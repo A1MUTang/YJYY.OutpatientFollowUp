@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OutPatientFollowUp.Application</name>
+    </assembly>
+    <members>
+        <member name="T:OutPatientFollowUp.Application.BasicProfileInformationDto">
+            <summary>
+            基础档案信息
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.Id">
+            <summary>
+            主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.Name">
+            <summary>
+            姓名
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.Gender">
+            <summary>
+            性别
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.IDCardNumber">
+            <summary>
+            身份证号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.PhoneNumber">
+            <summary>
+            手机号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.Address">
+            <summary>
+            地址 (身份证上的地址)
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.CurrentAddress">
+            <summary>
+            现住址
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.IsTakingAntihypertensiveMeds">
+            <summary>
+            是否正在服用降压药
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.IsTakingAntidiabeticMeds">
+            <summary>
+            是否正在服用降糖药
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.CreateBasicProfileInformationDto">
+            <summary>
+            创建基础档案信息
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateBasicProfileInformationDto.Name">
+            <summary>
+            姓名
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateBasicProfileInformationDto.Gender">
+            <summary>
+            性别 false:女 true:男
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateBasicProfileInformationDto.IDCardNumber">
+            <summary>
+            身份证号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateBasicProfileInformationDto.PhoneNumber">
+            <summary>
+            手机号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateBasicProfileInformationDto.Address">
+            <summary>
+            地址 (身份证上的地址)
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateBasicProfileInformationDto.CurrentAddress">
+            <summary>
+            现住址
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateBasicProfileInformationDto.IsTakingAntihypertensiveMeds">
+            <summary>
+            是否正在服用降压药 false:否 true:是
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateBasicProfileInformationDto.IsTakingAntidiabeticMeds">
+            <summary>
+            是否正在服用降糖药 false:否 true:是
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.UpdateBasicProfileInformationDto">
+            <summary>
+            更新基础档案信息
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.UpdateBasicProfileInformationDto.PhoneNumber">
+            <summary>
+            手机号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.UpdateBasicProfileInformationDto.IsTakingAntihypertensiveMeds">
+            <summary>
+            是否正在服用降压药
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.UpdateBasicProfileInformationDto.IsTakingAntidiabeticMeds">
+            <summary>
+            是否正在服用降糖药
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.SystemAppService">
+            <summary>
+            系统服务接口
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.SystemAppService.GetDescription">
+            <summary>
+            获取系统描述
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
