@@ -150,5 +150,129 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:OutPatientFollowUp.Application.DoctorinfoDto">
+            <summary>
+            登录记录
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.DoctorinfoDto.ID">
+            <summary>
+            医生id
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.DoctorinfoDto.ImgPath">
+            <summary>
+            医生头像
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.DoctorinfoDto.Gender">
+            <summary>
+            医生性别
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.DoctorinfoDto.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.IUserAppService">
+            <summary>
+            基础档案信息服务
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IUserAppService.Login(OutPatientFollowUp.Application.LoginDto)">
+            <summary>
+            登录
+            </summary>
+            <param name="loginDto">入参</param>
+            <returns></returns>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.LoginDto">
+            <summary>
+            登录记录
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.LoginDto.DoctorPhone">
+            <summary>
+            医生手机号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.LoginDto.DoctorPass">
+            <summary>
+            医生凭证 密码/验证码
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.LoginDto.MacId">
+            <summary>
+            设备号
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.LoginRecordDto">
+            <summary>
+            登录记录
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.LoginRecordDto.LoginTime">
+            <summary>
+            登录时间
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.LoginRecordDto.LoginMode">
+            <summary>
+            登录方式
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.LoginRecordDto.MacID">
+            <summary>
+            Mac地址
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.LoginRecordDto.LoginStatus">
+            <summary>
+            登录状态
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.SmsLoginInput">
+            <summary>
+            基础档案信息服务
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.SmsLoginInput.MacId">
+            <summary>
+            设备号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.SmsLoginInput.DoctorPhone">
+            <summary>
+            验证码
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.SmsLoginOutput">
+            <summary>
+            基础档案信息服务
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.SmsLoginOutput.VerifyCode">
+            <summary>
+            验证码
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Web.Core.Controller.ChangePwdInput.NewPwd">
+            <summary>
+            新密码
+            </summary>
+            <remarks>密码必须包含数字和字母，长度在 6 到 16 个字符之间</remarks>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Web.Core.Controller.ChangePwdInput.ConfirmNewPwd">
+            <summary>
+            确认新密码
+            </summary>
+            <remarks>密码必须包含数字和字母，长度在 6 到 16 个字符之间</remarks>
+            <value></value>
+        </member>
     </members>
 </doc>

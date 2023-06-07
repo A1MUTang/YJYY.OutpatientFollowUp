@@ -28,5 +28,110 @@
             <remarks>仅支持更改手机号，是否正在服用降压药，是否正在服用降糖药</remarks>
             <returns></returns>
         </member>
+        <member name="M:OutPatientFollowUp.Web.Core.Controller.UserController.Login(OutPatientFollowUp.Application.LoginDto)">
+            <summary>
+            登录    
+            </summary>
+            <param name="input">入参</param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Web.Core.Controller.UserController.SmsLogin(OutPatientFollowUp.Application.SmsLoginInput)">
+            <summary>
+            短信登录
+            </summary>
+            <param name="input">入参</param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Web.Core.Controller.UserController.ChangePwd(OutPatientFollowUp.Web.Core.Controller.ChangePwdInput)">
+            <summary>
+            修改密码
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OutPatientFollowUp.Web.Core.CustomResponse`1">
+            <summary>
+            自定义错误信息
+            </summary>
+            <typeparam name="T">数据类型</typeparam>
+        </member>
+        <member name="P:OutPatientFollowUp.Web.Core.CustomResponse`1.Msg">
+            <summary>
+            错误信息
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Web.Core.CustomResponse`1.Code">
+            <summary>
+            错误码
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Web.Core.CustomResponse`1.IsOK">
+            <summary>
+            是否成功
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Web.Core.CustomResponse`1.Ext">
+            <summary>
+            扩展信息
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Web.Core.CustomResponse`1.Data">
+            <summary>
+            数据
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:OutPatientFollowUp.Web.Core.CustomResponseProvider">
+            <summary>
+            RESTful 风格返回值
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Web.Core.CustomResponseProvider.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext,Furion.FriendlyException.ExceptionMetadata)">
+            <summary>
+            异常返回值
+            </summary>
+            <param name="context"></param>
+            <param name="metadata"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Web.Core.CustomResponseProvider.OnSucceeded(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext,System.Object)">
+            <summary>
+            成功返回值
+            </summary>
+            <param name="context"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Web.Core.CustomResponseProvider.OnValidateFailed(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Furion.DataValidation.ValidationMetadata)">
+            <summary>
+            验证失败返回值
+            </summary>
+            <param name="context"></param>
+            <param name="metadata"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Web.Core.CustomResponseProvider.OnResponseStatusCodes(Microsoft.AspNetCore.Http.HttpContext,System.Int32,Furion.UnifyResult.UnifyResultSettingsOptions)">
+            <summary>
+            特定状态码返回值
+            </summary>
+            <param name="context"></param>
+            <param name="statusCode"></param>
+            <param name="unifyResultSettings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Web.Core.CustomResponseProvider.YourRESTfulResult(System.Int32,System.Boolean,System.Object,System.Object)">
+            <summary>
+            返回 RESTful 风格结果集
+            </summary>
+            <param name="statusCode"></param>
+            <param name="succeeded"></param>
+            <param name="data"></param>
+            <param name="errors"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

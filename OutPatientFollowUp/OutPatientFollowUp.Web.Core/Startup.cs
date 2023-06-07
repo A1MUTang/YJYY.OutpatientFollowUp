@@ -16,7 +16,7 @@ public class Startup : AppStartup
         services.AddCorsAccessor();
 
         services.AddControllers()
-                .AddInjectWithUnifyResult();
+                .AddInjectWithUnifyResult<CustomResponseProvider>();
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using Furion.UnifyResult;
 using Microsoft.AspNetCore.Mvc;
 using OutPatientFollowUp.Application;
 
@@ -7,6 +8,7 @@ namespace OutPatientFollowUp.Web.Core.Controller;
 
 [ApiController]
 [Route("api/[controller]")]
+[UnifyModel(typeof(CustomResponse<>))]
 public class BasicProfileInformationController : ControllerBase
 {
     // private readonly IBasicProfileInformationAppService _basicProfileInformationAppService;

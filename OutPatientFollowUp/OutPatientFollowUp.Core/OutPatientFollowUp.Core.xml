@@ -14,5 +14,1270 @@
             SqlSugar 数据库实例
             </summary>
         </member>
+        <member name="T:OutPatientFollowUp.Core.AlcoholStatusEnum">
+            <summary>
+            饮酒状况枚举
+            <remarks>
+            Unknown = "不详"
+            Never = "从不饮酒"
+            Quit = "已戒酒"
+            Regular = "饮酒"
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.BloodLipidsResultEnum">
+            <summary>
+            血脂结果
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.BloodOxygenResultEnum">
+            <summary>
+            血氧结果枚举
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodOxygenResultEnum.Normal">
+            <summary>
+            正常
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodOxygenResultEnum.MildAbnormal">
+            <summary>
+            轻度异常
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodOxygenResultEnum.SevereAbnormal">
+            <summary>
+            严重异常
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.BloodPressureResultEnum">
+            <summary>
+            血压结果
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.LowBloodPressure">
+            <summary>
+            低血压
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.Ideal">
+            <summary>
+            理想
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.Normal">
+            <summary>
+            正常
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.Mild">
+            <summary>
+            轻度
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.Moderate">
+            <summary>
+            中度
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.Severe">
+            <summary>
+            重度
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.BloodPulseResultEnum">
+            <summary>
+            脉搏结果
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodPulseResultEnum.SlowPulse">
+            <summary>
+            脉搏过慢
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodPulseResultEnum.NormalPulse">
+            <summary>
+            脉搏正常
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodPulseResultEnum.FastPulse">
+            <summary>
+            脉搏过快
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.BloodSugarType">
+            <summary>
+            血糖类型
+            <remarks>
+            Fasting = "空腹"
+            Postprandial = "餐后"
+            Random = "随机"
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.ChronicDiseaseCategoryEnum">
+            <summary>
+            慢病分类枚举
+            <remarks>
+            Hypertension = "高血压"
+            Diabetes = "糖尿病"
+            Dyslipidemia = "血脂异常"
+            CoronaryHeartDisease = "冠心病"
+            Stroke = "脑卒中"
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.DietHabitsEnum">
+            <summary>
+            饮食习惯枚举
+            <remarks>
+            Unknown = "不详"
+            BalancedDiet = "荤素均衡"
+            MeatDiet = "荤食为主"
+            VegetarianDiet = "素食为主"
+            MixedDiet = "杂食"
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.DietPreferenceEnum">
+            <summary>
+            饮食口味枚举
+            <remarks>
+            Moderate = "适中"
+            SaltLover = "嗜盐"
+            SweetTooth = "嗜甜"
+            GreasyFood = "嗜油"
+            Light = "清淡"
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.ExerciseHabitsEnum">
+            <summary>
+            体育运动习惯枚举
+            <remarks>
+            Unknown = "不详"
+            NeverExercise = "从不运动"
+            AerobicExercise = "有氧运动"
+            IntenseExercise = "剧烈运动"
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.FamilyHistoryEnum">
+            <summary>
+            家族史枚举
+            <remarks>
+            Hypertension = "高血压"
+            CoronaryHeartDisease = "冠心病"
+            Stroke = "脑卒中"
+            DiabetesType2 = "糖尿病（Ⅱ型）"
+            EarlyCardiovascularDisease = "早发心血管疾病史"
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.FatHighFoodIntakeEnum">
+            <summary>
+            脂肪含量较高食物摄入量（肉类等）：
+            <remarks>
+            Unknown = "不详"
+            None = "0"
+            LessThanOneLiang = "＜1两"
+            OneToTwoLiang = "1两-2两"
+            TwoToThreeLiang = "2两-3两"
+            ThreeLiangToHalfCatty = "3两-半斤"
+            HalfCattyToOneCatty = "半斤-1斤"
+            OneCattyToTwoCatties = "1斤-2斤"
+            MoreThanTwoCatties = "＞2斤"
+            </remarks>
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.FatHighFoodIntakeEnum.Unknown">
+            <summary>
+            脂肪含量较高食物摄入量：不详
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.FatHighFoodIntakeEnum.None">
+            <summary>
+            脂肪含量较高食物摄入量：0
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.FatHighFoodIntakeEnum.LessThanOneLiang">
+            <summary>
+            脂肪含量较高食物摄入量：＜1两
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.FatHighFoodIntakeEnum.OneToTwoLiang">
+            <summary>
+            脂肪含量较高食物摄入量：1两-2两
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.FatHighFoodIntakeEnum.TwoToThreeLiang">
+            <summary>
+            脂肪含量较高食物摄入量：2两-3两
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.FatHighFoodIntakeEnum.ThreeLiangToHalfCatty">
+            <summary>
+            脂肪含量较高食物摄入量：3两-半斤
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.FatHighFoodIntakeEnum.HalfCattyToOneCatty">
+            <summary>
+            脂肪含量较高食物摄入量：半斤-1斤
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.FatHighFoodIntakeEnum.OneCattyToTwoCatties">
+            <summary>
+            脂肪含量较高食物摄入量：1斤-2斤
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.FatHighFoodIntakeEnum.MoreThanTwoCatties">
+            <summary>
+            脂肪含量较高食物摄入量：＞2斤
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.FruitIntakeEnum">
+            <summary>
+            水果摄入量枚举
+            <remarks>
+            Unknown = "不详"
+            None = "0"
+            LessThanOneLiang = "＜1两"
+            OneToTwoLiang = "1两-2两"
+            TwoToThreeLiang = "2两-3两"
+            ThreeLiangToHalfCatty = "3两-半斤"
+            HalfCattyToOneCatty = "半斤-1斤"
+            OneCattyToTwoCatties = "1斤-2斤"
+            MoreThanTwoCatties = "＞2斤"
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.HDLResultEnum">
+            <summary>
+            总胆固醇结果 
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.MaritalStatusEnum">
+            <summary>
+            婚姻状况枚举
+            <remarks>
+            Single = "未婚"
+            Married = "已婚"
+            Divorced = "离异"
+            Widowed = "丧偶"
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.PastMedicalHistoryEnum">
+            <summary>
+            既往病史枚举
+            <remarks>
+            None = "未发现"
+            Hypertension = "高血压"
+            CerebrovascularDisease = "脑血管病"
+            HeartDisease = "心脏疾病"
+            PeripheralVascularDisease = "外周血管病"
+            RetinalDisease = "视网膜疾病"
+            DiabetesType2 = "糖尿病（Ⅱ型）"
+            KidneyDisease = "肾病"
+            PCOS = "多囊卵巢综合征（PCOS）"
+            GestationalDiabetes = "妊娠糖尿病史"
+            AcanthosisNigricans = "黑棘皮症"
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.PaymentMethodEnum">
+            <summary>
+            医疗费用支付方式枚举
+            <remarks>
+            SelfPayment = "自费"
+            HealthInsurance = "医保"
+            CommercialInsurance = "商业保险"
+            PublicFunding = "公费"
+            </remarks>
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.PaymentMethodEnum.SelfPayment">
+            <summary>
+            自费
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.PopulationCategoryEnum">
+            <summary>
+            人群分类枚举
+            <remarks>
+            AT01 = "高龄"
+            AT02 = "老年人"
+            AT03 = "中青年"
+            AT04 = "孕产"
+            AT05 = "儿童"
+            AT06 = "未知"
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.SaltTargetEnum">
+            <summary>
+            控盐目标枚举
+            <remarks>
+            LessThan2Grams = "&lt;2克"
+            TwoToFourGrams = "2-4克"
+            FourToSixGrams = "4-6克"
+            SixToEightGrams = "6-8克"
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.SleepDurationEnum">
+            <summary>
+            睡眠时间
+            <remarks>
+            Unknown = "不详"
+            LessThanSixHours = "＜6小时"
+            SixToSevenHours = "6-7小时"
+            SevenToEightHours = "7-8小时"
+            EightToNineHours = "8-9小时"
+            NineToTenHours = "9-10小时"
+            MoreThanTenHours = "＞10小时"
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.SmokingStatusEnum">
+            <summary>
+            吸烟状况枚举
+            <remarks>
+            Unknown = "不详"
+            NeverSmoked = "从不吸烟"
+            QuitSmoking = "已戒烟"
+            Smoking = "吸烟"
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.VegetableIntakeEnum">
+            <summary>
+            蔬菜摄入量枚举
+            <remarks>
+            Unknown = "不详"
+            LowIntake = "摄入量小"
+            HighIntake = "摄入量大"
+            ModerateIntake = "摄入量适中"
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.VegetableIntakeTargetEnum">
+            <summary>
+            目标蔬菜摄入量枚举
+            <remarks>
+            Unknown = "不详"
+            HalfToOneKilogram = "半斤到一斤"
+            OneToOneAndHalfKilograms = "一斤到一斤半"
+            OneAndHalfToTwoKilograms = "一斤半到二斤"
+            TwoToThreeKilograms = "两斤到三斤"
+            MoreThanThreeKilograms = "三斤以上"
+            </remarks>
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.VegetableIntakeTargetEnum.Unknown">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.VegetableIntakeTargetEnum.HalfToOneKilogram">
+            <summary>
+            半斤到一斤
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.VegetableIntakeTargetEnum.OneToOneAndHalfKilograms">
+            <summary>
+            一斤到一斤半
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.VegetableIntakeTargetEnum.OneAndHalfToTwoKilograms">
+            <summary>
+            一斤半到二斤
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.VegetableIntakeTargetEnum.TwoToThreeKilograms">
+            <summary>
+            两斤到三斤
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.VegetableIntakeTargetEnum.MoreThanThreeKilograms">
+            <summary>
+            三斤以上
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.HT_PatientBasicInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.JoinShareDate">
+            <summary>
+            智享版加入时间
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_UserID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_UserName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Gender">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ICard">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Country">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_OriginPlace">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Birthday">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Nation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_HuBie">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_HuJi">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_MarryState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Education">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_WorkState">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Province">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_City">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_County">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Street">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Address">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_JuWeiHui">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_HomePhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_PersonPhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_BaoXiaoFangShi">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_YiBaoHao">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_PersonCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_HuZhu">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_YearEarning">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Salary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_HaveNET">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_NetTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ContactPhone1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ContactEmail1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ContactRelation1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ContactPhone2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ContactEmail2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ContactRelation2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_CreateArchivesDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.ArchivesCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_CreateArchivesUnit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_SignDoctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_SignNurse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_SheQuHao">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ChronicDiseaseType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ChronicDiseaseOther">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ChronicDiseaseShow">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_AgeType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_IsBindMachine">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_XYMacID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_XYUserCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_XYManufacture">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_XYSIM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_XTMacID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_XTUserCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_XTManufacture">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_XTSIM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_FamilyDiseaseType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_GXYRelation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_GXYDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_GXBRelation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_GXBDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_NZZRelation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_NZZDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_TNBRelation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_TNBDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_XXGRelation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_XXGDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_XiYanXiGuan">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_XiYanShuLiang">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_KongYanMuBiao">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_YinJiuXiGuan">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_YinJiuPinCi">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_YinJiuLiang">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_XianJiuMuBiao">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_YunDongXiGuan">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_DuanLianPinCi">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_DuanLianShiChang">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_MuBiaoPinCi">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_MuBiaoShiChang">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_YinShiKouWei">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ShiYanLiang">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_KongYanLiang">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ShuiMinXiGuan">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ShuiMinShiJian">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ShuCiSheRuLiang">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_MuBiaoSCSheRuLiang">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ShuiGuoSheRuLiang">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_MuBiaoSGSheRuLiang">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ZhiFangSheRuLiang">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_MuBiaoZFSheRuLiang">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_FeelBad">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Height">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Weight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_AimWeight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_BMI">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_AimBMI">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_YaoWei">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_MuBiaoYaoWei">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_TunWei">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_YaoTunBi">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_BloodType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_RHBloodType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_CreateUserID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_CreateUser">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_CreateDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_IsModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ModelName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Collect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Delete">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Cancel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Quit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Undone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ManageQuestion">
+            <summary>
+            管理问题
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_NextTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_UserStatus">
+            <summary>
+            服务包类型
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ExpiryTime">
+            <summary>
+            服务包截止日期
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ServiceStartTime">
+            <summary>
+            服务包开始日期
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_BakFlag">
+            <summary>
+            服务包状态
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.IsReceiveSMS">
+            <summary>
+            是否接受周短信
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:OutPatientFollowUp.Core.HT_PatientBasicInfo.IsGxyStandard" -->
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.SupplementaryExam">
+            <summary>
+            辅助检查数据
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_CompanyName">
+            <summary>
+            抗精神
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_IsAntidepressant">
+            <summary>
+            抗抑郁
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_IsStatins">
+            <summary>
+            他汀类
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_SmokingStatus">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_SmokingQuantity">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_SmokingAge">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_SmokeAbstinenceAge">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_AbstinenceAge">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ExcessiveDrinking">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_TypesDrinking">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_StickExerciseTime">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_DrinkeIntake">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.Referral">
+            <summary>
+             1申请转诊过，2被远程指导过，3本院治疗
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_NameAcronym">
+            <summary>
+            医生姓名拼音缩写
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_OnlineStatus">
+            <summary>
+            医生在线状态
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Userintegral">
+            <summary>
+            医生用户积分
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Sign">
+            <summary>
+            医生签名
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Passe">
+            <summary>
+            医生通过
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_ID">
+            <summary>
+            医生ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Phone">
+            <summary>
+            医生电话
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_UserName">
+            <summary>
+            医生用户名
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Pwd">
+            <summary>
+            医生密码
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Gender">
+            <summary>
+            医生性别
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_ICard">
+            <summary>
+            医生身份证号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.OldPhone">
+            <summary>
+            旧电话
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_type">
+            <summary>
+            医生类型
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.PI_Score">
+            <summary>
+            PI得分
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_CreateTime">
+            <summary>
+            医生创建时间
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_CreatePople">
+            <summary>
+            医生创建人
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_State">
+            <summary>
+            医生状态
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Docto_Reason">
+            <summary>
+            医生原因
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_PassCreaTime">
+            <summary>
+            医生通过创建时间
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_PassPeple">
+            <summary>
+            医生通过人
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.ID">
+            <summary>
+            登录记录ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.MacID">
+            <summary>
+            Mac地址
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.DoctorPhone">
+            <summary>
+            医生手机号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.LoginStatus">
+            <summary>
+            登录状态
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.LoginMode">
+            <summary>
+            登录方式
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.LoginTime">
+            <summary>
+            登录时间
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.DoctorID">
+            <summary>
+            医生ID
+            </summary>
+        </member>
+        <member name="T:YiJiaYiYun.OutpatientFollowUp.FruitIntakeTargetEnum">
+            <summary>
+            目标蔬菜摄入量枚举
+            <remarks>
+            Unknown = "不详"
+            HalfToOneKilogram = "半斤到一斤"
+            OneToOneAndHalfKilograms = "一斤到一斤半"
+            OneAndHalfToTwoKilograms = "一斤半到二斤"
+            TwoToThreeKilograms = "两斤到三斤"
+            MoreThanThreeKilograms = "三斤以上"
+            </remarks>
+            </summary>
+        </member>
+        <member name="F:YiJiaYiYun.OutpatientFollowUp.FruitIntakeTargetEnum.Unknown">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:YiJiaYiYun.OutpatientFollowUp.FruitIntakeTargetEnum.HalfToOneKilogram">
+            <summary>
+            半斤到一斤
+            </summary>
+        </member>
+        <member name="F:YiJiaYiYun.OutpatientFollowUp.FruitIntakeTargetEnum.OneToOneAndHalfKilograms">
+            <summary>
+            一斤到一斤半
+            </summary>
+        </member>
+        <member name="F:YiJiaYiYun.OutpatientFollowUp.FruitIntakeTargetEnum.OneAndHalfToTwoKilograms">
+            <summary>
+            一斤半到二斤
+            </summary>
+        </member>
+        <member name="F:YiJiaYiYun.OutpatientFollowUp.FruitIntakeTargetEnum.TwoToThreeKilograms">
+            <summary>
+            两斤到三斤
+            </summary>
+        </member>
+        <member name="F:YiJiaYiYun.OutpatientFollowUp.FruitIntakeTargetEnum.MoreThanThreeKilograms">
+            <summary>
+            三斤以上
+            </summary>
+        </member>
+        <member name="T:YiJiaYiYun.OutpatientFollowUp.HighFatFoodIntakeEnum">
+            <summary>
+            目标脂肪含量较高食物摄入量枚举
+            <remarks>
+            Unknown = "不详"
+            None = "0"
+            LessThanOneLiang = "＜1两"
+            OneToTwoLiang = "1两-2两"
+            TwoToThreeLiang = "2两-3两"
+            ThreeLiangToHalfCatty = "3两-半斤"
+            HalfCattyToOneCatty = "半斤-1斤"
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:YiJiaYiYun.OutpatientFollowUp.SleepHabitEnum">
+            <summary>
+            睡眠习惯枚举
+            <remarks>
+            Unknown = "不详"
+            EarlySleep = "早睡"
+            Normal = "正常"
+            LateSleep = "晚睡"
+            Insomnia = "失眠"
+            </remarks>
+            </summary>
+        </member>
     </members>
 </doc>
