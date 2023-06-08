@@ -7,7 +7,7 @@ namespace OutPatientFollowUp.Application
         /// 用户Id
         /// </summary>
         /// <value></value>
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         /// <summary>
         /// 新密码

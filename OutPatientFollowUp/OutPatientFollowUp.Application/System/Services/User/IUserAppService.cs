@@ -6,31 +6,31 @@ namespace OutPatientFollowUp.Application;
 public interface IUserAppService : ITransient
 {
     /// <summary>
-    /// 登录
+    /// 登录 未填充token，请web端填充
     /// </summary>
     /// <param name="loginDto">入参</param>
     /// <returns></returns>
-    Task<DoctorinfoDto> Login(LoginInput loginDto);
+    Task<DoctorinfoDto> LoginAsync(LoginInput loginDto);
 
     /// <summary>
     ///  发送修改密码验证码
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
-    Task<SendChangePwdVerificationCodeOutput> SendChangePwdVerificationCode(SendChangePwdVerificationCodeInput input);
+    Task<SendChangePwdVerificationCodeOutput> SendChangePwdVerificationCodeAsync(SendChangePwdVerificationCodeInput input);
 
     /// <summary>
     /// 验证修改密码的验证码
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
-    Task<VerifyChangePwdVerificationCodeOutput> VerifyChangePwdVerificationCode(VerifyChangePwdVerificationCodeInput input);
+    Task<VerifyChangePwdVerificationCodeOutput> VerifyChangePwdVerificationCodeAsync(VerifyChangePwdVerificationCodeInput input);
 
     /// <summary>
     /// 修改密码
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
-    Task<bool> ChangePwd(ChangePwdInput input);
+    Task<bool> ChangePwdAsync(ChangePwdInput input);
 
 }
