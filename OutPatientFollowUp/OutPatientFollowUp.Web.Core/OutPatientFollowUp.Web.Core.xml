@@ -133,5 +133,69 @@
             <param name="errors"></param>
             <returns></returns>
         </member>
+        <member name="T:OutPatientFollowUp.Core.HealthMonitor.BloodLipidsController">
+            <summary>
+            血脂
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HealthMonitor.BloodLipidsController.CreateAsync(System.String,OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodLipidsDto)">
+            <summary>
+            创建血脂记录
+            </summary>
+            <param name="basicProfileInformationId">基础档案信息主键</param>
+            <param name="input">入参</param>
+            <remarks>会创建血脂信息</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HealthMonitor.BloodLipidsController.GetAsync(System.String)">
+            <summary>
+            获取血脂
+            </summary>
+            <param name="basicProfileInformationId">基础档案信息主键</param>
+            <remarks>会获取最新当前血脂和基础档案部分信息</remarks> 
+            <returns></returns>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.HealthMonitor.BloodOxygenController">
+            <summary>
+            血氧
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HealthMonitor.BloodOxygenController.CreateAsync(System.String,OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodOxygenDto)">
+            <summary>
+            录入血氧
+            </summary>
+            <param name="basicProfileInformationId">基本档案信息Id</param>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HealthMonitor.BloodOxygenController.GetAsync(System.String)">
+            <summary>
+            获取血氧
+            </summary>
+            <param name="basicProfileInformationId">基本档案信息Id</param>
+            <returns></returns>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.ProfileInformationDetailController">
+            <summary>
+            基本档案信息
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.ProfileInformationDetailController.GetAsync(System.Guid)">
+            <summary>
+            获取档案信息
+            </summary>
+            <param name="basicProfileInformationId">基本档案信息</param>
+            <remarks>当前响应结果为基础档案信息+最近一条档案详情</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.ProfileInformationDetailController.SaveAsync(System.Guid,OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto)">
+            <summary>
+            保存档案信息
+            </summary>
+            <param name="basicProfileInformationId">基本档案信息</param>
+            <param name="input">入参</param>
+            <remarks>当前逻辑为修改基础档案信息+添加一条档案详情数据</remarks>
+            <returns></returns>
+        </member>
     </members>
 </doc>

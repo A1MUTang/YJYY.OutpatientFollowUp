@@ -63,6 +63,154 @@
             </summary>
             <value></value>
         </member>
+        <member name="T:OutPatientFollowUp.Application.HealthMonitor.BloodLipidsDto">
+            <summary>
+            血脂
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodLipidsDto.BasicProfileInformationId">
+            <summary>
+            基础档案信息主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodLipidsDto.HealthMonitorBaseDto">
+            <summary>
+            健康基础信息
+            </summary>
+            <remarks>测量结果中的抬头</remarks>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodLipidsDto.TotalCholesterol">
+            <summary>
+            总胆固醇
+            </summary>
+            <remarks>单位：mmol/L</remarks>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodLipidsDto.Triglycerides">
+            <summary>
+            甘油三酯
+            </summary>
+            <remarks>单位：mmol/L</remarks>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodLipidsDto.HDLCholesterol">
+            <summary>
+            高密度脂蛋白胆固醇
+            </summary>
+            <remarks>单位：mmol/L</remarks>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodLipidsDto.LDLCholesterol">
+            <summary>
+            低密度脂蛋白胆固醇
+            </summary>
+            <remarks>单位：mmol/L</remarks>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodLipidsDto.BloodLipidsResult">
+            <summary>
+            血脂结果
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodLipidsDto.HealthAdvice">
+            <summary>
+            健康建议
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodLipidsDto.HDLCholesterolLevel">
+            <summary>
+            高密度脂蛋白胆固醇 (HDL-C)水平
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodOxygenDto.BloodOxygenValue">
+            <summary>
+            血氧值
+            </summary>
+            <remarks>单位：%</remarks>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodOxygenDto.BasicProfileInformationId">
+            <summary>
+            基础档案信息主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodOxygenDto.HealthMonitorBaseDto">
+            <summary>
+            健康基础信息
+            </summary>
+            <remarks>测量结果中的抬头</remarks>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodOxygenDto.BloodOxygenResult">
+            <summary>
+            血氧结果
+            </summary>
+            <remarks>单位：%</remarks>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodLipidsDto.TotalCholesterol">
+            <summary>
+            总胆固醇
+            </summary>
+            <remarks>单位：mmol/L</remarks>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodLipidsDto.Triglycerides">
+            <summary>
+            甘油三酯
+            </summary>
+            <remarks>单位：mmol/L</remarks>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodLipidsDto.HDLCholesterol">
+            <summary>
+            高密度脂蛋白胆固醇
+            </summary>
+            <remarks>单位：mmol/L</remarks>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodLipidsDto.LDLCholesterol">
+            <summary>
+            低密度脂蛋白胆固醇
+            </summary>
+            <remarks>单位：mmol/L</remarks>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodOxygenDto.BloodOxygenValue">
+            <summary>
+            血氧值
+            </summary>
+            <remarks>单位：%</remarks>
+            <value></value>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.HealthMonitor.HealthMonitorBaseDto">
+            <summary>
+            健康基础信息
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.HealthMonitorBaseDto.Name">
+            <summary>
+            姓名
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.HealthMonitorBaseDto.Gender">
+             <summary>
+            性别：男、女
+             </summary>
+             <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.HealthMonitorBaseDto.IDCardNumber">
+            <summary>
+            身份证号
+            </summary>
+            <value></value>
+        </member>
         <member name="T:OutPatientFollowUp.Application.CreateBasicProfileInformationDto">
             <summary>
             创建基础档案信息
@@ -114,6 +262,327 @@
             <summary>
             是否正在服用降糖药 false:否 true:是
             </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.Ethnicity">
+            <summary>
+            民族
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.MaritalStatus">
+            <summary>
+            婚姻状况
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.Height">
+            <summary>
+            身高（单位：米）
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.Weight">
+            <summary>
+            体重（单位：千克）
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.BMI">
+            <summary>
+            BMI (Body Mass Index)
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.WaistCircumference">
+            <summary>
+            腰围（单位：厘米）
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.HipCircumference">
+            <summary>
+            臀围（单位：厘米）
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.WaistToHipRatio">
+            <summary>
+            腰臀比
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.ChronicDiseaseCategory">
+            <summary>
+            慢病分类
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.OtherChronicDiseases">
+            <summary>
+            慢性病其他说明
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.PaymentMethod">
+            <summary>
+            医疗费用支付方式
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.PastMedicalHistory">
+            <summary>
+            既往病史
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.OtherMedicalHistory">
+            <summary>
+            既往病史其他说明
+            </summary>
+            <remarks>既往病史为其他时填写</remarks>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.FamilyHistory">
+            <summary>
+            家族史
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.SmokingStatus">
+            <summary>
+            吸烟状况
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.AlcoholStatus">
+            <summary>
+            饮酒状况
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.ExerciseHabits">
+            <summary>
+            体育运动习惯
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.DietPreference">
+            <summary>
+            饮食口味
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.DietHabits">
+            <summary>
+            饮食习惯
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.SaltTarget">
+            <summary>
+            控盐目标
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.VegetableIntake">
+            <summary>
+            蔬菜摄入量
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.VegetableIntakeTarget">
+            <summary>
+            目标蔬菜摄入量
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.FruitIntakeEnum">
+            <summary>
+            水果摄入量
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.FruitIntakeTargetEnum">
+            <summary>
+            目标水果摄入量
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.FatIntake">
+            <summary>
+            脂肪含量较高食物摄入量（肉类等）
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.HighFatFoodIntake">
+            <summary>
+            目标脂肪含量较高食物摄入量
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.SleepHabit">
+            <summary>
+            睡眠习惯枚举
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.SleepDuration">
+            <summary>
+            睡眠时间
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.RecentEmotionalState">
+            <summary>
+            近期情绪状态
+            </summary>
+            <remarks>true: 感到压抑/压力大/紧张着急/愤怒 false:无</remarks>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.Id">
+            <summary>
+            主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.PopulationCategory">
+            <summary>
+            人群分类
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.Ethnicity">
+            <summary>
+            民族
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.MaritalStatus">
+            <summary>
+            婚姻状况
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.Height">
+            <summary>
+            身高（单位：米）
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.Weight">
+            <summary>
+            体重（单位：千克）
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.BMI">
+            <summary>
+            BMI (Body Mass Index)
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.WaistCircumference">
+            <summary>
+            腰围（单位：厘米）
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.HipCircumference">
+            <summary>
+            臀围（单位：厘米）
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.WaistToHipRatio">
+            <summary>
+            腰臀比
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.ChronicDiseaseCategory">
+            <summary>
+            慢病分类
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.OtherChronicDiseases">
+            <summary>
+            慢性病其他说明
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.PaymentMethod">
+            <summary>
+            医疗费用支付方式
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.PastMedicalHistory">
+            <summary>
+            既往病史
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.OtherMedicalHistory">
+            <summary>
+            既往病史其他说明
+            </summary>
+            <remarks>既往病史为其他时填写</remarks>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.FamilyHistory">
+            <summary>
+            家族史
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.SmokingStatus">
+            <summary>
+            吸烟状况
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.AlcoholStatus">
+            <summary>
+            饮酒状况
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.ExerciseHabits">
+            <summary>
+            体育运动习惯
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.DietPreference">
+            <summary>
+            饮食口味
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.DietHabits">
+            <summary>
+            饮食习惯
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.SaltTarget">
+            <summary>
+            控盐目标
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.VegetableIntake">
+            <summary>
+            蔬菜摄入量
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.VegetableIntakeTarget">
+            <summary>
+            目标蔬菜摄入量
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.FruitIntakeEnum">
+            <summary>
+            水果摄入量
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.FruitIntakeTargetEnum">
+            <summary>
+            目标水果摄入量
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.FatIntake">
+            <summary>
+            脂肪含量较高食物摄入量（肉类等）
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.HighFatFoodIntake">
+            <summary>
+            目标脂肪含量较高食物摄入量
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.SleepHabit">
+            <summary>
+            睡眠习惯枚举
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.SleepDuration">
+            <summary>
+            睡眠时间
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.RecentEmotionalState">
+            <summary>
+            近期情绪状态
+            </summary>
+            <remarks>true: 感到压抑/压力大/紧张着急/愤怒 false:无</remarks>
             <value></value>
         </member>
         <member name="T:OutPatientFollowUp.Application.UpdateBasicProfileInformationDto">
@@ -273,6 +742,61 @@
             </summary>
             <remarks>密码必须包含数字和字母，长度在 6 到 16 个字符之间</remarks>
             <value></value>
+        </member>
+        <member name="P:CompleteUpdateBasicProfileInformationDto.Name">
+            <summary>
+            姓名
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CompleteUpdateBasicProfileInformationDto.Gender">
+            <summary>
+            性别
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CompleteUpdateBasicProfileInformationDto.IDCardNumber">
+            <summary>
+            身份证号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CompleteUpdateBasicProfileInformationDto.PhoneNumber">
+            <summary>
+            手机号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CompleteUpdateBasicProfileInformationDto.Address">
+            <summary>
+            地址 (身份证上的地址)
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CompleteUpdateBasicProfileInformationDto.CurrentAddress">
+            <summary>
+            现住址
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CompleteUpdateBasicProfileInformationDto.IsTakingAntihypertensiveMeds">
+            <summary>
+            是否正在服用降压药
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CompleteUpdateBasicProfileInformationDto.IsTakingAntidiabeticMeds">
+            <summary>
+            是否正在服用降糖药
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:CompleteUpdateBasicProfileInformationDto.UserId">
+            <summary>
+            患者Id
+            </summary>
+            <value></value>
+            <remarks>用于关联患者</remarks>
         </member>
     </members>
 </doc>

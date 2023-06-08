@@ -251,9 +251,66 @@
             </remarks>
             </summary>
         </member>
+        <member name="T:OutPatientFollowUp.Core.FruitIntakeTargetEnum">
+            <summary>
+            目标蔬菜摄入量枚举
+            <remarks>
+            Unknown = "不详"
+            HalfToOneKilogram = "半斤到一斤"
+            OneToOneAndHalfKilograms = "一斤到一斤半"
+            OneAndHalfToTwoKilograms = "一斤半到二斤"
+            TwoToThreeKilograms = "两斤到三斤"
+            MoreThanThreeKilograms = "三斤以上"
+            </remarks>
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.FruitIntakeTargetEnum.Unknown">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.FruitIntakeTargetEnum.HalfToOneKilogram">
+            <summary>
+            半斤到一斤
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.FruitIntakeTargetEnum.OneToOneAndHalfKilograms">
+            <summary>
+            一斤到一斤半
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.FruitIntakeTargetEnum.OneAndHalfToTwoKilograms">
+            <summary>
+            一斤半到二斤
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.FruitIntakeTargetEnum.TwoToThreeKilograms">
+            <summary>
+            两斤到三斤
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.FruitIntakeTargetEnum.MoreThanThreeKilograms">
+            <summary>
+            三斤以上
+            </summary>
+        </member>
         <member name="T:OutPatientFollowUp.Core.HDLResultEnum">
             <summary>
             总胆固醇结果 
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.HighFatFoodIntakeEnum">
+            <summary>
+            目标脂肪含量较高食物摄入量枚举
+            <remarks>
+            Unknown = "不详"
+            None = "0"
+            LessThanOneLiang = "＜1两"
+            OneToTwoLiang = "1两-2两"
+            TwoToThreeLiang = "2两-3两"
+            ThreeLiangToHalfCatty = "3两-半斤"
+            HalfCattyToOneCatty = "半斤-1斤"
+            </remarks>
             </summary>
         </member>
         <member name="T:OutPatientFollowUp.Core.MaritalStatusEnum">
@@ -336,6 +393,18 @@
             EightToNineHours = "8-9小时"
             NineToTenHours = "9-10小时"
             MoreThanTenHours = "＞10小时"
+            </remarks>
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.SleepHabitEnum">
+            <summary>
+            睡眠习惯枚举
+            <remarks>
+            Unknown = "不详"
+            EarlySleep = "早睡"
+            Normal = "正常"
+            LateSleep = "晚睡"
+            Insomnia = "失眠"
             </remarks>
             </summary>
         </member>
@@ -1208,75 +1277,6 @@
         <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.DoctorID">
             <summary>
             医生ID
-            </summary>
-        </member>
-        <member name="T:YiJiaYiYun.OutpatientFollowUp.FruitIntakeTargetEnum">
-            <summary>
-            目标蔬菜摄入量枚举
-            <remarks>
-            Unknown = "不详"
-            HalfToOneKilogram = "半斤到一斤"
-            OneToOneAndHalfKilograms = "一斤到一斤半"
-            OneAndHalfToTwoKilograms = "一斤半到二斤"
-            TwoToThreeKilograms = "两斤到三斤"
-            MoreThanThreeKilograms = "三斤以上"
-            </remarks>
-            </summary>
-        </member>
-        <member name="F:YiJiaYiYun.OutpatientFollowUp.FruitIntakeTargetEnum.Unknown">
-            <summary>
-            未知
-            </summary>
-        </member>
-        <member name="F:YiJiaYiYun.OutpatientFollowUp.FruitIntakeTargetEnum.HalfToOneKilogram">
-            <summary>
-            半斤到一斤
-            </summary>
-        </member>
-        <member name="F:YiJiaYiYun.OutpatientFollowUp.FruitIntakeTargetEnum.OneToOneAndHalfKilograms">
-            <summary>
-            一斤到一斤半
-            </summary>
-        </member>
-        <member name="F:YiJiaYiYun.OutpatientFollowUp.FruitIntakeTargetEnum.OneAndHalfToTwoKilograms">
-            <summary>
-            一斤半到二斤
-            </summary>
-        </member>
-        <member name="F:YiJiaYiYun.OutpatientFollowUp.FruitIntakeTargetEnum.TwoToThreeKilograms">
-            <summary>
-            两斤到三斤
-            </summary>
-        </member>
-        <member name="F:YiJiaYiYun.OutpatientFollowUp.FruitIntakeTargetEnum.MoreThanThreeKilograms">
-            <summary>
-            三斤以上
-            </summary>
-        </member>
-        <member name="T:YiJiaYiYun.OutpatientFollowUp.HighFatFoodIntakeEnum">
-            <summary>
-            目标脂肪含量较高食物摄入量枚举
-            <remarks>
-            Unknown = "不详"
-            None = "0"
-            LessThanOneLiang = "＜1两"
-            OneToTwoLiang = "1两-2两"
-            TwoToThreeLiang = "2两-3两"
-            ThreeLiangToHalfCatty = "3两-半斤"
-            HalfCattyToOneCatty = "半斤-1斤"
-            </remarks>
-            </summary>
-        </member>
-        <member name="T:YiJiaYiYun.OutpatientFollowUp.SleepHabitEnum">
-            <summary>
-            睡眠习惯枚举
-            <remarks>
-            Unknown = "不详"
-            EarlySleep = "早睡"
-            Normal = "正常"
-            LateSleep = "晚睡"
-            Insomnia = "失眠"
-            </remarks>
             </summary>
         </member>
     </members>

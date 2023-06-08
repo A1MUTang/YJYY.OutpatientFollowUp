@@ -1,12 +1,12 @@
 ﻿{
   "$schema": "https://gitee.com/dotnetchina/Furion/raw/v4/schemas/v4/furion-schema.json",
   "SpecificationDocumentSettings": {
-    "DocumentTitle": "Furion | 规范化接口",
+    "DocumentTitle": "院外随访 | 规范化接口",
     "GroupOpenApiInfos": [
       {
         "Group": "Default",
-        "Title": "规范化接口演示",
-        "Description": "让 .NET 开发更简单，更通用，更流行。",
+        "Title": "院外随访",
+        "Description": "院外随访接口",
         "Version": "1.0.0"
       }
     ]
