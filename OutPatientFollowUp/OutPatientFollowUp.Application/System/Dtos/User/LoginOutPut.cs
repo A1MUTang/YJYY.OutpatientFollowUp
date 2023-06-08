@@ -35,6 +35,12 @@ namespace OutPatientFollowUp.Application
         public string IDCardNumber { get; set; }
 
         /// <summary>
+        /// 是否需要修改密码
+        /// </summary>
+        /// <value></value>
+        public bool IsPasswordChangeRequired { get; set; }
+
+        /// <summary>
         /// 手机号
         /// </summary>
         /// <value></value>

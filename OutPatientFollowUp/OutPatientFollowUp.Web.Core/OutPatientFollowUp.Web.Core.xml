@@ -42,14 +42,14 @@
             <param name="input">入参</param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Web.Core.Controller.UserController.VerifyChangePwdVerificationCode(OutPatientFollowUp.Web.Core.Controller.VerifyChangePwdVerificationCodeInput)">
+        <member name="M:OutPatientFollowUp.Web.Core.Controller.UserController.VerifyChangePwdVerificationCode(OutPatientFollowUp.Application.VerifyChangePwdVerificationCodeInput)">
             <summary>
             验证修改密码验证码
             </summary>
             <param name="input"></param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Web.Core.Controller.UserController.ChangePwd(OutPatientFollowUp.Web.Core.Controller.ChangePwdInput)">
+        <member name="M:OutPatientFollowUp.Web.Core.Controller.UserController.ChangePwd(OutPatientFollowUp.Application.ChangePwdInput)">
             <summary>
             修改密码
             </summary>

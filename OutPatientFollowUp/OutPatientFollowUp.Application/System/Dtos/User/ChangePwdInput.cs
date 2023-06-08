@@ -1,9 +1,14 @@
 using System.Text.RegularExpressions;
-namespace OutPatientFollowUp.Web.Core.Controller
+namespace OutPatientFollowUp.Application
 {
     public class ChangePwdInput : IValidatableObject
     {
-        
+        /// <summary>
+        /// 用户Id
+        /// </summary>
+        /// <value></value>
+        public int UserId { get; set; }
+
         /// <summary>
         /// 新密码
         /// </summary>

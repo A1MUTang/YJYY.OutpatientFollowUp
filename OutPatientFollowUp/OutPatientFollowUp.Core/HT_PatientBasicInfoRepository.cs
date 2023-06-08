@@ -7,8 +7,11 @@ namespace OutPatientFollowUp.Core;
 /// </summary>
 public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
 {
-    public HT_PatientBasicInfoRepository(ISqlSugarClient db) : base(db)
+    private readonly ISqlSugarClient _context;
+
+    public HT_PatientBasicInfoRepository(ISqlSugarClient context) : base(context)
     {
+        _context = context;
     }
 
     /// <summary>
@@ -19,7 +22,7 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
     /// <returns></returns>
     public async Task<HT_PatientBasicInfo> GetByIdcardAndDocterIdAsync(string idcard, string manageName)
     {
-        return await _db.Queryable<HT_PatientBasicInfo>()
+        return await _context.Queryable<HT_PatientBasicInfo>()
             .Where(x => x.PBI_ICard == idcard && SqlFunc.Subqueryable<PT_OrgnameForParent>()
                 .Where(y => y.OrgName == manageName)
                 .Select(y => y.ManageName)
@@ -35,7 +38,7 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
     /// <returns>true 已存在 false 不存在</returns>
     public async Task<bool> ExistIdCardByManageName(string idcard, string manageName)
     {
-        return await _db.Queryable<HT_PatientBasicInfo>()
+        return await _context.Queryable<HT_PatientBasicInfo>()
             .Where(x => x.PBI_ICard == idcard && SqlFunc.Subqueryable<PT_OrgnameForParent>()
                 .Where(y => y.OrgName == manageName)
                 .Select(y => y.ManageName)
@@ -51,7 +54,7 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
     /// <returns></returns>
     public async Task<HT_PatientBasicInfo> Insert(HT_PatientBasicInfo patientBasicInfo)
     {
-        return await _db.Insertable(patientBasicInfo).ExecuteReturnEntityAsync();
+        return await _context.Insertable(patientBasicInfo).ExecuteReturnEntityAsync();
     }
 
     /// <summary>
@@ -62,7 +65,7 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
     /// <returns></returns>
     public async Task<bool> Update(HT_PatientBasicInfo patientBasicInfo)
     {
-        return await _db.Updateable(patientBasicInfo).IgnoreColumns(ignoreAllNullColumns: true).Where(it => it.ArchivesCode == patientBasicInfo.ArchivesCode).ExecuteCommandAsync() > 0;
+        return await _context.Updateable(patientBasicInfo).IgnoreColumns(ignoreAllNullColumns: true).Where(it => it.ArchivesCode == patientBasicInfo.ArchivesCode).ExecuteCommandAsync() > 0;
     }
     
 

@@ -663,53 +663,25 @@
             </summary>
             <value></value>
         </member>
-        <member name="M:OutPatientFollowUp.Application.IProfileInformation.GetBasicProfileInformationAsync(System.String)">
+        <member name="P:OutPatientFollowUp.Application.ChangePwdInput.UserId">
             <summary>
-            获取基础档案信息
+            用户Id
             </summary>
-            <param name="archivesCode">档案编号</param>
-            <returns></returns>
+            <value></value>
         </member>
-        <member name="M:OutPatientFollowUp.Application.IProfileInformation.CreateBasicProfileInformationAsync(OutPatientFollowUp.Application.CreateBasicProfileInformationDto)">
+        <member name="P:OutPatientFollowUp.Application.ChangePwdInput.NewPwd">
             <summary>
-            创建基础档案信息
+            新密码
             </summary>
-            <param name="input">入参</param>
-            <returns></returns>
+            <remarks>密码必须包含数字和字母，长度在 6 到 16 个字符之间</remarks>
+            <value></value>
         </member>
-        <member name="M:OutPatientFollowUp.Application.IProfileInformation.UpdateBasicProfileInformationAsync(OutPatientFollowUp.Application.UpdateBasicProfileInformationDto)">
+        <member name="P:OutPatientFollowUp.Application.ChangePwdInput.ConfirmNewPwd">
             <summary>
-            更新基础档案信息
+            确认新密码
             </summary>
-            <param name="input"></param>
-            <remarks>手机号、是否服用降压药、是否服用降糖药</remarks>
-            <returns></returns>
-        </member>
-        <member name="M:OutPatientFollowUp.Application.IProfileInformation.GetProfileInformationDetailAsync(System.String)">
-            <summary>
-            获取档案信息详情
-            </summary>
-            <param name="archivesCode">档案编号</param>
-            <returns></returns>
-        </member>
-        <member name="M:OutPatientFollowUp.Application.IProfileInformation.CreateOrUpdateProfileInformationDetailAsync(OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto)">
-            <summary>
-            创建或更新档案信息详情
-            </summary>
-            <param name="input">入参</param>
-            <remarks>会生成对应的修改记录（审计日志）</remarks>
-            <returns></returns>
-        </member>
-        <member name="T:OutPatientFollowUp.Application.SystemAppService">
-            <summary>
-            系统服务接口
-            </summary>
-        </member>
-        <member name="M:OutPatientFollowUp.Application.SystemAppService.GetDescription">
-            <summary>
-            获取系统描述
-            </summary>
-            <returns></returns>
+            <remarks>密码必须包含数字和字母，长度在 6 到 16 个字符之间</remarks>
+            <value></value>
         </member>
         <member name="T:OutPatientFollowUp.Application.DoctorinfoDto">
             <summary>
@@ -736,17 +708,11 @@
             用户名
             </summary>
         </member>
-        <member name="T:OutPatientFollowUp.Application.IUserAppService">
+        <member name="P:OutPatientFollowUp.Application.DoctorinfoDto.IsPasswordChangeRequired">
             <summary>
-            基础档案信息服务
+            是否需要修改密码
             </summary>
-        </member>
-        <member name="M:OutPatientFollowUp.Application.IUserAppService.Login(OutPatientFollowUp.Application.LoginInput)">
-            <summary>
-            登录
-            </summary>
-            <param name="loginDto">入参</param>
-            <returns></returns>
+            <value></value>
         </member>
         <member name="T:OutPatientFollowUp.Application.LoginInput">
             <summary>
@@ -796,6 +762,12 @@
         <member name="P:OutPatientFollowUp.Application.LoginOtput.IDCardNumber">
             <summary>
             身份证号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.LoginOtput.IsPasswordChangeRequired">
+            <summary>
+            是否需要修改密码
             </summary>
             <value></value>
         </member>
@@ -870,42 +842,121 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Web.Core.Controller.ChangePwdInput.NewPwd">
-            <summary>
-            新密码
-            </summary>
-            <remarks>密码必须包含数字和字母，长度在 6 到 16 个字符之间</remarks>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Web.Core.Controller.ChangePwdInput.ConfirmNewPwd">
-            <summary>
-            确认新密码
-            </summary>
-            <remarks>密码必须包含数字和字母，长度在 6 到 16 个字符之间</remarks>
-            <value></value>
-        </member>
-        <member name="T:OutPatientFollowUp.Web.Core.Controller.VerifyChangePwdVerificationCodeInput">
+        <member name="T:OutPatientFollowUp.Application.VerifyChangePwdVerificationCodeInput">
             <summary>
             校验修改密码验证码 
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Web.Core.Controller.VerifyChangePwdVerificationCodeInput.PhoneNumber">
+        <member name="P:OutPatientFollowUp.Application.VerifyChangePwdVerificationCodeInput.PhoneNumber">
             <summary>
             手机号
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Web.Core.Controller.VerifyChangePwdVerificationCodeInput.VerificationCode">
+        <member name="P:OutPatientFollowUp.Application.VerifyChangePwdVerificationCodeInput.VerificationCode">
             <summary>
             验证码
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Web.Core.Controller.VerifyChangePwdVerificationCodeOutput.DocterId">
+        <member name="P:OutPatientFollowUp.Application.VerifyChangePwdVerificationCodeOutput.DocterId">
             <summary>
             医生id
             </summary>
             <value></value>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.GetBasicProfileInformationAsync(System.String)">
+            <summary>
+            获取基础档案信息
+            </summary>
+            <param name="archivesCode">档案编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.CreateBasicProfileInformationAsync(OutPatientFollowUp.Application.CreateBasicProfileInformationDto)">
+            <summary>
+            创建基础档案信息
+            </summary>
+            <param name="input">入参</param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.UpdateBasicProfileInformationAsync(OutPatientFollowUp.Application.UpdateBasicProfileInformationDto)">
+            <summary>
+            更新基础档案信息
+            </summary>
+            <param name="input"></param>
+            <remarks>手机号、是否服用降压药、是否服用降糖药</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.GetProfileInformationDetailAsync(System.String)">
+            <summary>
+            获取档案信息详情
+            </summary>
+            <param name="archivesCode">档案编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.CreateOrUpdateProfileInformationDetailAsync(OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto)">
+            <summary>
+            创建或更新档案信息详情
+            </summary>
+            <param name="input">入参</param>
+            <remarks>会生成对应的修改记录（审计日志）</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.IUserAppService">
+            <summary>
+            基础档案信息服务
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IUserAppService.Login(OutPatientFollowUp.Application.LoginInput)">
+            <summary>
+            登录
+            </summary>
+            <param name="loginDto">入参</param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IUserAppService.SendChangePwdVerificationCode(OutPatientFollowUp.Application.SendChangePwdVerificationCodeInput)">
+            <summary>
+             发送修改密码验证码
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IUserAppService.VerifyChangePwdVerificationCode(OutPatientFollowUp.Application.VerifyChangePwdVerificationCodeInput)">
+            <summary>
+            验证修改密码的验证码
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IUserAppService.ChangePwd(OutPatientFollowUp.Application.ChangePwdInput)">
+            <summary>
+            修改密码
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="F:OutPatientFollowUp.Application.UserAppService.accessTokenExpiration">
+            <summary>
+            访问Token过期时间
+            <remarks>单位：分钟</remarks>
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Application.UserAppService.refreshTokenExpiration">
+            <summary>
+            刷新Token过期时间
+            <remarks>单位：分钟</remarks>
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.SystemAppService">
+            <summary>
+            系统服务接口
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.SystemAppService.GetDescription">
+            <summary>
+            获取系统描述
+            </summary>
+            <returns></returns>
         </member>
     </members>
 </doc>

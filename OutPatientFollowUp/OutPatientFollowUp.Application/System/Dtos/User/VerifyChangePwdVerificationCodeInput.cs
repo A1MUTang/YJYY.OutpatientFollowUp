@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 using System.ComponentModel.DataAnnotations;
-namespace OutPatientFollowUp.Web.Core.Controller
+namespace OutPatientFollowUp.Application
 {
     /// <summary>
     /// 校验修改密码验证码 

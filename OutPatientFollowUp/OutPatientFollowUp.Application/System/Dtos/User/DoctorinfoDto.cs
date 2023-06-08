@@ -29,6 +29,12 @@ namespace OutPatientFollowUp.Application
         [Required(ErrorMessage = "用户名不能为空")]
         public string UserName { get; set; }
 
+        /// <summary>
+        /// 是否需要修改密码
+        /// </summary>
+        /// <value></value>
+        public bool IsPasswordChangeRequired { get; set; }
+
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             throw new NotImplementedException();

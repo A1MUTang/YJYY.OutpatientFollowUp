@@ -1,4 +1,4 @@
-namespace OutPatientFollowUp.Web.Core.Controller
+namespace OutPatientFollowUp.Application
 {
     public class VerifyChangePwdVerificationCodeOutput
     {
