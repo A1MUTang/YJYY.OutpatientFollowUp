@@ -3,7 +3,7 @@ namespace OutPatientFollowUp.Application
     /// <summary>
     /// 登录记录
     /// </summary>
-    public class LoginDto : IValidatableObject
+    public class LoginInput : IValidatableObject
     {
         /// <summary>
         /// 医生手机号

@@ -3,7 +3,7 @@ namespace OutPatientFollowUp.Application
     /// <summary>
     /// 基础档案信息服务
     /// </summary>
-    public class SmsLoginOutput 
+    public class SendChangePwdVerificationCodeOutput 
     {   
         /// <summary>
         /// 验证码

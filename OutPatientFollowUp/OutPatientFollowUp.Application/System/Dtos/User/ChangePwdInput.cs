@@ -3,6 +3,7 @@ namespace OutPatientFollowUp.Web.Core.Controller
 {
     public class ChangePwdInput : IValidatableObject
     {
+        
         /// <summary>
         /// 新密码
         /// </summary>

@@ -21,18 +21,29 @@ public class UserController : ControllerBase
     /// <param name="input">入参</param>
     /// <returns></returns>
     [HttpPost]
-    public async Task<LoginDto> Login(LoginDto input)
+    public async Task<LoginOtput> Login(LoginInput input)
     {
         throw new NotImplementedException();
     }
 
     /// <summary>
-    /// 短信登录
+    /// 发送修改密码验证码
     /// </summary>
     /// <param name="input">入参</param>
     /// <returns></returns>
-    [HttpPost("SmsLogin")]
-    public async Task<SmsLoginOutput> SmsLogin(SmsLoginInput input)
+    [HttpPost("SendChangePwdVerificationCodeInput")]
+    public async Task<SendChangePwdVerificationCodeOutput> SendChangePwdVerificationCode(SendChangePwdVerificationCodeInput input)
+    {
+        throw new NotImplementedException();
+    }
+
+    /// <summary>
+    /// 验证修改密码验证码
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
+    [HttpPost("VerifyChangePwdVerificationCode")]
+    public async Task<VerifyChangePwdVerificationCodeOutput>  VerifyChangePwdVerificationCode(VerifyChangePwdVerificationCodeInput input)
     {
         throw new NotImplementedException();
     }

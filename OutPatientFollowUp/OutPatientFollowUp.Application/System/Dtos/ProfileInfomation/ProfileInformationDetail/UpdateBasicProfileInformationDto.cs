@@ -1,9 +1,11 @@
+using System.Text.RegularExpressions;
+
 namespace OutPatientFollowUp.Application
 {
     /// <summary>
     /// 更新基础档案信息
     /// </summary>
-    public class UpdateBasicProfileInformationDto
+    public class UpdateBasicProfileInformationDto :IValidatableObject
     {
         /// <summary>
         /// 手机号
@@ -26,5 +28,12 @@ namespace OutPatientFollowUp.Application
         [Required]
         public bool IsTakingAntidiabeticMeds { get; set; }
 
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (!Regex.IsMatch(PhoneNumber, @"^1[3456789]\d{9}$"))
+            {
+                yield return new ValidationResult("手机号格式不正确", new[] { nameof(PhoneNumber) });
+            }
+        }
     }
 }

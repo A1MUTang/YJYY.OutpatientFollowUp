@@ -1,6 +1,8 @@
 
 using System.Text.RegularExpressions;
 
+namespace OutPatientFollowUp.Application;
+
 public class CompleteUpdateBasicProfileInformationDto : IValidatableObject
 {
 

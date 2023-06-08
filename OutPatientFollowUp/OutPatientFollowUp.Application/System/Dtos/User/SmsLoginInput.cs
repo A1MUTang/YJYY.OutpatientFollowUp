@@ -4,7 +4,7 @@ namespace OutPatientFollowUp.Application
     /// <summary>
     /// 基础档案信息服务
     /// </summary>
-    public class SmsLoginInput : IValidatableObject
+    public class SendChangePwdVerificationCodeInput : IValidatableObject
     {
         /// <summary>
         /// 设备号
@@ -13,7 +13,7 @@ namespace OutPatientFollowUp.Application
         public string MacId { get; set; }
 
         /// <summary>
-        /// 验证码
+        /// 手机号
         /// </summary>
         /// <value></value>
         public string DoctorPhone { get; set; }

@@ -1079,7 +1079,7 @@
             辅助检查数据
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_CompanyName">
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_IsAntipsychotics">
             <summary>
             抗精神
             </summary>
@@ -1143,6 +1143,42 @@
             <summary>
              1申请转诊过，2被远程指导过，3本院治疗
             </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.HT_PatientBasicInfoRepository">
+            <summary>
+            患者基本信息仓储类。
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HT_PatientBasicInfoRepository.GetByIdcardAndDocterIdAsync(System.String,System.String)">
+            <summary>
+            根据身份证号和管理单位名称获取患者基本信息。
+            </summary>
+            <param name="idcard"></param>
+            <param name="manageName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HT_PatientBasicInfoRepository.ExistIdCardByManageName(System.String,System.String)">
+            <summary>
+            判断身份证号在管理单位下是否存在。
+            </summary>
+            <param name="idcard"></param>
+            <param name="manageName"></param>
+            <returns>true 已存在 false 不存在</returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HT_PatientBasicInfoRepository.Insert(OutPatientFollowUp.Core.HT_PatientBasicInfo)">
+            <summary>
+            插入患者基本信息
+            </summary>
+            <param name="patientBasicInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HT_PatientBasicInfoRepository.Update(OutPatientFollowUp.Core.HT_PatientBasicInfo)">
+            <summary>
+            更新患者基本信息
+            </summary>
+            <remarks>仅修改不为空的字段</remarks>
+            <param name="patientBasicInfo"></param>
+            <returns></returns>
         </member>
         <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_NameAcronym">
             <summary>
@@ -1244,6 +1280,106 @@
             医生通过人
             </summary>
         </member>
+        <member name="T:OutPatientFollowUp.Core.PT_OrgnameForParent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.CD05">
+            <summary>
+            CD05
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.CDother">
+            <summary>
+            CDother
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.Age4">
+            <summary>
+            Age4
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.Age5">
+            <summary>
+            Age5
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.AllCount">
+            <summary>
+            AllCount
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.Man">
+            <summary>
+            Man
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.Women">
+            <summary>
+            Women
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.Age1">
+            <summary>
+            Age1
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.Age2">
+            <summary>
+            Age2
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.Age3">
+            <summary>
+            Age3
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.OrgID">
+            <summary>
+            机构ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.OrgName">
+            <summary>
+            机构名称
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.ParentName">
+            <summary>
+            父机构名称
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.ManageName">
+            <summary>
+            管理机构名称
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.Provice">
+            <summary>
+            省份
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.CenterPosition">
+            <summary>
+            中心位置
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.LowerLeftPosition">
+            <summary>
+            左下位置
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.UpperRightPosition">
+            <summary>
+            右上位置
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_OrgnameForParent.CircleColor">
+            <summary>
+            圆圈颜色
+            </summary>
+        </member>
         <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.ID">
             <summary>
             登录记录ID
@@ -1277,6 +1413,97 @@
         <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.DoctorID">
             <summary>
             医生ID
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.SY_Code">
+            <summary>
+            
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:OutPatientFollowUp.Core.SY_Code.SYC_ID" -->
+        <member name="P:OutPatientFollowUp.Core.SY_Code.SCT_ID">
+            <summary>
+            编码类型ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SY_Code.SYC_Code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SY_Code.SYC_Name">
+            <summary>
+            编码名称
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SY_Code.SYC_Index">
+            <summary>
+            编码排序
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SY_Code.SYC_Url">
+            <summary>
+            编码链接
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SY_Code.SYC_ParentID">
+            <summary>
+            父级编码ID
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.SY_CodeType">
+            <summary>
+            编码类型实体类
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SY_CodeType.SCT_ID">
+            <summary>
+            编码类型ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SY_CodeType.SCT_Code">
+            <summary>
+            编码类型编码
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SY_CodeType.SCT_Name">
+            <summary>
+            编码类型名称
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SY_CodeType.SCT_Index">
+            <summary>
+            编码类型索引
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.view_GetDicText">
+            <summary>
+            视图
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.view_GetDicText.SYC_ID">
+            <summary>
+            所属类别ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.view_GetDicText.SYC_Code">
+            <summary>
+            所属类别编码
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.view_GetDicText.SYC_Name">
+            <summary>
+            所属类别名称
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.view_GetDicText.SCT_Code">
+            <summary>
+            子类编码
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.view_GetDicText.SYC_Index">
+            <summary>
+            排序索引
             </summary>
         </member>
     </members>

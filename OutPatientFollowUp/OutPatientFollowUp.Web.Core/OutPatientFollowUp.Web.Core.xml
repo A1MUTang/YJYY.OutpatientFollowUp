@@ -19,27 +19,34 @@
             <remarks>身份证号仅支持18位字符串</remarks>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Web.Core.Controller.BasicProfileInformationController.UpdateAsync(System.Guid,OutPatientFollowUp.Application.UpdateBasicProfileInformationDto)">
+        <member name="M:OutPatientFollowUp.Web.Core.Controller.BasicProfileInformationController.UpdateAsync(System.String,OutPatientFollowUp.Application.UpdateBasicProfileInformationDto)">
             <summary>
             更新患者基本信息
             </summary>
             <param name="input">入参</param>
-            <param name="id">患者基本信息id</param>
+            <param name="archivesCode">建党编号</param>
             <remarks>仅支持更改手机号，是否正在服用降压药，是否正在服用降糖药</remarks>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Web.Core.Controller.UserController.Login(OutPatientFollowUp.Application.LoginDto)">
+        <member name="M:OutPatientFollowUp.Web.Core.Controller.UserController.Login(OutPatientFollowUp.Application.LoginInput)">
             <summary>
             登录    
             </summary>
             <param name="input">入参</param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Web.Core.Controller.UserController.SmsLogin(OutPatientFollowUp.Application.SmsLoginInput)">
+        <member name="M:OutPatientFollowUp.Web.Core.Controller.UserController.SendChangePwdVerificationCode(OutPatientFollowUp.Application.SendChangePwdVerificationCodeInput)">
             <summary>
-            短信登录
+            发送修改密码验证码
             </summary>
             <param name="input">入参</param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Web.Core.Controller.UserController.VerifyChangePwdVerificationCode(OutPatientFollowUp.Web.Core.Controller.VerifyChangePwdVerificationCodeInput)">
+            <summary>
+            验证修改密码验证码
+            </summary>
+            <param name="input"></param>
             <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Web.Core.Controller.UserController.ChangePwd(OutPatientFollowUp.Web.Core.Controller.ChangePwdInput)">
@@ -180,21 +187,19 @@
             基本档案信息
             </summary>
         </member>
-        <member name="M:OutPatientFollowUp.Application.ProfileInformationDetailController.GetAsync(System.Guid)">
+        <member name="M:OutPatientFollowUp.Application.ProfileInformationDetailController.GetAsync(System.String)">
             <summary>
             获取档案信息
             </summary>
-            <param name="basicProfileInformationId">基本档案信息</param>
-            <remarks>当前响应结果为基础档案信息+最近一条档案详情</remarks>
+            <param name="archivesCode">基本档案信息</param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Application.ProfileInformationDetailController.SaveAsync(System.Guid,OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto)">
+        <member name="M:OutPatientFollowUp.Application.ProfileInformationDetailController.SaveAsync(System.String,OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto)">
             <summary>
             保存档案信息
             </summary>
-            <param name="basicProfileInformationId">基本档案信息</param>
+            <param name="archivesCode">基本档案信息</param>
             <param name="input">入参</param>
-            <remarks>当前逻辑为修改基础档案信息+添加一条档案详情数据</remarks>
             <returns></returns>
         </member>
     </members>

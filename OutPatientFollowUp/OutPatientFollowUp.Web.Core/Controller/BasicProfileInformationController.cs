@@ -43,11 +43,11 @@ public class BasicProfileInformationController : ControllerBase
     /// 更新患者基本信息
     /// </summary>
     /// <param name="input">入参</param>
-    /// <param name="id">患者基本信息id</param>
+    /// <param name="archivesCode">建党编号</param>
     /// <remarks>仅支持更改手机号，是否正在服用降压药，是否正在服用降糖药</remarks>
     /// <returns></returns>
     [HttpPut]
-    public async Task<BasicProfileInformationDto> UpdateAsync(Guid id, UpdateBasicProfileInformationDto input)
+    public async Task<BasicProfileInformationDto> UpdateAsync(string archivesCode, UpdateBasicProfileInformationDto input)
     {
         throw new NotImplementedException();
         // return await _basicProfileInformationAppService.UpdateAsync(id, input);

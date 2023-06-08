@@ -6,6 +6,9 @@ namespace OutPatientFollowUp.Core;
 /// 
 /// </summary>
 [Serializable]
+/// <summary>
+/// 患者基本信息
+/// </summary>
 public partial class HT_PatientBasicInfo
 {
     /// <summary>
@@ -641,12 +644,12 @@ public partial class HT_PatientBasicInfo
 
     public string PBI_ResidentType { get; set; }
 
+
+    public string PBI_CompanyName { get; set; }
+
     /// <summary>
     /// 抗精神
     /// </summary>
-    public string PBI_CompanyName { get; set; }
-
-
     public int? PBI_IsAntipsychotics { get; set; }
     /// <summary>
     /// 抗抑郁

@@ -11,7 +11,7 @@ public interface IUserAppService : ITransient
     /// </summary>
     /// <param name="loginDto">入参</param>
     /// <returns></returns>
-    Task<DoctorinfoDto> Login(LoginDto loginDto);
+    Task<DoctorinfoDto> Login(LoginInput loginDto);
 
 
 }
