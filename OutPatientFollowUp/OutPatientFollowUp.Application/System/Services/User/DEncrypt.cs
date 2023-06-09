@@ -35,8 +35,8 @@ namespace OutPatientFollowUp.Application
         }
         private static string Md5(string pwd, int num)
         {
-            string[] str = { "TJ", "JL", "LM" };
-            int rnum = pwd.Length > 9 ? pwd.Length : 10;
+             string[] str = { "TJ", "JL", "LM" };
+        int rnum = pwd.Length > 9 ? pwd.Length : 10;
             int rnum1 = Convert.ToInt32(rnum.ToString().Substring(0, 1));
             int rnum2 = Convert.ToInt32(rnum.ToString().Substring(1));
             rnum = rnum1 + rnum2;
@@ -50,35 +50,22 @@ namespace OutPatientFollowUp.Application
                 return pwd;
             }
         }
-        private static string GetMd5(string pwd)
+        private static string GetMd5(string str)
         {
-            using (var md5 = MD5.Create())
+            MD5 md5 = MD5.Create();
+            byte[] data = md5.ComputeHash(Encoding.UTF8.GetBytes(str));
+            string md5Str = "";
+            for (int i = 0; i < data.Length; i++)
             {
-                var inputBytes = Encoding.UTF8.GetBytes(pwd);
-                var hashBytes = md5.ComputeHash(inputBytes);
-                var sb = new StringBuilder();
-                for (int i = 0; i < hashBytes.Length; i++)
-                {
-                    sb.Append(hashBytes[i].ToString("x2"));
-                }
-                return sb.ToString().Substring(6, 20);
+                md5Str += data[i].ToString("x2").ToUpperInvariant();
             }
+            return md5Str;
         }
 
-        public static string SetMD5(string str)
+        private static string SetMD5(string str)
         {
-            using (var md5 = MD5.Create())
-            {
-                var inputBytes = Encoding.UTF8.GetBytes(str);
-                var hashBytes = md5.ComputeHash(inputBytes);
-                var sb = new StringBuilder();
-                for (int i = 0; i < hashBytes.Length; i++)
-                {
-                    sb.Append(hashBytes[i].ToString("x2"));
-                }
-                return sb.ToString();
-            }
+            var md5 = MD5.Create();
+            return BitConverter.ToString(md5.ComputeHash(Encoding.Default.GetBytes(str)));
         }
-
     }
 }

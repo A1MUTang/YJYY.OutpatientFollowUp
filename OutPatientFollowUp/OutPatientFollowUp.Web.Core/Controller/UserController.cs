@@ -11,8 +11,11 @@ namespace OutPatientFollowUp.Web.Core.Controller;
 [UnifyModel(typeof(CustomResponse<>))]
 public class UserController : ControllerBase
 {
-    public UserController()
+
+    private readonly IUserAppService _userAppService;
+    public UserController( IUserAppService userAppService)
     {
+        _userAppService = userAppService;
     }
 
     /// <summary>
@@ -23,7 +26,7 @@ public class UserController : ControllerBase
     [HttpPost]
     public async Task<LoginOtput> Login(LoginInput input)
     {
-        throw new NotImplementedException();
+        return await _userAppService.LoginAsync(input);
     }
 
     /// <summary>
@@ -34,7 +37,7 @@ public class UserController : ControllerBase
     [HttpPost("SendChangePwdVerificationCodeInput")]
     public async Task<bool> SendChangePwdVerificationCode(SendChangePwdVerificationCodeInput input)
     {
-        throw new NotImplementedException();
+        return await _userAppService.SendChangePwdVerificationCodeAsync(input);
     }
 
     /// <summary>
@@ -45,7 +48,7 @@ public class UserController : ControllerBase
     [HttpPost("VerifyChangePwdVerificationCode")]
     public async Task<VerifyChangePwdVerificationCodeOutput>  VerifyChangePwdVerificationCode(VerifyChangePwdVerificationCodeInput input)
     {
-        throw new NotImplementedException();
+        return await _userAppService.VerifyChangePwdVerificationCodeAsync(input);
     }
 
     /// <summary>
@@ -56,7 +59,7 @@ public class UserController : ControllerBase
     [HttpPost("ChangePwd")]
     public async Task<bool> ChangePwd(ChangePwdInput input)
     {
-        throw new NotImplementedException();
+        return await _userAppService.ChangePwdAsync(input);
     }
 
 }

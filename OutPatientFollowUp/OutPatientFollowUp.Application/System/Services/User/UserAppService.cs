@@ -31,7 +31,6 @@ public class UserAppService : IUserAppService
 
 
 
-
     private readonly IPT_DoctorBasicInfoRepositroy _doctorBasicInfoRepositroy;
 
     private readonly ILoginRecordRepository _loginRecordRepository;
@@ -51,6 +50,7 @@ public class UserAppService : IUserAppService
 
     public async Task<bool> ChangePwdAsync(ChangePwdInput input)
     {
+
         //判断两次密码是否一致
         if (input.NewPwd != input.ConfirmNewPwd)
         {
@@ -58,48 +58,53 @@ public class UserAppService : IUserAppService
         }
         //获取原有的用户信息
 
-        var existUser = _doctorBasicInfoRepositroy.GetSingle(x => x.Doctor_ID == input.UserId);
+        var existUser = await _doctorBasicInfoRepositroy.GetSingleAsync(x => x.Doctor_ID == input.UserId);
         //判断用户是否存在
         if (existUser == null)
         {
             Oops.Oh("用户不存在");
         }
+        //判断验证码是否过期
+        await  VerifyChangePwdVerificationCodeAsync(new VerifyChangePwdVerificationCodeInput
+        {
+            PhoneNumber = existUser.Doctor_Phone,
+            VerificationCode = input.VerificationCode
+        });
         //将完善密码字段改为1，已完善
         existUser.IsPerfectPwd = 1;
         //将用户输入的密码加密
-        var pwd = Md5Helper.Encryption(input.NewPwd);
+        var pwd = DEncrypt.Md5(input.NewPwd);
         //修改密码
-        existUser.Doctor_Pwd = pwd;
         //保存
-        var result = await _doctorBasicInfoRepositroy.UpdateAsync(existUser);
+        var result = await _doctorBasicInfoRepositroy.ChangePwd(existUser.Doctor_ID, pwd);
 
         return result;
     }
 
-    public async Task<DoctorinfoDto> LoginAsync(LoginInput loginDto)
+    public async Task<LoginOtput> LoginAsync(LoginInput loginDto)
     {
         //获取用户信息
         var existUser = await _doctorBasicInfoRepositroy.GetSingleAsync(x => x.Doctor_Phone == loginDto.DoctorPhone);
         //判断用户是否存在
         if (existUser == null)
         {
-            Oops.Oh("用户不存在");
+            throw Oops.Oh("用户不存在");
         }
         //判断密码是否正确
         if (existUser.IsPerfectPwd.GetValueOrDefault() == 1)
         {
-            // 加密 老的方式
-            if (!DEncrypt.Md5(loginDto.DoctorPass.Trim()).ToLower().Equals(existUser.Doctor_Pwd))
+            // 加密 新的方式
+            if (!DEncrypt.Md5(loginDto.DoctorPass.Trim()).ToLower().Equals(existUser.Doctor_Pwd.ToLower()))
             {
-                Oops.Oh("用户名密码错误");
+                throw Oops.Oh("用户名密码错误");
             }
         }
         else
         {
-            // 加密 新的方式
+            // 加密 老的方式
             if (!Md5Helper.Encryption(loginDto.DoctorPass.Trim()).Equals(existUser.Doctor_Pwd))
             {
-                Oops.Oh("用户名密码错误");
+                throw Oops.Oh("用户名密码错误");
             }
         }
         //添加登录记录
@@ -112,8 +117,28 @@ public class UserAppService : IUserAppService
             DoctorPhone = loginDto.DoctorPhone,
             MacID = loginDto.MacId,
         });
+        //生成访问Token
+        //TODO：获取医生对应的manageName Doctor_WorkUnits字段 与 PT_OrgnameForParent表 OrgName 匹配然后获取ManageName
+        var accessToken =JWTEncryption.Encrypt(new Dictionary<string, object>()
+            {
+                { "UserId", existUser.Doctor_ID },  // 存储Id
+                { "Account",existUser.Doctor_UserName }, // 存储用户名
+                { "ManageName","" }, // 存储管理单位
+            }, accessTokenExpiration);
+        // 生成刷新Token
+        var refreshToken = JWTEncryption.GenerateRefreshToken(accessToken, refreshTokenExpiration);
         //返回用户信息
-        return existUser.Adapt<DoctorinfoDto>();
+        return new LoginOtput()
+        {
+            ID = existUser.Doctor_ID,
+            ImgPath = existUser.Doctor_ImgPath,
+            UserName = existUser.Doctor_UserName,
+            AccessToken = accessToken,
+            RefreshToken = refreshToken,
+            IsPasswordChangeRequired = existUser.IsPerfectPwd.GetValueOrDefault() == 0 ? true : false,
+            Gender = existUser.Doctor_Gender,
+            IDCardNumber = existUser.Doctor_ICard
+        };
     }
 
     public async Task<bool> SendChangePwdVerificationCodeAsync(SendChangePwdVerificationCodeInput input)
@@ -124,7 +149,7 @@ public class UserAppService : IUserAppService
         //判断用户是否存在
         if (existUser == null)
         {
-            Oops.Oh("用户不存在");
+            throw Oops.Oh("用户不存在");
         }
         //生成验证码（6位数）
         var code = SMShandle.GetRandomCode();
@@ -132,7 +157,7 @@ public class UserAppService : IUserAppService
         //判断缓存中有没有对应的验证码，如果有，提示已发送验证码，如果没有，发送验证码
         if (_memoryCache.TryGetValue(input.DoctorPhone + ChangePwdCodeKeyPrefix, out string cacheCode))
         {
-            Oops.Oh("已发送验证码，请注意查收");
+            throw Oops.Oh("已发送验证码，请注意查收");
         }
         //将验证码存入缓存中
         _memoryCache.Set(input.DoctorPhone + ChangePwdCodeKeyPrefix, code, TimeSpan.FromMinutes(ChangePwdCodeExpiration));
@@ -149,21 +174,20 @@ public class UserAppService : IUserAppService
         //判断用户是否存在
         if (existUser == null)
         {
-            Oops.Oh("用户不存在");
+           throw  Oops.Oh("用户不存在");
         }
         //验证验证码
         if (!_memoryCache.TryGetValue(input.PhoneNumber + ChangePwdCodeKeyPrefix, out string cacheCode))
         {
-            Oops.Oh("验证码已过期");
+            throw Oops.Oh("验证码已过期");
         }
         if (cacheCode != input.VerificationCode)
         {
-            Oops.Oh("验证码错误");
+            throw Oops.Oh("验证码错误");
         }
         return new VerifyChangePwdVerificationCodeOutput
         {
             UserId = existUser.Doctor_ID
         };
-        throw new NotImplementedException();
     }
 }

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Text;
 using Furion.DataValidation;
 using Furion;
 using Furion.FriendlyException;
@@ -48,7 +50,15 @@ namespace OutPatientFollowUp.Web.Core
         /// <returns></returns>
         public IActionResult OnValidateFailed(ActionExecutingContext context, ValidationMetadata metadata)
         {
-            return new JsonResult(YourRESTfulResult(metadata.StatusCode ?? StatusCodes.Status400BadRequest, data: metadata.Data, errors: metadata.ValidationResult)
+            var a = metadata.ValidationResult as Dictionary<string, string[]>;
+            var errorMessage = new StringBuilder();
+            foreach (var item in a)
+            {
+                var itemArray = item.Value;
+                errorMessage.Append(itemArray[0].ToString()+";");
+            }
+            errorMessage.Remove(errorMessage.Length - 1, 1);
+            return new JsonResult(YourRESTfulResult(metadata.StatusCode ?? StatusCodes.Status400BadRequest, data: metadata.Data, errors: errorMessage)
                 , UnifyContext.GetSerializerSettings(context)); // 当前行仅限 Furion 4.6.6+ 使用
         }
 

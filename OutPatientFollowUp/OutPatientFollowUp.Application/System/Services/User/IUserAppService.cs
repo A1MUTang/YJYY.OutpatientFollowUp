@@ -10,7 +10,7 @@ public interface IUserAppService : ITransient
     /// </summary>
     /// <param name="loginDto">入参</param>
     /// <returns></returns>
-    Task<DoctorinfoDto> LoginAsync(LoginInput loginDto);
+    Task<LoginOtput> LoginAsync(LoginInput loginDto);
 
     /// <summary>
     ///  发送修改密码验证码

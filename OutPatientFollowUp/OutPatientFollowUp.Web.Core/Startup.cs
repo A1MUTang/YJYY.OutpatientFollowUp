@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OutPatientFollowUp.Application;
 using SqlSugar;
 
 namespace OutPatientFollowUp.Web.Core;
@@ -18,12 +19,13 @@ public class Startup : AppStartup
         services.AddJwt<JwtHandler>();
 
         services.AddCorsAccessor();
+        services.AddTransient<SMShandle>();
         services.AddSingleton<ISqlSugarClient>(s =>
         {
              SqlSugarScope sqlSugar = new SqlSugarScope(new ConnectionConfig()
              {
-                DbType = SqlSugar.DbType.Sqlite,
-                ConnectionString = "DataSource=sqlsugar-dev.db",
+                DbType = SqlSugar.DbType.SqlServer,
+                ConnectionString = "server=101.201.120.1;uid=sa;pwd=Yjyy968@bbw.com!@#;database=Hypertension; Trusted_Connection=no;Pooling=true;Max Pool Size=500; Min Pool Size=5;Connection Lifetime=300;Connect Timeout=500",
                 IsAutoCloseConnection = true,
             },
             db =>

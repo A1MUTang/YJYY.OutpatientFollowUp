@@ -154,7 +154,12 @@
         <member name="P:ServiceReference1.RemainResult.Remain">
             <remarks/>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:OutPatientFollowUp.Application.SMShandle.GetRandomCode" -->
+        <member name="M:OutPatientFollowUp.Application.SMShandle.GetRandomCode">
+            <summary>
+            取得一个6位的随机码
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:OutPatientFollowUp.Application.SMShandle.APPSendSM(System.String,System.String)">
             <summary>
             
@@ -830,16 +835,24 @@
         </member>
         <member name="P:OutPatientFollowUp.Application.ChangePwdInput.NewPwd">
             <summary>
-            新密码
+            新密码 
             </summary>
-            <remarks>密码必须包含数字和字母，长度在 6 到 16 个字符之间</remarks>
-            <value></value>
+            <param name="=="></param>
+            <remarks>密码必须包含数字和大小写字母符号，长度在 6 到 16 个字符之间</remarks>
+            <returns></returns>
         </member>
         <member name="P:OutPatientFollowUp.Application.ChangePwdInput.ConfirmNewPwd">
             <summary>
-            确认新密码
+            新密码 
             </summary>
-            <remarks>密码必须包含数字和字母，长度在 6 到 16 个字符之间</remarks>
+            <param name="=="></param>
+            <remarks>密码必须包含数字和大小写字母符号，长度在 6 到 16 个字符之间</remarks>
+            <returns></returns>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.ChangePwdInput.VerificationCode">
+            <summary>
+            验证码
+            </summary>
             <value></value>
         </member>
         <member name="T:OutPatientFollowUp.Application.DoctorinfoDto">
@@ -1018,7 +1031,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Application.VerifyChangePwdVerificationCodeOutput.DocterId">
+        <member name="P:OutPatientFollowUp.Application.VerifyChangePwdVerificationCodeOutput.UserId">
             <summary>
             医生id
             </summary>
@@ -1127,6 +1140,17 @@
         <member name="F:OutPatientFollowUp.Application.UserAppService.refreshTokenExpiration">
             <summary>
             刷新Token过期时间
+            <remarks>单位：分钟</remarks>
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Application.UserAppService.ChangePwdCodeKeyPrefix">
+            <summary>
+            修改密码验证码缓存Key
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Application.UserAppService.ChangePwdCodeExpiration">
+            <summary>
+            修改密码验证码过期时间
             <remarks>单位：分钟</remarks>
             </summary>
         </member>

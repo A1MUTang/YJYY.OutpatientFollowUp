@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 namespace OutPatientFollowUp.Application
 {
     /// <summary>
@@ -24,7 +25,11 @@ namespace OutPatientFollowUp.Application
         public string MacId { get; set; }
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            throw new NotImplementedException();
+            if(!Regex.IsMatch(DoctorPhone, @"^1[3456789]\d{9}$"))
+            {
+                yield return new ValidationResult("手机号格式不正确", new[] { nameof(DoctorPhone) });
+            }
+            //密码先不做交验
         }
     }
 }
