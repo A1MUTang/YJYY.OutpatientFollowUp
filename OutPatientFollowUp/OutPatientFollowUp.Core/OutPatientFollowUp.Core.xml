@@ -1180,106 +1180,6 @@
             <param name="patientBasicInfo"></param>
             <returns></returns>
         </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_NameAcronym">
-            <summary>
-            医生姓名拼音缩写
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_OnlineStatus">
-            <summary>
-            医生在线状态
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Userintegral">
-            <summary>
-            医生用户积分
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Sign">
-            <summary>
-            医生签名
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Passe">
-            <summary>
-            医生通过
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_ID">
-            <summary>
-            医生ID
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Phone">
-            <summary>
-            医生电话
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_UserName">
-            <summary>
-            医生用户名
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Pwd">
-            <summary>
-            医生密码
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Gender">
-            <summary>
-            医生性别
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_ICard">
-            <summary>
-            医生身份证号
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.OldPhone">
-            <summary>
-            旧电话
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_type">
-            <summary>
-            医生类型
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.PI_Score">
-            <summary>
-            PI得分
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_CreateTime">
-            <summary>
-            医生创建时间
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_CreatePople">
-            <summary>
-            医生创建人
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_State">
-            <summary>
-            医生状态
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Docto_Reason">
-            <summary>
-            医生原因
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_PassCreaTime">
-            <summary>
-            医生通过创建时间
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_PassPeple">
-            <summary>
-            医生通过人
-            </summary>
-        </member>
         <member name="T:OutPatientFollowUp.Core.PT_OrgnameForParent">
             <summary>
             
@@ -1380,41 +1280,6 @@
             圆圈颜色
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.ID">
-            <summary>
-            登录记录ID
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.MacID">
-            <summary>
-            Mac地址
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.DoctorPhone">
-            <summary>
-            医生手机号
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.LoginStatus">
-            <summary>
-            登录状态
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.LoginMode">
-            <summary>
-            登录方式
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.LoginTime">
-            <summary>
-            登录时间
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.DoctorID">
-            <summary>
-            医生ID
-            </summary>
-        </member>
         <member name="T:OutPatientFollowUp.Core.SY_Code">
             <summary>
             
@@ -1474,6 +1339,208 @@
         <member name="P:OutPatientFollowUp.Core.SY_CodeType.SCT_Index">
             <summary>
             编码类型索引
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.ILoginRecordRepository">
+            <summary>
+            登录记录
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.LoginRecordRepository">
+            <summary>
+            登录记录
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Userintegral">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Sign">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Passe">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_ID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Phone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_UserName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Pwd">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Gender">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_ICard">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.OldPhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.PI_Score">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_CreateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_CreatePople">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_State">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Docto_Reason">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_PassCreaTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_PassPeple">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Address">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_ZipCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_CumulativeTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_AvailableTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_PersonalProfile">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_UserLevel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_WorkUnits">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Department">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Position">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Title">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_Number">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.Doctor_ImgPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_DoctorBasicInfo.IsPerfectPwd">
+            <summary>
+            新旧密码格式
+            </summary>
+            <remarks>1为新密码</remarks>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.ID">
+            <summary>
+            登录记录ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.MacID">
+            <summary>
+            Mac地址
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.DoctorPhone">
+            <summary>
+            医生手机号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.LoginStatus">
+            <summary>
+            登录状态
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.LoginMode">
+            <summary>
+            登录方式
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.LoginTime">
+            <summary>
+            登录时间
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SP_LoginRecord.DoctorID">
+            <summary>
+            医生ID
             </summary>
         </member>
         <member name="T:OutPatientFollowUp.Core.view_GetDicText">
