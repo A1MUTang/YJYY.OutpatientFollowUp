@@ -6,6 +6,6 @@ namespace OutPatientFollowUp.Application
         /// 医生id
         /// </summary>
         /// <value></value>
-        public int DocterId { get; set; }
+        public string UserId { get; set; }
     }
 }

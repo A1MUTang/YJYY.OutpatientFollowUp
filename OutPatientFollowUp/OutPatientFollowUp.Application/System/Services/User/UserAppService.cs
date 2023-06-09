@@ -21,7 +21,16 @@ public class UserAppService : IUserAppService
     /// <summary>
     /// 修改密码验证码缓存Key
     /// </summary>
-    public const string ChangePwdCodeKey = "ChangePwdCodeKey";
+    public const string ChangePwdCodeKeyPrefix = "ChangePwdCodeKey_";
+
+    /// <summary>
+    /// 修改密码验证码过期时间
+    /// <remarks>单位：分钟</remarks>
+    /// </summary>
+    public const int ChangePwdCodeExpiration = 1;
+
+
+
 
     private readonly IPT_DoctorBasicInfoRepositroy _doctorBasicInfoRepositroy;
 
@@ -69,7 +78,6 @@ public class UserAppService : IUserAppService
 
     public async Task<DoctorinfoDto> LoginAsync(LoginInput loginDto)
     {
-        //TODO:登录
         //获取用户信息
         var existUser = await _doctorBasicInfoRepositroy.GetSingleAsync(x => x.Doctor_Phone == loginDto.DoctorPhone);
         //判断用户是否存在
@@ -110,7 +118,6 @@ public class UserAppService : IUserAppService
 
     public async Task<bool> SendChangePwdVerificationCodeAsync(SendChangePwdVerificationCodeInput input)
     {
-        //TODO:发送修改密码验证码
 
         //获取用户信息
         var existUser = await _doctorBasicInfoRepositroy.GetSingleAsync(x => x.Doctor_Phone == input.DoctorPhone);
@@ -121,24 +128,42 @@ public class UserAppService : IUserAppService
         }
         //生成验证码（6位数）
         var code = SMShandle.GetRandomCode();
+        string messageContent = @"您的验证码为：" + code + "，有效时间1分钟，切勿将验证码泄露于他人。";
         //判断缓存中有没有对应的验证码，如果有，提示已发送验证码，如果没有，发送验证码
-        if (_memoryCache.TryGetValue(input.DoctorPhone + ChangePwdCodeKey, out string cacheCode))
+        if (_memoryCache.TryGetValue(input.DoctorPhone + ChangePwdCodeKeyPrefix, out string cacheCode))
         {
             Oops.Oh("已发送验证码，请注意查收");
         }
         //将验证码存入缓存中
-        _memoryCache.Set(input.DoctorPhone + ChangePwdCodeKey, code, TimeSpan.FromMinutes(5));
+        _memoryCache.Set(input.DoctorPhone + ChangePwdCodeKeyPrefix, code, TimeSpan.FromMinutes(ChangePwdCodeExpiration));
         //发送验证码通过短信的形式
-        _smsHandle.SendSM(input.DoctorPhone, code);
+        _smsHandle.SendSM(input.DoctorPhone, messageContent);
         return true;
     }
 
-    public Task<VerifyChangePwdVerificationCodeOutput> VerifyChangePwdVerificationCodeAsync(VerifyChangePwdVerificationCodeInput input)
+    public async Task<VerifyChangePwdVerificationCodeOutput> VerifyChangePwdVerificationCodeAsync(VerifyChangePwdVerificationCodeInput input)
     {
-        //TODO:验证修改密码验证码
+
         //获取用户信息
+        var existUser = await _doctorBasicInfoRepositroy.GetSingleAsync(x => x.Doctor_Phone == input.PhoneNumber);
         //判断用户是否存在
+        if (existUser == null)
+        {
+            Oops.Oh("用户不存在");
+        }
         //验证验证码
+        if (!_memoryCache.TryGetValue(input.PhoneNumber + ChangePwdCodeKeyPrefix, out string cacheCode))
+        {
+            Oops.Oh("验证码已过期");
+        }
+        if (cacheCode != input.VerificationCode)
+        {
+            Oops.Oh("验证码错误");
+        }
+        return new VerifyChangePwdVerificationCodeOutput
+        {
+            UserId = existUser.Doctor_ID
+        };
         throw new NotImplementedException();
     }
 }
