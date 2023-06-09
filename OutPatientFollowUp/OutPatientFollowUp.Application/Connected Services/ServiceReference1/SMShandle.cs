@@ -9,6 +9,8 @@ public class SMShandle
 
     /// <summary>
     /// 取得一个6位的随机码
+    /// </summary>
+    /// <returns></returns>
     public static string GetRandomCode()
     {
         //return Guid.NewGuid().ToString().Substring(0, 4);

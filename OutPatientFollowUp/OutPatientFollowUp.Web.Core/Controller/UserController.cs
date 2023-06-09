@@ -32,7 +32,7 @@ public class UserController : ControllerBase
     /// <param name="input">入参</param>
     /// <returns></returns>
     [HttpPost("SendChangePwdVerificationCodeInput")]
-    public async Task<SendChangePwdVerificationCodeOutput> SendChangePwdVerificationCode(SendChangePwdVerificationCodeInput input)
+    public async Task<bool> SendChangePwdVerificationCode(SendChangePwdVerificationCodeInput input)
     {
         throw new NotImplementedException();
     }

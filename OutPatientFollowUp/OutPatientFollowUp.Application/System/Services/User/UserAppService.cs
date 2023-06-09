@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Caching.Memory;
 using OutPatientFollowUp.Core;
 
 namespace OutPatientFollowUp.Application;
@@ -17,16 +18,25 @@ public class UserAppService : IUserAppService
     /// </summary>
     public const int refreshTokenExpiration = 60 * 24 * 7;
 
+    /// <summary>
+    /// 修改密码验证码缓存Key
+    /// </summary>
+    public const string ChangePwdCodeKey = "ChangePwdCodeKey";
+
     private readonly IPT_DoctorBasicInfoRepositroy _doctorBasicInfoRepositroy;
 
     private readonly ILoginRecordRepository _loginRecordRepository;
 
-    private readonly SMShandle _smsHandle = new SMShandle();
+    private readonly SMShandle _smsHandle;
 
-    public UserAppService(IPT_DoctorBasicInfoRepositroy doctorBasicInfoRepositroy, ILoginRecordRepository loginRecordRepository)
+    private readonly IMemoryCache _memoryCache;
+
+    public UserAppService(IPT_DoctorBasicInfoRepositroy doctorBasicInfoRepositroy, ILoginRecordRepository loginRecordRepository, SMShandle smsHandle, IMemoryCache memoryCache)
     {
         _doctorBasicInfoRepositroy = doctorBasicInfoRepositroy;
         _loginRecordRepository = loginRecordRepository;
+        _smsHandle = smsHandle;
+        _memoryCache = memoryCache;
     }
 
 
@@ -98,20 +108,29 @@ public class UserAppService : IUserAppService
         return existUser.Adapt<DoctorinfoDto>();
     }
 
-    public Task<SendChangePwdVerificationCodeOutput> SendChangePwdVerificationCodeAsync(SendChangePwdVerificationCodeInput input)
+    public async Task<bool> SendChangePwdVerificationCodeAsync(SendChangePwdVerificationCodeInput input)
     {
         //TODO:发送修改密码验证码
 
         //获取用户信息
-        var existUser = _doctorBasicInfoRepositroy.GetSingle(x => x.Doctor_Phone == input.DoctorPhone);
+        var existUser = await _doctorBasicInfoRepositroy.GetSingleAsync(x => x.Doctor_Phone == input.DoctorPhone);
         //判断用户是否存在
         if (existUser == null)
         {
             Oops.Oh("用户不存在");
         }
         //生成验证码（6位数）
+        var code = SMShandle.GetRandomCode();
+        //判断缓存中有没有对应的验证码，如果有，提示已发送验证码，如果没有，发送验证码
+        if (_memoryCache.TryGetValue(input.DoctorPhone + ChangePwdCodeKey, out string cacheCode))
+        {
+            Oops.Oh("已发送验证码，请注意查收");
+        }
+        //将验证码存入缓存中
+        _memoryCache.Set(input.DoctorPhone + ChangePwdCodeKey, code, TimeSpan.FromMinutes(5));
         //发送验证码通过短信的形式
-        throw new NotImplementedException();
+        _smsHandle.SendSM(input.DoctorPhone, code);
+        return true;
     }
 
     public Task<VerifyChangePwdVerificationCodeOutput> VerifyChangePwdVerificationCodeAsync(VerifyChangePwdVerificationCodeInput input)

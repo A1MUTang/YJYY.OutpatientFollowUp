@@ -17,7 +17,7 @@ public interface IUserAppService : ITransient
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
-    Task<SendChangePwdVerificationCodeOutput> SendChangePwdVerificationCodeAsync(SendChangePwdVerificationCodeInput input);
+    Task<bool> SendChangePwdVerificationCodeAsync(SendChangePwdVerificationCodeInput input);
 
     /// <summary>
     /// 验证修改密码的验证码
