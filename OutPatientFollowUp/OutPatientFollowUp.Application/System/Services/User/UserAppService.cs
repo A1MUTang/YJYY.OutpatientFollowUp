@@ -99,7 +99,9 @@ public class UserAppService : IUserAppService
     public Task<SendChangePwdVerificationCodeOutput> SendChangePwdVerificationCodeAsync(SendChangePwdVerificationCodeInput input)
     {
         //TODO:发送修改密码验证码
+
         //获取用户信息
+        
         //判断用户是否存在
         //生成验证码（6位数）
         //发送验证码通过短信的形式

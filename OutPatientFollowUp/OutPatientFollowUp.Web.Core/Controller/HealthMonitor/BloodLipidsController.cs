@@ -23,27 +23,27 @@ public class BloodLipidsController : ControllerBase
     /// <summary>
     /// 创建血脂记录
     /// </summary>
-    /// <param name="basicProfileInformationId">基础档案信息主键</param>
+    /// <param name="archivesCode">基础档案信息主键</param>
     /// <param name="input">入参</param>
     /// <remarks>会创建血脂信息</remarks>
     /// <returns></returns>
-    [HttpPost("{basicProfileInformationId}")]
-    public async Task<BloodLipidsDto> CreateAsync(string basicProfileInformationId, CreateOrUpdateBloodLipidsDto input)
+    [HttpPost("{archivesCode}")]
+    public async Task<BloodLipidsDto> CreateAsync(string archivesCode, CreateOrUpdateBloodLipidsDto input)
     {
         throw new NotImplementedException();
-        // return await _bloodLipidsAppService.CreateAsync(basicProfileInformationId, input);
+        // return await _bloodLipidsAppService.CreateAsync(archivesCode, input);
     }
 
     /// <summary>
     /// 获取血脂
     /// </summary>
-    /// <param name="basicProfileInformationId">基础档案信息主键</param>
+    /// <param name="archivesCode">基础档案信息主键</param>
     /// <remarks>会获取最新当前血脂和基础档案部分信息</remarks> 
     /// <returns></returns>
-    [HttpGet("{basicProfileInformationId}")]
-    public async Task<BloodLipidsDto> GetAsync(string basicProfileInformationId)
+    [HttpGet("{archivesCode}")]
+    public async Task<BloodLipidsDto> GetAsync(string archivesCode)
     {
         throw new NotImplementedException();
-        // return await _bloodLipidsAppService.GetAsync(basicProfileInformationId);
+        // return await _bloodLipidsAppService.GetAsync(archivesCode);
     }
 }

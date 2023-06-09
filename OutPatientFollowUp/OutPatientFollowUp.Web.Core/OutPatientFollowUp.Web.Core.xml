@@ -149,7 +149,7 @@
             <summary>
             创建血脂记录
             </summary>
-            <param name="basicProfileInformationId">基础档案信息主键</param>
+            <param name="archivesCode">基础档案信息主键</param>
             <param name="input">入参</param>
             <remarks>会创建血脂信息</remarks>
             <returns></returns>
@@ -158,7 +158,7 @@
             <summary>
             获取血脂
             </summary>
-            <param name="basicProfileInformationId">基础档案信息主键</param>
+            <param name="archivesCode">基础档案信息主键</param>
             <remarks>会获取最新当前血脂和基础档案部分信息</remarks> 
             <returns></returns>
         </member>
@@ -171,7 +171,7 @@
             <summary>
             录入血氧
             </summary>
-            <param name="basicProfileInformationId">基本档案信息Id</param>
+            <param name="archivesCode">基本档案信息Id</param>
             <param name="input"></param>
             <returns></returns>
         </member>
@@ -179,7 +179,7 @@
             <summary>
             获取血氧
             </summary>
-            <param name="basicProfileInformationId">基本档案信息Id</param>
+            <param name="archivesCode">基本档案信息Id</param>
             <returns></returns>
         </member>
         <member name="T:OutPatientFollowUp.Application.ProfileInformationDetailController">

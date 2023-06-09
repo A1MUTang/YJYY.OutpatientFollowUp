@@ -23,7 +23,7 @@ public class ProfileInformationDetailController : ControllerBase
     /// </summary>
     /// <param name="archivesCode">基本档案信息</param>
     /// <returns></returns>
-    [HttpGet("{basicProfileInformationId}")]
+    [HttpGet("{archivesCode}")]
     public async Task<ProfileInformationDetailDto> GetAsync(string archivesCode)
     {
         throw new NotImplementedException();
@@ -36,7 +36,7 @@ public class ProfileInformationDetailController : ControllerBase
     /// <param name="archivesCode">基本档案信息</param>
     /// <param name="input">入参</param>
     /// <returns></returns>
-    [HttpPost("{basicProfileInformationId}")]
+    [HttpPost("{archivesCode}")]
     public async Task<ProfileInformationDetailDto> SaveAsync(string archivesCode, CreateOrUpdateProfileInformationDetailDto input)
     {
         throw new NotImplementedException();         
