@@ -5,7 +5,6 @@ namespace OutPatientFollowUp.Application;
 
 public class CompleteUpdateBasicProfileInformationDto : IValidatableObject
 {
-
     /// <summary>
     /// 姓名
     /// </summary>

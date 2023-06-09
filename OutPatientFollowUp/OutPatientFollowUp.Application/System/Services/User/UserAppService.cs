@@ -21,6 +21,8 @@ public class UserAppService : IUserAppService
 
     private readonly ILoginRecordRepository _loginRecordRepository;
 
+    private readonly SMShandle _smsHandle = new SMShandle();
+
     public UserAppService(IPT_DoctorBasicInfoRepositroy doctorBasicInfoRepositroy, ILoginRecordRepository loginRecordRepository)
     {
         _doctorBasicInfoRepositroy = doctorBasicInfoRepositroy;
@@ -101,8 +103,12 @@ public class UserAppService : IUserAppService
         //TODO:发送修改密码验证码
 
         //获取用户信息
-        
+        var existUser = _doctorBasicInfoRepositroy.GetSingle(x => x.Doctor_Phone == input.DoctorPhone);
         //判断用户是否存在
+        if (existUser == null)
+        {
+            Oops.Oh("用户不存在");
+        }
         //生成验证码（6位数）
         //发送验证码通过短信的形式
         throw new NotImplementedException();

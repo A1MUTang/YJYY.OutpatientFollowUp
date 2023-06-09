@@ -11,10 +11,10 @@ namespace OutPatientFollowUp.Application;
 public class BasicProfileInformationDto :  IValidatableObject
 {
     /// <summary>
-    /// 主键
+    /// 建档号
     /// </summary>
     /// <value></value>
-    public Guid Id { get; set; }
+    public string ArchivesCode  { get; set; }
 
     /// <summary>
     /// 姓名

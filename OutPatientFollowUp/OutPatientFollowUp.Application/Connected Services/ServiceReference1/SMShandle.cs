@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using ServiceReference1;
 using System.Text.Json;
-namespace OutPatientFollowUp.Web.Entry;
+namespace OutPatientFollowUp.Application;
 
 public class SMShandle
 {

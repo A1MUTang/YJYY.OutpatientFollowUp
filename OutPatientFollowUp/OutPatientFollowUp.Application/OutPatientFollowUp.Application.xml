@@ -4,14 +4,173 @@
         <name>OutPatientFollowUp.Application</name>
     </assembly>
     <members>
+        <member name="T:ServiceReference1.ErrorResult">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.ErrorResult.ErrorCode">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.ErrorResult.ErrorMsg">
+            <remarks/>
+        </member>
+        <member name="T:ServiceReference1.MsgSplitCalculateResult">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.MsgSplitCalculateResult.ResultCode">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.MsgSplitCalculateResult.ResultState">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.MsgSplitCalculateResult.Pages">
+            <remarks/>
+        </member>
+        <member name="T:ServiceReference1.MsgPackageSingleInfo">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.MsgPackageSingleInfo.MobilePhonerQuantity">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.MsgPackageSingleInfo.ChargeQuantity">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.MsgPackageSingleInfo.MsgState">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.MsgPackageSingleInfo.SendSuccess">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.MsgPackageSingleInfo.SendFails">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.MsgPackageSingleInfo.SendFailTimes">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.MsgPackageSingleInfo.BlackLists">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.MsgPackageSingleInfo.Cancels">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.MsgPackageSingleInfo.ReportSuccess">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.MsgPackageSingleInfo.ReportFails">
+            <remarks/>
+        </member>
+        <member name="T:ServiceReference1.MsgPackageResult">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.MsgPackageResult.error">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.MsgPackageResult.result">
+            <remarks/>
+        </member>
+        <member name="T:ServiceReference1.Error">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.Error.errorid">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.Error.errormsg">
+            <remarks/>
+        </member>
+        <member name="T:ServiceReference1.SingleResult">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.SingleResult.AccountId">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.SingleResult.MobilePhone">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.SingleResult.MsgContent">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.SingleResult.ProductExtendId">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.SingleResult.ResourceId">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.SingleResult.CommitTime">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.SingleResult.SendState">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.SingleResult.ReportState">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.SingleResult.DepartMentName">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.SingleResult.Name">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.SingleResult.MsgID">
+            <remarks/>
+        </member>
+        <member name="T:ServiceReference1.SigleMsgInfo">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.SigleMsgInfo.error">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.SigleMsgInfo.result">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.SigleMsgInfo.totlenum">
+            <remarks/>
+        </member>
+        <member name="T:ServiceReference1.CRemain">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.CRemain.State">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.CRemain.Remain">
+            <remarks/>
+        </member>
+        <member name="T:ServiceReference1.CSubmitState">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.CSubmitState.State">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.CSubmitState.MsgID">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.CSubmitState.MsgState">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.CSubmitState.Reserve">
+            <remarks/>
+        </member>
+        <member name="T:ServiceReference1.RemainResult">
+            <remarks/>
+        </member>
+        <member name="P:ServiceReference1.RemainResult.Remain">
+            <remarks/>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:OutPatientFollowUp.Application.SMShandle.GetRandomCode" -->
+        <member name="M:OutPatientFollowUp.Application.SMShandle.APPSendSM(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="tel"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
         <member name="T:OutPatientFollowUp.Application.BasicProfileInformationDto">
             <summary>
             基础档案信息
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.Id">
+        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.ArchivesCode">
             <summary>
-            主键
+            建档号
             </summary>
             <value></value>
         </member>
