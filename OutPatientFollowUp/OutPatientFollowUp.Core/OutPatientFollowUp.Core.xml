@@ -1346,6 +1346,14 @@
             登录记录
             </summary>
         </member>
+        <member name="M:OutPatientFollowUp.Core.IPT_DoctorBasicInfoRepositroy.ChangePwd(System.String,System.String)">
+            <summary>
+            修改密码
+            </summary>
+            <param name="id"></param>
+            <param name="pwd"></param>
+            <returns></returns>
+        </member>
         <member name="T:OutPatientFollowUp.Core.LoginRecordRepository">
             <summary>
             登录记录

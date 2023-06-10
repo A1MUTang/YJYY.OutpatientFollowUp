@@ -33,4 +33,12 @@ public interface IUserAppService : ITransient
     /// <returns></returns>
     Task<bool> ChangePwdAsync(ChangePwdInput input);
 
+    /// <summary>
+    /// 第一次登录修改密码
+    /// </summary>
+    /// <param name="userId"></param>
+    /// <param name="input"></param>
+    /// <returns></returns>
+    Task<bool> FirstLoginChangePwdAsync (string userId,FirstLoginChangePwdInput input);
+
 }

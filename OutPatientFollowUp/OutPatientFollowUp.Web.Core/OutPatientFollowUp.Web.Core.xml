@@ -56,6 +56,13 @@
             <param name="input"></param>
             <returns></returns>
         </member>
+        <member name="M:OutPatientFollowUp.Web.Core.Controller.UserController.FirstLoginChangePwd(OutPatientFollowUp.Application.FirstLoginChangePwdInput)">
+            <summary>
+            第一次登录修改密码
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
         <member name="T:OutPatientFollowUp.Web.Core.CustomResponse`1">
             <summary>
             自定义错误信息
@@ -138,6 +145,21 @@
             <param name="succeeded"></param>
             <param name="data"></param>
             <param name="errors"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Web.Core.JwtHandler.HandleAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext)">
+            <summary>
+            重写 Handler 添加自动刷新收取逻辑
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Web.Core.JwtHandler.PipelineAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,Microsoft.AspNetCore.Http.DefaultHttpContext)">
+            <summary>
+            验证管道，也就是验证核心代码
+            </summary>
+            <param name="context"></param>
+            <param name="httpContext"></param>
             <returns></returns>
         </member>
         <member name="T:OutPatientFollowUp.Core.HealthMonitor.BloodLipidsController">

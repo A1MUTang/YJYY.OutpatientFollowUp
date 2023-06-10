@@ -886,6 +886,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:OutPatientFollowUp.Application.FirstLoginChangePwdInput.PassWord">
+            <summary>
+            密码
+            </summary>
+            <value></value>
+        </member>
         <member name="T:OutPatientFollowUp.Application.LoginInput">
             <summary>
             登录记录
@@ -1121,6 +1127,14 @@
             <summary>
             修改密码
             </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IUserAppService.FirstLoginChangePwdAsync(System.String,OutPatientFollowUp.Application.FirstLoginChangePwdInput)">
+            <summary>
+            第一次登录修改密码
+            </summary>
+            <param name="userId"></param>
             <param name="input"></param>
             <returns></returns>
         </member>

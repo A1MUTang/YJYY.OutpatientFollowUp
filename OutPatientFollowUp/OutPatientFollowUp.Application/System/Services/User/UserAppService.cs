@@ -83,6 +83,8 @@ public class UserAppService : IUserAppService
 
     public async Task<LoginOtput> LoginAsync(LoginInput loginDto)
     {
+        //TODO:需要添加设备ID交验select count(*) from (select ParentName from PT_EQPDistribution where {0}=@{0} ) t1inner join PT_OrgnameForParent t2 on t1.ParentName=t2.ParentNamewhere OrgName='{1}
+        //TODO：和张行确认设备绑定的相关内容
         //获取用户信息
         var existUser = await _doctorBasicInfoRepositroy.GetSingleAsync(x => x.Doctor_Phone == loginDto.DoctorPhone);
         //判断用户是否存在
@@ -190,4 +192,22 @@ public class UserAppService : IUserAppService
             UserId = existUser.Doctor_ID
         };
     }
+
+     public async Task<bool> FirstLoginChangePwdAsync(string userId,FirstLoginChangePwdInput input)
+     {
+            //获取原有的用户信息
+            var existUser = await _doctorBasicInfoRepositroy.GetSingleAsync(x => x.Doctor_ID == userId);
+            //判断用户是否存在
+            if (existUser == null)
+            {
+                throw Oops.Oh("用户不存在");
+            }
+            //将用户输入的密码加密
+            var pwd = DEncrypt.Md5(input.PassWord);
+            //保存
+            var result = await _doctorBasicInfoRepositroy.ChangePwd(existUser.Doctor_ID, pwd);
+            return result;
+
+
+     }
 }

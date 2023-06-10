@@ -1,8 +1,10 @@
+using System.Net;
 using System;
 using System.Threading.Tasks;
 using Furion.UnifyResult;
 using Microsoft.AspNetCore.Mvc;
 using OutPatientFollowUp.Application;
+using Microsoft.AspNetCore.Authorization;
 
 namespace OutPatientFollowUp.Web.Core.Controller;
 
@@ -13,7 +15,7 @@ public class UserController : ControllerBase
 {
 
     private readonly IUserAppService _userAppService;
-    public UserController( IUserAppService userAppService)
+    public UserController(IUserAppService userAppService)
     {
         _userAppService = userAppService;
     }
@@ -46,7 +48,7 @@ public class UserController : ControllerBase
     /// <param name="input"></param>
     /// <returns></returns>
     [HttpPost("VerifyChangePwdVerificationCode")]
-    public async Task<VerifyChangePwdVerificationCodeOutput>  VerifyChangePwdVerificationCode(VerifyChangePwdVerificationCodeInput input)
+    public async Task<VerifyChangePwdVerificationCodeOutput> VerifyChangePwdVerificationCode(VerifyChangePwdVerificationCodeInput input)
     {
         return await _userAppService.VerifyChangePwdVerificationCodeAsync(input);
     }
@@ -61,5 +63,23 @@ public class UserController : ControllerBase
     {
         return await _userAppService.ChangePwdAsync(input);
     }
+
+    //TODO: 第一次登录修改密码
+
+    /// <summary>
+    /// 第一次登录修改密码
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
+    [HttpPost("FirstLoginChangePwd")]
+    [Authorize] 
+    public async Task<bool> FirstLoginChangePwd(FirstLoginChangePwdInput input)
+    {
+        //解析token 获取用户信息
+        var user = HttpContext.User;
+        var userId = user.FindFirst("UserId").Value;
+        return await _userAppService.FirstLoginChangePwdAsync(userId, input);
+    }
+
 
 }
