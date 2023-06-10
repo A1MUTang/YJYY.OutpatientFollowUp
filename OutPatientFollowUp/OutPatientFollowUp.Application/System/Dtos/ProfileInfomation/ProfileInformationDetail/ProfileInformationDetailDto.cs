@@ -2,6 +2,7 @@ namespace OutPatientFollowUp.Application;
 
 public class ProfileInformationDetailDto
 {
+    //TODO:需要查询数据将其填充
 
     /// <summary>
     /// 主键

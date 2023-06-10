@@ -28,6 +28,12 @@
             <remarks>仅支持更改手机号，是否正在服用降压药，是否正在服用降糖药</remarks>
             <returns></returns>
         </member>
+        <member name="M:OutPatientFollowUp.Web.Core.Controller.DictionaryController.GetDicionary">
+            <summary>
+            获取字典
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:OutPatientFollowUp.Web.Core.Controller.UserController.Login(OutPatientFollowUp.Application.LoginInput)">
             <summary>
             登录    

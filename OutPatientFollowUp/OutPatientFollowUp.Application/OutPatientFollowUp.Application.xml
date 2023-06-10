@@ -1043,6 +1043,18 @@
             </summary>
             <value></value>
         </member>
+        <member name="M:OutPatientFollowUp.Application.DictionaryAppService.GetDicionary">
+            <summary>
+            获取字典
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IDictionaryAppService.GetDicionary">
+            <summary>
+            获取字典
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.GetBasicProfileInformationAsync(System.String)">
             <summary>
             获取基础档案信息
