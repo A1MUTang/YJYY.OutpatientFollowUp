@@ -5,7 +5,7 @@ namespace OutPatientFollowUp.Core;
 /// <summary>
 /// 患者基本信息仓储类。
 /// </summary>
-public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
+public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>, IHT_PatientBasicInfoRepository
 {
     private readonly ISqlSugarClient _context;
 
@@ -43,7 +43,7 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
                 .Where(y => y.OrgName == manageName)
                 .Select(y => y.ManageName)
                 .Contains(x.PBI_ManageUnit))
-        .CountAsync() > 0;
+            .CountAsync() > 0;
 
     }
 
@@ -52,7 +52,7 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
     /// </summary>
     /// <param name="patientBasicInfo"></param>
     /// <returns></returns>
-    public async Task<HT_PatientBasicInfo> Insert(HT_PatientBasicInfo patientBasicInfo)
+    async Task<HT_PatientBasicInfo> IHT_PatientBasicInfoRepository.InsertAsync(HT_PatientBasicInfo patientBasicInfo)
     {
         return await _context.Insertable(patientBasicInfo).ExecuteReturnEntityAsync();
     }
@@ -63,11 +63,11 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
     /// <remarks>仅修改不为空的字段</remarks>
     /// <param name="patientBasicInfo"></param>
     /// <returns></returns>
-    public async Task<bool> Update(HT_PatientBasicInfo patientBasicInfo)
+    async Task<bool> IHT_PatientBasicInfoRepository.Update(HT_PatientBasicInfo patientBasicInfo)
     {
         return await _context.Updateable(patientBasicInfo).IgnoreColumns(ignoreAllNullColumns: true).Where(it => it.ArchivesCode == patientBasicInfo.ArchivesCode).ExecuteCommandAsync() > 0;
     }
-    
+
 
 
 }

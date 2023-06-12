@@ -14,8 +14,10 @@ namespace OutPatientFollowUp.Application
         /// 创建基础档案信息
         /// </summary>
         /// <param name="input">入参</param>
+        /// <param name="doctorId"> 医生Id </param>
+        /// <param name="manageName"> 管理机构名称</param>
         /// <returns></returns>
-        Task<BasicProfileInformationDto> CreateBasicProfileInformationAsync(CreateBasicProfileInformationDto input);
+        Task<BasicProfileInformationDto> CreateBasicProfileInformationAsync(CreateBasicProfileInformationDto input, string doctorId, string manageName);
 
         /// <summary>
         /// 更新基础档案信息
