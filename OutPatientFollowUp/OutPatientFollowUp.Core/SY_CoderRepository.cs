@@ -28,11 +28,6 @@ public class SY_CoderRepository : BaseRepository<SY_Code>, ISY_CoderRepository
             dic.Add(item.Key, item.Select(x => new string[] { x.SYC_Code.ToString(), x.SYC_Name }).ToArray());
             result.Add(dic);
         }
-        // var type =  grouplist.Select(x => new Dictionary<string, string[][]>
-        // {
-        //     {x.Key, x.Select(y => new string[] {y.SYC_ID.ToString(), y.SYC_Name}).ToArray()}
-        // }).ToList();
-
 
         return result;
     }
