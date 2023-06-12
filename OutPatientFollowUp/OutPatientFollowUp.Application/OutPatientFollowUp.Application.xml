@@ -209,10 +209,35 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.Province">
+            <summary>
+            省份
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.City">
+            <summary>
+            市
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.District">
+            <summary>
+            区
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.AddressLine">
+            <summary>
+            地址行/详细住址
+            </summary>
+            <value></value>
+        </member>
         <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.CurrentAddress">
             <summary>
             现住址
             </summary>
+            <remarks>拼接省市区后的住址</remarks>
             <value></value>
         </member>
         <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.IsTakingAntihypertensiveMeds">
@@ -257,9 +282,27 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Application.CompleteUpdateBasicProfileInformationDto.CurrentAddress">
+        <member name="P:OutPatientFollowUp.Application.CompleteUpdateBasicProfileInformationDto.Province">
             <summary>
-            现住址
+            省份
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CompleteUpdateBasicProfileInformationDto.City">
+            <summary>
+            市
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CompleteUpdateBasicProfileInformationDto.District">
+            <summary>
+            区
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CompleteUpdateBasicProfileInformationDto.AddressLine">
+            <summary>
+            地址行/详细住址
             </summary>
             <value></value>
         </member>
@@ -644,18 +687,18 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.PopulationCategory">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.PopulationCategoryCode">
             <summary>
             人群分类
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.Ethnicity">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.EthnicityCode">
             <summary>
             民族
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.MaritalStatus">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.MaritalStatusCode">
             <summary>
             婚姻状况
             </summary>
@@ -690,7 +733,7 @@
             腰臀比
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.ChronicDiseaseCategory">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.ChronicDiseaseCategoryCode">
             <summary>
             慢病分类
             </summary>
@@ -700,7 +743,7 @@
             慢性病其他说明
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.PaymentMethod">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.PaymentMethodCode">
             <summary>
             医疗费用支付方式
             </summary>
@@ -716,82 +759,82 @@
             </summary>
             <remarks>既往病史为其他时填写</remarks>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.FamilyHistory">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.FamilyHistoryCode">
             <summary>
             家族史
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.SmokingStatus">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.SmokingStatusCode">
             <summary>
             吸烟状况
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.AlcoholStatus">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.AlcoholStatusCode">
             <summary>
             饮酒状况
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.ExerciseHabits">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.ExerciseHabitsCode">
             <summary>
             体育运动习惯
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.DietPreference">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.DietPreferenceCode">
             <summary>
             饮食口味
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.DietHabits">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.DietHabitsCode">
             <summary>
             饮食习惯
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.SaltTarget">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.SaltTargetCode">
             <summary>
             控盐目标
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.VegetableIntake">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.VegetableIntakeCode">
             <summary>
             蔬菜摄入量
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.VegetableIntakeTarget">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.VegetableIntakeTargetCode">
             <summary>
             目标蔬菜摄入量
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.FruitIntakeEnum">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.FruitIntakeEnumCode">
             <summary>
             水果摄入量
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.FruitIntakeTargetEnum">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.FruitIntakeTargetEnumCode">
             <summary>
             目标水果摄入量
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.FatIntake">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.FatIntakeCode">
             <summary>
             脂肪含量较高食物摄入量（肉类等）
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.HighFatFoodIntake">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.HighFatFoodIntakeCode">
             <summary>
             目标脂肪含量较高食物摄入量
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.SleepHabit">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.SleepHabitCode">
             <summary>
             睡眠习惯枚举
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.SleepDuration">
+        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.SleepDurationCode">
             <summary>
             睡眠时间
             </summary>
@@ -1055,40 +1098,50 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.GetBasicProfileInformationAsync(System.String)">
+        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.GetBasicProfileInformationAsync(System.String,System.String,System.String)">
             <summary>
             获取基础档案信息
             </summary>
             <param name="archivesCode">档案编号</param>
+            <param name="doctorId"> 医生Id </param>
+            <param name="manageName"> 管理机构名称</param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.CreateBasicProfileInformationAsync(OutPatientFollowUp.Application.CreateBasicProfileInformationDto)">
+        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.CreateBasicProfileInformationAsync(OutPatientFollowUp.Application.CreateBasicProfileInformationDto,System.String,System.String)">
             <summary>
             创建基础档案信息
             </summary>
             <param name="input">入参</param>
+            <param name="doctorId"> 医生Id </param>
+            <param name="manageName"> 管理机构名称</param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.UpdateBasicProfileInformationAsync(OutPatientFollowUp.Application.UpdateBasicProfileInformationDto)">
+        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.UpdateBasicProfileInformationAsync(OutPatientFollowUp.Application.UpdateBasicProfileInformationDto,System.String,System.String)">
             <summary>
             更新基础档案信息
             </summary>
             <param name="input"></param>
+            <param name="doctorId"> 医生Id </param>
+            <param name="manageName"> 管理机构名称</param>
             <remarks>手机号、是否服用降压药、是否服用降糖药</remarks>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.GetProfileInformationDetailAsync(System.String)">
+        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.GetProfileInformationDetailAsync(System.String,System.String,System.String)">
             <summary>
             获取档案信息详情
             </summary>
             <param name="archivesCode">档案编号</param>
+            <param name="doctorId"> 医生Id </param>
+            <param name="manageName"> 管理机构名称</param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.CreateOrUpdateProfileInformationDetailAsync(OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto)">
+        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.CreateOrUpdateProfileInformationDetailAsync(OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto,System.String,System.String)">
             <summary>
             创建或更新档案信息详情
             </summary>
             <param name="input">入参</param>
+            <param name="doctorId"> 医生Id </param>
+            <param name="manageName"> 管理机构名称</param>
             <remarks>会生成对应的修改记录（审计日志）</remarks>
             <returns></returns>
         </member>

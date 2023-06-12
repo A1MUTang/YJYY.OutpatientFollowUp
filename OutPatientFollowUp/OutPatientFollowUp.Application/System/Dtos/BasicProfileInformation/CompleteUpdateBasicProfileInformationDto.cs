@@ -36,10 +36,28 @@ public class CompleteUpdateBasicProfileInformationDto : IValidatableObject
     public string Address { get; set; }
 
     /// <summary>
-    /// 现住址
+    /// 省份
     /// </summary>
     /// <value></value>
-    public string CurrentAddress { get; set; }
+    public string Province { get; set; }
+
+    /// <summary>
+    /// 市
+    /// </summary>
+    /// <value></value>
+    public string City { get; set; }
+
+    /// <summary>
+    /// 区
+    /// </summary>
+    /// <value></value>
+    public string District { get; set; }
+
+    /// <summary>
+    /// 地址行/详细住址
+    /// </summary>
+    /// <value></value>
+    public int AddressLine { get; set; }
 
     /// <summary>
     /// 是否正在服用降压药

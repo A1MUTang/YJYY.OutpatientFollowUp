@@ -15,18 +15,18 @@ public class ProfileInformationDetailDto
     /// <summary>
     /// 人群分类
     /// </summary>
-    public string PopulationCategory { get; set; }
+    public string PopulationCategoryCode { get; set; }
 
     /// <summary>
     /// 民族
     /// </summary>
     /// <value></value>
-    public string Ethnicity { get; set; }
+    public string EthnicityCode { get; set; }
 
     /// <summary>
     /// 婚姻状况
     /// </summary>
-    public string MaritalStatus { get; set; }
+    public string MaritalStatusCode { get; set; }
 
     /// <summary>
     /// 身高（单位：米）
@@ -58,8 +58,9 @@ public class ProfileInformationDetailDto
 
     /// <summary>
     /// 慢病分类
+    /// <remarks>多选,已','分隔</remarks>
     /// </summary>
-    public string ChronicDiseaseCategory { get; set; }
+    public string ChronicDiseaseCategoryCodes { get; set; }
 
     /// <summary>
     /// 慢性病其他说明
@@ -69,7 +70,7 @@ public class ProfileInformationDetailDto
     /// <summary>
     /// 医疗费用支付方式
     /// </summary>
-    public string PaymentMethod { get; set; }
+    public string PaymentMethodCode { get; set; }
 
     /// <summary>
     /// 既往病史
@@ -84,84 +85,85 @@ public class ProfileInformationDetailDto
 
     /// <summary>
     /// 家族史
+    /// <remarks>多选,已','分隔</remarks>
     /// </summary>
-    public string FamilyHistory { get; set; }
+    public string FamilyHistoryCodes { get; set; }
 
     /// <summary>
     /// 吸烟状况
     /// </summary>
-    public string SmokingStatus { get; set; }
+    public string SmokingStatusCode { get; set; }
 
     /// <summary>
     /// 饮酒状况
     /// </summary>
-    public string AlcoholStatus { get; set; }
+    public string AlcoholStatusCode { get; set; }
 
     /// <summary>
     /// 体育运动习惯
     /// </summary>
-    public string ExerciseHabits { get; set; }
+    public string ExerciseHabitsCode { get; set; }
 
     /// <summary>
     /// 饮食口味
     /// </summary>
-    public string DietPreference { get; set; }
+    public string DietPreferenceCode { get; set; }
 
     /// <summary>
     /// 饮食习惯
     /// </summary>
-    public string DietHabits { get; set; }
+    public string DietHabitsCode { get; set; }
 
     /// <summary>
     /// 控盐目标
     /// </summary>
-    public string SaltTarget { get; set; }
+    public string SaltTargetCode { get; set; }
 
     /// <summary>
     /// 蔬菜摄入量
     /// </summary>
-    public string VegetableIntake { get; set; }
+    public string VegetableIntakeCode { get; set; }
 
     /// <summary>
     /// 目标蔬菜摄入量
     /// </summary>
     /// <value></value>
-    public string VegetableIntakeTarget { get; set; }
+    public string VegetableIntakeTargetCode { get; set; }
 
     /// <summary>
     /// 水果摄入量
     /// </summary>
     /// <value></value>
-    public string FruitIntakeEnum { get; set; }
+    public string FruitIntakeEnumCode { get; set; }
 
     /// <summary>
     /// 目标水果摄入量
     /// </summary>
-    public string FruitIntakeTargetEnum { get; set; }
+    public string FruitIntakeTargetEnumCode { get; set; }
 
     /// <summary>
     /// 脂肪含量较高食物摄入量（肉类等）
     /// </summary>
     /// <value></value>
-    public string FatIntake { get; set; }
+    public string FatIntakeCode { get; set; }
 
     /// <summary>
     /// 目标脂肪含量较高食物摄入量
     /// </summary>
     /// <value></value>
-    public string HighFatFoodIntake { get; set; }
+    public string HighFatFoodIntakeCode { get; set; }
 
     /// <summary>
     /// 睡眠习惯枚举
     /// </summary>
     /// <value></value>
-    public string SleepHabit { get; set; }
+    public string SleepHabitCode { get; set; }
 
     /// <summary>
     /// 睡眠时间
     /// </summary>
     /// <value></value>
-    public string SleepDuration { get; set; }
+    public string SleepDurationCode { get; set; }
 
     /// <summary>
     /// 近期情绪状态

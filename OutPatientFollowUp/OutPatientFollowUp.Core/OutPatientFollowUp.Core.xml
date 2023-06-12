@@ -1165,14 +1165,45 @@
             <param name="manageName"></param>
             <returns>true 已存在 false 不存在</returns>
         </member>
-        <member name="M:OutPatientFollowUp.Core.HT_PatientBasicInfoRepository.Insert(OutPatientFollowUp.Core.HT_PatientBasicInfo)">
+        <member name="M:OutPatientFollowUp.Core.HT_PatientBasicInfoRepository.OutPatientFollowUp#Core#IHT_PatientBasicInfoRepository#InsertAsync(OutPatientFollowUp.Core.HT_PatientBasicInfo)">
             <summary>
             插入患者基本信息
             </summary>
             <param name="patientBasicInfo"></param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Core.HT_PatientBasicInfoRepository.Update(OutPatientFollowUp.Core.HT_PatientBasicInfo)">
+        <member name="M:OutPatientFollowUp.Core.HT_PatientBasicInfoRepository.OutPatientFollowUp#Core#IHT_PatientBasicInfoRepository#Update(OutPatientFollowUp.Core.HT_PatientBasicInfo)">
+            <summary>
+            更新患者基本信息
+            </summary>
+            <remarks>仅修改不为空的字段</remarks>
+            <param name="patientBasicInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_PatientBasicInfoRepository.GetByIdcardAndDocterIdAsync(System.String,System.String)">
+            <summary>
+            根据身份证号和管理单位名称获取患者基本信息。
+            </summary>
+            <param name="idCard"></param>
+            <param name="manageName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_PatientBasicInfoRepository.ExistIdCardByManageName(System.String,System.String)">
+            <summary>
+            判断身份证号在管理单位下是否存在。
+            </summary>
+            <param name="idCard"></param>
+            <param name="manageName"></param>
+            <returns>true 已存在 false 不存在</returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_PatientBasicInfoRepository.InsertAsync(OutPatientFollowUp.Core.HT_PatientBasicInfo)">
+            <summary>
+            插入患者基本信息
+            </summary>
+            <param name="patientBasicInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_PatientBasicInfoRepository.Update(OutPatientFollowUp.Core.HT_PatientBasicInfo)">
             <summary>
             更新患者基本信息
             </summary>

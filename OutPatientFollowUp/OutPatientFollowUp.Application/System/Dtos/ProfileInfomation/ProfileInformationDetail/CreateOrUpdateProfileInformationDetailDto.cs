@@ -50,8 +50,9 @@ public class CreateOrUpdateProfileInformationDetailDto
 
     /// <summary>
     /// 慢病分类
+    /// <remarks>多个分类用逗号分隔</remarks>
     /// </summary>
-    public ChronicDiseaseCategoryEnum ChronicDiseaseCategory { get; set; }
+    public string ChronicDiseaseCategoryCodes { get; set; }
 
     /// <summary>
     /// 慢性病其他说明
@@ -61,12 +62,13 @@ public class CreateOrUpdateProfileInformationDetailDto
     /// <summary>
     /// 医疗费用支付方式
     /// </summary>
-    public PaymentMethodEnum PaymentMethod { get; set; }
+    public string PaymentMethodCode { get; set; }
 
     /// <summary>
     /// 既往病史
+    /// <remarks>多个分类用逗号分隔</remarks>
     /// </summary>
-    public PastMedicalHistoryEnum PastMedicalHistory { get; set; }
+    public string PastMedicalHistoryCodes { get; set; }
 
     /// <summary>
     /// 既往病史其他说明
@@ -77,83 +79,83 @@ public class CreateOrUpdateProfileInformationDetailDto
     /// <summary>
     /// 家族史
     /// </summary>
-    public FamilyHistoryEnum FamilyHistory { get; set; }
+    public string FamilyHistoryCode { get; set; }
 
     /// <summary>
     /// 吸烟状况
     /// </summary>
-    public SmokingStatusEnum SmokingStatus { get; set; }
+    public string SmokingStatusCode { get; set; }
 
     /// <summary>
     /// 饮酒状况
     /// </summary>
-    public AlcoholStatusEnum AlcoholStatus { get; set; }
+    public string AlcoholStatusCode { get; set; }
 
     /// <summary>
     /// 体育运动习惯
     /// </summary>
-    public ExerciseHabitsEnum ExerciseHabits { get; set; }
+    public string ExerciseHabitsCode { get; set; }
 
     /// <summary>
     /// 饮食口味
     /// </summary>
-    public DietPreferenceEnum DietPreference { get; set; }
+    public string DietPreferenceCode { get; set; }
 
     /// <summary>
     /// 饮食习惯
     /// </summary>
-    public DietHabitsEnum DietHabits { get; set; }
+    public string DietHabitsCode { get; set; }
 
     /// <summary>
     /// 控盐目标
     /// </summary>
-    public SaltTargetEnum SaltTarget { get; set; }
+    public string SaltTargetCode { get; set; }
 
     /// <summary>
     /// 蔬菜摄入量
     /// </summary>
-    public VegetableIntakeEnum VegetableIntake { get; set; }
+    public string VegetableIntakeCode { get; set; }
 
     /// <summary>
     /// 目标蔬菜摄入量
     /// </summary>
     /// <value></value>
-    public VegetableIntakeTargetEnum VegetableIntakeTarget { get; set; }
+    public string VegetableIntakeTargetCode { get; set; }
 
     /// <summary>
     /// 水果摄入量
     /// </summary>
     /// <value></value>
-    public FruitIntakeEnum FruitIntakeEnum { get; set; }
+    public string FruitIntakeEnumCode { get; set; }
 
     /// <summary>
     /// 目标水果摄入量
     /// </summary>
-    public FruitIntakeTargetEnum FruitIntakeTargetEnum { get; set; }
+    public string FruitIntakeTargetEnumCode { get; set; }
 
     /// <summary>
     /// 脂肪含量较高食物摄入量（肉类等）
     /// </summary>
     /// <value></value>
-    public FatHighFoodIntakeEnum FatIntake { get; set; }
+    public string FatIntakeCode { get; set; }
 
     /// <summary>
     /// 目标脂肪含量较高食物摄入量
     /// </summary>
     /// <value></value>
-    public HighFatFoodIntakeEnum HighFatFoodIntake { get; set; }
+    public string HighFatFoodIntakeCode { get; set; }
 
     /// <summary>
     /// 睡眠习惯枚举
     /// </summary>
     /// <value></value>
-    public SleepHabitEnum SleepHabit { get; set; }
+    public string SleepHabitCode { get; set; }
 
     /// <summary>
     /// 睡眠时间
     /// </summary>
     /// <value></value>
-    public SleepDurationEnum SleepDuration { get; set; }
+    public string SleepDurationCode { get; set; }
 
     /// <summary>
     /// 近期情绪状态

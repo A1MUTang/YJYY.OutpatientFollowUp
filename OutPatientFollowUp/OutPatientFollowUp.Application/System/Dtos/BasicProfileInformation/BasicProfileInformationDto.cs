@@ -47,8 +47,33 @@ public class BasicProfileInformationDto :  IValidatableObject
     public string Address { get; set; }
 
     /// <summary>
+    /// 省份
+    /// </summary>
+    /// <value></value>
+    public string Province { get; set; }
+
+    /// <summary>
+    /// 市
+    /// </summary>
+    /// <value></value>
+    public string City { get; set; }
+
+    /// <summary>
+    /// 区
+    /// </summary>
+    /// <value></value>
+    public string District { get; set; }
+
+    /// <summary>
+    /// 地址行/详细住址
+    /// </summary>
+    /// <value></value>
+    public int AddressLine { get; set; }
+
+    /// <summary>
     /// 现住址
     /// </summary>
+    /// <remarks>拼接省市区后的住址</remarks>
     /// <value></value>
     public string CurrentAddress { get; set; }
 
