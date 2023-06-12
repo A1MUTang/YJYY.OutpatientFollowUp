@@ -12,12 +12,23 @@ public interface IUserAppService : ITransient
     /// <returns></returns>
     Task<LoginOtput> LoginAsync(LoginInput loginDto);
 
+#if DEBUG
     /// <summary>
     ///  发送修改密码验证码
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
+    Task<string> SendChangePwdVerificationCodeAsync(SendChangePwdVerificationCodeInput input);
+#elif RELEASE
+      /// <summary>
+    ///  发送修改密码验证码
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
     Task<bool> SendChangePwdVerificationCodeAsync(SendChangePwdVerificationCodeInput input);
+#endif
+
+
 
     /// <summary>
     /// 验证修改密码的验证码
@@ -39,6 +50,6 @@ public interface IUserAppService : ITransient
     /// <param name="userId"></param>
     /// <param name="input"></param>
     /// <returns></returns>
-    Task<bool> FirstLoginChangePwdAsync (string userId,FirstLoginChangePwdInput input);
+    Task<bool> FirstLoginChangePwdAsync(string userId, FirstLoginChangePwdInput input);
 
 }

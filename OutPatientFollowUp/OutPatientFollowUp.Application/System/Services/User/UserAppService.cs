@@ -143,7 +143,33 @@ public class UserAppService : IUserAppService
         };
     }
 
-    public async Task<bool> SendChangePwdVerificationCodeAsync(SendChangePwdVerificationCodeInput input)
+#if DEBUG
+   public async Task<string> SendChangePwdVerificationCodeAsync(SendChangePwdVerificationCodeInput input)
+    {
+
+        //获取用户信息
+        var existUser = await _doctorBasicInfoRepositroy.GetSingleAsync(x => x.Doctor_Phone == input.DoctorPhone);
+        //判断用户是否存在
+        if (existUser == null)
+        {
+            throw Oops.Oh("用户不存在");
+        }
+        //生成验证码（6位数）
+        var code = SMShandle.GetRandomCode();
+        string messageContent = @"您的验证码为：" + code + "，有效时间1分钟，切勿将验证码泄露于他人。";
+        //判断缓存中有没有对应的验证码，如果有，提示已发送验证码，如果没有，发送验证码
+        if (_memoryCache.TryGetValue(input.DoctorPhone + ChangePwdCodeKeyPrefix, out string cacheCode))
+        {
+            throw Oops.Oh("已发送验证码，请注意查收");
+        }
+        //将验证码存入缓存中
+        _memoryCache.Set(input.DoctorPhone + ChangePwdCodeKeyPrefix, code, TimeSpan.FromMinutes(ChangePwdCodeExpiration));
+        //发送验证码通过短信的形式
+        _smsHandle.SendSM(input.DoctorPhone, messageContent); //TODO 短信发送，记录日志内容
+        return messageContent;
+    }
+#elif RELEASE
+   public async Task<bool> SendChangePwdVerificationCodeAsync(SendChangePwdVerificationCodeInput input)
     {
 
         //获取用户信息
@@ -167,6 +193,12 @@ public class UserAppService : IUserAppService
         _smsHandle.SendSM(input.DoctorPhone, messageContent);
         return true;
     }
+#endif
+
+
+ 
+
+
 
     public async Task<VerifyChangePwdVerificationCodeOutput> VerifyChangePwdVerificationCodeAsync(VerifyChangePwdVerificationCodeInput input)
     {

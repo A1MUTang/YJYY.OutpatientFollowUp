@@ -31,6 +31,20 @@ public class UserController : ControllerBase
         return await _userAppService.LoginAsync(input);
     }
 
+    #if DEBUG
+     /// <summary>
+    /// 发送修改密码验证码
+    /// </summary>
+    /// <param name="input">入参</param>
+    /// <returns></returns>
+    [HttpPost("SendChangePwdVerificationCodeInput")]
+    public async Task<string> SendChangePwdVerificationCode(SendChangePwdVerificationCodeInput input)
+    {
+        return await _userAppService.SendChangePwdVerificationCodeAsync(input);
+    }
+
+    #elif RELEASE
+
     /// <summary>
     /// 发送修改密码验证码
     /// </summary>
@@ -41,7 +55,7 @@ public class UserController : ControllerBase
     {
         return await _userAppService.SendChangePwdVerificationCodeAsync(input);
     }
-
+    #endif
     /// <summary>
     /// 验证修改密码验证码
     /// </summary>
@@ -64,7 +78,6 @@ public class UserController : ControllerBase
         return await _userAppService.ChangePwdAsync(input);
     }
 
-    //TODO: 第一次登录修改密码
 
     /// <summary>
     /// 第一次登录修改密码

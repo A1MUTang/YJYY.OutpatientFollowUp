@@ -126,7 +126,7 @@ public partial class HT_PatientBasicInfo
     public string PBI_Email { get; set; }
 
     /// <summary>
-    /// 报销方式
+    /// 医疗支付方式
     /// </summary>
     public string PBI_BaoXiaoFangShi { get; set; }
 
@@ -250,7 +250,7 @@ public partial class HT_PatientBasicInfo
     public string PBI_ChronicDiseaseShow { get; set; }
 
     /// <summary>
-    /// 年龄分类
+    /// 人群分类
     /// </summary>
     public string PBI_AgeType { get; set; }
 
@@ -412,13 +412,15 @@ public partial class HT_PatientBasicInfo
     /// <summary>
     /// 锻炼目标时长
     /// </summary>
-    public string PBI_MuBiaoShiChang { get; set; }/// <summary>
-                                                  /// 饮食口味
-                                                  /// </summary>
+    public string PBI_MuBiaoShiChang { get; set; }
+
+    /// <summary>
+    /// 饮食口味
+    /// </summary>
     public string PBI_YinShiKouWei { get; set; }
 
     /// <summary>
-    /// 实验量
+    /// 饮食习惯
     /// </summary>
     public string PBI_ShiYanLiang { get; set; }
 
@@ -428,12 +430,12 @@ public partial class HT_PatientBasicInfo
     public string PBI_KongYanLiang { get; set; }
 
     /// <summary>
-    /// 水敏细管
+    /// 睡眠习惯
     /// </summary>
     public string PBI_ShuiMinXiGuan { get; set; }
 
     /// <summary>
-    /// 水敏时间
+    /// 睡眠时间
     /// </summary>
     public string PBI_ShuiMinShiJian { get; set; }
 
@@ -468,7 +470,7 @@ public partial class HT_PatientBasicInfo
     public string PBI_MuBiaoZFSheRuLiang { get; set; }
 
     /// <summary>
-    /// 是否感觉不适
+    /// 近期是否感到压抑/压力大/紧张着急/愤怒
     /// </summary>
     public string PBI_FeelBad { get; set; }
 
@@ -730,7 +732,7 @@ public partial class HT_PatientBasicInfo
     /// <summary>
     /// 家族疾病类型
     /// </summary>
-    public string PBI_FamilyDiseaseTypeStr { get; set; }
+    public string PBI_FamilyHistory { get; set; }
 
     /// <summary>
     /// 医院

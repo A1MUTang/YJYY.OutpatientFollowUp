@@ -197,12 +197,6 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.Nation">
-            <summary>
-            民族
-            </summary>
-            <value></value>
-        </member>
         <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.PhoneNumber">
             <summary>
             手机号
@@ -212,12 +206,6 @@
         <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.Address">
             <summary>
             地址 (身份证上的地址)
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.Birthday">
-            <summary>
-            出生日期
             </summary>
             <value></value>
         </member>

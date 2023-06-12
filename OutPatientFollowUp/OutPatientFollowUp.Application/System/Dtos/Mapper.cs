@@ -50,7 +50,29 @@ public class Mapper : IRegister
                 .Map(dest => dest.Birthday, src => src.PBI_Birthday)
                 .Map(dest => dest.BMI, src => src.PBI_BMI)
                 .Map(dest => dest.ChronicDiseaseCategory, src => "")//TODO:需用通过Code查询数据库获取具体的疾病名称
-                .Map(dest => dest.ChronicDiseaseCategoryCodes, src => src.PBI_ChronicDiseaseType);
+                .Map(dest => dest.ChronicDiseaseCategoryCodes, src => src.PBI_ChronicDiseaseType)
+                .Map(dest => dest.DietHabitsCode, src => src.PBI_ShiYanLiang)
+                .Map(dest => dest.DietPreferenceCode, src => src.PBI_YinShiKouWei)
+                .Map(dest => dest.EthnicityCode, src => src.PBI_Nation)
+                .Map(dest => dest.ExerciseHabitsCode, src => src.PBI_YunDongXiGuan)
+                .Map(dest => dest.FamilyHistory, src => "")//TODO:需用通过Code查询数据库获取具体的疾病名称
+                .Map(dest => dest.FamilyHistoryCodes, src => src.PBI_FamilyDiseaseType)
+                .Map(dest=> dest.FatIntakeCode,src=>src.PBI_ZhiFangSheRuLiang)
+                .Map(dest=> dest.FruitIntakeEnumCode, src=>src.PBI_ShuiGuoSheRuLiang)
+                .Map(dest=>dest.FruitIntakeTargetEnumCode,src=>src.PBI_MuBiaoSGSheRuLiang)
+                .Map(dest=>dest.Height, src=>src.PBI_Height)
+                .Map(dest=>dest.HighFatFoodIntakeCode, src=>src.PBI_MuBiaoZFSheRuLiang)
+                .Map(dest=>dest.HipCircumference, src=>src.PBI_TunWei)
+                .Map(dest=>dest.MaritalStatusCode, src=>src.PBI_MarryState)
+                .Map(dest=>dest.OtherChronicDiseases, src=>src.PBI_ChronicDiseaseOther)
+                .Map(dest=>dest.OtherMedicalHistory, src=>"")//TODO 未确认字段
+                .Map(dest=>dest.PastMedicalHistory, src=>"") //TODO 未确认字段
+                .Map(dest=>dest.PastMedicalHistoryCodes, src=>"")//TODO 未确认字段
+                .Map(dest=>dest.PaymentMethodCode, src=>src.PBI_BaoXiaoFangShi)
+                .Map(dest=>dest.PopulationCategory, src=>src.PBI_AgeType)
+                .Map(dest=>dest.RecentEmotionalState, src=>src.PBI_FeelBad)
+                .Map(dest=>dest.SleepDurationCode, src=>src.PBI_ShuiMinShiJian);
+
 
 
 

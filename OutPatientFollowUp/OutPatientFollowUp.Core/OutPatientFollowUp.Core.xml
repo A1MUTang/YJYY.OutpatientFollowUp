@@ -595,7 +595,7 @@
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_BaoXiaoFangShi">
             <summary>
-            报销方式
+            医疗支付方式
             </summary>
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_YiBaoHao">
@@ -720,7 +720,7 @@
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_AgeType">
             <summary>
-            年龄分类
+            人群分类
             </summary>
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_IsBindMachine">
@@ -890,7 +890,7 @@
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ShiYanLiang">
             <summary>
-            实验量
+            饮食习惯
             </summary>
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_KongYanLiang">
@@ -900,12 +900,12 @@
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ShuiMinXiGuan">
             <summary>
-            水敏细管
+            睡眠习惯
             </summary>
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ShuiMinShiJian">
             <summary>
-            水敏时间
+            睡眠时间
             </summary>
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ShuCiSheRuLiang">
@@ -940,7 +940,7 @@
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_FeelBad">
             <summary>
-            是否感觉不适
+            近期是否感到压抑/压力大/紧张着急/愤怒
             </summary>
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Height">
@@ -1198,7 +1198,7 @@
             是否使用其他药物
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_FamilyDiseaseTypeStr">
+        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_FamilyHistory">
             <summary>
             家族疾病类型
             </summary>
