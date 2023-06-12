@@ -4,11 +4,6 @@ public class ProfileInformationDetailDto
 {
     //TODO:需要查询数据将其填充
 
-    /// <summary>
-    /// 主键
-    /// </summary>
-    /// <value></value>
-    public Guid Id { get; set; }
 
     public BasicProfileInformationDto BasicProfileInformation { get; set; } = null;
 

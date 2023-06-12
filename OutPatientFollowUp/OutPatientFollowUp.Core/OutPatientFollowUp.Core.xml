@@ -475,7 +475,7 @@
         </member>
         <member name="T:OutPatientFollowUp.Core.HT_PatientBasicInfo">
             <summary>
-            
+            患者基本信息
             </summary>
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.JoinShareDate">
@@ -895,7 +895,7 @@
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_KongYanLiang">
             <summary>
-            控盐量
+            控盐目标
             </summary>
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ShuiMinXiGuan">
@@ -910,12 +910,12 @@
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ShuCiSheRuLiang">
             <summary>
-            输液次数
+            蔬菜摄入量
             </summary>
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_MuBiaoSCSheRuLiang">
             <summary>
-            目标输液量
+            目标蔬菜摄入量
             </summary>
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ShuiGuoSheRuLiang">
@@ -1078,26 +1078,6 @@
             服务包状态
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.IsReceiveSMS">
-            <summary>
-            是否接受周短信
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.IsInstantSMS">
-            <summary>
-            是否接受即时短信
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.MinSBP">
-            <summary>
-            最小收缩压
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.MinDBP">
-            <summary>
-            最小舒张压
-            </summary>
-        </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Complete">
             <summary>
             完成
@@ -1136,11 +1116,6 @@
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.IsGxyStandard">
             <summary>
             是否对接达标中心
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.SupplementaryExam">
-            <summary>
-            辅助检查数据
             </summary>
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_Age">
@@ -1196,16 +1171,6 @@
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_IsOtherDrugs">
             <summary>
             是否使用其他药物
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_FamilyHistory">
-            <summary>
-            家族疾病类型
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.yyStr">
-            <summary>
-            医院
             </summary>
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_PatientBasicInfo.PBI_ShangYeBaoX">
@@ -1523,6 +1488,13 @@
             </summary>
             <param name="id"></param>
             <param name="pwd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IPT_DoctorBasicInfoRepositroy.GetDoctorManageName(System.String)">
+            <summary>
+            获取医生对应的manageName Doctor_WorkUnits字段 与 PT_OrgnameForParent表 OrgName 匹配然后获取ManageName
+            </summary>
+            <param name="doctorId"></param>
             <returns></returns>
         </member>
         <member name="T:OutPatientFollowUp.Core.LoginRecordRepository">

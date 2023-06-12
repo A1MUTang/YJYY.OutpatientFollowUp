@@ -2,13 +2,11 @@
 using System;
 
 namespace OutPatientFollowUp.Core;
-/// <summary>
-/// 
-/// </summary>
-[Serializable]
+
 /// <summary>
 /// 患者基本信息
 /// </summary>
+[Serializable]
 public partial class HT_PatientBasicInfo
 {
     /// <summary>
@@ -425,7 +423,7 @@ public partial class HT_PatientBasicInfo
     public string PBI_ShiYanLiang { get; set; }
 
     /// <summary>
-    /// 控盐量
+    /// 控盐目标
     /// </summary>
     public string PBI_KongYanLiang { get; set; }
 
@@ -440,12 +438,12 @@ public partial class HT_PatientBasicInfo
     public string PBI_ShuiMinShiJian { get; set; }
 
     /// <summary>
-    /// 输液次数
+    /// 蔬菜摄入量
     /// </summary>
     public string PBI_ShuCiSheRuLiang { get; set; }
 
     /// <summary>
-    /// 目标输液量
+    /// 目标蔬菜摄入量
     /// </summary>
     public string PBI_MuBiaoSCSheRuLiang { get; set; }
 
@@ -610,26 +608,6 @@ public partial class HT_PatientBasicInfo
     public bool? PBI_BakFlag { get; set; }
 
     /// <summary>
-    /// 是否接受周短信
-    /// </summary>
-    public string IsReceiveSMS { get; set; }
-
-    /// <summary>
-    /// 是否接受即时短信
-    /// </summary>
-    public string IsInstantSMS { get; set; }
-
-    /// <summary>
-    /// 最小收缩压
-    /// </summary>
-    public string MinSBP { get; set; }
-
-    /// <summary>
-    /// 最小舒张压
-    /// </summary>
-    public string MinDBP { get; set; }
-
-    /// <summary>
     /// 完成
     /// </summary>
     public string PBI_Complete { get; set; }
@@ -668,11 +646,6 @@ public partial class HT_PatientBasicInfo
     /// 是否对接达标中心
     /// </summary>
     public string IsGxyStandard { get; set; }
-
-    /// <summary>
-    /// 辅助检查数据
-    /// </summary>
-    public string SupplementaryExam { get; set; }
 
     /// <summary>
     /// 年龄
@@ -728,16 +701,6 @@ public partial class HT_PatientBasicInfo
     /// 是否使用其他药物
     /// </summary>
     public int? PBI_IsOtherDrugs { get; set; }
-
-    /// <summary>
-    /// 家族疾病类型
-    /// </summary>
-    public string PBI_FamilyHistory { get; set; }
-
-    /// <summary>
-    /// 医院
-    /// </summary>
-    public string yyStr { get; set; }
 
     /// <summary>
     /// 商业保险

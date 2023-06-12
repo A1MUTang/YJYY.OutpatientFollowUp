@@ -20,4 +20,13 @@ public class PT_DoctorBasicInfoRepositroy : BaseRepository<PT_DoctorBasicInfo>, 
         return result > 0 ? true : false;
     }
 
+    public async Task<string> GetDoctorManageName(string doctorId)
+    {
+        //获取医生对应的manageName Doctor_WorkUnits字段 与 PT_OrgnameForParent表 OrgName 匹配然后获取ManageName
+        
+        var doctor = await Context.Queryable<PT_DoctorBasicInfo>().FirstAsync(x => x.Doctor_ID == doctorId);
+        var manageUnit = await Context.Queryable<PT_OrgnameForParent>().FirstAsync(x => x.OrgName == doctor.Doctor_WorkUnits);
+        return manageUnit.ManageName;
+    }
+
 }

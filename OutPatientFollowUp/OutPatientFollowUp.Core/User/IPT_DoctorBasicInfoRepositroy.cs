@@ -13,5 +13,12 @@ namespace OutPatientFollowUp.Core
         /// <returns></returns>
         public Task<bool> ChangePwd(string id, string pwd);
 
+        /// <summary>
+        /// 获取医生对应的manageName Doctor_WorkUnits字段 与 PT_OrgnameForParent表 OrgName 匹配然后获取ManageName
+        /// </summary>
+        /// <param name="doctorId"></param>
+        /// <returns></returns>
+        public  Task<string> GetDoctorManageName(string doctorId);
+
     }
 }

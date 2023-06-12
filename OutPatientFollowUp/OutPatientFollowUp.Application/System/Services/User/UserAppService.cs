@@ -65,7 +65,7 @@ public class UserAppService : IUserAppService
             Oops.Oh("用户不存在");
         }
         //判断验证码是否过期
-        await  VerifyChangePwdVerificationCodeAsync(new VerifyChangePwdVerificationCodeInput
+        await VerifyChangePwdVerificationCodeAsync(new VerifyChangePwdVerificationCodeInput
         {
             PhoneNumber = existUser.Doctor_Phone,
             VerificationCode = input.VerificationCode
@@ -120,12 +120,11 @@ public class UserAppService : IUserAppService
             MacID = loginDto.MacId,
         });
         //生成访问Token
-        //TODO：获取医生对应的manageName Doctor_WorkUnits字段 与 PT_OrgnameForParent表 OrgName 匹配然后获取ManageName
-        var accessToken =JWTEncryption.Encrypt(new Dictionary<string, object>()
+        var accessToken = JWTEncryption.Encrypt(new Dictionary<string, object>()
             {
                 { "UserId", existUser.Doctor_ID },  // 存储Id
                 { "Account",existUser.Doctor_UserName }, // 存储用户名
-                { "ManageName","" }, // 存储管理单位
+                { "ManageName",await _doctorBasicInfoRepositroy.GetDoctorManageName(existUser.Doctor_ID) }, // 存储管理单位
             }, accessTokenExpiration);
         // 生成刷新Token
         var refreshToken = JWTEncryption.GenerateRefreshToken(accessToken, refreshTokenExpiration);
@@ -144,7 +143,7 @@ public class UserAppService : IUserAppService
     }
 
 #if DEBUG
-   public async Task<string> SendChangePwdVerificationCodeAsync(SendChangePwdVerificationCodeInput input)
+    public async Task<string> SendChangePwdVerificationCodeAsync(SendChangePwdVerificationCodeInput input)
     {
 
         //获取用户信息
@@ -196,7 +195,7 @@ public class UserAppService : IUserAppService
 #endif
 
 
- 
+
 
 
 
@@ -208,7 +207,7 @@ public class UserAppService : IUserAppService
         //判断用户是否存在
         if (existUser == null)
         {
-           throw  Oops.Oh("用户不存在");
+            throw Oops.Oh("用户不存在");
         }
         //验证验证码
         if (!_memoryCache.TryGetValue(input.PhoneNumber + ChangePwdCodeKeyPrefix, out string cacheCode))
@@ -225,21 +224,21 @@ public class UserAppService : IUserAppService
         };
     }
 
-     public async Task<bool> FirstLoginChangePwdAsync(string userId,FirstLoginChangePwdInput input)
-     {
-            //获取原有的用户信息
-            var existUser = await _doctorBasicInfoRepositroy.GetSingleAsync(x => x.Doctor_ID == userId);
-            //判断用户是否存在
-            if (existUser == null)
-            {
-                throw Oops.Oh("用户不存在");
-            }
-            //将用户输入的密码加密
-            var pwd = DEncrypt.Md5(input.PassWord);
-            //保存
-            var result = await _doctorBasicInfoRepositroy.ChangePwd(existUser.Doctor_ID, pwd);
-            return result;
+    public async Task<bool> FirstLoginChangePwdAsync(string userId, FirstLoginChangePwdInput input)
+    {
+        //获取原有的用户信息
+        var existUser = await _doctorBasicInfoRepositroy.GetSingleAsync(x => x.Doctor_ID == userId);
+        //判断用户是否存在
+        if (existUser == null)
+        {
+            throw Oops.Oh("用户不存在");
+        }
+        //将用户输入的密码加密
+        var pwd = DEncrypt.Md5(input.PassWord);
+        //保存
+        var result = await _doctorBasicInfoRepositroy.ChangePwd(existUser.Doctor_ID, pwd);
+        return result;
 
 
-     }
+    }
 }

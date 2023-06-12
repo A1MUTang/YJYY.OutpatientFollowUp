@@ -11,11 +11,12 @@ namespace OutPatientFollowUp.Web.Core.Controller;
 [UnifyModel(typeof(CustomResponse<>))]
 public class BasicProfileInformationController : ControllerBase
 {
-    // private readonly IBasicProfileInformationAppService _basicProfileInformationAppService;
-    // public BasicProfileInformationController(IBasicProfileInformationAppService basicProfileInformationAppService)
-    // {
-    //     _basicProfileInformationAppService = basicProfileInformationAppService;
-    // }
+    private readonly IProfileInformationAppService _profileInformationAppService;
+    public BasicProfileInformationController(IProfileInformationAppService profileInformationAppService)
+    {
+        _profileInformationAppService = profileInformationAppService;
+    }
+
     /// <summary>
     /// 创建患者基本信息
     /// </summary>
@@ -24,8 +25,7 @@ public class BasicProfileInformationController : ControllerBase
     [HttpPost]
     public async Task<BasicProfileInformationDto> CreateAsync(CreateBasicProfileInformationDto input)
     {
-        throw new NotImplementedException();
-        // return await _basicProfileInformationAppService.CreateAsync(input);
+        return await _profileInformationAppService.CreateBasicProfileInformationAsync(input);
     }
     /// <summary>
     /// 获取患者基本信息
@@ -36,8 +36,7 @@ public class BasicProfileInformationController : ControllerBase
     [HttpGet(), Route("{IDCardNumber}")]
     public async Task<BasicProfileInformationDto> GetAsync(string IDCardNumber)
     {
-        throw new NotImplementedException();
-        // return await _basicProfileInformationAppService.GetAsync(IDCardNumber);
+        return await _profileInformationAppService.GetBasicProfileInformationAsync(IDCardNumber);
     }
     /// <summary>
     /// 更新患者基本信息
@@ -49,8 +48,7 @@ public class BasicProfileInformationController : ControllerBase
     [HttpPut]
     public async Task<BasicProfileInformationDto> UpdateAsync(string archivesCode, UpdateBasicProfileInformationDto input)
     {
-        throw new NotImplementedException();
-        // return await _basicProfileInformationAppService.UpdateAsync(id, input);
+       return await _profileInformationAppService.UpdateBasicProfileInformationAsync(archivesCode, input);
     }
 
 }

@@ -699,12 +699,6 @@
             <remarks>true: 感到压抑/压力大/紧张着急/愤怒 false:无</remarks>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.Id">
-            <summary>
-            主键
-            </summary>
-            <value></value>
-        </member>
         <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.PopulationCategory">
             <summary>
             人群分类
@@ -1121,50 +1115,42 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.GetBasicProfileInformationAsync(System.String,System.String,System.String)">
+        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.GetBasicProfileInformationAsync(System.String)">
             <summary>
             获取基础档案信息
             </summary>
             <param name="archivesCode">档案编号</param>
-            <param name="doctorId"> 医生Id </param>
-            <param name="manageName"> 管理机构名称</param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.CreateBasicProfileInformationAsync(OutPatientFollowUp.Application.CreateBasicProfileInformationDto,System.String,System.String)">
+        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.CreateBasicProfileInformationAsync(OutPatientFollowUp.Application.CreateBasicProfileInformationDto)">
             <summary>
             创建基础档案信息
             </summary>
             <param name="input">入参</param>
-            <param name="doctorId"> 医生Id </param>
-            <param name="manageName"> 管理机构名称</param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.UpdateBasicProfileInformationAsync(OutPatientFollowUp.Application.UpdateBasicProfileInformationDto,System.String,System.String)">
+        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.UpdateBasicProfileInformationAsync(System.String,OutPatientFollowUp.Application.UpdateBasicProfileInformationDto)">
             <summary>
             更新基础档案信息
             </summary>
+            <param name="archivesCode"></param>
             <param name="input"></param>
-            <param name="doctorId"> 医生Id </param>
-            <param name="manageName"> 管理机构名称</param>
             <remarks>手机号、是否服用降压药、是否服用降糖药</remarks>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.GetProfileInformationDetailAsync(System.String,System.String,System.String)">
+        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.GetProfileInformationDetailAsync(System.String)">
             <summary>
             获取档案信息详情
             </summary>
             <param name="archivesCode">档案编号</param>
-            <param name="doctorId"> 医生Id </param>
-            <param name="manageName"> 管理机构名称</param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.CreateOrUpdateProfileInformationDetailAsync(OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto,System.String,System.String)">
+        <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.CreateOrUpdateProfileInformationDetailAsync(System.String,OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto)">
             <summary>
             创建或更新档案信息详情
             </summary>
+            <param name="archivesCode"></param>
             <param name="input">入参</param>
-            <param name="doctorId"> 医生Id </param>
-            <param name="manageName"> 管理机构名称</param>
             <remarks>会生成对应的修改记录（审计日志）</remarks>
             <returns></returns>
         </member>

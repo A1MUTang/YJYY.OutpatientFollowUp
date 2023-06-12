@@ -21,12 +21,12 @@ public partial class PT_OrgnameForParent
     /// <summary>
     /// Age4
     /// </summary>
-    public decimal? Age4 { get; set; }
+    public string Age4 { get; set; }
 
     /// <summary>
     /// Age5
     /// </summary>
-    public decimal? Age5 { get; set; }
+    public string Age5 { get; set; }
 
     /// <summary>
     /// AllCount
@@ -46,17 +46,17 @@ public partial class PT_OrgnameForParent
     /// <summary>
     /// Age1
     /// </summary>
-    public decimal? Age1 { get; set; }
+    public string Age1 { get; set; }
 
     /// <summary>
     /// Age2
     /// </summary>
-    public decimal? Age2 { get; set; }
+    public string Age2 { get; set; }
 
     /// <summary>
     /// Age3
     /// </summary>
-    public decimal? Age3 { get; set; }
+    public string Age3 { get; set; }
 
     /// <summary>
     /// 机构ID
