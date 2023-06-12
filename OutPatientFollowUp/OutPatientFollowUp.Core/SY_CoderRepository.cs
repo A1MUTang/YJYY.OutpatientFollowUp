@@ -17,7 +17,7 @@ public class SY_CoderRepository : BaseRepository<SY_Code>, ISY_CoderRepository
         {
             JoinType.Left, c.SCT_ID == t.SCT_ID
         })
-        .Select((c, t) => new { c.SCT_ID, c.SYC_ID, c.SYC_Name, t.SCT_Name })
+        .Select((c, t) => new { c.SCT_ID, c.SYC_ID, c.SYC_Name, t.SCT_Name,c.SYC_Code })
         .ToListAsync();
         var grouplist = list.GroupBy(x => x.SCT_Name).ToList();
         var result = new List<Dictionary<string, string[][]>>();
@@ -25,7 +25,7 @@ public class SY_CoderRepository : BaseRepository<SY_Code>, ISY_CoderRepository
         {
             var dic = new Dictionary<string, string[][]>();
             if(!string.IsNullOrEmpty(item.Key))
-            dic.Add(item.Key, item.Select(x => new string[] { x.SYC_ID.ToString(), x.SYC_Name }).ToArray());
+            dic.Add(item.Key, item.Select(x => new string[] { x.SYC_Code.ToString(), x.SYC_Name }).ToArray());
             result.Add(dic);
         }
         // var type =  grouplist.Select(x => new Dictionary<string, string[][]>
