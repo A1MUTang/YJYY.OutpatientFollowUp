@@ -15,7 +15,7 @@ public class ProfileInformationDetailDto
     /// <summary>
     /// 人群分类
     /// </summary>
-    public string PopulationCategoryCode { get; set; }
+    public string PopulationCategory { get; set; }
 
     /// <summary>
     /// 民族

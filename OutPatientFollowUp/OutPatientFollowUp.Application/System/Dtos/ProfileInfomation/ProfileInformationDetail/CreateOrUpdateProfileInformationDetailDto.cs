@@ -34,10 +34,12 @@ public class CreateOrUpdateProfileInformationDetailDto
     /// BMI (Body Mass Index)
     /// </summary>
     public float BMI { get; set; }
+    
     /// <summary>
     /// 腰围（单位：厘米）
     /// </summary>
     public decimal WaistCircumference { get; set; }
+
     /// <summary>
     /// 臀围（单位：厘米）
     /// </summary>
