@@ -74,8 +74,9 @@ public class ProfileInformationDetailDto
 
     /// <summary>
     /// 既往病史
+    /// <remarks>多选,已','分隔</remarks>
     /// </summary>
-    public string PastMedicalHistory { get; set; }
+    public string PastMedicalHistoryCodes { get; set; }
 
     /// <summary>
     /// 既往病史其他说明
