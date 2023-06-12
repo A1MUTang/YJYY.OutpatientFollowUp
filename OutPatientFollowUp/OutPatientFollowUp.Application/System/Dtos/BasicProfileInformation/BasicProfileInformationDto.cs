@@ -45,7 +45,6 @@ public class BasicProfileInformationDto :  IValidatableObject
     /// </summary>
     /// <value></value>
     public string Address { get; set; }
-
     /// <summary>
     /// 省份
     /// </summary>
