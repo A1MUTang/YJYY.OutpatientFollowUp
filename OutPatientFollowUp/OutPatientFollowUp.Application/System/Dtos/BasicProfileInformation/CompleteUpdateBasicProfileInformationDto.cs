@@ -71,13 +71,6 @@ public class CompleteUpdateBasicProfileInformationDto : IValidatableObject
     /// <value></value>
     public bool IsTakingAntidiabeticMeds { get; set; }
 
-    /// <summary>
-    /// 患者Id
-    /// </summary>
-    /// <value></value>
-    /// <remarks>用于关联患者</remarks>
-    public string UserId { get; set; }
-
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
     {
         if (!Regex.IsMatch(IDCardNumber, @"^\d{17}(\d|X)$"))
