@@ -63,6 +63,13 @@ public class ProfileInformationDetailDto
     public string ChronicDiseaseCategoryCodes { get; set; }
 
     /// <summary>
+    /// 慢病分类
+    /// </summary>
+    /// <remarks>多选,已','分隔</remarks>
+    /// <value></value>
+    public string ChronicDiseaseCategory { get; set; }
+
+    /// <summary>
     /// 慢性病其他说明
     /// </summary>
     public string OtherChronicDiseases { get; set; }
@@ -78,6 +85,13 @@ public class ProfileInformationDetailDto
     /// </summary>
     public string PastMedicalHistoryCodes { get; set; }
 
+
+    /// <summary>
+    /// 既往病史
+    /// <remarks>多选,已','分隔</remarks>
+    /// </summary>
+    public string PastMedicalHistory { get; set; }
+
     /// <summary>
     /// 既往病史其他说明
     /// </summary>
@@ -88,7 +102,13 @@ public class ProfileInformationDetailDto
     /// 家族史
     /// <remarks>多选,已','分隔</remarks>
     /// </summary>
-    public string FamilyHistoryCodes { get; set; }
+    public string FamilyHistoryCodes { get; set; } 
+
+    /// <summary>
+    /// 家族史
+    /// <remarks>多选,已','分隔</remarks>
+    /// </summary>
+    public string FamilyHistoryCode { get; set; }
 
     /// <summary>
     /// 吸烟状况
