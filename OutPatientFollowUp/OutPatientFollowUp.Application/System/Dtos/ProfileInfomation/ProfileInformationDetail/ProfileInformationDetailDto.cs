@@ -29,6 +29,12 @@ public class ProfileInformationDetailDto
     public string MaritalStatusCode { get; set; }
 
     /// <summary>
+    /// 出生日期
+    /// </summary>
+    /// <value></value>
+    public string Birthday { get; set; }
+
+    /// <summary>
     /// 身高（单位：米）
     /// </summary>
     public float Height { get; set; }
@@ -42,6 +48,7 @@ public class ProfileInformationDetailDto
     /// BMI (Body Mass Index)
     /// </summary>
     public float BMI { get; set; }
+
     /// <summary>
     /// 腰围（单位：厘米）
     /// </summary>
@@ -108,7 +115,7 @@ public class ProfileInformationDetailDto
     /// 家族史
     /// <remarks>多选,已','分隔</remarks>
     /// </summary>
-    public string FamilyHistoryCode { get; set; }
+    public string FamilyHistory { get; set; }
 
     /// <summary>
     /// 吸烟状况
