@@ -22,67 +22,85 @@ public class SF_IDManageRepository : BaseRepository<SF_IDManage>, ISF_IDManageRe
 
     public async Task<string> GetManangeID(string tableName)
     {
-        Context.Ado.BeginTran();
-
-        var result = await Context.Queryable<SF_IDManage>().TranLock(DbLockType.Wait).Where(x => x.SID_Table == tableName).ToListAsync();
-        string strCode = "";
-        string ID = string.Empty;
-        string SeqNo = string.Empty;
-        if (result != null && result.Any())
+        try
         {
-            UpdateNum(result.First(), tableName);
-            strCode = result.First().SID_Code.ToString();
-            switch (result.First().SID_Bit.ToString())
+            Context.Ado.BeginTran();
+
+            var result = await Context.Queryable<SF_IDManage>().TranLock(DbLockType.Wait).Where(x => x.SID_Table == tableName).ToListAsync();
+            string strCode = "";
+            string ID = string.Empty;
+            string SeqNo = string.Empty;
+            if (result != null && result.Any())
             {
-                case "4":
-                    { SeqNo = string.Format("{0:0000}", startNum); }
-                    break;
-                case "5":
-                    { SeqNo = string.Format("{0:00000}", startNum); }
-                    break;
-                case "6":
-                    { SeqNo = string.Format("{0:000000}", startNum); }
-                    break;
+                UpdateNum(result.First(), tableName);
+                strCode = result.First().SID_Code.ToString();
+                switch (result.First().SID_Bit.ToString())
+                {
+                    case "4":
+                        { SeqNo = string.Format("{0:0000}", startNum); }
+                        break;
+                    case "5":
+                        { SeqNo = string.Format("{0:00000}", startNum); }
+                        break;
+                    case "6":
+                        { SeqNo = string.Format("{0:000000}", startNum); }
+                        break;
 
-                default: { SeqNo = string.Format("{0:0000}", startNum); } break;
+                    default: { SeqNo = string.Format("{0:0000}", startNum); } break;
+                }
             }
+            else
+            {
+                strCode = await Insert(strCode, tableName);
+                SeqNo = string.Format("{0:000}", startNum);
+            }
+            if (strCode.Length > 3)
+            {
+                ID = strCode.Substring(0, 3) + DateTime.Now.ToString("yyyyMMdd") + SeqNo;
+            }
+            else
+            {
+                ID = strCode + DateTime.Now.ToString("yyyyMMdd") + SeqNo;
+            }
+            Context.Ado.CommitTran();
+            return ID;
         }
-        else
+        catch (Exception ex)
         {
-            strCode = await Insert(strCode, tableName);
-            SeqNo = string.Format("{0:000}", startNum);
+            Context.Ado.RollbackTran();
+            throw ex;
         }
-        if (strCode.Length > 3)
-        {
-            ID = strCode.Substring(0, 3) + DateTime.Now.ToString("yyyyMMdd") + SeqNo;
-        }
-        else
-        {
-            ID = strCode + DateTime.Now.ToString("yyyyMMdd") + SeqNo;
-        }
-        Context.Ado.CommitTran();
-        return ID;
     }
 
 
     public async Task<string> GetNewManangeID(string tableName, string strcode)
     {
-        Context.Ado.BeginTran();
-        if (string.IsNullOrEmpty(tableName))
+        try
         {
-            return null;
-        }
 
-        var nameP = new SugarParameter("@TABLETYPE", tableName);
-        var result = await Context.Ado.UseStoredProcedure().GetDataTableAsync("GetHtpatientID", nameP);
+            Context.Ado.BeginTran();
+            if (string.IsNullOrEmpty(tableName))
+            {
+                return null;
+            }
 
-        if (result?.Rows.Count > 0)
-        {
+            var nameP = new SugarParameter("@TABLETYPE", tableName);
+            var result = await Context.Ado.UseStoredProcedure().GetDataTableAsync("GetHtpatientID", nameP);
+
+            if (result?.Rows.Count < 0)
+            {
+                return null;
+            }
             var states = result.Rows[0]["States"].ToString().PadLeft(5, '0');
+
+            Context.Ado.CommitTran();
             return strcode + DateTime.Now.ToString("yyyyMMdd") + states;
         }
-        Context.Ado.CommitTran();
-        return null;
+        catch (Exception ex)
+        {
+            Context.Ado.RollbackTran();
+            throw ex;
+        }
 
     }
 

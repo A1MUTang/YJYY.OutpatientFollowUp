@@ -54,7 +54,7 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
     /// <returns></returns>
     async Task<HT_PatientBasicInfo> IHT_PatientBasicInfoRepository.InsertAsync(HT_PatientBasicInfo patientBasicInfo)
     {
-        return await _context.Insertable(patientBasicInfo).ExecuteReturnEntityAsync();
+        return await _context.Insertable(patientBasicInfo).IgnoreColumns(ignoreNullColumn:true).ExecuteReturnEntityAsync();
     }
 
     /// <summary>

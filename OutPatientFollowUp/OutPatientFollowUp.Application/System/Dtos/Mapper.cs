@@ -20,7 +20,37 @@ public class Mapper : IRegister
                  .Map(dest => dest.IsSdrug, src => src.IsTakingAntidiabeticMeds)
                  .Map(dest => dest.IsHdrug, src => src.IsTakingAntihypertensiveMeds)
                 .Map(dest => dest.PBI_PersonPhone, src => src.PhoneNumber)
-                .Map(dest => dest.PBI_Gender, src => src.Gender);
+                .Map(dest => dest.PBI_Gender, src => src.Gender == true ? "1" : "2");
+        //TODO创建的时候给默认值
+        // .Map(dest => dest.PBI_ChronicDiseaseType, src => "")
+        // .Map(dest => dest.PBI_ShiYanLiang, src =>"")
+        // .Map(dest => dest.PBI_YinShiKouWei, src =>"")
+        // .Map(dest => dest.PBI_Nation, src => "")
+        // .Map(dest => dest.PBI_YunDongXiGuan, src => "")
+        // .Map(dest => dest.PBI_FamilyDiseaseType, src => "")
+        // .Map(dest => dest.PBI_ZhiFangSheRuLiang, src => "")
+        // .Map(dest => dest.PBI_ShuiGuoSheRuLiang, src => "")
+        // .Map(dest => dest.PBI_MuBiaoSGSheRuLiang, src => "")
+        // .Map(dest => dest.PBI_Height, src => "")
+        // .Map(dest => dest.PBI_MuBiaoZFSheRuLiang, src => "")
+        // .Map(dest => dest.PBI_TunWei, src => "")
+        // .Map(dest => dest.PBI_MarryState, src => "")
+        // .Map(dest => dest.PBI_ChronicDiseaseOther, src => "")
+        // .Map(dest => dest.PBI_BaoXiaoFangShi, src => "")
+        // .Map(dest => dest.PBI_AgeType, src => "")
+        // .Map(dest => dest.PBI_FeelBad, src => "")
+        // .Map(dest => dest.PBI_KongYanLiang, src => "")
+        // .Map(dest => dest.PBI_ShuiMinShiJian, src => "")
+        // .Map(dest => dest.PBI_ShuiMinXiGuan, src => "")
+        // .Map(dest => dest.PBI_SmokingStatus, src => "")
+        // .Map(dest => dest.PBI_ShuCiSheRuLiang, src => "")
+        // .Map(dest => dest.PBI_MuBiaoSCSheRuLiang, src => "")
+        // .Map(dest => dest.PBI_YaoWei, src => "")
+        // .Map(dest => dest.PBI_Weight, src => "")
+        // .Map(dest => dest.PBI_YaoTunBi, src => "");
+
+
+
 
         config.ForType<UpdateBasicProfileInformationDto, HT_PatientBasicInfo>()
                 .Map(dest => dest.PBI_PersonPhone, src => src.PhoneNumber)
