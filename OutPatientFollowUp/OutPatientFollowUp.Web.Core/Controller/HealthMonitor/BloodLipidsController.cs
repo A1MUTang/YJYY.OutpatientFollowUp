@@ -27,7 +27,7 @@ public class BloodLipidsController : ControllerBase
     /// <param name="input">入参</param>
     /// <remarks>会创建血脂信息</remarks>
     /// <returns></returns>
-    [HttpPost("{archivesCode}")]
+    [HttpPost()]
     public async Task<BloodLipidsDto> CreateAsync(string archivesCode, CreateOrUpdateBloodLipidsDto input)
     {
         throw new NotImplementedException();
@@ -40,7 +40,7 @@ public class BloodLipidsController : ControllerBase
     /// <param name="archivesCode">基础档案信息主键</param>
     /// <remarks>会获取最新当前血脂和基础档案部分信息</remarks> 
     /// <returns></returns>
-    [HttpGet("{archivesCode}")]
+    [HttpGet()]
     public async Task<BloodLipidsDto> GetAsync(string archivesCode)
     {
         throw new NotImplementedException();

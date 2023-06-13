@@ -21,16 +21,16 @@ public class JwtHandler : AppAuthorizeHandler
     public override async Task HandleAsync(AuthorizationHandlerContext context)
     {
         // 自动刷新 token
-        #if !DEBUG
-        if (JWTEncryption.AutoRefreshToken(context, context.GetCurrentHttpContext()))
-        {
-            await AuthorizeHandleAsync(context);
+        // #if !DEBUG
+        // if (JWTEncryption.AutoRefreshToken(context, context.GetCurrentHttpContext()))
+        // {
+        //     await AuthorizeHandleAsync(context);
            
-        }
-        else context.Fail();    // 授权失败
-        #elif DEBUG
+        // }
+        // else context.Fail();    // 授权失败
+        // #elif DEBUG
          context.Succeed(requirement: context.PendingRequirements.First());
-        #endif
+        // #endif
         
     }
 

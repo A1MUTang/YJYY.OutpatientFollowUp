@@ -1,14 +1,17 @@
+using System.Net;
 using System;
 using System.Threading.Tasks;
 using Furion.UnifyResult;
 using Microsoft.AspNetCore.Mvc;
 using OutPatientFollowUp.Application;
+using Microsoft.AspNetCore.Authorization;
 
 namespace OutPatientFollowUp.Web.Core.Controller;
 
 [ApiController]
 [Route("api/[controller]")]
 [UnifyModel(typeof(CustomResponse<>))]
+[Authorize] 
 public class BasicProfileInformationController : ControllerBase
 {
     private readonly IProfileInformationAppService _profileInformationAppService;
@@ -33,7 +36,7 @@ public class BasicProfileInformationController : ControllerBase
     /// <param name="IDCardNumber">身份证号</param>
     /// <remarks>身份证号仅支持18位字符串</remarks>
     /// <returns></returns>
-    [HttpGet(), Route("{IDCardNumber}")]
+    [HttpGet()]
     public async Task<BasicProfileInformationDto> GetAsync(string IDCardNumber)
     {
         return await _profileInformationAppService.GetBasicProfileInformationAsync(IDCardNumber);

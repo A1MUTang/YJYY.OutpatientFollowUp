@@ -26,7 +26,7 @@ public class BloodOxygenController : ControllerBase
     /// <param name="archivesCode">基本档案信息Id</param>
     /// <param name="input"></param>
     /// <returns></returns>
-    [HttpPost("{archivesCode}")]
+    [HttpPost()]
     public Task<BloodOxygenDto> CreateAsync(string archivesCode, CreateOrUpdateBloodOxygenDto input)
     {
         throw new NotImplementedException();
@@ -38,7 +38,7 @@ public class BloodOxygenController : ControllerBase
     /// </summary>
     /// <param name="archivesCode">基本档案信息Id</param>
     /// <returns></returns>
-    [HttpGet("{archivesCode}")]
+    [HttpGet()]
     public Task<BloodOxygenDto> GetAsync(string archivesCode)
     {
         throw new NotImplementedException();
