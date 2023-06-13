@@ -44,12 +44,6 @@ namespace OutPatientFollowUp.Application
         public string Address { get; set; }
 
         /// <summary>
-        /// 现住址
-        /// </summary>
-        /// <value></value>
-        public string CurrentAddress { get; set; }
-
-        /// <summary>
         /// 省份
         /// </summary>
         /// <value></value>
