@@ -18,6 +18,12 @@ public class ProfileInformationAppService : IProfileInformationAppService
     public async Task<BasicProfileInformationDto> CreateBasicProfileInformationAsync(CreateBasicProfileInformationDto input)
     {
         var (doctorId, manageName, workUnits) = GetLoginInfo();
+        //判断身份证号是否重复
+        var isExist = await _patientBasicInfoRepository.GetByIdcardAndDocterIdAsync(input.IDCardNumber, manageName);
+        if (isExist != null)
+        {
+            throw  Oops.Oh("身份证号已存在");
+        }
         var basicProfileInformation = input.Adapt<HT_PatientBasicInfo>();
         basicProfileInformation.PBI_UserID = await _idAppService.GetNewManangeID("HT_PatientBasicInfo", "PBI");
         basicProfileInformation.ArchivesCode = basicProfileInformation.PBI_UserID.IndexOf("PBI") != -1
@@ -32,7 +38,7 @@ public class ProfileInformationAppService : IProfileInformationAppService
     public async Task<ProfileInformationDetailDto> CreateOrUpdateProfileInformationDetailAsync(string archivesCode, CreateOrUpdateProfileInformationDetailDto input)
     {
         var (doctorId, manageName, workUnits) = GetLoginInfo();
-        var patientBasicInfo = await _patientBasicInfoRepository.GetByIdcardAndDocterIdAsync(doctorId, manageName);
+        var patientBasicInfo = await _patientBasicInfoRepository.GetByArchivesCode(archivesCode, manageName);
         if (patientBasicInfo == null)
         {
             throw Oops.Oh("患者基本信息不存在");
@@ -65,7 +71,7 @@ public class ProfileInformationAppService : IProfileInformationAppService
     public async Task<ProfileInformationDetailDto> GetProfileInformationDetailAsync(string archivesCode)
     {
         var (doctorId, manageName, workUnits) = GetLoginInfo();
-        var patientBasicInfo = await _patientBasicInfoRepository.GetByIdcardAndDocterIdAsync(doctorId, manageName);
+        var patientBasicInfo = await _patientBasicInfoRepository.GetByArchivesCode(archivesCode, manageName);
         if (patientBasicInfo == null)
         {
             throw Oops.Oh("患者基本信息不存在");

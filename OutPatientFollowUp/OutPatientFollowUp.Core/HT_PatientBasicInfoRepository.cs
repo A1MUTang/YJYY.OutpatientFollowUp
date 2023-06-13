@@ -14,6 +14,13 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
         _context = context;
     }
 
+    public  async Task<HT_PatientBasicInfo> GetByArchivesCode(string archivesCode,string manageName)
+    {
+        return await _context.Queryable<HT_PatientBasicInfo>()
+            .Where(x => x.ArchivesCode == archivesCode && x.PBI_ManageUnit == manageName)
+            .FirstAsync();
+    }
+
     /// <summary>
     /// 根据身份证号和管理单位名称获取患者基本信息。
     /// </summary>

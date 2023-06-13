@@ -1373,6 +1373,14 @@
             <param name="patientBasicInfo">档案编号</param>
             <returns></returns>
         </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_PatientBasicInfoRepository.GetByArchivesCode(System.String,System.String)">
+            <summary>
+            根据档案编号获取患者基本信息
+            </summary>
+            <param name="archivesCode"></param>
+            <param name="manageName"></param>
+            <returns></returns>
+        </member>
         <member name="M:OutPatientFollowUp.Core.ISY_CoderRepository.GetDicionary">
             <summary>
             获取字典

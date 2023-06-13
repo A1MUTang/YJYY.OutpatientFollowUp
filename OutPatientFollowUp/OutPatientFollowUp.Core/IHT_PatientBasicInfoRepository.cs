@@ -41,4 +41,12 @@ public interface IHT_PatientBasicInfoRepository : IBaseRepository<HT_PatientBasi
     /// <param name="patientBasicInfo">档案编号</param>
     /// <returns></returns>
     public new Task<HT_PatientBasicInfo> UpdateAsync(HT_PatientBasicInfo patientBasicInfo);
+
+    /// <summary>
+    /// 根据档案编号获取患者基本信息
+    /// </summary>
+    /// <param name="archivesCode"></param>
+    /// <param name="manageName"></param>
+    /// <returns></returns>
+    public Task<HT_PatientBasicInfo> GetByArchivesCode(string archivesCode,string manageName);
 }

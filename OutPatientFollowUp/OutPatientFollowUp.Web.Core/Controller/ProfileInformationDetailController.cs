@@ -12,6 +12,11 @@ namespace OutPatientFollowUp.Application;
 [Route("api/[controller]")]
 public class ProfileInformationDetailController : ControllerBase
 {
+    private readonly IProfileInformationAppService _profileInformationAppService;
+    public ProfileInformationDetailController(IProfileInformationAppService profileInformationAppService)
+    {
+        _profileInformationAppService = profileInformationAppService;
+    }
     // private readonly IProfileInformationDetailAppService _profileInformationDetailAppService;
     // public ProfileInformationDetailController(IProfileInformationDetailAppService profileInformationDetailAppService)
     // {
@@ -26,8 +31,7 @@ public class ProfileInformationDetailController : ControllerBase
     [HttpGet()]
     public async Task<ProfileInformationDetailDto> GetAsync(string archivesCode)
     {
-        throw new NotImplementedException();
-        // return _profileInformationDetailAppService.GetAsync(basicProfileInformationId);
+        return await _profileInformationAppService.GetProfileInformationDetailAsync(archivesCode);
     }
 
     /// <summary>
@@ -39,7 +43,7 @@ public class ProfileInformationDetailController : ControllerBase
     [HttpPost()]
     public async Task<ProfileInformationDetailDto> SaveAsync(string archivesCode, CreateOrUpdateProfileInformationDetailDto input)
     {
-        throw new NotImplementedException();         
+        throw new NotImplementedException();
         // return _profileInformationDetailAppService.SaveAsync(basicProfileInformationId, input);
     }
 

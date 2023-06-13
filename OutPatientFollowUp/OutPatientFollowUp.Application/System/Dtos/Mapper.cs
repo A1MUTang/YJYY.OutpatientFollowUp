@@ -123,7 +123,7 @@ public class Mapper : IRegister
                 .Map(dest => dest.PastMedicalHistoryCodes, src => "")//TODO 未确认字段
                 .Map(dest => dest.PaymentMethodCode, src => src.PBI_BaoXiaoFangShi)
                 .Map(dest => dest.PopulationCategory, src => src.PBI_AgeType)
-                .Map(dest => dest.RecentEmotionalState, src => src.PBI_FeelBad)
+                .Map(dest => dest.RecentEmotionalState, src => src.PBI_FeelBad == "1" ? true:false)
                 .Map(dest => dest.SaltTargetCode, src => src.PBI_KongYanLiang)
                 .Map(dest => dest.SleepDurationCode, src => src.PBI_ShuiMinShiJian)
                 .Map(dest => dest.SleepHabitCode, src => src.PBI_ShuiMinXiGuan)
