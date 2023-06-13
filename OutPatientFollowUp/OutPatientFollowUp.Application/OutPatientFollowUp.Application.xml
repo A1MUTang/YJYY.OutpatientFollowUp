@@ -335,6 +335,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:OutPatientFollowUp.Application.CreateBasicProfileInformationDto.EthnicityCode">
+            <summary>
+            民族 Code
+            </summary>
+            <value></value>
+        </member>
         <member name="P:OutPatientFollowUp.Application.CreateBasicProfileInformationDto.IDCardNumber">
             <summary>
             身份证号
@@ -353,9 +359,27 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Application.CreateBasicProfileInformationDto.CurrentAddress">
+        <member name="P:OutPatientFollowUp.Application.CreateBasicProfileInformationDto.Province">
             <summary>
-            现住址
+            省份
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateBasicProfileInformationDto.City">
+            <summary>
+            市
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateBasicProfileInformationDto.District">
+            <summary>
+            区
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateBasicProfileInformationDto.AddressLine">
+            <summary>
+            地址行/详细住址
             </summary>
             <value></value>
         </member>
@@ -703,12 +727,6 @@
             <summary>
             人群分类
             </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.EthnicityCode">
-            <summary>
-            民族
-            </summary>
-            <value></value>
         </member>
         <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.MaritalStatusCode">
             <summary>
@@ -1282,6 +1300,106 @@
             获取系统描述
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.BloodLipidsTool">
+            <summary>
+            血脂结果帮助类
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.BloodLipidsTool.GetBloodLipidsResult(System.Decimal,System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            获取血脂结果
+            </summary>
+            <param name="TotalCholesterol">总胆固醇</param>
+            <param name="LDLCholesterol">低密度脂蛋白胆固醇</param>
+            <param name="HDLCholesterol">高密度脂蛋白胆固醇</param>
+            <param name="Triglyceride">甘油三酯</param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.BloodLipidsTool.GetHDLResult(System.Decimal)">
+            <summary>
+            获取高密度脂蛋白胆固醇结果
+            </summary>
+            <param name="HDLCholesterol">高密度脂蛋白胆固醇</param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.BloodLipidsTool.GetBloodLipidsHealthAdvice(OutPatientFollowUp.Core.BloodLipidsResultEnum,OutPatientFollowUp.Core.HDLResultEnum)">
+            <summary>
+            获取血脂健康建议
+            </summary>
+            <param name="bloodLipidsResult">血脂结果</param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.BloodLipidsTool.GetBloodLipidsHealthAdvice(System.Decimal,System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            获取血脂健康建议
+            </summary>
+            <param name="TotalCholesterol">总胆固醇</param>
+            <param name="LDLCholesterol">低密度脂蛋白胆固醇</param>
+            <param name="HDLCholesterol">高密度脂蛋白胆固醇</param>
+            <param name="Triglyceride">甘油三酯</param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.BloodLipidsTool.GetHDLCholesterolLevel(OutPatientFollowUp.Core.HDLResultEnum)">
+            <summary>
+            获取高密度脂蛋白胆固醇健康建议
+            </summary>
+            <param name="hDLResult">高密度脂蛋白胆固醇结果</param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.BloodLipidsTool.GetHDLCholesterolLevel(System.Decimal)">
+            <summary>
+            获取高密度脂蛋白胆固醇 (HDL-C)水平
+            </summary>
+            <param name="TotalCholesterol">总胆固醇</param>
+            <param name="LDLCholesterol">低密度脂蛋白胆固醇</param>
+            <param name="HDLCholesterol">高密度脂蛋白胆固醇</param>
+            <param name="Triglyceride">甘油三酯</param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.BloodOxygenTool.GetBloodOxygenResult(System.Int32)">
+            <summary>
+            血氧结果
+            </summary>
+            <param name="bloodOxygenValue">血氧值</param>
+            <returns></returns>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.ProfileInformationDetailTool">
+            <summary>
+            档案信息详情工具类
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.ProfileInformationDetailTool.GetPopulationCategory(System.String)">
+            <summary>
+            获取人群分类
+            </summary>
+            <param name="idCardNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.ProfileInformationDetailTool.GetBirthdayFromIdCard(System.String)">
+            <summary>
+            根据身份证号获取生日
+            </summary>
+            <param name="idCardNumber">身份证号</param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.ProfileInformationDetailTool.GetAgeFromIdCard(System.String)">
+            <summary>
+            根据身份证号码获取年龄
+            </summary>
+            <param name="idCardNumber">身份证号码</param>
+            <returns></returns>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.ValidateTool">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.ValidateTool.ValidateIdCardNumber(System.String)">
+            <summary>
+            交验身份证号格式
+            </summary>
+            <param name="idCardNumber"></param>
         </member>
     </members>
 </doc>
