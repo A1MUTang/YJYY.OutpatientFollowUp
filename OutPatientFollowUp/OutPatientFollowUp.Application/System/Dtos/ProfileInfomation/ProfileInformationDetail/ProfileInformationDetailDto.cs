@@ -13,12 +13,6 @@ public class ProfileInformationDetailDto
     public string PopulationCategory { get; set; }
 
     /// <summary>
-    /// 民族
-    /// </summary>
-    /// <value></value>
-    public string EthnicityCode { get; set; }
-
-    /// <summary>
     /// 婚姻状况
     /// </summary>
     public string MaritalStatusCode { get; set; }

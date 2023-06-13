@@ -20,6 +20,12 @@ namespace OutPatientFollowUp.Application
         public bool Gender { get; set; }
 
         /// <summary>
+        /// 民族
+        /// </summary>
+        /// <value></value>
+        public string EthnicityCode  { get; set; }
+
+        /// <summary>
         /// 身份证号
         /// </summary>
         /// <value></value>
@@ -44,6 +50,30 @@ namespace OutPatientFollowUp.Application
         public string CurrentAddress { get; set; }
 
         /// <summary>
+        /// 省份
+        /// </summary>
+        /// <value></value>
+        public string ProvinceCode { get; set; }
+
+        /// <summary>
+        /// 市
+        /// </summary>
+        /// <value></value>
+        public string CityCode { get; set; }
+
+        /// <summary>
+        /// 区
+        /// </summary>
+        /// <value></value>
+        public string DistrictCode { get; set; }
+
+        /// <summary>
+        /// 地址行/详细住址
+        /// </summary>
+        /// <value></value>
+        public int AddressLine { get; set; }
+
+        /// <summary>
         /// 是否正在服用降压药 false:否 true:是
         /// </summary>
         /// <value></value>
@@ -57,14 +87,11 @@ namespace OutPatientFollowUp.Application
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            if (!Regex.IsMatch(IDCardNumber, @"^\d{17}(\d|X)$"))
-            {
-                yield return new ValidationResult("身份证号格式不正确", new[] { nameof(IDCardNumber) });
-            }
-            if (!Regex.IsMatch(PhoneNumber, @"^1[3456789]\d{9}$"))
-            {
-                yield return new ValidationResult("手机号格式不正确", new[] { nameof(PhoneNumber) });
-            }
+            //正则交验身份证号15位或18位
+            ValidateTool.ValidateIdCardNumber(IDCardNumber);
+            //正则交验手机号
+            ValidateTool.ValidatePhoneNumber(PhoneNumber);
+            yield return ValidationResult.Success;
         }
 
     }
