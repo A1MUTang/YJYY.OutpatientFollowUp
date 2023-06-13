@@ -18,7 +18,7 @@ public class CreateOrUpdateProfileInformationDetailDto
     /// <summary>
     /// 婚姻状况
     /// </summary>
-    public MaritalStatusEnum MaritalStatus { get; set; }
+    public string MaritalStatus { get; set; }
 
     /// <summary>
     /// 身高（单位：米）

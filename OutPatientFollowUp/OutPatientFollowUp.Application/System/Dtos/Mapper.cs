@@ -72,7 +72,7 @@ public class Mapper : IRegister
                 .Map(dest => dest.HipCircumference, src => src.PBI_TunWei)
                 .Map(dest => dest.MaritalStatusCode, src => src.PBI_MarryState)
                 .Map(dest => dest.OtherChronicDiseases, src => src.PBI_ChronicDiseaseOther)
-                .Map(dest => dest.OtherMedicalHistory, src => "")//TODO 未确认字段 既往病史需要通过对应的字段查询拼接出来
+                .Map(dest => dest.OtherMedicalHistory, src => "")//TODO 未确认字段 既往病史需要通过对应的字段查询拼接出来 //TODO 既往病史需要枚举ID
                 .Map(dest => dest.PastMedicalHistory, src => "") //TODO 未确认字段
                 .Map(dest => dest.PastMedicalHistoryCodes, src => "")//TODO 未确认字段
                 .Map(dest => dest.PaymentMethodCode, src => src.PBI_BaoXiaoFangShi)

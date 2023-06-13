@@ -783,7 +783,7 @@
         <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.PastMedicalHistory">
             <summary>
             既往病史
-            <remarks>多选,已','分隔</remarks>
+            <remarks>名称多选,已','分隔</remarks>
             </summary>
         </member>
         <member name="P:OutPatientFollowUp.Application.ProfileInformationDetailDto.OtherMedicalHistory">
@@ -1102,6 +1102,36 @@
             医生id
             </summary>
             <value></value>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IdAppService.GetManangeID(System.String)">
+            <summary>
+            获取ManageID
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IdAppService.GetNewManangeID(System.String,System.String)">
+            <summary>
+             获取新的ManageID
+            </summary>
+            <param name="tableName"></param>
+            <param name="strcode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IIdAppService.GetManangeID(System.String)">
+            <summary>
+            获取ManageID
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IIdAppService.GetNewManangeID(System.String,System.String)">
+            <summary>
+             获取新的ManageID
+            </summary>
+            <param name="tableName"></param>
+            <param name="strcode"></param>
+            <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Application.DictionaryAppService.GetDicionary">
             <summary>

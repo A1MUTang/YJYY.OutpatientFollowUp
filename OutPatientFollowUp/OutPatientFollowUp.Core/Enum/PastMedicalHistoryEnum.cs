@@ -43,9 +43,7 @@ public enum PastMedicalHistoryEnum
     [Display(Name = "妊娠糖尿病史")]
     GestationalDiabetes,
     [Display(Name = "黑棘皮症")]
-    AcanthosisNigricans,
-    [Display(Name = "其它")]
-    Other
+    AcanthosisNigricans
 }
 
 

@@ -90,7 +90,7 @@ public class ProfileInformationDetailDto
 
     /// <summary>
     /// 既往病史
-    /// <remarks>多选,已','分隔</remarks>
+    /// <remarks>名称多选,已','分隔</remarks>
     /// </summary>
     public string PastMedicalHistory { get; set; }
 

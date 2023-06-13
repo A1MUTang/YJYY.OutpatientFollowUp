@@ -1279,6 +1279,71 @@
             <param name="patientBasicInfo"></param>
             <returns></returns>
         </member>
+        <member name="M:OutPatientFollowUp.Core.ISF_IDManageRepository.GetManangeID(System.String)">
+            <summary>
+            获取ManageID
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.ISF_IDManageRepository.GetNewManangeID(System.String,System.String)">
+            <summary>
+             获取新的ManageID
+            </summary>
+            <param name="tableName"></param>
+            <param name="strcode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.SF_IDManage">
+            <summary>
+            身份证管理类
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SF_IDManage.SID_ID">
+            <summary>
+            身份证ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SF_IDManage.SID_Table">
+            <summary>
+            身份证表格
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SF_IDManage.SID_Code">
+            <summary>
+            身份证编码
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SF_IDManage.SID_Bit">
+            <summary>
+            身份证位数
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SF_IDManage.SID_LastDate">
+            <summary>
+            身份证最后日期
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SF_IDManage.SID_LastNum">
+            <summary>
+            身份证最后编号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SF_IDManage.SID_Remark">
+            <summary>
+            身份证备注
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.SF_IDManageRepository.isToday">
+            <summary>
+            今天第一次得ID吗?
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.SF_IDManageRepository.UpdateNum(OutPatientFollowUp.Core.SF_IDManage,System.String)">
+            <summary>
+            更新一条
+            </summary>
+        </member>
         <member name="M:OutPatientFollowUp.Core.IHT_PatientBasicInfoRepository.GetByIdcardAndDocterIdAsync(System.String,System.String)">
             <summary>
             根据身份证号和管理单位名称获取患者基本信息。

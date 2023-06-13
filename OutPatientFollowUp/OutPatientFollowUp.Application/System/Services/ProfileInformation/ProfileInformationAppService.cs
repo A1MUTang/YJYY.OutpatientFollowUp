@@ -6,21 +6,28 @@ namespace OutPatientFollowUp.Application;
 public class ProfileInformationAppService : IProfileInformationAppService
 {
     private readonly IHT_PatientBasicInfoRepository _patientBasicInfoRepository;
+    private readonly IIdAppService _idAppService;
 
-    public ProfileInformationAppService(IHT_PatientBasicInfoRepository patientBasicInfoRepository)
+    public ProfileInformationAppService(IHT_PatientBasicInfoRepository patientBasicInfoRepository, IIdAppService idAppService)
     {
         _patientBasicInfoRepository = patientBasicInfoRepository;
+        _idAppService = idAppService;
     }
 
 
     public async Task<BasicProfileInformationDto> CreateBasicProfileInformationAsync(CreateBasicProfileInformationDto input)
     {
         var (doctorId, manageName) = GetLoginInfo();
-        var patientBasicInfo = await _patientBasicInfoRepository.InsertAsync(input.Adapt<HT_PatientBasicInfo>());
+        var basicProfileInformation = input.Adapt<HT_PatientBasicInfo>();
+        basicProfileInformation.PBI_UserID = await _idAppService.GetNewManangeID("HT_PatientBasicInfo", "PBI");
+        basicProfileInformation.ArchivesCode = basicProfileInformation.PBI_UserID.IndexOf("PBI") != -1
+            ? basicProfileInformation.PBI_UserID.Substring(3)
+            : basicProfileInformation.PBI_UserID;
+        var patientBasicInfo = await _patientBasicInfoRepository.InsertAsync(basicProfileInformation);
         return patientBasicInfo.Adapt<BasicProfileInformationDto>();
     }
 
-    public async Task<ProfileInformationDetailDto> CreateOrUpdateProfileInformationDetailAsync(string archivesCode,CreateOrUpdateProfileInformationDetailDto input)
+    public async Task<ProfileInformationDetailDto> CreateOrUpdateProfileInformationDetailAsync(string archivesCode, CreateOrUpdateProfileInformationDetailDto input)
     {
         var (doctorId, manageName) = GetLoginInfo();
         var patientBasicInfo = await _patientBasicInfoRepository.GetByIdcardAndDocterIdAsync(doctorId, manageName);
@@ -62,7 +69,7 @@ public class ProfileInformationAppService : IProfileInformationAppService
         return patientBasicInfo.Adapt<ProfileInformationDetailDto>();
     }
 
-    public async Task<BasicProfileInformationDto> UpdateBasicProfileInformationAsync(string archivesCode,UpdateBasicProfileInformationDto input)
+    public async Task<BasicProfileInformationDto> UpdateBasicProfileInformationAsync(string archivesCode, UpdateBasicProfileInformationDto input)
     {
         var (doctorId, manageName) = GetLoginInfo();
         var updateResult = await _patientBasicInfoRepository.UpdateAsync(input.Adapt<HT_PatientBasicInfo>());
