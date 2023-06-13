@@ -101,7 +101,6 @@ public class Mapper : IRegister
                 .Map(dest => dest.ChronicDiseaseCategoryCodes, src => src.PBI_ChronicDiseaseType)
                 .Map(dest => dest.DietHabitsCode, src => src.PBI_ShiYanLiang)
                 .Map(dest => dest.DietPreferenceCode, src => src.PBI_YinShiKouWei)
-                .Map(dest => dest.EthnicityCode, src => src.PBI_Nation)
                 .Map(dest => dest.ExerciseHabitsCode, src => src.PBI_YunDongXiGuan)
                 .Map(dest => dest.FamilyHistory, src => "")//TODO:需用通过Code查询数据库获取具体的疾病名称
                 .Map(dest => dest.FamilyHistoryCodes, src => src.PBI_FamilyDiseaseType)
@@ -136,7 +135,6 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_ChronicDiseaseType, src => src.ChronicDiseaseCategoryCodes)
                 .Map(dest => dest.PBI_ShiYanLiang, src => src.DietHabitsCode)
                 .Map(dest => dest.PBI_YinShiKouWei, src => src.DietPreferenceCode)
-                .Map(dest => dest.PBI_Nation, src => src.EthnicityCode)
                 .Map(dest => dest.PBI_YunDongXiGuan, src => src.ExerciseHabitsCode)
                 .Map(dest => dest.PBI_FamilyDiseaseType, src => src.FamilyHistoryCodes)
                 .Map(dest => dest.PBI_ZhiFangSheRuLiang, src => src.FatIntakeCode)

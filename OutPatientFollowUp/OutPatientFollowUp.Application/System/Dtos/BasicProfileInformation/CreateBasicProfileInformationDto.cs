@@ -20,7 +20,7 @@ namespace OutPatientFollowUp.Application
         public bool Gender { get; set; }
 
         /// <summary>
-        /// 民族
+        /// 民族 Code
         /// </summary>
         /// <value></value>
         public string EthnicityCode  { get; set; }
@@ -53,19 +53,19 @@ namespace OutPatientFollowUp.Application
         /// 省份
         /// </summary>
         /// <value></value>
-        public string ProvinceCode { get; set; }
+        public string Province { get; set; }
 
         /// <summary>
         /// 市
         /// </summary>
         /// <value></value>
-        public string CityCode { get; set; }
+        public string City { get; set; }
 
         /// <summary>
         /// 区
         /// </summary>
         /// <value></value>
-        public string DistrictCode { get; set; }
+        public string District { get; set; }
 
         /// <summary>
         /// 地址行/详细住址
