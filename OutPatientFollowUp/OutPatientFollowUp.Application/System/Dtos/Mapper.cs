@@ -92,10 +92,11 @@ public class Mapper : IRegister
                  .Map(dest => dest.IsTakingAntihypertensiveMeds, src => src.IsHdrug == 1 ? "是" : "否")
 
                 .Map(dest => dest.Gender, src => src.PBI_Gender == "1" ? "男" : "女")
-                .Map(dest => dest.Province, src => src.PBI_Province)
-                .Map(dest => dest.City, src => src.PBI_City)
-                .Map(dest => dest.District, src => src.PBI_Country)
-                .Map(dest => dest.CurrentAddress, src => src.PBI_Province + src.PBI_City + src.PBI_Country + src.PBI_Address);
+                .Map(dest => dest.Province, src => "北京")//TODO:需用通过Code查询数据库获取具体的省份名称
+                .Map(dest => dest.City, src => "北京市")
+                .Map(dest => dest.District, src => "顺义区")
+                .Map(dest => dest.AddressLine, src => "自由港B区")
+                .Map(dest => dest.CurrentAddress, src => "北京市顺义区自由港B区");
 
 
         config.ForType<HT_PatientBasicInfo, ProfileInformationDetailDto>()
