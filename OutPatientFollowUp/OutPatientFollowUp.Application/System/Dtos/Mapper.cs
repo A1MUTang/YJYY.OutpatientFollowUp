@@ -21,14 +21,23 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_PersonPhone, src => src.PhoneNumber)
                 .Map(dest => dest.PBI_Gender, src => src.Gender == true ? "1" : "2")
                 .Map(dest => dest.PBI_AgeType, src => ProfileInformationDetailTool.GetPopulationCategory(src.IDCardNumber).GetName())
-        //TODO创建的时候给默认值
+                .Map(dest => dest.PBI_Birthday, src => ProfileInformationDetailTool.GetBirthdayFromIdCard(src.IDCardNumber))
+
+                // .Map(dest => dest.PBI_YaoWei, src => "")
+                // .Map(dest => dest.PBI_Height, src => "")//默认为空
+                // .Map(dest => dest.PBI_FamilyDiseaseType, src => "") //默认为空
+                // .Map(dest => dest.PBI_ChronicDiseaseOther, src => "")//默认为空
+                // .Map(dest => dest.PBI_TunWei, src => "")//默认为空
+                // .Map(dest => dest.PBI_Weight, src => "")
+                // .Map(dest => dest.PBI_YaoTunBi, src => "");
+
                 // .Map(dest => dest.PBI_ChronicDiseaseType, src => "") 慢病分类默认无 数据库中是null
                 //A01素食为主    
                 //SA02荤食为主    
                 //SA03杂食       
                 //SA04荤素均衡    
                 //SA05不详
-                .Map(dest => dest.PBI_ShiYanLiang, src => "SA05") 
+                .Map(dest => dest.PBI_ShiYanLiang, src => "SA05")
                 // ET01	适中
                 // ET02	嗜盐
                 // ET03	嗜糖
@@ -36,29 +45,25 @@ public class Mapper : IRegister
                 // ET05	嗜油
                 // ET06	不详
                 .Map(dest => dest.PBI_YinShiKouWei, src => "ET06")
-                .Map(dest => dest.PBI_Nation, src => "")
-                .Map(dest => dest.PBI_YunDongXiGuan, src => "")
-                .Map(dest => dest.PBI_FamilyDiseaseType, src => "")
-                .Map(dest => dest.PBI_ZhiFangSheRuLiang, src => "")
-                .Map(dest => dest.PBI_ShuiGuoSheRuLiang, src => "")
-                .Map(dest => dest.PBI_MuBiaoSGSheRuLiang, src => "")
-                .Map(dest => dest.PBI_Height, src => "")
-                .Map(dest => dest.PBI_MuBiaoZFSheRuLiang, src => "")
-                .Map(dest => dest.PBI_TunWei, src => "")
-                .Map(dest => dest.PBI_MarryState, src => "")
-                .Map(dest => dest.PBI_ChronicDiseaseOther, src => "")
-                .Map(dest => dest.PBI_BaoXiaoFangShi, src => "")
-                .Map(dest => dest.PBI_AgeType, src => "")
-                .Map(dest => dest.PBI_FeelBad, src => "")
-                .Map(dest => dest.PBI_KongYanLiang, src => "")
-                .Map(dest => dest.PBI_ShuiMinShiJian, src => "")
-                .Map(dest => dest.PBI_ShuiMinXiGuan, src => "")
-                .Map(dest => dest.PBI_SmokingStatus, src => "")
-                .Map(dest => dest.PBI_ShuCiSheRuLiang, src => "")
-                .Map(dest => dest.PBI_MuBiaoSCSheRuLiang, src => "")
-                .Map(dest => dest.PBI_YaoWei, src => "")
-                .Map(dest => dest.PBI_Weight, src => "")
-                .Map(dest => dest.PBI_YaoTunBi, src => "");
+                .Map(dest => dest.PBI_Nation, src => src.EthnicityCode) //TODO 需要通过访问数据库将Name转换为Code
+                                                                        //SP01	不运动
+                                                                        //SP02	有氧运动
+                                                                        //SP03	剧烈运动
+                                                                        //SP04	不详
+                .Map(dest => dest.PBI_YunDongXiGuan, src => "SP04")
+                .Map(dest => dest.PBI_ZhiFangSheRuLiang, src => "FAT08")
+                .Map(dest => dest.PBI_ShuiGuoSheRuLiang, src => "FI04")
+                .Map(dest => dest.PBI_MuBiaoSGSheRuLiang, src => "AFI06")
+                .Map(dest => dest.PBI_MuBiaoZFSheRuLiang, src => "AFT06")
+                .Map(dest => dest.PBI_MarryState, src => "MS05")
+                .Map(dest => dest.PBI_BaoXiaoFangShi, src => "BX07")
+                .Map(dest => dest.PBI_FeelBad, src => "0")
+                .Map(dest => dest.PBI_ShuiMinShiJian, src => "ST07")
+                .Map(dest => dest.PBI_ShuiMinXiGuan, src => "SLP05")
+                .Map(dest => dest.PBI_SmokingStatus, src => "SKS004")
+                .Map(dest => dest.PBI_ShuCiSheRuLiang, src => "VT04")
+                .Map(dest => dest.PBI_MuBiaoSCSheRuLiang, src => "AV06")
+                .Map(dest => dest.PBI_CreateArchivesDate, src => DateTime.Now)
 
         ;
 
@@ -83,8 +88,8 @@ public class Mapper : IRegister
                 .Map(dest => dest.Address, src => src.PBI_Address)
                 .Map(dest => dest.IDCardNumber, src => src.PBI_ICard)
                 .Map(dest => dest.PhoneNumber, src => src.PBI_PersonPhone)
-                .Map(dest => dest.IsTakingAntidiabeticMeds, src => src.IsSdrug)
-                 .Map(dest => dest.IsTakingAntihypertensiveMeds, src => src.IsHdrug)
+                .Map(dest => dest.IsTakingAntidiabeticMeds, src => src.IsSdrug == 1 ? "是" : "否")
+                 .Map(dest => dest.IsTakingAntihypertensiveMeds, src => src.IsHdrug == 1 ? "是" : "否")
 
                 .Map(dest => dest.Gender, src => src.PBI_Gender == "1" ? "男" : "女")
                 .Map(dest => dest.Province, src => src.PBI_Province)

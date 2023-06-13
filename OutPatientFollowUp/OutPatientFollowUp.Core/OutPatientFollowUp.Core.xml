@@ -1264,20 +1264,19 @@
             <param name="manageName"></param>
             <returns>true 已存在 false 不存在</returns>
         </member>
-        <member name="M:OutPatientFollowUp.Core.HT_PatientBasicInfoRepository.OutPatientFollowUp#Core#IHT_PatientBasicInfoRepository#InsertAsync(OutPatientFollowUp.Core.HT_PatientBasicInfo)">
+        <member name="M:OutPatientFollowUp.Core.HT_PatientBasicInfoRepository.InsertAsync(OutPatientFollowUp.Core.HT_PatientBasicInfo)">
             <summary>
             插入患者基本信息
             </summary>
             <param name="patientBasicInfo"></param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Core.HT_PatientBasicInfoRepository.OutPatientFollowUp#Core#IHT_PatientBasicInfoRepository#Update(OutPatientFollowUp.Core.HT_PatientBasicInfo)">
+        <member name="M:OutPatientFollowUp.Core.HT_PatientBasicInfoRepository.UpdateAsync(OutPatientFollowUp.Core.HT_PatientBasicInfo)">
             <summary>
             更新患者基本信息
             </summary>
             <remarks>仅修改不为空的字段</remarks>
             <param name="patientBasicInfo"></param>
-            <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Core.ISF_IDManageRepository.GetManangeID(System.String)">
             <summary>
@@ -1367,12 +1366,11 @@
             <param name="patientBasicInfo"></param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Core.IHT_PatientBasicInfoRepository.Update(OutPatientFollowUp.Core.HT_PatientBasicInfo)">
+        <member name="M:OutPatientFollowUp.Core.IHT_PatientBasicInfoRepository.UpdateAsync(OutPatientFollowUp.Core.HT_PatientBasicInfo)">
             <summary>
             更新患者基本信息
             </summary>
-            <remarks>仅修改不为空的字段</remarks>
-            <param name="patientBasicInfo"></param>
+            <param name="patientBasicInfo">档案编号</param>
             <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Core.ISY_CoderRepository.GetDicionary">
@@ -1558,6 +1556,13 @@
         <member name="M:OutPatientFollowUp.Core.IPT_DoctorBasicInfoRepositroy.GetDoctorManageName(System.String)">
             <summary>
             获取医生对应的manageName Doctor_WorkUnits字段 与 PT_OrgnameForParent表 OrgName 匹配然后获取ManageName
+            </summary>
+            <param name="doctorId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IPT_DoctorBasicInfoRepositroy.GetDoctorWorkUnits(System.String)">
+            <summary>
+            获取医生对应的Doctor_WorkUnits字段  
             </summary>
             <param name="doctorId"></param>
             <returns></returns>

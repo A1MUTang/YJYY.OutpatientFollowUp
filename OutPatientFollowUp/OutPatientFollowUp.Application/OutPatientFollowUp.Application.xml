@@ -1167,7 +1167,7 @@
             <summary>
             获取基础档案信息
             </summary>
-            <param name="archivesCode">档案编号</param>
+            <param name="idCardNumber">身份证号</param>
             <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.CreateBasicProfileInformationAsync(OutPatientFollowUp.Application.CreateBasicProfileInformationDto)">
@@ -1368,6 +1368,14 @@
             <summary>
             档案信息详情工具类
             </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.ProfileInformationDetailTool.CalculateWHR(System.Double,System.Double)">
+            <summary>
+            计算腰臀比
+            </summary>
+            <param name="waist">腰围</param>
+            <param name="hip">臀围</param>
+            <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Application.ProfileInformationDetailTool.GetPopulationCategory(System.String)">
             <summary>

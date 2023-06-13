@@ -7,6 +7,21 @@ namespace OutPatientFollowUp.Application;
 /// </summary>
 public static class ProfileInformationDetailTool
 {
+    /// <summary>
+    /// 计算腰臀比
+    /// </summary>
+    /// <param name="waist">腰围</param>
+    /// <param name="hip">臀围</param>
+    /// <returns></returns>
+    public static double CalculateWHR(double waist, double hip)
+    {
+        if (waist <= 0 || hip <= 0)
+        {
+            throw Oops.Oh("腰围或臀围不能小于等于0");
+        }
+
+        return waist / hip;
+    }
 
     /// <summary>
     /// 获取人群分类
@@ -28,13 +43,26 @@ public static class ProfileInformationDetailTool
     /// </summary>
     /// <param name="idCardNumber">身份证号</param>
     /// <returns></returns>
-    private static DateTime GetBirthdayFromIdCard(string idCardNumber)
+    public static DateTime GetBirthdayFromIdCard(string idCardNumber)
     {
         ValidateTool.ValidateIdCardNumber(idCardNumber);
-        var year = Convert.ToInt32(idCardNumber.Substring(6, 4));
-        var month = Convert.ToInt32(idCardNumber.Substring(10, 2));
-        var day = Convert.ToInt32(idCardNumber.Substring(12, 2));
-        return new DateTime(year, month, day);
+        // 身份证号码会出现18位和15位的情况
+        if (idCardNumber.Length == 15)
+        {
+            var year = Convert.ToInt32(idCardNumber.Substring(6, 2));
+            var month = Convert.ToInt32(idCardNumber.Substring(8, 2));
+            var day = Convert.ToInt32(idCardNumber.Substring(10, 2));
+            // 15 位身份证号的年份需要加上 1900
+            year += 1900;
+            return new DateTime(year, month, day);
+        }
+        else
+        {
+            var year = Convert.ToInt32(idCardNumber.Substring(6, 4));
+            var month = Convert.ToInt32(idCardNumber.Substring(10, 2));
+            var day = Convert.ToInt32(idCardNumber.Substring(12, 2));
+            return new DateTime(year, month, day);
+        }
     }
 
     /// <summary>
@@ -45,13 +73,11 @@ public static class ProfileInformationDetailTool
     public static int GetAgeFromIdCard(string idCardNumber)
     {
         ValidateTool.ValidateIdCardNumber(idCardNumber);
+        // 身份证号码会出现18位和15位的情况
         var birthday = GetBirthdayFromIdCard(idCardNumber);
         var today = DateTime.Today;
-        var age = today.Year - birthday.Year;
-        if (birthday > today.AddYears(-age))
-        {
-            age--;
-        }
+        var ageTimeSpan = today - birthday;
+        var age = Convert.ToInt32(ageTimeSpan.TotalDays / 365.25);
         return age;
     }
 

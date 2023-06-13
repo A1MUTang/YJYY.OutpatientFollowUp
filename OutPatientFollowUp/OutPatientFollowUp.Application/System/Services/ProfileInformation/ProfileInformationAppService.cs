@@ -17,40 +17,44 @@ public class ProfileInformationAppService : IProfileInformationAppService
 
     public async Task<BasicProfileInformationDto> CreateBasicProfileInformationAsync(CreateBasicProfileInformationDto input)
     {
-        var (doctorId, manageName) = GetLoginInfo();
+        var (doctorId, manageName, workUnits) = GetLoginInfo();
         var basicProfileInformation = input.Adapt<HT_PatientBasicInfo>();
         basicProfileInformation.PBI_UserID = await _idAppService.GetNewManangeID("HT_PatientBasicInfo", "PBI");
         basicProfileInformation.ArchivesCode = basicProfileInformation.PBI_UserID.IndexOf("PBI") != -1
             ? basicProfileInformation.PBI_UserID.Substring(3)
             : basicProfileInformation.PBI_UserID;
+        basicProfileInformation.PBI_CreateArchivesUnit = workUnits;
+        basicProfileInformation.PBI_ManageUnit = manageName;
         var patientBasicInfo = await _patientBasicInfoRepository.InsertAsync(basicProfileInformation);
         return patientBasicInfo.Adapt<BasicProfileInformationDto>();
     }
 
     public async Task<ProfileInformationDetailDto> CreateOrUpdateProfileInformationDetailAsync(string archivesCode, CreateOrUpdateProfileInformationDetailDto input)
     {
-        var (doctorId, manageName) = GetLoginInfo();
+        var (doctorId, manageName, workUnits) = GetLoginInfo();
         var patientBasicInfo = await _patientBasicInfoRepository.GetByIdcardAndDocterIdAsync(doctorId, manageName);
         if (patientBasicInfo == null)
         {
             throw Oops.Oh("患者基本信息不存在");
         }
+
         patientBasicInfo.PBI_Gender = input.BasicProfileInformation.Gender ? "男" : "女";
         var patientBasicInfoDetail = await _patientBasicInfoRepository.UpdateAsync(patientBasicInfo);
         return patientBasicInfo.Adapt<ProfileInformationDetailDto>();
 
     }
-    private (string, string) GetLoginInfo()
+    private (string, string, string) GetLoginInfo()
     {
         var doctorId = App.User?.FindFirstValue("UserID");
         var manageName = App.User?.FindFirstValue("ManageName");
-        return (doctorId, manageName);
+        var workUnits = App.User?.FindFirstValue("WorkUnits");
+        return (doctorId, manageName, workUnits);
     }
 
-    public async Task<BasicProfileInformationDto> GetBasicProfileInformationAsync(string archivesCode)
+    public async Task<BasicProfileInformationDto> GetBasicProfileInformationAsync(string IDCardNumber)
     {
-        var (doctorId, manageName) = GetLoginInfo();
-        var patientBasicInfo = await _patientBasicInfoRepository.GetByIdcardAndDocterIdAsync(doctorId, manageName);
+        var (doctorId, manageName, workUnits) = GetLoginInfo();
+        var patientBasicInfo = await _patientBasicInfoRepository.GetByIdcardAndDocterIdAsync(IDCardNumber, manageName);
         if (patientBasicInfo == null)
         {
             throw Oops.Oh("患者基本信息不存在");
@@ -60,7 +64,7 @@ public class ProfileInformationAppService : IProfileInformationAppService
 
     public async Task<ProfileInformationDetailDto> GetProfileInformationDetailAsync(string archivesCode)
     {
-        var (doctorId, manageName) = GetLoginInfo();
+        var (doctorId, manageName, workUnits) = GetLoginInfo();
         var patientBasicInfo = await _patientBasicInfoRepository.GetByIdcardAndDocterIdAsync(doctorId, manageName);
         if (patientBasicInfo == null)
         {
@@ -71,8 +75,10 @@ public class ProfileInformationAppService : IProfileInformationAppService
 
     public async Task<BasicProfileInformationDto> UpdateBasicProfileInformationAsync(string archivesCode, UpdateBasicProfileInformationDto input)
     {
-        var (doctorId, manageName) = GetLoginInfo();
-        var updateResult = await _patientBasicInfoRepository.UpdateAsync(input.Adapt<HT_PatientBasicInfo>());
+        var (doctorId, manageName, workUnits) = GetLoginInfo();
+        var patientBasicInfo = input.Adapt<HT_PatientBasicInfo>();
+        patientBasicInfo.ArchivesCode = archivesCode;
+        var updateResult = await _patientBasicInfoRepository.UpdateAsync(patientBasicInfo);
         return updateResult.Adapt<BasicProfileInformationDto>();
     }
 }

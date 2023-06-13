@@ -67,7 +67,7 @@ public class BasicProfileInformationDto :  IValidatableObject
     /// 地址行/详细住址
     /// </summary>
     /// <value></value>
-    public int AddressLine { get; set; }
+    public string AddressLine { get; set; }
 
     /// <summary>
     /// 现住址

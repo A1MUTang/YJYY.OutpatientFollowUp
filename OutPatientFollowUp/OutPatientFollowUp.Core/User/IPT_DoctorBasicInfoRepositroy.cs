@@ -20,5 +20,12 @@ namespace OutPatientFollowUp.Core
         /// <returns></returns>
         public  Task<string> GetDoctorManageName(string doctorId);
 
+        /// <summary>
+        /// 获取医生对应的Doctor_WorkUnits字段  
+        /// </summary>
+        /// <param name="doctorId"></param>
+        /// <returns></returns>
+         public Task<string> GetDoctorWorkUnits(string doctorId);
+
     }
 }

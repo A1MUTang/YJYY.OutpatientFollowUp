@@ -52,9 +52,9 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
     /// </summary>
     /// <param name="patientBasicInfo"></param>
     /// <returns></returns>
-    async Task<HT_PatientBasicInfo> IHT_PatientBasicInfoRepository.InsertAsync(HT_PatientBasicInfo patientBasicInfo)
+    public new async Task<HT_PatientBasicInfo> InsertAsync(HT_PatientBasicInfo patientBasicInfo)
     {
-        return await _context.Insertable(patientBasicInfo).IgnoreColumns(ignoreNullColumn:true).ExecuteReturnEntityAsync();
+        return await _context.Insertable(patientBasicInfo).IgnoreColumns(ignoreNullColumn: true).ExecuteReturnEntityAsync();
     }
 
     /// <summary>
@@ -62,12 +62,17 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
     /// </summary>
     /// <remarks>仅修改不为空的字段</remarks>
     /// <param name="patientBasicInfo"></param>
-    /// <returns></returns>
-    async Task<bool> IHT_PatientBasicInfoRepository.Update(HT_PatientBasicInfo patientBasicInfo)
+    // /// <returns></returns>
+    // public new async Task<bool> UpdateAsync(HT_PatientBasicInfo patientBasicInfo)
+    // {
+    //     return await _context.Updateable(patientBasicInfo).IgnoreColumns(ignoreAllNullColumns: true).WhereColumns(it => new { it.ArchivesCode }).ExecuteCommandAsync() > 0;
+    // }
+
+
+    public new async Task<HT_PatientBasicInfo> UpdateAsync(HT_PatientBasicInfo patientBasicInfo)
     {
-        return await _context.Updateable(patientBasicInfo).IgnoreColumns(ignoreAllNullColumns: true).Where(it => it.ArchivesCode == patientBasicInfo.ArchivesCode).ExecuteCommandAsync() > 0;
+        await _context.Updateable<HT_PatientBasicInfo>(patientBasicInfo).Where(it => it.ArchivesCode == patientBasicInfo.ArchivesCode).IgnoreColumns(ignoreAllNullColumns: true).ExecuteCommandAsync();
+        return await _context.Queryable<HT_PatientBasicInfo>().FirstAsync(x => x.ArchivesCode == patientBasicInfo.ArchivesCode);
     }
-
-
 
 }

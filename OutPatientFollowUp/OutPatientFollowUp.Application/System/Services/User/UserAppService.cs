@@ -125,6 +125,7 @@ public class UserAppService : IUserAppService
                 { "UserId", existUser.Doctor_ID },  // 存储Id
                 { "Account",existUser.Doctor_UserName }, // 存储用户名
                 { "ManageName",await _doctorBasicInfoRepositroy.GetDoctorManageName(existUser.Doctor_ID) }, // 存储管理单位
+                {"WorkUnits", await _doctorBasicInfoRepositroy.GetDoctorWorkUnits(existUser.Doctor_ID)}  //GetDoctorWorkUnits
             }, accessTokenExpiration);
         // 生成刷新Token
         var refreshToken = JWTEncryption.GenerateRefreshToken(accessToken, refreshTokenExpiration);

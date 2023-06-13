@@ -1,4 +1,5 @@
 ﻿using Furion;
+using Furion.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -33,6 +34,7 @@ public class Startup : AppStartup
                {
                    //获取作IOC作用域对象
                    var appServive = s.GetService<IHttpContextAccessor>();
+                   Log.Information($"【SQL语句】：{sql} \r\n 【参数】：{pars}");
                };
            });
             return sqlSugar;

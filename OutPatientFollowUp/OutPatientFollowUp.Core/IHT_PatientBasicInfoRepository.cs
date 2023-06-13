@@ -33,5 +33,12 @@ public interface IHT_PatientBasicInfoRepository : IBaseRepository<HT_PatientBasi
     /// <remarks>仅修改不为空的字段</remarks>
     /// <param name="patientBasicInfo"></param>
     /// <returns></returns>
-    public new Task<bool> Update(HT_PatientBasicInfo patientBasicInfo);
+    // public new Task<bool> UpdateAsync(HT_PatientBasicInfo patientBasicInfo);
+
+    /// <summary>
+    /// 更新患者基本信息
+    /// </summary>
+    /// <param name="patientBasicInfo">档案编号</param>
+    /// <returns></returns>
+    public new Task<HT_PatientBasicInfo> UpdateAsync(HT_PatientBasicInfo patientBasicInfo);
 }

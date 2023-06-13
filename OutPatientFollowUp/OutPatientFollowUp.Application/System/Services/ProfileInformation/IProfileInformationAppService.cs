@@ -6,9 +6,9 @@ namespace OutPatientFollowUp.Application
         /// <summary>
         /// 获取基础档案信息
         /// </summary>
-        /// <param name="archivesCode">档案编号</param>
+        /// <param name="idCardNumber">身份证号</param>
         /// <returns></returns>
-        Task<BasicProfileInformationDto> GetBasicProfileInformationAsync(string archivesCode);
+        Task<BasicProfileInformationDto> GetBasicProfileInformationAsync(string idCardNumber);
 
         /// <summary>
         /// 创建基础档案信息
