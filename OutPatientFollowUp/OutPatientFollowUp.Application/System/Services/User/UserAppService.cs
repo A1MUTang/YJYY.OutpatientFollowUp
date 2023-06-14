@@ -123,12 +123,14 @@ public class UserAppService : IUserAppService
         var accessToken = JWTEncryption.Encrypt(new Dictionary<string, object>()
             {
                 { "UserId", existUser.Doctor_ID },  // 存储Id
-                { "Account",existUser.Doctor_UserName }, // 存储用户名
-                { "ManageName",await _doctorBasicInfoRepositroy.GetDoctorManageName(existUser.Doctor_ID) }, // 存储管理单位
-                {"WorkUnits", await _doctorBasicInfoRepositroy.GetDoctorWorkUnits(existUser.Doctor_ID)}  //GetDoctorWorkUnits
-            }, accessTokenExpiration);
+                { "Account",    existUser.Doctor_UserName }, // 存储用户名
+                { "ManageName", await _doctorBasicInfoRepositroy.GetDoctorManageName(existUser.Doctor_ID) }, // 存储管理单位
+                { "WorkUnits", await _doctorBasicInfoRepositroy.GetDoctorWorkUnits(existUser.Doctor_ID)}  //GetDoctorWorkUnits
+            });
         // 生成刷新Token
         var refreshToken = JWTEncryption.GenerateRefreshToken(accessToken, refreshTokenExpiration);
+        // 设置响应报文头
+
         //返回用户信息
         return new LoginOtput()
         {
