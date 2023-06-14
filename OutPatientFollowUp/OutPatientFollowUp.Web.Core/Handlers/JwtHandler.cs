@@ -20,6 +20,7 @@ public class JwtHandler : AppAuthorizeHandler
     /// <returns></returns>
     public override async Task HandleAsync(AuthorizationHandlerContext context)
     {
+        #if !DEBUG
         //获取token
         var token = context.GetCurrentHttpContext().Request.Headers["Authorization"].ToString();
         //解析token，获取过期时间
@@ -55,6 +56,9 @@ public class JwtHandler : AppAuthorizeHandler
             context.GetCurrentHttpContext().Response.Headers["access-token"] = "";
             context.GetCurrentHttpContext().Response.Headers["x-access-token"]= "";
         }
+        #elif DEBUG
+        await base.HandleAsync(context);
+        #endif
 
     }
 
