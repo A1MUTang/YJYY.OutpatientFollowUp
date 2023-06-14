@@ -20,18 +20,18 @@ public class JwtHandler : AppAuthorizeHandler
     /// <returns></returns>
     public override async Task HandleAsync(AuthorizationHandlerContext context)
     {
-        // 自动刷新 token
-        // #if !DEBUG
-        // if (JWTEncryption.AutoRefreshToken(context, context.GetCurrentHttpContext()))
-        // {
-        //     await AuthorizeHandleAsync(context);
+        //自动刷新 token
+#if !DEBUG
+        if (JWTEncryption.AutoRefreshToken(context, context.GetCurrentHttpContext()))
+        {
+            await AuthorizeHandleAsync(context);
            
-        // }
-        // else context.Fail();    // 授权失败
-        // #elif DEBUG
-         context.Succeed(requirement: context.PendingRequirements.First());
-        // #endif
-        
+        }
+        else context.Fail();    // 授权失败
+#elif DEBUG
+        context.Succeed(requirement: context.PendingRequirements.First());
+#endif
+
     }
 
     /// <summary>
@@ -43,7 +43,7 @@ public class JwtHandler : AppAuthorizeHandler
     public override Task<bool> PipelineAsync(AuthorizationHandlerContext context, DefaultHttpContext httpContext)
     {
         // 检查权限，如果方法是异步的就不用 Task.FromResult 包裹，直接使用 async/await 即可
-        
+
         return Task.FromResult(true);
     }
 }
