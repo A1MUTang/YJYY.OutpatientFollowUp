@@ -4,6 +4,36 @@
         <name>OutPatientFollowUp.Core</name>
     </assembly>
     <members>
+        <member name="P:OutPatientFollowUp.Core.SY_City.PROVINCE">
+            <summary>
+            省份
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SY_City.CITY">
+            <summary>
+            城市
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SY_City.CODE">
+            <summary>
+            区县
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SY_City.ROME">
+            <summary>
+            拼音
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SY_City.ZM_CODE">
+            <summary>
+            简拼
+            </summary>
+            <value></value>
+        </member>
         <member name="T:OutPatientFollowUp.Core.DbContext">
             <summary>
             数据库上下文对象
