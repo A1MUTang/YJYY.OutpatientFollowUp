@@ -98,6 +98,7 @@ public class UserAppService : IUserAppService
             // 加密 新的方式
             if (!DEncrypt.Md5(loginDto.DoctorPass.Trim()).ToLower().Equals(existUser.Doctor_Pwd.ToLower()))
             {
+                CheckLoginErrorCount(loginDto);
                 throw Oops.Oh("用户名密码错误");
             }
         }
@@ -106,6 +107,8 @@ public class UserAppService : IUserAppService
             // 加密 老的方式
             if (!Md5Helper.Encryption(loginDto.DoctorPass.Trim()).Equals(existUser.Doctor_Pwd))
             {
+                CheckLoginErrorCount(loginDto);
+
                 throw Oops.Oh("用户名密码错误");
             }
         }
@@ -143,6 +146,25 @@ public class UserAppService : IUserAppService
             Gender = existUser.Doctor_Gender,
             IDCardNumber = existUser.Doctor_ICard
         };
+    }
+
+    private void CheckLoginErrorCount(LoginInput loginDto)
+    {
+        //密码错误内存缓存
+        var cacheKey = $"LoginErrorCount_{loginDto.DoctorPhone}";
+        var errorCount = _memoryCache.GetOrCreate(cacheKey, entry =>
+        {
+            entry.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(30);
+            return 0;
+        });
+
+        errorCount++;
+        _memoryCache.Set(cacheKey, errorCount);
+        if (errorCount >= 3)
+        {
+            throw Oops.Oh($"密码错误次数过多,请稍后后再试");
+
+        }
     }
 
 #if DEBUG
