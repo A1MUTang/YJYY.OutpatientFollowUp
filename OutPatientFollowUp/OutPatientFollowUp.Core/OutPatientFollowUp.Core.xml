@@ -4,6 +4,26 @@
         <name>OutPatientFollowUp.Core</name>
     </assembly>
     <members>
+        <member name="M:OutPatientFollowUp.Core.ISY_CityRepository.GetCityAsync(System.String)">
+            <summary>
+            根据编码获取城市
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.ISY_CityRepository.GetCityLisAsynct">
+            <summary>
+            获取城市列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.ISY_CityRepository.GetCityListByParentIDAsync(System.String)">
+            <summary>
+            根据父级编码获取城市列表
+            </summary>
+            <param name="parentCode"></param>
+            <returns></returns>
+        </member>
         <member name="P:OutPatientFollowUp.Core.SY_City.PROVINCE">
             <summary>
             省份
@@ -33,6 +53,13 @@
             简拼
             </summary>
             <value></value>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.CityAppServiceExtensions.GetCodeName(System.String)">
+            <summary>
+            获取字典
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
         </member>
         <member name="T:OutPatientFollowUp.Core.DbContext">
             <summary>
@@ -1417,6 +1444,13 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:OutPatientFollowUp.Core.ISY_CoderRepository.GetCodeName(System.String)">
+            <summary>
+            根据编码获取名称
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
         <member name="T:OutPatientFollowUp.Core.PT_OrgnameForParent">
             <summary>
             
@@ -1552,6 +1586,13 @@
             <summary>
             父级编码ID
             </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.SY_CoderRepositoryExtensions.GetCodeName(System.String)">
+            <summary>
+            获取字典
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
         </member>
         <member name="T:OutPatientFollowUp.Core.SY_CodeType">
             <summary>

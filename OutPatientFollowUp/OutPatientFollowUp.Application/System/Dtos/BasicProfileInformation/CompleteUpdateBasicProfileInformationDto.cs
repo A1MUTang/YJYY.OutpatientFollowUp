@@ -73,11 +73,11 @@ public class CompleteUpdateBasicProfileInformationDto : IValidatableObject
 
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
     {
-        if (!Regex.IsMatch(IDCardNumber, @"^\d{17}(\d|X)$"))
+        if (!string.IsNullOrEmpty(IDCardNumber) &&!Regex.IsMatch(IDCardNumber, @"^\d{17}(\d|X)$"))
         {
             yield return new ValidationResult("身份证号格式不正确", new[] { nameof(IDCardNumber) });
         }
-        if (!Regex.IsMatch(PhoneNumber, @"^1[3456789]\d{9}$"))
+        if (!string.IsNullOrEmpty(PhoneNumber) && !Regex.IsMatch(PhoneNumber, @"^1[3456789]\d{9}$"))
         {
             yield return new ValidationResult("手机号格式不正确", new[] { nameof(PhoneNumber) });
         }

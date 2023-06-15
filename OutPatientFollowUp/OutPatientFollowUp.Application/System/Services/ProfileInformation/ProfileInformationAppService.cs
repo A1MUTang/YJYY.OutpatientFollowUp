@@ -31,6 +31,7 @@ public class ProfileInformationAppService : IProfileInformationAppService
             : basicProfileInformation.PBI_UserID;
         basicProfileInformation.PBI_CreateArchivesUnit = workUnits;
         basicProfileInformation.PBI_ManageUnit = manageName;
+        basicProfileInformation.PBI_CreateUserID = doctorId;
         var patientBasicInfo = await _patientBasicInfoRepository.InsertAsync(basicProfileInformation);
         return patientBasicInfo.Adapt<BasicProfileInformationDto>();
     }
@@ -43,7 +44,6 @@ public class ProfileInformationAppService : IProfileInformationAppService
         {
             throw Oops.Oh("患者基本信息不存在");
         }
-
         patientBasicInfo.PBI_Gender = input.BasicProfileInformation.Gender ? "男" : "女";
         var patientBasicInfoDetail = await _patientBasicInfoRepository.UpdateAsync(patientBasicInfo);
         return patientBasicInfo.Adapt<ProfileInformationDetailDto>();

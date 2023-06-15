@@ -64,9 +64,7 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_ShuCiSheRuLiang, src => "VT04")
                 .Map(dest => dest.PBI_MuBiaoSCSheRuLiang, src => "AV06")
                 .Map(dest => dest.PBI_CreateArchivesDate, src => DateTime.Now)
-                .Map(dest => dest.PBI_KongYanLiang, src => "不详")
-
-        ;
+                .Map(dest => dest.PBI_KongYanLiang, src => "不详");
 
 
         config.ForType<UpdateBasicProfileInformationDto, HT_PatientBasicInfo>()
@@ -96,7 +94,7 @@ public class Mapper : IRegister
                 .Map(dest => dest.Province, src => "北京")//TODO:需用通过Code查询数据库获取具体的省份名称
                 .Map(dest => dest.City, src => "北京市")
                 .Map(dest => dest.District, src => "顺义区")
-                .Map(dest => dest.AddressLine, src => "自由港B区")
+                .Map(dest => dest.AddressLine, src => "自由港B区")//TODO 未确认字段
                 .Map(dest => dest.CurrentAddress, src => "北京市顺义区自由港B区");
 
 
@@ -106,34 +104,48 @@ public class Mapper : IRegister
                 .Map(dest => dest.BMI, src => src.PBI_BMI)
                 .Map(dest => dest.ChronicDiseaseCategory, src => "")//TODO:需用通过Code查询数据库获取具体的疾病名称
                 .Map(dest => dest.ChronicDiseaseCategoryCodes, src => src.PBI_ChronicDiseaseType == null ? "" : src.PBI_ChronicDiseaseType)
-                .Map(dest => dest.DietHabitsCode, src => src.PBI_ShiYanLiang == null ? "不详" : src.PBI_ShiYanLiang)
-                .Map(dest => dest.DietPreferenceCode, src => src.PBI_YinShiKouWei == null ? "不详" : src.PBI_YinShiKouWei)
-                .Map(dest => dest.ExerciseHabitsCode, src => src.PBI_YunDongXiGuan == null ? "不详" : src.PBI_YunDongXiGuan)
+                .Map(dest => dest.DietHabitsCode, src => src.PBI_ShiYanLiang == null ? "SA05" : src.PBI_ShiYanLiang)
+                .Map(dest => dest.DietPreferenceCode, src => src.PBI_YinShiKouWei == null ? "ET06" : src.PBI_YinShiKouWei)
+                .Map(dest => dest.ExerciseHabitsCode, src => src.PBI_YunDongXiGuan == null ? "SP04" : src.PBI_YunDongXiGuan)
                 .Map(dest => dest.FamilyHistory, src => "")//TODO:需用通过Code查询数据库获取具体的疾病名称
                 .Map(dest => dest.FamilyHistoryCodes, src => src.PBI_FamilyDiseaseType)//TODO:需用通过Codes查询数据库获取具体的疾病名称拼出用‘,’分隔
-                .Map(dest => dest.FatIntakeCode, src => src.PBI_ZhiFangSheRuLiang == null ? "不详" : src.PBI_ZhiFangSheRuLiang)
-                .Map(dest => dest.FruitIntakeEnumCode, src => src.PBI_ShuiGuoSheRuLiang == null ? "不详" : src.PBI_ShuiGuoSheRuLiang)
-                .Map(dest => dest.FruitIntakeTargetEnumCode, src => src.PBI_MuBiaoSGSheRuLiang == null ? "不详" : src.PBI_MuBiaoSGSheRuLiang)
+                .Map(dest => dest.FatIntakeCode, src => src.PBI_ZhiFangSheRuLiang == null ? "FAT08" : src.PBI_ZhiFangSheRuLiang)
+                .Map(dest => dest.FruitIntakeEnumCode, src => src.PBI_ShuiGuoSheRuLiang == null ? "FI04" : src.PBI_ShuiGuoSheRuLiang)
+                .Map(dest => dest.FruitIntakeTargetEnumCode, src => src.PBI_MuBiaoSGSheRuLiang == null ? "AFI06" : src.PBI_MuBiaoSGSheRuLiang)
                 .Map(dest => dest.Height, src => src.PBI_Height)
-                .Map(dest => dest.HighFatFoodIntakeCode, src => src.PBI_MuBiaoZFSheRuLiang == null ? "不详" : src.PBI_MuBiaoZFSheRuLiang)
+                .Map(dest => dest.HighFatFoodIntakeCode, src => src.PBI_MuBiaoZFSheRuLiang == null ? "AFT06" : src.PBI_MuBiaoZFSheRuLiang)
                 .Map(dest => dest.HipCircumference, src => src.PBI_TunWei)
-                .Map(dest => dest.MaritalStatusCode, src => src.PBI_MarryState == null ? "不详" : src.PBI_MarryState)
+                .Map(dest => dest.MaritalStatusCode, src => src.PBI_MarryState == null ? "MS05" : src.PBI_MarryState)
                 .Map(dest => dest.OtherChronicDiseases, src => src.PBI_ChronicDiseaseOther)
                 .Map(dest => dest.OtherMedicalHistory, src => "")//TODO 未确认字段 既往病史需要通过对应的字段查询拼接出来 //TODO 既往病史需要枚举ID
                 .Map(dest => dest.PastMedicalHistory, src => "") //TODO 未确认字段
                 .Map(dest => dest.PastMedicalHistoryCodes, src => "")//TODO 未确认字段
-                .Map(dest => dest.PaymentMethodCode, src => src.PBI_BaoXiaoFangShi == null ? "不详" : src.PBI_BaoXiaoFangShi)
+                .Map(dest => dest.PaymentMethodCode, src => src.PBI_BaoXiaoFangShi == null ? "BX07" : src.PBI_BaoXiaoFangShi)
                 .Map(dest => dest.PopulationCategory, src => src.PBI_AgeType)
-                .Map(dest => dest.RecentEmotionalState, src => src.PBI_FeelBad == "1" ? true:false)
+                .Map(dest => dest.RecentEmotionalState, src => src.PBI_FeelBad == "1" ? true : false)
                 .Map(dest => dest.SaltTargetCode, src => src.PBI_KongYanLiang == null ? "不详" : src.PBI_KongYanLiang)
-                .Map(dest => dest.SleepDurationCode, src => src.PBI_ShuiMinShiJian == null ? "不详" : src.PBI_ShuiMinShiJian)
-                .Map(dest => dest.SleepHabitCode, src => src.PBI_ShuiMinXiGuan == null ? "不详" : src.PBI_ShuiMinXiGuan)
-                .Map(dest => dest.SmokingStatusCode, src => src.PBI_SmokingStatus == null ? "不详" : src.PBI_SmokingStatus)
-                .Map(dest => dest.VegetableIntakeCode, src => src.PBI_ShuCiSheRuLiang == null ? "不详" : src.PBI_ShuCiSheRuLiang)
-                .Map(dest => dest.VegetableIntakeTargetCode, src => src.PBI_MuBiaoSCSheRuLiang == null ? "不详" : src.PBI_MuBiaoSCSheRuLiang)
+                .Map(dest => dest.SleepDurationCode, src => src.PBI_ShuiMinShiJian == null ? "ST07" : src.PBI_ShuiMinShiJian)
+                .Map(dest => dest.SleepHabitCode, src => src.PBI_ShuiMinXiGuan == null ? "SLP05" : src.PBI_ShuiMinXiGuan)
+                .Map(dest => dest.SmokingStatusCode, src => src.PBI_SmokingStatus == null ? "SKS004" : src.PBI_SmokingStatus)
+                .Map(dest => dest.VegetableIntakeCode, src => src.PBI_ShuCiSheRuLiang == null ? "VT04" : src.PBI_ShuCiSheRuLiang)
+                .Map(dest => dest.VegetableIntakeTargetCode, src => src.PBI_MuBiaoSCSheRuLiang == null ? "AV06" : src.PBI_MuBiaoSCSheRuLiang)
                 .Map(dest => dest.WaistCircumference, src => src.PBI_YaoWei)
                 .Map(dest => dest.Weight, src => src.PBI_Weight)
-                .Map(dest => dest.WaistToHipRatio, src => src.PBI_YaoTunBi);
+                .Map(dest => dest.WaistToHipRatio, src => src.PBI_YaoTunBi)
+                .Map(dest => dest.BasicProfileInformation.Address, src => src.PBI_Address)
+                .Map(dest => dest.BasicProfileInformation.Gender, src => src.PBI_Gender == "1" ? "男" : "女")
+                .Map(dest => dest.BasicProfileInformation.Province, src => "北京")//TODO:需用通过Code查询数据库获取具体的省份名称
+                .Map(dest => dest.BasicProfileInformation.City, src => "北京市")
+                .Map(dest => dest.BasicProfileInformation.District, src => "顺义区")
+                .Map(dest => dest.BasicProfileInformation.AddressLine, src => "自由港B区")//TODO 未确认字段
+                .Map(dest => dest.BasicProfileInformation.CurrentAddress, src => "北京市顺义区自由港B区")
+                .Map(dest => dest.BasicProfileInformation.ArchivesCode, src => src.ArchivesCode)
+                .Map(dest => dest.BasicProfileInformation.Name, src => src.PBI_UserName)
+                .Map(dest => dest.BasicProfileInformation.Address, src => src.PBI_Address)
+                .Map(dest => dest.BasicProfileInformation.IDCardNumber, src => src.PBI_ICard)
+                .Map(dest => dest.BasicProfileInformation.PhoneNumber, src => src.PBI_PersonPhone)
+                .Map(dest => dest.BasicProfileInformation.IsTakingAntidiabeticMeds, src => src.IsSdrug == 1 ? "是" : "否")
+                 .Map(dest => dest.BasicProfileInformation.IsTakingAntihypertensiveMeds, src => src.IsHdrug == 1 ? "是" : "否");
 
         config.ForType<ProfileInformationDetailDto, HT_PatientBasicInfo>()
                 .Map(dest => dest.PBI_DrinkingStatus, src => src.AlcoholStatusCode)
@@ -163,7 +175,8 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_MuBiaoSCSheRuLiang, src => src.VegetableIntakeTargetCode)
                 .Map(dest => dest.PBI_YaoWei, src => src.WaistCircumference)
                 .Map(dest => dest.PBI_Weight, src => src.Weight)
-                .Map(dest => dest.PBI_YaoTunBi, src => src.WaistToHipRatio);
+                .Map(dest => dest.PBI_YaoTunBi, src => src.WaistToHipRatio)
+                ;
 
 
 
