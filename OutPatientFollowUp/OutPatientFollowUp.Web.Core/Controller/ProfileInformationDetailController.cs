@@ -43,8 +43,8 @@ public class ProfileInformationDetailController : ControllerBase
     [HttpPost()]
     public async Task<ProfileInformationDetailDto> SaveAsync(string archivesCode, CreateOrUpdateProfileInformationDetailDto input)
     {
-        throw new NotImplementedException();
-        // return _profileInformationDetailAppService.SaveAsync(basicProfileInformationId, input);
+        
+        return await _profileInformationAppService.CreateOrUpdateProfileInformationDetailAsync(archivesCode, input);
     }
 
 }

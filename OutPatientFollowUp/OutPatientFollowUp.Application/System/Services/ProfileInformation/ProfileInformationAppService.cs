@@ -44,6 +44,13 @@ public class ProfileInformationAppService : IProfileInformationAppService
         {
             throw Oops.Oh("患者基本信息不存在");
         }
+                //判断身份证号是否重复
+        var isExist = await _patientBasicInfoRepository.GetByIdcardAndDocterIdAsync(input.BasicProfileInformation.IDCardNumber, manageName);
+        if (isExist != null)
+        {
+            throw  Oops.Oh("身份证号已存在");
+        }
+        patientBasicInfo.ArchivesCode = archivesCode;
         patientBasicInfo.PBI_Gender = input.BasicProfileInformation.Gender ? "男" : "女";
         var patientBasicInfoDetail = await _patientBasicInfoRepository.UpdateAsync(patientBasicInfo);
         return patientBasicInfo.Adapt<ProfileInformationDetailDto>();

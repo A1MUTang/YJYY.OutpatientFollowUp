@@ -189,7 +189,7 @@ public class UserAppService : IUserAppService
         //将验证码存入缓存中
         _memoryCache.Set(input.DoctorPhone + ChangePwdCodeKeyPrefix, code, TimeSpan.FromMinutes(ChangePwdCodeExpiration));
         //发送验证码通过短信的形式
-        _smsHandle.APPSendSM(input.DoctorPhone, messageContent); //TODO 短信发送，记录日志内容
+        _smsHandle.APPSendSM(input.DoctorPhone, messageContent);
         return messageContent;
     }
 #elif RELEASE
