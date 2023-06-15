@@ -9,11 +9,7 @@ public class CreateOrUpdateProfileInformationDetailDto
     public CompleteUpdateBasicProfileInformationDto BasicProfileInformation { get; set; }
 
 
-    /// <summary>
-    /// 民族
-    /// </summary>
-    /// <value></value>
-    public string Ethnicity { get; set; }
+
 
     /// <summary>
     /// 婚姻状况

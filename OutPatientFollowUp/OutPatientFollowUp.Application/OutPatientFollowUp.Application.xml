@@ -191,6 +191,18 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.Ethnicity">
+            <summary>
+            民族
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.EthnicityCode">
+            <summary>
+            民族Code
+            </summary>
+            <value></value>
+        </member>
         <member name="P:OutPatientFollowUp.Application.BasicProfileInformationDto.IDCardNumber">
             <summary>
             身份证号
@@ -279,6 +291,12 @@
         <member name="P:OutPatientFollowUp.Application.CompleteUpdateBasicProfileInformationDto.Gender">
             <summary>
             性别
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CompleteUpdateBasicProfileInformationDto.Ethnicity">
+            <summary>
+            民族
             </summary>
             <value></value>
         </member>
@@ -581,12 +599,6 @@
         <member name="P:OutPatientFollowUp.Application.HealthMonitor.HealthMonitorBaseDto.IDCardNumber">
             <summary>
             身份证号
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateProfileInformationDetailDto.Ethnicity">
-            <summary>
-            民族
             </summary>
             <value></value>
         </member>

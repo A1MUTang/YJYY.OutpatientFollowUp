@@ -29,6 +29,20 @@ public class BasicProfileInformationDto :  IValidatableObject
     public string Gender { get; set; }
 
     /// <summary>
+    /// 民族
+    /// </summary>
+    /// <value></value>
+
+    public string Ethnicity { get; set; }
+
+    /// <summary>
+    /// 民族Code
+    /// </summary>
+    /// <value></value>
+    public string EthnicityCode { get; set; }
+    
+
+    /// <summary>
     /// 身份证号
     /// </summary>
     /// <value></value>

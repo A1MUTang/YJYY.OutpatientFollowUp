@@ -1618,6 +1618,13 @@
             <param name="code"></param>
             <returns></returns>
         </member>
+        <member name="M:OutPatientFollowUp.Core.SY_CoderRepositoryExtensions.GetCodesName(System.String)">
+            <summary>
+            获取字典名称
+            </summary>
+            <param name="codes"></param>
+            <returns></returns>
+        </member>
         <member name="T:OutPatientFollowUp.Core.SY_CodeType">
             <summary>
             编码类型实体类

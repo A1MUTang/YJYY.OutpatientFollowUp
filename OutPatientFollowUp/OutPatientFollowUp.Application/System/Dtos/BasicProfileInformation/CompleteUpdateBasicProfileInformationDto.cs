@@ -16,6 +16,12 @@ public class CompleteUpdateBasicProfileInformationDto : IValidatableObject
     /// </summary>
     /// <value></value>
     public bool Gender { get; set; }
+    
+    /// <summary>
+    /// 民族
+    /// </summary>
+    /// <value></value>
+    public string Ethnicity { get; set; }
 
     /// <summary>
     /// 身份证号
@@ -73,7 +79,7 @@ public class CompleteUpdateBasicProfileInformationDto : IValidatableObject
 
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
     {
-        if (!string.IsNullOrEmpty(IDCardNumber) &&!Regex.IsMatch(IDCardNumber, @"^\d{17}(\d|X)$"))
+        if (!string.IsNullOrEmpty(IDCardNumber) && !Regex.IsMatch(IDCardNumber, @"^\d{17}(\d|X)$"))
         {
             yield return new ValidationResult("身份证号格式不正确", new[] { nameof(IDCardNumber) });
         }
