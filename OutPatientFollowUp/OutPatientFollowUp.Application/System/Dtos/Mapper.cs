@@ -107,12 +107,12 @@ public class Mapper : IRegister
                 .Map(dest => dest.AlcoholStatusCode, src => src.PBI_DrinkingStatus)
                 .Map(dest => dest.Birthday, src => src.PBI_Birthday)
                 .Map(dest => dest.BMI, src => src.PBI_BMI)
-                .Map(dest => dest.ChronicDiseaseCategory, src => "")//TODO:需用通过Code查询数据库获取具体的疾病名称
+                .Map(dest => dest.ChronicDiseaseCategory, src => SY_CoderRepositoryExtensions.GetCodesName(src.PBI_ChronicDiseaseType))//TODO:需用通过Code查询数据库获取具体的疾病名称
                 .Map(dest => dest.ChronicDiseaseCategoryCodes, src => src.PBI_ChronicDiseaseType == null ? "" : src.PBI_ChronicDiseaseType)
                 .Map(dest => dest.DietHabitsCode, src => src.PBI_ShiYanLiang == null ? "SA05" : src.PBI_ShiYanLiang)
                 .Map(dest => dest.DietPreferenceCode, src => src.PBI_YinShiKouWei == null ? "ET06" : src.PBI_YinShiKouWei)
                 .Map(dest => dest.ExerciseHabitsCode, src => src.PBI_YunDongXiGuan == null ? "SP04" : src.PBI_YunDongXiGuan)
-                .Map(dest => dest.FamilyHistory, src => "")//TODO:需用通过Code查询数据库获取具体的疾病名称
+                .Map(dest => dest.FamilyHistory, src => SY_CoderRepositoryExtensions.GetCodesName(src.PBI_FamilyDiseaseType))//TODO:需用通过Code查询数据库获取具体的疾病名称
                 .Map(dest => dest.FamilyHistoryCodes, src => src.PBI_FamilyDiseaseType)//TODO:需用通过Codes查询数据库获取具体的疾病名称拼出用‘,’分隔
                 .Map(dest => dest.FatIntakeCode, src => src.PBI_ZhiFangSheRuLiang == null ? "FAT08" : src.PBI_ZhiFangSheRuLiang)
                 .Map(dest => dest.FruitIntakeEnumCode, src => src.PBI_ShuiGuoSheRuLiang == null ? "FI04" : src.PBI_ShuiGuoSheRuLiang)
@@ -123,8 +123,8 @@ public class Mapper : IRegister
                 .Map(dest => dest.MaritalStatusCode, src => src.PBI_MarryState == null ? "MS05" : src.PBI_MarryState)
                 .Map(dest => dest.OtherChronicDiseases, src => src.PBI_ChronicDiseaseOther)
                 .Map(dest => dest.OtherMedicalHistory, src => "")//TODO 未确认字段 既往病史需要通过对应的字段查询拼接出来 //TODO 既往病史需要枚举ID
-                .Map(dest => dest.PastMedicalHistory, src => "") //TODO 未确认字段
-                .Map(dest => dest.PastMedicalHistoryCodes, src => "")//TODO 未确认字段
+                //.Map(dest => dest.PastMedicalHistory, src => SY_CoderRepositoryExtensions.GetCodesName()) //
+                .Map(dest => dest.PastMedicalHistoryCodes, src => "")
                 .Map(dest => dest.PaymentMethodCode, src => src.PBI_BaoXiaoFangShi == null ? "BX07" : src.PBI_BaoXiaoFangShi)
                 .Map(dest => dest.PopulationCategory, src => src.PBI_AgeType)
                 .Map(dest => dest.RecentEmotionalState, src => src.PBI_FeelBad == "1" ? true : false)
