@@ -23,7 +23,7 @@ public class CityController : ControllerBase
     }
 
     /// <summary>
-    /// 获取城市
+    /// 获取省份
     /// </summary>
     /// <returns></returns>
     [HttpGet("GetProvinceList")]

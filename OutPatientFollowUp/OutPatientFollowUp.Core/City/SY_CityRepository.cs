@@ -77,32 +77,94 @@ public class SY_CityRepository : BaseRepository<SY_City>, ISY_CityRepository
         }
     }
 
-
-    public string GetCodeName(string code)
+    public string GetProvinceCodeByName(string code)
     {
         if (string.IsNullOrEmpty(code))
-        {
-           throw Oops.Oh("编码不能为空");
-        }
-         return Context.Queryable<SY_City>()
-                .Where(x => x.CODE == code)
-                .Select(x => x.CITY)
-                .First();
+             return string.Empty;
+
+        return Context.Queryable<SY_City>()
+            .Where(x => x.CODE == code)
+            .Select(x => x.PROVINCE)
+            .First();
     }
 
+    public string GetCityCodeByName(string code)
+    {
+        if (string.IsNullOrEmpty(code))
+            return string.Empty;
+
+        var city = Context.Queryable<SY_City>()
+            .Where(x => x.CODE == code)
+            .Select(x => x.CITY)
+            .First();
+        if(city == "直辖市")
+        return "";
+        else
+        return city;
+    }
+
+    public string GetCityNameByCode(string name)
+    {
+        if (string.IsNullOrEmpty(name))
+            return string.Empty;
+
+        return Context.Queryable<SY_City>()
+            .Where(x => x.CITY == name)
+            .Select(x => x.CODE)
+            .First();
+    }
+
+    public string GetProvinceNameByCode(string name)
+    {
+        if (string.IsNullOrEmpty(name))
+            return string.Empty;
+
+        return Context.Queryable<SY_City>()
+            .Where(x => x.PROVINCE == name)
+            .Select(x => x.CODE)
+            .First();
+    }
 
 }
 
 
-public static class CityAppServiceExtensions
+public static class CityRepositoryExtensions
 {
     /// <summary>
-    /// 获取字典
+    /// 获取省份名称
     /// </summary>
     /// <param name="code"></param>
     /// <returns></returns>
-    public static string GetCodeName( string code)
+    public static string GetProvinceCodeName( string code)
     {
-        return App.GetService<SY_CityRepository>().GetCodeName(code);
+        return App.GetService<SY_CityRepository>().GetProvinceCodeByName(code);
     }
+
+    /// <summary>
+    /// 获取城市名称
+    /// </summary>
+    /// <param name="code"></param>
+    /// <returns></returns>
+    public static string GetCityCodeName(string code)
+    {
+        return App.GetService<SY_CityRepository>().GetCityCodeByName(code);
+    }
+
+    /// <summary>
+    /// 获取城市编码
+    /// </summary>
+    public static string GetCityCodeByName(string name)
+    {
+        return App.GetService<SY_CityRepository>().GetCityNameByCode(name);
+    }
+
+    /// <summary>
+    /// 获取省份编码
+    /// </summary>
+    public static string GetProvinceCodeByName(string name)
+    {
+        return App.GetService<SY_CityRepository>().GetProvinceNameByCode(name);
+    }
+
+
 }

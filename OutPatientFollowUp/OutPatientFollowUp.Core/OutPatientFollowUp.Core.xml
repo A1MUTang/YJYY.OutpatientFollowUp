@@ -54,9 +54,16 @@
             </summary>
             <value></value>
         </member>
-        <member name="M:OutPatientFollowUp.Core.CityAppServiceExtensions.GetCodeName(System.String)">
+        <member name="M:OutPatientFollowUp.Core.CityRepositoryExtensions.GetProvinceCodeName(System.String)">
             <summary>
-            获取字典
+            获取省份名称
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.CityRepositoryExtensions.GetCityCodeName(System.String)">
+            <summary>
+            获取城市名称
             </summary>
             <param name="code"></param>
             <returns></returns>

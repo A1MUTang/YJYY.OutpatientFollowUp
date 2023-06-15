@@ -30,7 +30,7 @@
         </member>
         <member name="M:OutPatientFollowUp.Web.Core.Controller.CityController.GetProvinceList">
             <summary>
-            获取城市
+            获取省份
             </summary>
             <returns></returns>
         </member>

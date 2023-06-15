@@ -91,11 +91,14 @@ public class Mapper : IRegister
                  .Map(dest => dest.IsTakingAntihypertensiveMeds, src => src.IsHdrug == 1 ? "是" : "否")
 
                 .Map(dest => dest.Gender, src => src.PBI_Gender == "1" ? "男" : "女")
-                .Map(dest => dest.Province, src => "北京")//TODO:需用通过Code查询数据库获取具体的省份名称
-                .Map(dest => dest.City, src => "北京市")
-                .Map(dest => dest.District, src => "顺义区")
-                .Map(dest => dest.AddressLine, src => "自由港B区")//TODO 未确认字段
-                .Map(dest => dest.CurrentAddress, src => "北京市顺义区自由港B区");
+                .Map(dest => dest.Province, src => CityRepositoryExtensions.GetProvinceCodeName(src.PBI_Province))//TODO:需用通过Code查询数据库获取具体的省份名称
+                .Map(dest => dest.City, src => CityRepositoryExtensions.GetCityCodeName(src.PBI_City))
+                .Map(dest => dest.District, src => CityRepositoryExtensions.GetCityCodeName(src.PBI_County))
+                .Map(dest => dest.AddressLine, src => src.PBI_Address)//TODO 未确认字段
+                .Map(dest => dest.CurrentAddress, src => CityRepositoryExtensions.GetProvinceCodeName(src.PBI_Province)
+                                                                                + CityRepositoryExtensions.GetCityCodeName(src.PBI_City
+                                                                                + CityRepositoryExtensions.GetCityCodeName(src.PBI_County)
+                                                                                + src.PBI_Address ));
 
 
         config.ForType<HT_PatientBasicInfo, ProfileInformationDetailDto>()
@@ -132,13 +135,16 @@ public class Mapper : IRegister
                 .Map(dest => dest.WaistCircumference, src => src.PBI_YaoWei)
                 .Map(dest => dest.Weight, src => src.PBI_Weight)
                 .Map(dest => dest.WaistToHipRatio, src => src.PBI_YaoTunBi)
-                .Map(dest => dest.BasicProfileInformation.Address, src => src.PBI_Address)
+                .Map(dest => dest.BasicProfileInformation.Address, src => "")//TODO 未找到对应字段
                 .Map(dest => dest.BasicProfileInformation.Gender, src => src.PBI_Gender == "1" ? "男" : "女")
-                .Map(dest => dest.BasicProfileInformation.Province, src => "北京")//TODO:需用通过Code查询数据库获取具体的省份名称
-                .Map(dest => dest.BasicProfileInformation.City, src => "北京市")
-                .Map(dest => dest.BasicProfileInformation.District, src => "顺义区")
-                .Map(dest => dest.BasicProfileInformation.AddressLine, src => "自由港B区")//TODO 未确认字段
-                .Map(dest => dest.BasicProfileInformation.CurrentAddress, src => "北京市顺义区自由港B区")
+                .Map(dest => dest.BasicProfileInformation.Province, src => CityRepositoryExtensions.GetProvinceCodeName(src.PBI_Province))//TODO:需用通过Code查询数据库获取具体的省份名称
+                .Map(dest => dest.BasicProfileInformation.City, src => CityRepositoryExtensions.GetCityCodeName(src.PBI_City))
+                .Map(dest => dest.BasicProfileInformation.District, src => CityRepositoryExtensions.GetCityCodeName(src.PBI_County))
+                .Map(dest => dest.BasicProfileInformation.AddressLine, src => src.PBI_Address)//TODO 未确认字段
+                .Map(dest => dest.BasicProfileInformation.CurrentAddress, src => CityRepositoryExtensions.GetProvinceCodeName(src.PBI_Province)
+                                                                                + CityRepositoryExtensions.GetCityCodeName(src.PBI_City
+                                                                                + CityRepositoryExtensions.GetCityCodeName(src.PBI_County)
+                                                                                + src.PBI_Address ))
                 .Map(dest => dest.BasicProfileInformation.ArchivesCode, src => src.ArchivesCode)
                 .Map(dest => dest.BasicProfileInformation.Name, src => src.PBI_UserName)
                 .Map(dest => dest.BasicProfileInformation.Address, src => src.PBI_Address)
@@ -176,6 +182,12 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_YaoWei, src => src.WaistCircumference)
                 .Map(dest => dest.PBI_Weight, src => src.Weight)
                 .Map(dest => dest.PBI_YaoTunBi, src => src.WaistToHipRatio)
+                // .Map(dest => dest.PBI_Address, src => src.BasicProfileInformation.Address) //TODO 未找到对应字段
+                .Map(dest => dest.PBI_City, src => CityRepositoryExtensions.GetProvinceCodeByName( src.BasicProfileInformation.Province))
+                .Map(dest => dest.PBI_County, src => CityRepositoryExtensions.GetCityCodeName( src.BasicProfileInformation.City))
+                .Map(dest => dest.PBI_Country, src => CityRepositoryExtensions.GetCityCodeByName(src.BasicProfileInformation.District))
+                .Map(dest => dest.PBI_Address, src => src.BasicProfileInformation.AddressLine)
+
                 ;
 
 
