@@ -29,8 +29,18 @@ public class CityAppService : ICityAppService
         var provinceList = await _cityRepository.GetCityLisAsynct();
         return provinceList;
     }
-    //TODO 根据城市获取对应的区县
 
+
+    /// <summary>
+    /// 根据父级名称获取城市列表
+    /// </summary>
+    /// <param name="parentName"></param>
+    /// <returns></returns>
+    public async Task<IEnumerable<SY_City>> GetCityListByParentNameAsync(string parentName)
+    {
+        var cityList = await _cityRepository.GetCityListByParentNameAsync(parentName);
+        return cityList;
+    }
 
     
 }

@@ -45,11 +45,18 @@ public class BasicProfileInformationDto :  IValidatableObject
     /// </summary>
     /// <value></value>
     public string Address { get; set; }
+
     /// <summary>
     /// 省份
     /// </summary>
     /// <value></value>
     public string Province { get; set; }
+
+    /// <summary>
+    /// 省份Code
+    /// </summary>
+    /// <value></value>
+    public string ProvinceCode { get; set; }
 
     /// <summary>
     /// 市
@@ -58,10 +65,22 @@ public class BasicProfileInformationDto :  IValidatableObject
     public string City { get; set; }
 
     /// <summary>
+    /// 市Code
+    /// </summary>
+    /// <value></value>
+    public string CityCode { get; set; }
+
+    /// <summary>
     /// 区
     /// </summary>
     /// <value></value>
     public string District { get; set; }
+
+    /// <summary>
+    /// 区Code
+    /// </summary>
+    /// <value></value>
+    public string DistrictCode { get; set; }
 
     /// <summary>
     /// 地址行/详细住址

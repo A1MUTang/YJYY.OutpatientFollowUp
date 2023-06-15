@@ -15,6 +15,12 @@ namespace OutPatientFollowUp.Application
         /// </summary>
         /// <returns></returns>
         public Task<IEnumerable<SY_City>> GetProvinceListAsync();
-        //TODO 根据城市获取对应的区县
+
+        /// <summary>
+        /// 根据父级名称获取城市列表
+        /// </summary>
+        /// <param name="parentName"></param>
+        /// <returns></returns>
+        public  Task<IEnumerable<SY_City>> GetCityListByParentNameAsync(string parentName);
     }
 }

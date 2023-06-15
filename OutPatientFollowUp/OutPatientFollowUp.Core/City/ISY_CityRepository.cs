@@ -5,7 +5,7 @@ namespace OutPatientFollowUp.Core
 {
     public interface ISY_CityRepository : IBaseRepository<SY_City>
     {
-        
+
         /// <summary>
         /// 根据编码获取城市
         /// </summary>
@@ -25,6 +25,13 @@ namespace OutPatientFollowUp.Core
         /// <param name="parentCode"></param>
         /// <returns></returns>
         public Task<IEnumerable<SY_City>> GetCityListByParentIDAsync(string parentCode);
+
+        /// <summary>
+        /// 根据父级名称获取城市列表
+        /// </summary>
+        /// <param name="parentName"></param>
+        /// <returns></returns>
+        public Task<IEnumerable<SY_City>> GetCityListByParentNameAsync(string parentName);
 
     }
 }

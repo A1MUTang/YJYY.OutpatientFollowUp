@@ -1,3 +1,4 @@
+using System.Buffers;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Furion;
@@ -43,6 +44,18 @@ public class SY_CityRepository : BaseRepository<SY_City>, ISY_CityRepository
          })
          .ToListAsync();
     }
+    
+    public async Task<IEnumerable<SY_City>> GetCityListByParentNameAsync(string parentName)
+    {
+        if (!string.IsNullOrEmpty(parentName))
+            throw Oops.Oh("父级名称不能为空");
+        
+        var code = GetCityNameByCode(parentName);
+        if (!string.IsNullOrEmpty(code))
+            code = GetProvinceCodeByName(parentName);
+        return await GetCityListByParentIDAsync(code);
+    }
+
 
     public async Task<IEnumerable<SY_City>> GetCityListByParentIDAsync(string parentCode)
     {

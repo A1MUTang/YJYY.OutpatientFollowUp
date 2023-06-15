@@ -24,6 +24,13 @@
             <param name="parentCode"></param>
             <returns></returns>
         </member>
+        <member name="M:OutPatientFollowUp.Core.ISY_CityRepository.GetCityListByParentNameAsync(System.String)">
+            <summary>
+            根据父级名称获取城市列表
+            </summary>
+            <param name="parentName"></param>
+            <returns></returns>
+        </member>
         <member name="P:OutPatientFollowUp.Core.SY_City.PROVINCE">
             <summary>
             省份
@@ -67,6 +74,16 @@
             </summary>
             <param name="code"></param>
             <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.CityRepositoryExtensions.GetCityCodeByName(System.String)">
+            <summary>
+            获取城市编码
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.CityRepositoryExtensions.GetProvinceCodeByName(System.String)">
+            <summary>
+            获取省份编码
+            </summary>
         </member>
         <member name="T:OutPatientFollowUp.Core.DbContext">
             <summary>

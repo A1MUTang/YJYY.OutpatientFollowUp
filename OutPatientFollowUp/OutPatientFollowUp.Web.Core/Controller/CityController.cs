@@ -42,5 +42,4 @@ public class CityController : ControllerBase
         return await _cityAppService.GetCityListAsync(code);
     }
 
-
 }
