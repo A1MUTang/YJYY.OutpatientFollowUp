@@ -161,6 +161,7 @@ public class Mapper : IRegister
                  .Map(dest => dest.BasicProfileInformation.IsTakingAntihypertensiveMeds, src => src.IsHdrug == 1 ? "是" : "否");
 
         config.ForType<CreateOrUpdateProfileInformationDetailDto, HT_PatientBasicInfo>()
+                .Map(dest => dest.PBI_Gender, src => src.BasicProfileInformation.Gender ? "1" : "2")
                 .Map(dest => dest.PBI_DrinkingStatus, src => src.AlcoholStatusCode)
                 .Map(dest => dest.PBI_Birthday, src => ProfileInformationDetailTool.GetBirthdayFromIdCard(src.BasicProfileInformation.IDCardNumber))
                 .Map(dest => dest.PBI_BMI, src => src.BMI)
@@ -179,7 +180,7 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_ChronicDiseaseOther, src => src.OtherChronicDiseases)
                 .Map(dest => dest.PBI_BaoXiaoFangShi, src => src.PaymentMethodCode)
                 .Map(dest => dest.PBI_AgeType, src => ProfileInformationDetailTool.GetPopulationCategory(src.BasicProfileInformation.IDCardNumber))
-                .Map(dest => dest.PBI_FeelBad, src => src.RecentEmotionalState)
+                .Map(dest => dest.PBI_FeelBad, src => src.RecentEmotionalState ? "1" : "0")
                 .Map(dest => dest.PBI_KongYanLiang, src => src.SaltTargetCode)
                 .Map(dest => dest.PBI_ShuiMinShiJian, src => src.SleepDurationCode)
                 .Map(dest => dest.PBI_ShuiMinXiGuan, src => src.SleepHabitCode)
@@ -200,7 +201,6 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_Country, src => CityRepositoryExtensions.GetCityCodeByName(src.BasicProfileInformation.District))
                 .Map(dest => dest.PBI_Address, src => src.BasicProfileInformation.AddressLine)
                 ;
-
 
 
     }
