@@ -184,8 +184,6 @@ public class ProfileInformationAppService : IProfileInformationAppService
             output.PastMedicalHistory = string.Join(',', pastMedicalHistory);
             output.OtherMedicalHistory = supplementaryExam.SE_OtherTxt;
         }
-
-
         return output;
     }
 
