@@ -140,7 +140,7 @@ public class Mapper : IRegister
                 .Map(dest => dest.WaistCircumference, src => src.PBI_YaoWei)
                 .Map(dest => dest.Weight, src => src.PBI_Weight)
                 .Map(dest => dest.WaistToHipRatio, src => src.PBI_YaoTunBi)
-                .Map(dest => dest.BasicProfileInformation.Address, src => "")//TODO 未找到对应字段
+                .Map(dest => dest.BasicProfileInformation.Address, src => src. PBI_OriginPlace)//TODO 未找到对应字段，先填充到籍贯内
                 .Map(dest => dest.BasicProfileInformation.Gender, src => src.PBI_Gender == "1" ? "男" : "女")
                 .Map(dest => dest.BasicProfileInformation.Ethnicity, src => SY_CoderRepositoryExtensions.GetCodeName(src.PBI_Nation))
                 .Map(dest => dest.BasicProfileInformation.EthnicityCode, src => src.PBI_Nation)
@@ -198,16 +198,13 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_ICard, src => src.BasicProfileInformation.IDCardNumber)
                 .Map(dest => dest.PBI_PersonPhone, src => src.BasicProfileInformation.PhoneNumber)
                 .Map(dest => dest.PBI_Province, src => src.BasicProfileInformation.Province)
-                // .Map(dest => dest.PBI_Address, src => src.BasicProfileInformation.Address) //TODO 未找到对应字段
                 .Map(dest => dest.PBI_City, src => src.BasicProfileInformation.Province)
                 .Map(dest => dest.PBI_County, src => src.BasicProfileInformation.City)
                 .Map(dest => dest.PBI_Country, src => src.BasicProfileInformation.District)
                 .Map(dest => dest.PBI_Address, src => src.BasicProfileInformation.AddressLine)
+                .Map(dest => dest.PBI_OriginPlace, src => src.BasicProfileInformation.Address)//TODO 未找到对应字段，先对应到籍贯字段
                 .Map(dest => dest.IsSdrug, src => src.BasicProfileInformation.IsTakingAntidiabeticMeds ? "1" : "0")
                 .Map(dest => dest.IsHdrug, src => src.BasicProfileInformation.IsTakingAntihypertensiveMeds ? "1" : "0")
-
                 ;
-
-
     }
 }
