@@ -47,6 +47,8 @@ namespace OutPatientFollowUp.Application.HealthMonitor;
         /// <value></value>
         public string BloodLipidsResult { get; set; }
 
+        //TODO :健康监测结果都添加枚举索引
+
         /// <summary>
         /// 健康建议
         /// </summary>

@@ -22,9 +22,10 @@ namespace OutPatientFollowUp.Core;
 [JsonConverter(typeof(JsonStringEnumConverter))]
 public enum PastMedicalHistoryEnum
 {
+    //TODO 有些枚举值没有对应的字段，需要确认
     [Display(Name = "未发现")]
     None,
-    [Display(Name = "高血压")]
+    [Display(Name = "高血压")] //没有对应字段
     Hypertension,
     [Display(Name = "脑血管病")]
     CerebrovascularDisease,
@@ -38,9 +39,9 @@ public enum PastMedicalHistoryEnum
     DiabetesType2,
     [Display(Name = "肾病")]
     KidneyDisease,
-    [Display(Name = "多囊卵巢综合征（PCOS）")]
+    [Display(Name = "多囊卵巢综合征（PCOS）")] //没有对应字段
     PCOS,
-    [Display(Name = "妊娠糖尿病史")]
+    [Display(Name = "妊娠糖尿病史")] //没有对应字段
     GestationalDiabetes,
     [Display(Name = "黑棘皮症")]
     AcanthosisNigricans

@@ -1359,6 +1359,773 @@
             <remarks>仅修改不为空的字段</remarks>
             <param name="patientBasicInfo"></param>
         </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_ID">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.UserID">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.ArchivesCode">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IS_Check">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IsXZ">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TC">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TC_MG">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_HDL">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_HDL_MG">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_LDL">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_LDL_MG">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_ISXT">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_KFXT">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_CHXT">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_THXHDB">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_OGTT2h">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_SJXT">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_THDB">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_ISSGN">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_NiaoSu">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_NiaoSuan">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_JiGan">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_EGFR">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_ISWLDB">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_DBN">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_JGB">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_ISXDT">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_XDT">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_XDT_Other">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_ISCSXDT">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_CSXDT">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_CSXDT_Type">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_CSXDT_Other">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_ISTXBGAS">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TXBGAS">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_ISSWMBB">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_SWMBB_Type">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_SWMBB_Other">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_ISJDMBSD">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_JDMBSD_left">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_JDMBSD_right">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_ISABI">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_ABI_left">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_ABI_right">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IS_Electrolyte">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_K">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_Na">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_Chlorine">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IsDisease">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IS_GXY">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_GXY_Date">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IS_NXG">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_NXG_DATE">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_NXG_Type">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IS_XZJB">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_XZJB_DATE">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_XZJB_Type">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IS_WZXGB">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_WZXGB_DATE">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IS_TNB">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TNB_DATE">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IS_SB">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_SB_Date">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_SB_Type">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.CreateTime">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IS_Other">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_OtherTxt">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IS_LNMRI">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IS_LNCT">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_LNCT">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_LNCT_Other">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_LNMRI_Other">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_LNMRI">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_StandardCalcium">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_MeasuredCalcium">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TotalCalcium">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_PH">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TG">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TG_MG">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IS_SWMJB">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_SWMJB_Type">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_CXSC_DATE">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_SRTSZ_DATE">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TNBBFZ">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TNBBFZ_Type">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TNBSBDate">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TNBSBFQ">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TNBSWMBBFQ">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TNBSWMBBDate">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TNBZWSJBBDate">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TNBZWXGBBBW">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TNBZWXGBBDate">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TNBZBW">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TNBZDate">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TNBTZSZDDate">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TNBGSZHZDate">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TNBOTHER_Name">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TNBOTHERDate">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IS_PCOS">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_PCOS_Date">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_Acanthosis_Date">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IS_Acanthosis">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_XJGS_DATE">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_NCX_DATE">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_QXNZZ_DATE">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_DZNQX_DATE">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_WDXJT_DATE">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_JXGMZHZ_DATE">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_GZDMCJ_DATE">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_FBMFC_DATE">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_MXXlSJ_DATE">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_NYHA_FC">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_ExistFluidRetention">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_SGNSS_Date">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_BMFC_DATE">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_OtherDate">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IS_GDM">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_GDM_Date">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_JDMCS_Type">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IS_JDMCS">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_JDMCS_Other">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_TNB_Type">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_IS_SWMBB">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.PBI_ContactName1">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.PBI_ContactName2">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_GYSZ">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.UpdateTime">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.CheckCBC">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.Hb">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.RBC">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.WBC">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.PLT">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.HCT">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.MCV">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.MCHC">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.BiochemicalBlood">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.ALT">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.AST">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.TBIL">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.DBIL">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.IBIL">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.BloodElectrolyte">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.BE_Na">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.BE_K">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.BE_Cl">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.Thyroid">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.T3">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.FT3">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.T4">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.FT4">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.TSH">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.T3T4">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HT_SupplementaryExamRepositoryExtensions.GetByPatientBasicInfoIdAsync(System.String)">
+            <summary>
+            根据患者基本信息ID获取患者补充检查信息。
+            </summary>
+            <param name="archivesCode"></param>
+            <returns></returns>
+        </member>
         <member name="M:OutPatientFollowUp.Core.ISF_IDManageRepository.GetManangeID(System.String)">
             <summary>
             获取ManageID
