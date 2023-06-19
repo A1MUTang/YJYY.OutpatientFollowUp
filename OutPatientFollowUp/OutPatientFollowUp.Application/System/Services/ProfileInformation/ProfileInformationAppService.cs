@@ -113,6 +113,10 @@ public class ProfileInformationAppService : IProfileInformationAppService
         var supplementaryExam = await _supplementaryExamRepository.GetByArchivesCode(archivesCode);
         var pastMedicalHistoryCodes = new StringBuilder();
         var otherMedicalHistory = new StringBuilder();
+        if(supplementaryExam == null)
+        {
+            return (pastMedicalHistoryCodes.ToString(), otherMedicalHistory.ToString());
+        }
         if (supplementaryExam.SE_IS_NXG == "1")
         {
             pastMedicalHistoryCodes.Append("2,");
