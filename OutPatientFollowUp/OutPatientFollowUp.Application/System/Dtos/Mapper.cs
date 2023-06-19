@@ -16,10 +16,10 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_Address, src => src.Address)
                 .Map(dest => dest.PBI_Age, src => ProfileInformationDetailTool.GetAgeFromIdCard(src.IDCardNumber))
                 .Map(dest => dest.PBI_ICard, src => src.IDCardNumber)
-                .Map(dest => dest.IsSdrug, src => src.IsTakingAntidiabeticMeds)
-                .Map(dest => dest.IsHdrug, src => src.IsTakingAntihypertensiveMeds)
+                .Map(dest => dest.IsSdrug, src => src.IsTakingAntidiabeticMeds ? "1" : "0")
+                .Map(dest => dest.IsHdrug, src => src.IsTakingAntihypertensiveMeds ? "1" : "0")
                 .Map(dest => dest.PBI_PersonPhone, src => src.PhoneNumber)
-                .Map(dest => dest.PBI_Gender, src => src.Gender == true ? "1" : "2")
+                .Map(dest => dest.PBI_Gender, src => src.Gender ? "1" : "2")
                 .Map(dest => dest.PBI_AgeType, src => ProfileInformationDetailTool.GetPopulationCategory(src.IDCardNumber).ToString())
                 .Map(dest => dest.PBI_Birthday, src => ProfileInformationDetailTool.GetBirthdayFromIdCard(src.IDCardNumber))
                 .Map(dest => dest.PBI_City, src => src.Province)
@@ -127,11 +127,9 @@ public class Mapper : IRegister
                 .Map(dest => dest.HipCircumference, src => src.PBI_TunWei)
                 .Map(dest => dest.MaritalStatusCode, src => src.PBI_MarryState == null ? "MS05" : src.PBI_MarryState)
                 .Map(dest => dest.OtherChronicDiseases, src => src.PBI_ChronicDiseaseOther)
-                .Map(dest => dest.OtherMedicalHistory, src => "")//TODO 未确认字段 既往病史需要通过对应的字段查询拼接出来 //TODO 既往病史需要枚举ID
-                                                                                   //.Map(dest => dest.PastMedicalHistory, src => SY_CoderRepositoryExtensions.GetCodesName()) //
                 .Map(dest => dest.PastMedicalHistoryCodes, src => "")
                 .Map(dest => dest.PaymentMethodCode, src => src.PBI_BaoXiaoFangShi == null ? "BX07" : src.PBI_BaoXiaoFangShi)
-                .Map(dest => dest.PopulationCategory, src => src.PBI_AgeType)
+                .Map(dest => dest.PopulationCategory, src => SY_CoderRepositoryExtensions.GetCodeName(src.PBI_AgeType))
                 .Map(dest => dest.RecentEmotionalState, src => src.PBI_FeelBad == "1" ? true : false)
                 .Map(dest => dest.SaltTargetCode, src => src.PBI_KongYanLiang == null ? "不详" : src.PBI_KongYanLiang)
                 .Map(dest => dest.SleepDurationCode, src => src.PBI_ShuiMinShiJian == null ? "ST07" : src.PBI_ShuiMinShiJian)
@@ -163,7 +161,7 @@ public class Mapper : IRegister
                 .Map(dest => dest.BasicProfileInformation.IDCardNumber, src => src.PBI_ICard)
                 .Map(dest => dest.BasicProfileInformation.PhoneNumber, src => src.PBI_PersonPhone)
                 .Map(dest => dest.BasicProfileInformation.IsTakingAntidiabeticMeds, src => src.IsSdrug == 1 ? "是" : "否")
-                 .Map(dest => dest.BasicProfileInformation.IsTakingAntihypertensiveMeds, src => src.IsHdrug == 1 ? "是" : "否");
+                .Map(dest => dest.BasicProfileInformation.IsTakingAntihypertensiveMeds, src => src.IsHdrug == 1 ? "是" : "否");
 
         config.ForType<CreateOrUpdateProfileInformationDetailDto, HT_PatientBasicInfo>()
                 .Map(dest => dest.PBI_Gender, src => src.BasicProfileInformation.Gender ? "1" : "2")
@@ -205,6 +203,9 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_County, src => src.BasicProfileInformation.City)
                 .Map(dest => dest.PBI_Country, src => src.BasicProfileInformation.District)
                 .Map(dest => dest.PBI_Address, src => src.BasicProfileInformation.AddressLine)
+                .Map(dest => dest.IsSdrug, src => src.BasicProfileInformation.IsTakingAntidiabeticMeds ? "1" : "0")
+                .Map(dest => dest.IsHdrug, src => src.BasicProfileInformation.IsTakingAntihypertensiveMeds ? "1" : "0")
+
                 ;
 
 
