@@ -1,3 +1,4 @@
+using System.Text;
 using System.Security.Claims;
 using OutPatientFollowUp.Core;
 
@@ -98,9 +99,71 @@ public class ProfileInformationAppService : IProfileInformationAppService
         var updateEntity = input.Adapt<HT_PatientBasicInfo>();
         updateEntity.ArchivesCode = archivesCode;
         var patientBasicInfoDetail = await _patientBasicInfoRepository.UpdateAsync(updateEntity);
+        var output = patientBasicInfo.Adapt<ProfileInformationDetailDto>();
+        var (pastMedicalHistoryCodes, otherMedicalHistory) = await GetPastMedicalHistoryCodes(archivesCode);
+
+        output.PastMedicalHistoryCodes = pastMedicalHistoryCodes;
+        output.PastMedicalHistory = otherMedicalHistory;
         return patientBasicInfo.Adapt<ProfileInformationDetailDto>();
 
     }
+
+    private async Task<(string, string)> GetPastMedicalHistoryCodes(string archivesCode)
+    {
+        var supplementaryExam = await _supplementaryExamRepository.GetByArchivesCode(archivesCode);
+        var pastMedicalHistoryCodes = new StringBuilder();
+        var otherMedicalHistory = new StringBuilder();
+        if (supplementaryExam.SE_IS_NXG == "1")
+        {
+            pastMedicalHistoryCodes.Append("2,");
+            otherMedicalHistory.Append("脑血管病,");
+        }
+        if (supplementaryExam.SE_IS_XZJB == "1")
+        {
+            pastMedicalHistoryCodes.Append("3,");
+            otherMedicalHistory.Append("心脏疾病,");
+        }
+        if (supplementaryExam.SE_IS_WZXGB == "1")
+        {
+            pastMedicalHistoryCodes.Append("4,");
+            otherMedicalHistory.Append("外周血管病,");
+        }
+        if (supplementaryExam.SE_IS_SWMJB == "1")
+        {
+            pastMedicalHistoryCodes.Append("5,");
+            otherMedicalHistory.Append("视网膜疾病,");
+        }
+        if (supplementaryExam.SE_IS_TNB == "1")
+        {
+            pastMedicalHistoryCodes.Append("6,");
+            otherMedicalHistory.Append("糖尿病（Ⅱ型）,");
+        }
+        if (supplementaryExam.SE_IS_SB == "1")
+        {
+            pastMedicalHistoryCodes.Append("7,");
+            otherMedicalHistory.Append("肾病,");
+        }
+        if (supplementaryExam.SE_IS_Acanthosis == "1")
+        {
+            pastMedicalHistoryCodes.Append("8,");
+            otherMedicalHistory.Append("黑棘皮症,");
+        }
+        if (supplementaryExam.SE_IS_Other == "1")
+        {
+            pastMedicalHistoryCodes.Append("9,");
+            otherMedicalHistory.Append(supplementaryExam.SE_OtherTxt + ",");
+        }
+        if (pastMedicalHistoryCodes.Length == 0 && otherMedicalHistory.Length == 0)
+        {
+            pastMedicalHistoryCodes.Append("0,");
+            otherMedicalHistory.Append("未发现,");
+        }
+
+        pastMedicalHistoryCodes = pastMedicalHistoryCodes.Remove(pastMedicalHistoryCodes.Length - 1, 1);
+        otherMedicalHistory = otherMedicalHistory.Remove(otherMedicalHistory.Length - 1, 1);
+        return (pastMedicalHistoryCodes.ToString(), otherMedicalHistory.ToString());
+    }
+
     private (string, string, string) GetLoginInfo()
     {
         var doctorId = App.User?.FindFirstValue("UserID");
@@ -128,63 +191,10 @@ public class ProfileInformationAppService : IProfileInformationAppService
         {
             throw Oops.Oh("患者基本信息不存在");
         }
-        //填充既往病史
-        var supplementaryExam = await _supplementaryExamRepository.GetByArchivesCode(archivesCode);
         var output = patientBasicInfo.Adapt<ProfileInformationDetailDto>();
-
-        if (supplementaryExam != null)
-        {
-            var pastMedicalHistoryCodes = new List<int>();
-            var pastMedicalHistory = new List<string>();
-            if (supplementaryExam.SE_IS_NXG == "1")
-            {
-                pastMedicalHistoryCodes.Add(2);
-                pastMedicalHistory.Add("脑血管病");
-            }
-            if (supplementaryExam.SE_IS_XZJB == "1")
-            {
-                pastMedicalHistoryCodes.Add(3);
-                pastMedicalHistory.Add("心脏疾病");
-            }
-            if (supplementaryExam.SE_IS_WZXGB == "1")
-            {
-                pastMedicalHistoryCodes.Add(4);
-                pastMedicalHistory.Add("外周血管病");
-            }
-            if (supplementaryExam.SE_IS_SWMJB == "1")
-            {
-                pastMedicalHistoryCodes.Add(5);
-                pastMedicalHistory.Add("视网膜疾病");
-            }
-            if (supplementaryExam.SE_IS_TNB == "1")
-            {
-                pastMedicalHistoryCodes.Add(6);
-                pastMedicalHistory.Add("糖尿病（Ⅱ型）");
-            }
-            if (supplementaryExam.SE_IS_SB == "1")
-            {
-                pastMedicalHistoryCodes.Add(7);
-                pastMedicalHistory.Add("肾病");
-            }
-            if (supplementaryExam.SE_IS_Acanthosis == "1")
-            {
-                pastMedicalHistoryCodes.Add(8);
-                pastMedicalHistory.Add("黑棘皮症");
-            }
-            if (supplementaryExam.SE_IS_Other == "1")
-            {
-                pastMedicalHistoryCodes.Add(9);
-                pastMedicalHistory.Add("其他");
-            }
-            if (pastMedicalHistoryCodes.Count == 0)
-            {
-                pastMedicalHistoryCodes.Add(1);
-                pastMedicalHistory.Add("未发现");
-            }
-            output.PastMedicalHistoryCodes = string.Join(',', pastMedicalHistoryCodes);
-            output.PastMedicalHistory = string.Join(',', pastMedicalHistory);
-            output.OtherMedicalHistory = supplementaryExam.SE_OtherTxt;
-        }
+        var (pastMedicalHistoryCodes, otherMedicalHistory) = await GetPastMedicalHistoryCodes(archivesCode);
+        output.PastMedicalHistoryCodes = pastMedicalHistoryCodes;
+        output.OtherChronicDiseases = otherMedicalHistory;
         return output;
     }
 

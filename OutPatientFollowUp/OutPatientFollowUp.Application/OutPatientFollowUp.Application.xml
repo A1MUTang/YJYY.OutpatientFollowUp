@@ -953,7 +953,7 @@
             <summary>
             新密码 
             </summary>
-            <param name="=="></param>
+            <param name=""></param>
             <remarks>密码必须包含数字和大小写字母符号，长度在 6 到 16 个字符之间</remarks>
             <returns></returns>
         </member>
