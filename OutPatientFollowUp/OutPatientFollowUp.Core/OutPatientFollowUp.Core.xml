@@ -2119,13 +2119,6 @@
             
              </summary>
         </member>
-        <member name="M:OutPatientFollowUp.Core.HT_SupplementaryExamRepositoryExtensions.GetByPatientBasicInfoIdAsync(System.String)">
-            <summary>
-            根据患者基本信息ID获取患者补充检查信息。
-            </summary>
-            <param name="archivesCode"></param>
-            <returns></returns>
-        </member>
         <member name="M:OutPatientFollowUp.Core.ISF_IDManageRepository.GetManangeID(System.String)">
             <summary>
             获取ManageID
@@ -2229,6 +2222,13 @@
             <param name="manageName"></param>
             <returns></returns>
         </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_SupplementaryExamRepository.GetByArchivesCode(System.String)">
+            <summary>
+            根据档案号获取最新的补充检查信息
+            </summary>
+            <param name="archivesCode">档案号</param>
+            <returns></returns>
+        </member>
         <member name="M:OutPatientFollowUp.Core.ISY_CoderRepository.GetDicionary">
             <summary>
             获取字典
@@ -2240,6 +2240,13 @@
             根据编码获取名称
             </summary>
             <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.ISY_CoderRepository.GetCodeByName(System.String)">
+            <summary>
+            根据名称获取编码
+            </summary>
+            <param name="codeName"></param>
             <returns></returns>
         </member>
         <member name="T:OutPatientFollowUp.Core.PT_OrgnameForParent">
@@ -2380,7 +2387,7 @@
         </member>
         <member name="M:OutPatientFollowUp.Core.SY_CoderRepositoryExtensions.GetCodeName(System.String)">
             <summary>
-            获取字典
+            获取字典名称
             </summary>
             <param name="code"></param>
             <returns></returns>
@@ -2390,6 +2397,13 @@
             获取字典名称
             </summary>
             <param name="codes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.SY_CoderRepositoryExtensions.GetCodeByName(System.String)">
+            <summary>
+            根据名称获取编码
+            </summary>
+            <param name="codeName"></param>
             <returns></returns>
         </member>
         <member name="T:OutPatientFollowUp.Core.SY_CodeType">

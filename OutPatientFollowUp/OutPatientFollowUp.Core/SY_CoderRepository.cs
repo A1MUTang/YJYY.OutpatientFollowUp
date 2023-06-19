@@ -56,12 +56,24 @@ public class SY_CoderRepository : BaseRepository<SY_Code>, ISY_CoderRepository
             .ToList();
     }
 
+    public string GetCodeByName(string codeName)
+    {
+        if (string.IsNullOrEmpty(codeName))
+            throw Oops.Oh("编码名称不能为空");
+
+        return  Context.Queryable<SY_Code>()
+            .Where(x => x.SYC_Name == codeName)
+            .Select(x => x.SYC_Code)
+            .First();
+
+    }
+
 }
 
 public static class SY_CoderRepositoryExtensions
 {
     /// <summary>
-    /// 获取字典
+    /// 获取字典名称
     /// </summary>
     /// <param name="code"></param>
     /// <returns></returns>
@@ -84,4 +96,16 @@ public static class SY_CoderRepositoryExtensions
         var nameList = App.GetService<SY_CoderRepository>().GetCodesName(codesList);
         return string.Join(',', nameList);
     }
+
+    /// <summary>
+    /// 根据名称获取编码
+    /// </summary>
+    /// <param name="codeName"></param>
+    /// <returns></returns>
+    public   static string GetCodeByName(string codeName)
+    {
+        return App.GetService<ISY_CoderRepository>().GetCodeByName(codeName);
+    }
+
+
 }

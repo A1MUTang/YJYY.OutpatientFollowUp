@@ -4,7 +4,7 @@ using Furion.DependencyInjection;
 
 namespace OutPatientFollowUp.Core
 {
-    public interface ISY_CoderRepository : IBaseRepository<SY_Code>,ITransient
+    public interface ISY_CoderRepository : IBaseRepository<SY_Code>, ITransient
     {
         /// <summary>
         /// 获取字典
@@ -18,5 +18,12 @@ namespace OutPatientFollowUp.Core
         /// <param name="code"></param>
         /// <returns></returns>
         public string GetCodeName(string code);
+        /// <summary>
+        /// 根据名称获取编码
+        /// </summary>
+        /// <param name="codeName"></param>
+        /// <returns></returns>
+        public string GetCodeByName(string codeName);
+
     }
 }

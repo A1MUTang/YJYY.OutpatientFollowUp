@@ -81,6 +81,7 @@ public class ProfileInformationAppService : IProfileInformationAppService
 
         await _supplementaryExamRepository.InsertAsync(new HT_SupplementaryExam()
         {
+            SE_ID = await _idAppService.GetNewManangeID("HT_SupplementaryExam", "SE"),
             ArchivesCode = archivesCode,
             CreateTime = DateTime.Now,
             SE_IS_NXG = SE_IS_NXG,

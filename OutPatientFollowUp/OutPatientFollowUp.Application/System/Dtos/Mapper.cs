@@ -20,9 +20,12 @@ public class Mapper : IRegister
                 .Map(dest => dest.IsHdrug, src => src.IsTakingAntihypertensiveMeds)
                 .Map(dest => dest.PBI_PersonPhone, src => src.PhoneNumber)
                 .Map(dest => dest.PBI_Gender, src => src.Gender == true ? "1" : "2")
-                .Map(dest => dest.PBI_AgeType, src => ProfileInformationDetailTool.GetPopulationCategory(src.IDCardNumber).GetName())
+                .Map(dest => dest.PBI_AgeType, src => ProfileInformationDetailTool.GetPopulationCategory(src.IDCardNumber).ToString())
                 .Map(dest => dest.PBI_Birthday, src => ProfileInformationDetailTool.GetBirthdayFromIdCard(src.IDCardNumber))
-
+                .Map(dest => dest.PBI_City, src => src.Province)
+                .Map(dest => dest.PBI_County, src => src.City)
+                .Map(dest => dest.PBI_Country, src => src.District)
+                .Map(dest => dest.PBI_Address, src => src.AddressLine)
                 // .Map(dest => dest.PBI_YaoWei, src => "")
                 // .Map(dest => dest.PBI_Height, src => "")//默认为空
                 // .Map(dest => dest.PBI_FamilyDiseaseType, src => "") //默认为空
@@ -45,7 +48,7 @@ public class Mapper : IRegister
                 // ET05	嗜油
                 // ET06	不详
                 .Map(dest => dest.PBI_YinShiKouWei, src => "ET06")
-                .Map(dest => dest.PBI_Nation, src => src.EthnicityCode) 
+                .Map(dest => dest.PBI_Nation, src => SY_CoderRepositoryExtensions.GetCodeByName(src.EthnicityCode))
                 //SP01	不运动
                 //SP02	有氧运动
                 //SP03	剧烈运动
@@ -94,6 +97,8 @@ public class Mapper : IRegister
                 .Map(dest => dest.ProvinceCode, src => src.PBI_Province)
                 .Map(dest => dest.CityCode, src => src.PBI_City)
                 .Map(dest => dest.DistrictCode, src => src.PBI_County)
+                 .Map(dest => dest.Ethnicity, src => SY_CoderRepositoryExtensions.GetCodeName(src.PBI_Nation))
+                .Map(dest => dest.EthnicityCode, src => src.PBI_Nation)
                 .Map(dest => dest.Province, src => CityRepositoryExtensions.GetProvinceCodeName(src.PBI_Province))
                 .Map(dest => dest.City, src => CityRepositoryExtensions.GetCityCodeName(src.PBI_City))
                 .Map(dest => dest.District, src => CityRepositoryExtensions.GetCityCodeName(src.PBI_County))
@@ -122,8 +127,8 @@ public class Mapper : IRegister
                 .Map(dest => dest.HipCircumference, src => src.PBI_TunWei)
                 .Map(dest => dest.MaritalStatusCode, src => src.PBI_MarryState == null ? "MS05" : src.PBI_MarryState)
                 .Map(dest => dest.OtherChronicDiseases, src => src.PBI_ChronicDiseaseOther)
-                .Map(dest => dest.OtherMedicalHistory, src => src.PBI_IsOtherDrugs)//TODO 未确认字段 既往病史需要通过对应的字段查询拼接出来 //TODO 既往病史需要枚举ID
-                //.Map(dest => dest.PastMedicalHistory, src => SY_CoderRepositoryExtensions.GetCodesName()) //
+                .Map(dest => dest.OtherMedicalHistory, src => "")//TODO 未确认字段 既往病史需要通过对应的字段查询拼接出来 //TODO 既往病史需要枚举ID
+                                                                                   //.Map(dest => dest.PastMedicalHistory, src => SY_CoderRepositoryExtensions.GetCodesName()) //
                 .Map(dest => dest.PastMedicalHistoryCodes, src => "")
                 .Map(dest => dest.PaymentMethodCode, src => src.PBI_BaoXiaoFangShi == null ? "BX07" : src.PBI_BaoXiaoFangShi)
                 .Map(dest => dest.PopulationCategory, src => src.PBI_AgeType)
@@ -139,9 +144,9 @@ public class Mapper : IRegister
                 .Map(dest => dest.WaistToHipRatio, src => src.PBI_YaoTunBi)
                 .Map(dest => dest.BasicProfileInformation.Address, src => "")//TODO 未找到对应字段
                 .Map(dest => dest.BasicProfileInformation.Gender, src => src.PBI_Gender == "1" ? "男" : "女")
-                .Map(dest => dest.BasicProfileInformation.Ethnicity, src => SY_CoderRepositoryExtensions.GetCodeName(src.PBI_Nation)) 
+                .Map(dest => dest.BasicProfileInformation.Ethnicity, src => SY_CoderRepositoryExtensions.GetCodeName(src.PBI_Nation))
                 .Map(dest => dest.BasicProfileInformation.EthnicityCode, src => src.PBI_Nation)
-                .Map(dest => dest.BasicProfileInformation.Province, src => src.PBI_Province)
+                .Map(dest => dest.BasicProfileInformation.ProvinceCode, src => src.PBI_Province)
                 .Map(dest => dest.BasicProfileInformation.CityCode, src => src.PBI_City)
                 .Map(dest => dest.BasicProfileInformation.DistrictCode, src => src.PBI_County)
                 .Map(dest => dest.BasicProfileInformation.Province, src => CityRepositoryExtensions.GetProvinceCodeName(src.PBI_Province))
@@ -196,9 +201,9 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_PersonPhone, src => src.BasicProfileInformation.PhoneNumber)
                 .Map(dest => dest.PBI_Province, src => src.BasicProfileInformation.Province)
                 // .Map(dest => dest.PBI_Address, src => src.BasicProfileInformation.Address) //TODO 未找到对应字段
-                .Map(dest => dest.PBI_City, src => CityRepositoryExtensions.GetProvinceCodeByName(src.BasicProfileInformation.Province))
-                .Map(dest => dest.PBI_County, src => CityRepositoryExtensions.GetCityCodeName(src.BasicProfileInformation.City))
-                .Map(dest => dest.PBI_Country, src => CityRepositoryExtensions.GetCityCodeByName(src.BasicProfileInformation.District))
+                .Map(dest => dest.PBI_City, src => src.BasicProfileInformation.Province)
+                .Map(dest => dest.PBI_County, src => src.BasicProfileInformation.City)
+                .Map(dest => dest.PBI_Country, src => src.BasicProfileInformation.District)
                 .Map(dest => dest.PBI_Address, src => src.BasicProfileInformation.AddressLine)
                 ;
 
