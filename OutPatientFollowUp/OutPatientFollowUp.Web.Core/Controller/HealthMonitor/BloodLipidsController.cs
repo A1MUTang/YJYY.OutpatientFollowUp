@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using OutPatientFollowUp.Application;
 using OutPatientFollowUp.Application.HealthMonitor;
 
 namespace OutPatientFollowUp.Core.HealthMonitor;
@@ -12,13 +13,13 @@ namespace OutPatientFollowUp.Core.HealthMonitor;
 [Route("api/[controller]")]
 public class BloodLipidsController : ControllerBase
 {
-    // private readonly IBloodLipidsAppService _bloodLipidsAppService;
+    private readonly IBloodLipidAppService _bloodLipidAppService;
 
 
-    // public BloodLipidsController(IBloodLipidsAppService bloodLipidsAppService)
-    // {
-    //     _bloodLipidsAppService = bloodLipidsAppService;
-    // }
+    public BloodLipidsController(IBloodLipidAppService bloodLipidAppService)
+    {
+        _bloodLipidAppService = bloodLipidAppService;
+    }
 
     /// <summary>
     /// 创建血脂记录
@@ -30,8 +31,7 @@ public class BloodLipidsController : ControllerBase
     [HttpPost()]
     public async Task<BloodLipidsDto> CreateAsync(string archivesCode, CreateOrUpdateBloodLipidsDto input)
     {
-        throw new NotImplementedException();
-        // return await _bloodLipidsAppService.CreateAsync(archivesCode, input);
+       return  await _bloodLipidAppService.CreateAsync(archivesCode, input);
     }
 
     /// <summary>
@@ -43,7 +43,6 @@ public class BloodLipidsController : ControllerBase
     [HttpGet()]
     public async Task<BloodLipidsDto> GetAsync(string archivesCode)
     {
-        throw new NotImplementedException();
-        // return await _bloodLipidsAppService.GetAsync(archivesCode);
+        return await _bloodLipidAppService.GetAsync(archivesCode);
     }
 }

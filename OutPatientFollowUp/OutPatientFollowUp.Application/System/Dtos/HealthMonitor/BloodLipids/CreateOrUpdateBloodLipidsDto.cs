@@ -3,6 +3,11 @@ namespace OutPatientFollowUp.Application.HealthMonitor;
 public class CreateOrUpdateBloodLipidsDto : IValidatableObject
 {
     /// <summary>
+    /// 设备号
+    /// </summary>
+    /// <value></value>
+    public string MacID { get; set; }
+    /// <summary>
     /// 总胆固醇
     /// </summary>
     /// <remarks>单位：mmol/L</remarks>

@@ -26,13 +26,6 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_County, src => src.City)
                 .Map(dest => dest.PBI_Country, src => src.District)
                 .Map(dest => dest.PBI_Address, src => src.AddressLine)
-                // .Map(dest => dest.PBI_YaoWei, src => "")
-                // .Map(dest => dest.PBI_Height, src => "")//默认为空
-                // .Map(dest => dest.PBI_FamilyDiseaseType, src => "") //默认为空
-                // .Map(dest => dest.PBI_ChronicDiseaseOther, src => "")//默认为空
-                // .Map(dest => dest.PBI_TunWei, src => "")//默认为空
-                // .Map(dest => dest.PBI_Weight, src => "")
-                // .Map(dest => dest.PBI_YaoTunBi, src => "");
 
                 // .Map(dest => dest.PBI_ChronicDiseaseType, src => "") 慢病分类默认无 数据库中是null
                 //A01素食为主    
@@ -91,13 +84,12 @@ public class Mapper : IRegister
                 .Map(dest => dest.IDCardNumber, src => src.PBI_ICard)
                 .Map(dest => dest.PhoneNumber, src => src.PBI_PersonPhone)
                 .Map(dest => dest.IsTakingAntidiabeticMeds, src => src.IsSdrug == 1 ? "是" : "否")
-                 .Map(dest => dest.IsTakingAntihypertensiveMeds, src => src.IsHdrug == 1 ? "是" : "否")
-
+                .Map(dest => dest.IsTakingAntihypertensiveMeds, src => src.IsHdrug == 1 ? "是" : "否")
                 .Map(dest => dest.Gender, src => src.PBI_Gender == "1" ? "男" : "女")
                 .Map(dest => dest.ProvinceCode, src => src.PBI_Province)
                 .Map(dest => dest.CityCode, src => src.PBI_City)
                 .Map(dest => dest.DistrictCode, src => src.PBI_County)
-                 .Map(dest => dest.Ethnicity, src => SY_CoderRepositoryExtensions.GetCodeName(src.PBI_Nation))
+                .Map(dest => dest.Ethnicity, src => SY_CoderRepositoryExtensions.GetCodeName(src.PBI_Nation))
                 .Map(dest => dest.EthnicityCode, src => src.PBI_Nation)
                 .Map(dest => dest.Province, src => CityRepositoryExtensions.GetProvinceCodeName(src.PBI_Province))
                 .Map(dest => dest.City, src => CityRepositoryExtensions.GetCityCodeName(src.PBI_City))

@@ -44,7 +44,7 @@ public class BasicProfileInformationDto :  IValidatableObject
 
     /// <summary>
     /// 身份证号
-    /// </summary>
+    /// </summary>  
     /// <value></value>
     public string IDCardNumber { get; set; }
 

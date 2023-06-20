@@ -1,3 +1,5 @@
+using OutPatientFollowUp.Core;
+
 namespace OutPatientFollowUp.Application.HealthMonitor;
 
     /// <summary>
@@ -6,16 +8,10 @@ namespace OutPatientFollowUp.Application.HealthMonitor;
     public class BloodLipidsDto 
     {
         /// <summary>
-        /// 基础档案信息主键
+        /// 档案信息编号
         /// </summary>
         /// <value></value>
-        public Guid BasicProfileInformationId { get; set; }
-        /// <summary>
-        /// 健康基础信息
-        /// </summary>
-        /// <remarks>测量结果中的抬头</remarks>
-        /// <value></value>
-        public HealthMonitorBaseDto HealthMonitorBaseDto { get; set; }
+        public string ArchivesCode { get; set; }
         /// <summary>
         /// 总胆固醇
         /// </summary>
@@ -45,7 +41,7 @@ namespace OutPatientFollowUp.Application.HealthMonitor;
         /// 血脂结果
         /// </summary>
         /// <value></value>
-        public string BloodLipidsResult { get; set; }
+        public BloodLipidsResultEnum BloodLipidsResult { get; set; }
 
         //TODO :健康监测结果都添加枚举索引
 

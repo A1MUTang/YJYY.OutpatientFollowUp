@@ -1,3 +1,5 @@
+using OutPatientFollowUp.Core;
+
 namespace OutPatientFollowUp.Application.HealthMonitor;
 public class BloodOxygenDto
 {
@@ -24,6 +26,6 @@ public class BloodOxygenDto
     /// </summary>
     /// <remarks>单位：%</remarks>
     /// <value></value>
-    public string BloodOxygenResult { get; set; }
+    public BloodOxygenResultEnum BloodOxygenResult { get; set; }
 
 }

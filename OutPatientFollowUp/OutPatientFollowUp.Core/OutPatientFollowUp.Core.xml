@@ -554,6 +554,126 @@
             三斤以上
             </summary>
         </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.ID">
+            <summary>
+            主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.ArchivesCode">
+            <summary>
+            建档号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.MacID">
+            <summary>
+            设备号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.Manufacture">
+            <summary>
+            设备名称
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.MeasureDate">
+            <summary>
+            测量时间
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.TC">
+            <summary>
+            总胆固醇
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.HDL">
+            <summary>
+            高密度脂蛋白胆固醇
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.LDL">
+            <summary>
+            低密度脂蛋白胆固醇
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.TG">
+            <summary>
+            甘油三酯
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.DataSource">
+            <summary>
+            数据来源
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.UserName">
+            <summary>
+            姓名
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.Gender">
+            <summary>
+            性别
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.ICard">
+            <summary>
+            身份证号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.CreateArchivesUnit">
+            <summary>
+            患者的管理机构
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.IsDelete">
+            <summary>
+            是否删除 0 未删除 1 已删除
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.SvcId">
+            <summary>
+            服务ID
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.DocPhone">
+            <summary>
+            手机号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.IsUpdate">
+            <summary>
+            是否更新
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.IsHdrug">
+            <summary>
+            是否是高血压药
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Bloodlipid.IsSdrug">
+            <summary>
+            是否是降脂药
+            </summary>
+            <value></value>
+        </member>
         <member name="T:OutPatientFollowUp.Core.HT_PatientBasicInfo">
             <summary>
             患者基本信息
