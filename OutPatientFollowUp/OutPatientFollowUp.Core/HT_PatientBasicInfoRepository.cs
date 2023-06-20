@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Furion;
 using SqlSugar;
 
 namespace OutPatientFollowUp.Core;
@@ -82,4 +83,18 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
         return await _context.Queryable<HT_PatientBasicInfo>().FirstAsync(x => x.ArchivesCode == patientBasicInfo.ArchivesCode);
     }
 
+    public HT_PatientBasicInfo GetByArchivesCode(string archivesCode)
+    {
+        return _context.Queryable<HT_PatientBasicInfo>().OrderByDescending(x=>x.PBI_CreateDate).First(x => x.ArchivesCode == archivesCode);
+    }
+}
+
+
+public static class HT_PatientBasicInfoRepositoryExtensions
+{
+    public static HT_PatientBasicInfo GetByArchivesCode(string archivesCode)
+    {
+        return App.GetService<IHT_PatientBasicInfoRepository>().GetByArchivesCode(archivesCode);
+    }
+   
 }

@@ -2409,6 +2409,13 @@
             <param name="manageName"></param>
             <returns></returns>
         </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_PatientBasicInfoRepository.GetByArchivesCode(System.String)">
+            <summary>
+            根据档案编号获取患者基本信息
+            </summary>
+            <param name="archivesCode"></param>
+            <returns></returns>
+        </member>
         <member name="M:OutPatientFollowUp.Core.IHT_SupplementaryExamRepository.GetByArchivesCode(System.String)">
             <summary>
             根据档案号获取最新的补充检查信息

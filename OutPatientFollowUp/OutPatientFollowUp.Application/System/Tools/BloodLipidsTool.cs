@@ -1,7 +1,6 @@
-using System.Collections.Generic;
-using System.Text;
-using System;
 using OutPatientFollowUp.Core;
+using System.ComponentModel;
+using System.Reflection;
 
 namespace OutPatientFollowUp.Application;
 
@@ -19,7 +18,7 @@ public static class BloodLipidsTool
     /// <param name="HDLCholesterol">高密度脂蛋白胆固醇</param>
     /// <param name="Triglyceride">甘油三酯</param>
     /// <returns></returns>
-    public static BloodLipidsResultEnum GetBloodLipidsResult(decimal TotalCholesterol, decimal LDLCholesterol, decimal HDLCholesterol, decimal Triglyceride)
+    public static BloodLipidsResultEnum GetBloodLipidsResultCode(decimal TotalCholesterol, decimal LDLCholesterol, decimal HDLCholesterol, decimal Triglyceride)
     {
         decimal nonHDLCholesterol = TotalCholesterol - HDLCholesterol;
 
@@ -53,6 +52,16 @@ public static class BloodLipidsTool
         {
             return BloodLipidsResultEnum.Abnormal;
         }
+    }
+
+    public static string GetBloodLipidsResult(decimal TotalCholesterol, decimal LDLCholesterol, decimal HDLCholesterol, decimal Triglyceride)
+    {
+        var bloodLipidsResult = GetBloodLipidsResultCode(TotalCholesterol, LDLCholesterol, HDLCholesterol, Triglyceride);
+
+        var type = bloodLipidsResult.GetType();//先获取这个枚举的类型
+        var field = type.GetField(bloodLipidsResult.ToString());//通过这个类型获取到值
+        var obj = (DisplayAttribute)field.GetCustomAttribute(typeof(DisplayAttribute));//得到特性
+        return obj.Name ?? "";
     }
 
     /// <summary>
@@ -96,11 +105,11 @@ public static class BloodLipidsTool
     /// <returns></returns>
     public static string GetBloodLipidsHealthAdvice(decimal TotalCholesterol, decimal LDLCholesterol, decimal HDLCholesterol, decimal Triglyceride)
     {
-        var bloodLipidsResult = GetBloodLipidsResult(TotalCholesterol, LDLCholesterol, HDLCholesterol, Triglyceride);
+        var bloodLipidsResult = GetBloodLipidsResultCode(TotalCholesterol, LDLCholesterol, HDLCholesterol, Triglyceride);
         var nonHDLCholesterol = TotalCholesterol - HDLCholesterol;
         var hDLResult = GetHDLResult(HDLCholesterol);
         //整体结果属于“边缘升高、升高”
-        if ( hDLResult   == HDLResultEnum.Low &&((bloodLipidsResult == BloodLipidsResultEnum.Ideal || bloodLipidsResult == BloodLipidsResultEnum.Suitable))|| bloodLipidsResult == BloodLipidsResultEnum.Abnormal)
+        if (hDLResult == HDLResultEnum.Low && ((bloodLipidsResult == BloodLipidsResultEnum.Ideal || bloodLipidsResult == BloodLipidsResultEnum.Suitable)) || bloodLipidsResult == BloodLipidsResultEnum.Abnormal)
             return string.Empty;
 
         //当处于边缘升高时获取，达到边缘升高的指标名称，替换到健康建议中
@@ -137,7 +146,7 @@ public static class BloodLipidsTool
             healthAdvice = string.Format(healthAdvice, healthAdviceContentString);
             return healthAdvice;
         }
-        return  bloodLipidsResult.GetDescription();
+        return bloodLipidsResult.GetDescription();
     }
 
     /// <summary>

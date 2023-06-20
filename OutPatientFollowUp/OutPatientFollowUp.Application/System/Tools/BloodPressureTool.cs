@@ -1,7 +1,7 @@
 using OutPatientFollowUp.Core;
 
 namespace OutPatientFollowUp.Application;
-public static class BloodPressureResultTool
+public static class BloodPressureTool
 {
     /// <summary>
     /// 获取血压结果    
@@ -10,6 +10,7 @@ public static class BloodPressureResultTool
     /// <returns></returns>
     public static BloodPressureResultEnum GetBloodPressureResult(BloodPressureResultInput input)
     {
+        //TODO: 有空再优化，也可能有空就忘了
         if (input.SBP < 90 || input.DBP < 60)
         {
             return BloodPressureResultEnum.LowBloodPressure;
@@ -105,6 +106,20 @@ public static class BloodPressureResultTool
     }
 
 
+    public static BloodPressureResultEnum GetBloodPressureResult(string ArchivesCode, int SBP, int DBP)
+    {
+        var patientBasicInfo = HT_PatientBasicInfoRepositoryExtensions.GetByArchivesCode(ArchivesCode);
+        var input = new BloodPressureResultInput
+        {
+            SBP = SBP,
+            DBP = DBP,
+            Age = ProfileInformationDetailTool.GetAgeFromIdCard(patientBasicInfo.PBI_ICard),
+            IsUsingAntidiabeticMedication = patientBasicInfo.IsSdrug == 1,
+            IsUsingAntihypertensiveMedication = patientBasicInfo.IsHdrug == 1
+        };
+        return GetBloodPressureResult(input);
+    }
+
     public class BloodPressureResultInput
     {
         /// <summary>
@@ -121,12 +136,12 @@ public static class BloodPressureResultTool
         /// 是否使用降脂药
         /// </summary>
         /// <value></value>
-        public decimal SBP { get; set; }
+        public int SBP { get; set; }
         /// <summary>
         /// 是否使用降脂药
         /// </summary>
         /// <value></value>
-        public decimal DBP { get; set; }
+        public int DBP { get; set; }
         /// <summary>
         /// 年龄
         /// </summary>

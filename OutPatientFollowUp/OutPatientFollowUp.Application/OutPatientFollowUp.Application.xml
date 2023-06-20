@@ -499,6 +499,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodLipidsDto.BloodLipidsResultCode">
+            <summary>
+            血脂结果
+            </summary>
+            <value></value>
+        </member>
         <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodLipidsDto.HealthAdvice">
             <summary>
             健康建议
@@ -1403,7 +1409,7 @@
             血脂结果帮助类
             </summary>
         </member>
-        <member name="M:OutPatientFollowUp.Application.BloodLipidsTool.GetBloodLipidsResult(System.Decimal,System.Decimal,System.Decimal,System.Decimal)">
+        <member name="M:OutPatientFollowUp.Application.BloodLipidsTool.GetBloodLipidsResultCode(System.Decimal,System.Decimal,System.Decimal,System.Decimal)">
             <summary>
             获取血脂结果
             </summary>
@@ -1460,6 +1466,43 @@
             </summary>
             <param name="bloodOxygenValue">血氧值</param>
             <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.BloodPressureTool.GetBloodPressureResult(OutPatientFollowUp.Application.BloodPressureTool.BloodPressureResultInput)">
+            <summary>
+            获取血压结果    
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodPressureTool.BloodPressureResultInput.IsUsingAntihypertensiveMedication">
+            <summary>
+            是否使用降压药
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodPressureTool.BloodPressureResultInput.IsUsingAntidiabeticMedication">
+            <summary>
+            是否使用降糖药
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodPressureTool.BloodPressureResultInput.SBP">
+            <summary>
+            是否使用降脂药
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodPressureTool.BloodPressureResultInput.DBP">
+            <summary>
+            是否使用降脂药
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodPressureTool.BloodPressureResultInput.Age">
+            <summary>
+            年龄
+            </summary>
+            <value></value>
         </member>
         <member name="T:OutPatientFollowUp.Application.ProfileInformationDetailTool">
             <summary>
