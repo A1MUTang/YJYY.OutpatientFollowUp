@@ -189,7 +189,4 @@ public static class CityRepositoryExtensions
             city = string.Empty;
         return $"{province}{city}{county}{address}";
     }
-   
-
-
 }
