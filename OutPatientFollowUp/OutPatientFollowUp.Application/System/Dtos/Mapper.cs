@@ -22,8 +22,8 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_Gender, src => src.Gender ? "1" : "2")
                 .Map(dest => dest.PBI_AgeType, src => ProfileInformationDetailTool.GetPopulationCategory(src.IDCardNumber).ToString())
                 .Map(dest => dest.PBI_Birthday, src => ProfileInformationDetailTool.GetBirthdayFromIdCard(src.IDCardNumber))
-                .Map(dest => dest.PBI_City, src => src.Province)
-                .Map(dest => dest.PBI_County, src => src.City)
+                .Map(dest => dest.PBI_Province, src => src.Province)
+                .Map(dest => dest.PBI_City, src => src.City)
                 .Map(dest => dest.PBI_Country, src => src.District)
                 .Map(dest => dest.PBI_Address, src => src.AddressLine)
 
@@ -95,10 +95,7 @@ public class Mapper : IRegister
                 .Map(dest => dest.City, src => CityRepositoryExtensions.GetCityCodeName(src.PBI_City))
                 .Map(dest => dest.District, src => CityRepositoryExtensions.GetCityCodeName(src.PBI_County))
                 .Map(dest => dest.AddressLine, src => src.PBI_Address)
-                .Map(dest => dest.CurrentAddress, src => CityRepositoryExtensions.GetProvinceCodeName(src.PBI_Province)
-                                                                                + CityRepositoryExtensions.GetCityCodeName(src.PBI_City
-                                                                                + CityRepositoryExtensions.GetCityCodeName(src.PBI_County)
-                                                                                + src.PBI_Address));
+                .Map(dest => dest.CurrentAddress, src => CityRepositoryExtensions.GetAdressDetails(src.PBI_Province, src.PBI_City, src.PBI_Country, src.PBI_Address));
 
         config.ForType<HT_PatientBasicInfo, ProfileInformationDetailDto>()
                 .Map(dest => dest.AlcoholStatusCode, src => src.PBI_DrinkingStatus)
@@ -151,7 +148,6 @@ public class Mapper : IRegister
                 .Map(dest => dest.BasicProfileInformation.PhoneNumber, src => src.PBI_PersonPhone)
                 .Map(dest => dest.BasicProfileInformation.IsTakingAntidiabeticMeds, src => src.IsSdrug == 1 ? "是" : "否")
                 .Map(dest => dest.BasicProfileInformation.IsTakingAntihypertensiveMeds, src => src.IsHdrug == 1 ? "是" : "否");
-
         config.ForType<CreateOrUpdateProfileInformationDetailDto, HT_PatientBasicInfo>()
                 .Map(dest => dest.PBI_Gender, src => src.BasicProfileInformation.Gender ? "1" : "2")
                 .Map(dest => dest.PBI_DrinkingStatus, src => src.AlcoholStatusCode)
