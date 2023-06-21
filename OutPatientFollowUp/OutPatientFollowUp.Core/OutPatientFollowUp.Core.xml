@@ -265,25 +265,28 @@
             重度高血压
             </summary>
         </member>
-        <member name="T:OutPatientFollowUp.Core.BloodPulseResultEnum">
+        <member name="T:OutPatientFollowUp.Core.HeartRateResultEnum">
             <summary>
-            脉搏结果
+            脉搏结果枚举
             </summary>
         </member>
-        <member name="F:OutPatientFollowUp.Core.BloodPulseResultEnum.SlowPulse">
+        <member name="F:OutPatientFollowUp.Core.HeartRateResultEnum.Bradycardia">
             <summary>
             脉搏过慢
             </summary>
+            <remarks>脉搏小于60</remarks>
         </member>
-        <member name="F:OutPatientFollowUp.Core.BloodPulseResultEnum.NormalPulse">
+        <member name="F:OutPatientFollowUp.Core.HeartRateResultEnum.Normal">
             <summary>
             脉搏正常
             </summary>
+            <remarks>脉搏60-100</remarks>
         </member>
-        <member name="F:OutPatientFollowUp.Core.BloodPulseResultEnum.FastPulse">
+        <member name="F:OutPatientFollowUp.Core.HeartRateResultEnum.Tachycardia">
             <summary>
             脉搏过快
             </summary>
+            <remarks>脉搏大于100</remarks>
         </member>
         <member name="T:OutPatientFollowUp.Core.BloodSugarType">
             <summary>
@@ -477,26 +480,6 @@
         <member name="T:OutPatientFollowUp.Core.HDLResultEnum">
             <summary>
             总胆固醇结果 
-            </summary>
-        </member>
-        <member name="T:OutPatientFollowUp.Core.HeartRateResultEnum">
-            <summary>
-            脉搏结果枚举
-            </summary>
-        </member>
-        <member name="F:OutPatientFollowUp.Core.HeartRateResultEnum.Bradycardia">
-            <summary>
-            脉搏过慢
-            </summary>
-        </member>
-        <member name="F:OutPatientFollowUp.Core.HeartRateResultEnum.Normal">
-            <summary>
-            脉搏正常
-            </summary>
-        </member>
-        <member name="F:OutPatientFollowUp.Core.HeartRateResultEnum.Tachycardia">
-            <summary>
-            脉搏过快
             </summary>
         </member>
         <member name="T:OutPatientFollowUp.Core.HighFatFoodIntakeEnum">

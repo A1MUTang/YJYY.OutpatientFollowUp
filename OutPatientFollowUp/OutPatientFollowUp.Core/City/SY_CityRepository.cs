@@ -44,12 +44,12 @@ public class SY_CityRepository : BaseRepository<SY_City>, ISY_CityRepository
          })
          .ToListAsync();
     }
-    
+
     public async Task<IEnumerable<SY_City>> GetCityListByParentNameAsync(string parentName)
     {
         if (!string.IsNullOrEmpty(parentName))
             throw Oops.Oh("父级名称不能为空");
-        
+
         var code = GetCityNameByCode(parentName);
         if (!string.IsNullOrEmpty(code))
             code = GetProvinceCodeByName(parentName);
@@ -93,7 +93,7 @@ public class SY_CityRepository : BaseRepository<SY_City>, ISY_CityRepository
     public string GetProvinceCodeByName(string code)
     {
         if (string.IsNullOrEmpty(code))
-             return string.Empty;
+            return string.Empty;
 
         return Context.Queryable<SY_City>()
             .Where(x => x.CODE == code)
@@ -110,10 +110,10 @@ public class SY_CityRepository : BaseRepository<SY_City>, ISY_CityRepository
             .Where(x => x.CODE == code)
             .Select(x => x.CITY)
             .First();
-        if(city == "直辖市")
-        return "";
+        if (city == "直辖市")
+            return "";
         else
-        return city;
+            return city;
     }
 
     public string GetCityNameByCode(string name)
@@ -148,7 +148,7 @@ public static class CityRepositoryExtensions
     /// </summary>
     /// <param name="code"></param>
     /// <returns></returns>
-    public static string GetProvinceCodeName( string code)
+    public static string GetProvinceCodeName(string code)
     {
         return App.GetService<SY_CityRepository>().GetProvinceCodeByName(code);
     }
@@ -178,8 +178,8 @@ public static class CityRepositoryExtensions
     {
         return App.GetService<SY_CityRepository>().GetProvinceNameByCode(name);
     }
-    
-    public static string GetAdressDetails(string provinceCode, string cityCode,string countyCode, string address)
+
+    public static string GetAdressDetailsByCode(string provinceCode, string cityCode, string countyCode, string address)
     {
         var province = GetProvinceCodeName(provinceCode);
         var city = GetCityCodeName(cityCode);
@@ -189,4 +189,12 @@ public static class CityRepositoryExtensions
             city = string.Empty;
         return $"{province}{city}{county}{address}";
     }
+    public static string GetAdressDetails(string province, string city, string county, string address)
+    {
+        if (city == "市辖区")
+            city = string.Empty;
+        return $"{province}{city}{county}{address}";
+    }
+
+
 }

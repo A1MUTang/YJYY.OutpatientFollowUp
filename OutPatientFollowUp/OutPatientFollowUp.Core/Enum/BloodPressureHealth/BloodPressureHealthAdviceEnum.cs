@@ -36,7 +36,7 @@ namespace OutPatientFollowUp.Core
         /// </summary>
         /// <remarks>SBP小于140且DBP小于90</remarks>
         [Display(Name = "使用降压药使用降糖药小于65岁血压达标",
-            Description = "您本次血压达标，望继续保持，建议至少了个月测量血压1次。坚持家庭血压自测将有助于更好的管理您的健康。")]
+            Description = "您本次血压达标，望继续保持，建议至少3个月测量血压1次。坚持家庭血压自测将有助于更好的管理您的健康。")]
         IsBloodPressureMetForUnder65WithMedication,
 
         /// <summary>
