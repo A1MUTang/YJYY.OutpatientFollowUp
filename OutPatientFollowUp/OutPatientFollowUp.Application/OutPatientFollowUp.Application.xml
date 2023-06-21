@@ -950,7 +950,6 @@
             <summary>
             新密码 
             </summary>
-            <param name="=="></param>
             <remarks>密码必须包含数字和大小写字母符号，长度在 6 到 16 个字符之间</remarks>
             <returns></returns>
         </member>
@@ -1019,12 +1018,6 @@
             <summary>
             医生凭证 密码/验证码
             </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Application.LoginInput.ManageName">
-            <summary>
-            所属机构名称
-            </summary>
-            <value></value>
         </member>
         <member name="P:OutPatientFollowUp.Application.LoginInput.MacId">
             <summary>
