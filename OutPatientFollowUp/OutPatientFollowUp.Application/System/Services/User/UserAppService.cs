@@ -27,7 +27,7 @@ public class UserAppService : IUserAppService
     /// 修改密码验证码过期时间
     /// <remarks>单位：分钟</remarks>
     /// </summary>
-    public const int ChangePwdCodeExpiration = 1;
+    public const int ChangePwdCodeExpiration = 10;
 
 
 
@@ -181,11 +181,11 @@ public class UserAppService : IUserAppService
         }
         //生成验证码（6位数）
         var code = SMShandle.GetRandomCode();
-        string messageContent = @"您的验证码为：" + code + "，有效时间1分钟，切勿将验证码泄露于他人。";
-        //判断缓存中有没有对应的验证码，如果有，提示已发送验证码，如果没有，发送验证码
+        string messageContent = @"您的验证码为：" + code + "，有效时间10分钟，切勿将验证码泄露于他人。";
+        //判断缓存中有没有对应的验证码，如果有，替换原有验证码
         if (_memoryCache.TryGetValue(input.DoctorPhone + ChangePwdCodeKeyPrefix, out string cacheCode))
         {
-            throw Oops.Oh("已发送验证码，请注意查收");
+            _memoryCache.Remove(input.DoctorPhone + ChangePwdCodeKeyPrefix);
         }
         //将验证码存入缓存中
         _memoryCache.Set(input.DoctorPhone + ChangePwdCodeKeyPrefix, code, TimeSpan.FromMinutes(ChangePwdCodeExpiration));
@@ -206,11 +206,11 @@ public class UserAppService : IUserAppService
         }
         //生成验证码（6位数）
         var code = SMShandle.GetRandomCode();
-        string messageContent = @"您的验证码为：" + code + "，有效时间1分钟，切勿将验证码泄露于他人。";
+        string messageContent = @"您的验证码为：" + code + "，有效时间10分钟，切勿将验证码泄露于他人。";
         //判断缓存中有没有对应的验证码，如果有，提示已发送验证码，如果没有，发送验证码
         if (_memoryCache.TryGetValue(input.DoctorPhone + ChangePwdCodeKeyPrefix, out string cacheCode))
-        {
-            throw Oops.Oh("已发送验证码，请注意查收");
+        { 
+            _memoryCache.Remove(input.DoctorPhone + ChangePwdCodeKeyPrefix);
         }
         //将验证码存入缓存中
         _memoryCache.Set(input.DoctorPhone + ChangePwdCodeKeyPrefix, code, TimeSpan.FromMinutes(ChangePwdCodeExpiration));
