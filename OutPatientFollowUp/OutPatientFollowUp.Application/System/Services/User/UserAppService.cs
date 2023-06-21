@@ -29,8 +29,6 @@ public class UserAppService : IUserAppService
     /// </summary>
     public const int ChangePwdCodeExpiration = 10;
 
-
-
     private readonly IPT_DoctorBasicInfoRepositroy _doctorBasicInfoRepositroy;
 
     private readonly ILoginRecordRepository _loginRecordRepository;
