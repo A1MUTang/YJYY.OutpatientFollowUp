@@ -122,7 +122,7 @@ public class ProfileInformationAppService : IProfileInformationAppService
         var patientBasicInfo = await _patientBasicInfoRepository.GetByIdcardAndDocterIdAsync(IDCardNumber, manageName);
         if (patientBasicInfo == null)
         {
-            throw Oops.Oh("患者基本信息不存在");
+            throw Oops.Bah("患者基本信息不存在");
         }
         return patientBasicInfo.Adapt<BasicProfileInformationDto>();
     }
