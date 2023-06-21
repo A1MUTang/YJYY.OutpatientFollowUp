@@ -131,100 +131,120 @@
             严重异常
             </summary>
         </member>
-        <member name="T:OutPatientFollowUp.Core.BloodPressureResultEnum">
+        <member name="T:OutPatientFollowUp.Core.BloodPressureHealthAdviceEnum">
             <summary>
             血压结果
             </summary>
         </member>
-        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.LowBloodPressure">
+        <member name="F:OutPatientFollowUp.Core.BloodPressureHealthAdviceEnum.LowBloodPressure">
             <summary>
             低血压
             </summary>
             <remarks>SBP小于90或DBP小于60</remarks>
         </member>
-        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.IsBloodPressureMetForOver65WithMedication">
+        <member name="F:OutPatientFollowUp.Core.BloodPressureHealthAdviceEnum.IsBloodPressureMetForOver65WithMedication">
             <summary>
             使用降压药使用降糖药大于等于65岁血压达标
             </summary>
             <remarks>SBP小于150或DBP小于90</remarks>
         </member>
-        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.IsBloodPressureNotMetForOver65WithMedication">
+        <member name="F:OutPatientFollowUp.Core.BloodPressureHealthAdviceEnum.IsBloodPressureNotMetForOver65WithMedication">
             <summary>
             使用降压药使用降糖药大于等于65岁血压不达标
             </summary>
             <remarks>SBP大于等于150或DBP大于等于90</remarks>
         </member>
-        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.IsBloodPressureMetForUnder65WithMedication">
+        <member name="F:OutPatientFollowUp.Core.BloodPressureHealthAdviceEnum.IsBloodPressureMetForUnder65WithMedication">
             <summary>
             使用降压药使用降糖药小于65岁血压达标
             </summary>
             <remarks>SBP小于140且DBP小于90</remarks>
         </member>
-        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.IsBloodPressureNotMetForUnder65WithMedication">
+        <member name="F:OutPatientFollowUp.Core.BloodPressureHealthAdviceEnum.IsBloodPressureNotMetForUnder65WithMedication">
             <summary>
             使用降压药使用降糖药小于65岁血压不达标
             </summary>
             <remarks>SBP大于等于140或DBP大于等于90</remarks>
         </member>
-        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.IsBloodPressureMetForOver65WithAntihypertensiveMedication">
+        <member name="F:OutPatientFollowUp.Core.BloodPressureHealthAdviceEnum.IsBloodPressureMetForOver65WithAntihypertensiveMedication">
             <summary>
             使用降压药不使用降糖药大于等于65岁血压达标
             </summary>
             <remarks>SBP小于140且DBP小于90</remarks>
         </member>
-        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.IsBloodPressureNotMetForOver65WithAntihypertensiveMedication">
+        <member name="F:OutPatientFollowUp.Core.BloodPressureHealthAdviceEnum.IsBloodPressureNotMetForOver65WithAntihypertensiveMedication">
             <summary>
             使用降压药不使用降糖药大于等于65岁血压不达标
             </summary>
             <remarks>SBP大于等于140或DBP大于等于90</remarks>
         </member>
-        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.IsBloodPressureMetForUnder65WithAntihypertensiveMedication">
+        <member name="F:OutPatientFollowUp.Core.BloodPressureHealthAdviceEnum.IsBloodPressureMetForUnder65WithAntihypertensiveMedication">
             <summary>
             使用降压药不使用降糖药小于65岁血压达标
             </summary>
             <remarks>SBP小于140且DBP小于90</remarks>
         </member>
-        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.IsBloodPressureNotMetForUnder65WithAntihypertensiveMedication">
+        <member name="F:OutPatientFollowUp.Core.BloodPressureHealthAdviceEnum.IsBloodPressureNotMetForUnder65WithAntihypertensiveMedication">
             <summary>
             使用降压药不使用降糖药小于65岁血压不达标
             </summary>
             <remarks>SBP大于等于140或DBP大于等于90</remarks>
         </member>
-        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.IsBloodPressureMetForUnder45WithoutMedication">
+        <member name="F:OutPatientFollowUp.Core.BloodPressureHealthAdviceEnum.IsBloodPressureMetForUnder45WithoutMedication">
             <summary>
             不使用降压药小于45岁血压达标
             </summary>
             <remarks>SBP小于120且DBP小于80</remarks>
         </member>
-        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.IsBloodPressureMetForOver45WithoutMedication">
+        <member name="F:OutPatientFollowUp.Core.BloodPressureHealthAdviceEnum.IsBloodPressureMetForOver45WithoutMedication">
             <summary>
             不使用降压药大于45岁血压达标
             </summary>
             <remarks>SBP小于140且DBP小于90</remarks>
         </member>
-        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.IsBloodPressureAboveIdealWithoutMedication">
+        <member name="F:OutPatientFollowUp.Core.BloodPressureHealthAdviceEnum.IsBloodPressureAboveIdealWithoutMedication">
             <summary>
             不使用降压药血压高于理想状态
             </summary>
             <remarks>SBP大于等于120或DBP大于等于80</remarks>
         </member>
-        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.IsBloodPressureSlightlyHighWithoutMedication">
+        <member name="F:OutPatientFollowUp.Core.BloodPressureHealthAdviceEnum.IsBloodPressureSlightlyHighWithoutMedication">
             <summary>
             不使用降压药血压偏高
             </summary>
             <remarks>SBP大于等于120或DBP大于等于80</remarks>
         </member>
-        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.IsBloodPressureModeratelyHighWithoutMedication">
+        <member name="F:OutPatientFollowUp.Core.BloodPressureHealthAdviceEnum.IsBloodPressureModeratelyHighWithoutMedication">
             <summary>
             不使用降压药血压较高
             </summary>
             <remarks>SBP大于等于140或DBP大于等于90</remarks>
         </member>
-        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.IsBloodPressureVeryHighWithoutMedication">
+        <member name="F:OutPatientFollowUp.Core.BloodPressureHealthAdviceEnum.IsBloodPressureVeryHighWithoutMedication">
             <summary>
             不使用降压药血压很高
             </summary>
             <remarks>SBP大于等于160或DBP大于等于100</remarks>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.BloodPressureResultEnum">
+            <summary>
+            血压结果枚举
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.Normal">
+            <summary>
+            正常
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.MildAbnormal">
+            <summary>
+            轻度异常
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodPressureResultEnum.SevereAbnormal">
+            <summary>
+            严重异常
+            </summary>
         </member>
         <member name="T:OutPatientFollowUp.Core.BloodPulseResultEnum">
             <summary>

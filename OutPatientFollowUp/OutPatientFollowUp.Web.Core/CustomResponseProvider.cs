@@ -52,12 +52,15 @@ namespace OutPatientFollowUp.Web.Core
         {
             var a = metadata.ValidationResult as Dictionary<string, string[]>;
             var errorMessage = new StringBuilder();
-            foreach (var item in a)
+            if (a != null)
             {
-                var itemArray = item.Value;
-                errorMessage.Append(itemArray[0].ToString()+";");
+                foreach (var item in a)
+                {
+                    var itemArray = item.Value;
+                    errorMessage.Append(itemArray[0].ToString() + ";");
+                }
+                errorMessage.Remove(errorMessage.Length - 1, 1);
             }
-            errorMessage.Remove(errorMessage.Length - 1, 1);
             return new JsonResult(YourRESTfulResult(metadata.StatusCode ?? StatusCodes.Status400BadRequest, data: metadata.Data, errors: errorMessage)
                 , UnifyContext.GetSerializerSettings(context)); // 当前行仅限 Furion 4.6.6+ 使用
         }

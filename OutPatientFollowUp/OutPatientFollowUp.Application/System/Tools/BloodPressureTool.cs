@@ -8,39 +8,39 @@ public static class BloodPressureTool
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
-    public static BloodPressureResultEnum GetBloodPressureResult(BloodPressureResultInput input)
+    public static BloodPressureHealthAdviceEnum GetBloodPressureResult(BloodPressureResultInput input)
     {
         //TODO: 有空再优化，也可能有空就忘了
         if (input.SBP < 90 || input.DBP < 60)
         {
-            return BloodPressureResultEnum.LowBloodPressure;
+            return BloodPressureHealthAdviceEnum.LowBloodPressure;
         }
         //不使用降压药不使用降糖药
         if (!input.IsUsingAntihypertensiveMedication && !input.IsUsingAntidiabeticMedication)
         {
             if (input.SBP >= 90 && input.SBP <= 120 && input.DBP >= 60 && input.DBP <= 80 && input.Age < 45)
             {
-                return BloodPressureResultEnum.IsBloodPressureMetForUnder45WithoutMedication;
+                return BloodPressureHealthAdviceEnum.IsBloodPressureMetForUnder45WithoutMedication;
             }
             if (input.SBP >= 90 && input.SBP <= 140 && input.DBP >= 60 && input.DBP <= 80 && input.Age >= 45)
             {
-                return BloodPressureResultEnum.IsBloodPressureMetForOver45WithoutMedication;
+                return BloodPressureHealthAdviceEnum.IsBloodPressureMetForOver45WithoutMedication;
             }
             if (input.SBP >= 120 && input.SBP < 140 && input.DBP >= 80 && input.DBP < 90)
             {
-                return BloodPressureResultEnum.IsBloodPressureAboveIdealWithoutMedication;
+                return BloodPressureHealthAdviceEnum.IsBloodPressureAboveIdealWithoutMedication;
             }
             if (input.SBP >= 140 && input.SBP < 160 && input.DBP >= 90 && input.DBP < 100)
             {
-                return BloodPressureResultEnum.IsBloodPressureSlightlyHighWithoutMedication;
+                return BloodPressureHealthAdviceEnum.IsBloodPressureSlightlyHighWithoutMedication;
             }
             if (input.SBP >= 160 && input.SBP < 180 && input.DBP >= 100 && input.DBP < 110)
             {
-                return BloodPressureResultEnum.IsBloodPressureModeratelyHighWithoutMedication;
+                return BloodPressureHealthAdviceEnum.IsBloodPressureModeratelyHighWithoutMedication;
             }
             if (input.SBP >= 180 && input.SBP < 210 && input.DBP >= 110 && input.DBP < 120)
             {
-                return BloodPressureResultEnum.IsBloodPressureVeryHighWithoutMedication;
+                return BloodPressureHealthAdviceEnum.IsBloodPressureVeryHighWithoutMedication;
             }
         }
 
@@ -52,11 +52,11 @@ public static class BloodPressureTool
             {
                 if (input.SBP < 140 && input.DBP < 90)
                 {
-                    return BloodPressureResultEnum.IsBloodPressureMetForOver65WithMedication;
+                    return BloodPressureHealthAdviceEnum.IsBloodPressureMetForOver65WithMedication;
                 }
                 if (input.SBP >= 140 && input.DBP >= 90)
                 {
-                    return BloodPressureResultEnum.IsBloodPressureNotMetForOver65WithMedication;
+                    return BloodPressureHealthAdviceEnum.IsBloodPressureNotMetForOver65WithMedication;
                 }
 
             }
@@ -65,11 +65,11 @@ public static class BloodPressureTool
             {
                 if (input.SBP < 130 && input.DBP < 80)
                 {
-                    return BloodPressureResultEnum.IsBloodPressureMetForUnder65WithMedication;
+                    return BloodPressureHealthAdviceEnum.IsBloodPressureMetForUnder65WithMedication;
                 }
                 if (input.SBP >= 130 && input.DBP >= 80)
                 {
-                    return BloodPressureResultEnum.IsBloodPressureNotMetForUnder65WithMedication;
+                    return BloodPressureHealthAdviceEnum.IsBloodPressureNotMetForUnder65WithMedication;
                 }
             }
         }
@@ -81,11 +81,11 @@ public static class BloodPressureTool
             {
                 if (input.SBP < 150 && input.DBP < 90)
                 {
-                    return BloodPressureResultEnum.IsBloodPressureMetForOver65WithMedication;
+                    return BloodPressureHealthAdviceEnum.IsBloodPressureMetForOver65WithMedication;
                 }
                 if (input.SBP >= 150 && input.DBP >= 90)
                 {
-                    return BloodPressureResultEnum.IsBloodPressureNotMetForOver65WithMedication;
+                    return BloodPressureHealthAdviceEnum.IsBloodPressureNotMetForOver65WithMedication;
                 }
             }
             //年龄小于65岁
@@ -93,11 +93,11 @@ public static class BloodPressureTool
             {
                 if (input.SBP < 140 && input.DBP < 90)
                 {
-                    return BloodPressureResultEnum.IsBloodPressureMetForUnder65WithMedication;
+                    return BloodPressureHealthAdviceEnum.IsBloodPressureMetForUnder65WithMedication;
                 }
                 if (input.SBP >= 140 && input.DBP >= 90)
                 {
-                    return BloodPressureResultEnum.IsBloodPressureNotMetForUnder65WithMedication;
+                    return BloodPressureHealthAdviceEnum.IsBloodPressureNotMetForUnder65WithMedication;
                 }
             }
         }
@@ -106,7 +106,7 @@ public static class BloodPressureTool
     }
 
 
-    public static BloodPressureResultEnum GetBloodPressureResult(string ArchivesCode, int SBP, int DBP)
+    public static BloodPressureHealthAdviceEnum GetBloodPressureResult(string ArchivesCode, int SBP, int DBP)
     {
         var patientBasicInfo = HT_PatientBasicInfoRepositoryExtensions.GetByArchivesCode(ArchivesCode);
         var input = new BloodPressureResultInput

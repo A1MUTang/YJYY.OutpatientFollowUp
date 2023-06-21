@@ -37,8 +37,7 @@ public class SY_CoderRepository : BaseRepository<SY_Code>, ISY_CoderRepository
     public string GetCodeName(string code)
     {
         if (string.IsNullOrEmpty(code))
-            throw Oops.Oh("编码不能为空");
-
+            return string.Empty;
         return Context.Queryable<SY_Code>()
             .Where(x => x.SYC_Code == code)
             .Select(x => x.SYC_Name)

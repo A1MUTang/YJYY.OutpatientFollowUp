@@ -26,7 +26,7 @@ public class ProfileInformationAppService : IProfileInformationAppService
         var isExist = await _patientBasicInfoRepository.GetByIdcardAndDocterIdAsync(input.IDCardNumber, manageName);
         if (isExist != null)
         {
-            throw Oops.Oh("身份证号已存在");
+            throw Oops.Bah("身份证号已存在", new AbandonedMutexException("身份证号已存在"));
         }
         var basicProfileInformation = input.Adapt<HT_PatientBasicInfo>();
         basicProfileInformation.PBI_UserID = await _idAppService.GetNewManangeID("HT_PatientBasicInfo", "PBI");

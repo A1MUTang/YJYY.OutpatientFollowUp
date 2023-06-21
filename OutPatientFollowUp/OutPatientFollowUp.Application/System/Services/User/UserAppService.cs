@@ -108,7 +108,6 @@ public class UserAppService : IUserAppService
             if (!Md5Helper.Encryption(loginDto.DoctorPass.Trim()).Equals(existUser.Doctor_Pwd))
             {
                 CheckLoginErrorCount(loginDto);
-
                 throw Oops.Oh("用户名密码错误");
             }
         }
