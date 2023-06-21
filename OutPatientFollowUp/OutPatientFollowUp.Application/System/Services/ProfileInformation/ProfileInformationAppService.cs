@@ -59,49 +59,52 @@ public class ProfileInformationAppService : IProfileInformationAppService
             }
         }
         //填充既往病史
-
-        List<int> pastMedicalHistorys = input.PastMedicalHistoryCodes.Split(',').Select(int.Parse).ToList();
-        // SE_IS_NXG 是否有脑血管病 
-        var SE_IS_NXG = pastMedicalHistorys.Contains(2) ? "1" : "0";
-        // SE_IS_XZJB 是否有心脏疾病 
-        var SE_IS_XZJB = pastMedicalHistorys.Contains(3) ? "1" : "0";
-        // SE_IS_WZXGB 是否有外周血管病 
-        var SE_IS_WZXGB = pastMedicalHistorys.Contains(4) ? "1" : "0";
-        // SE_IS_SWMJB 视网膜疾病 
-        var SE_IS_SWMJB = pastMedicalHistorys.Contains(5) ? "1" : "0";
-        // SE_IS_TNB  糖尿病（Ⅱ型） 
-        var SE_IS_TNB = pastMedicalHistorys.Contains(6) ? "1" : "0";
-        // SE_IS_SB 肾病
-        var SE_IS_SB = pastMedicalHistorys.Contains(7) ? "1" : "0";
-        // SE_IS_Acanthosis 黑棘皮症
-        var SE_IS_Acanthosis = pastMedicalHistorys.Contains(8) ? "1" : "0";
-        // SE_IS_Other 是否有其他 
-        var SE_IS_Other = pastMedicalHistorys.Contains(9) ? "1" : "0";
-        // SE_OtherTxt 其他疾病
-        var SE_OtherTxt = input.OtherMedicalHistory;
-
-        await _supplementaryExamRepository.InsertAsync(new HT_SupplementaryExam()
+        if (!string.IsNullOrEmpty(input.PastMedicalHistoryCodes))
         {
-            SE_ID = await _idAppService.GetNewManangeID("HT_SupplementaryExam", "SE"),
-            ArchivesCode = archivesCode,
-            CreateTime = DateTime.Now,
-            SE_IS_NXG = SE_IS_NXG,
-            SE_IS_XZJB = SE_IS_XZJB,
-            SE_IS_WZXGB = SE_IS_WZXGB,
-            SE_IS_SWMJB = SE_IS_SWMJB,
-            SE_IS_TNB = SE_IS_TNB,
-            SE_IS_SB = SE_IS_SB,
-            SE_IS_Acanthosis = SE_IS_Acanthosis,
-            SE_IS_Other = SE_IS_Other,
-            SE_OtherTxt = SE_OtherTxt
-        });
+
+            List<int> pastMedicalHistorys = input.PastMedicalHistoryCodes.Split(',').Select(int.Parse).ToList();
+            // SE_IS_NXG 是否有脑血管病 
+            var SE_IS_NXG = pastMedicalHistorys.Contains(2) ? "1" : "0";
+            // SE_IS_XZJB 是否有心脏疾病 
+            var SE_IS_XZJB = pastMedicalHistorys.Contains(3) ? "1" : "0";
+            // SE_IS_WZXGB 是否有外周血管病 
+            var SE_IS_WZXGB = pastMedicalHistorys.Contains(4) ? "1" : "0";
+            // SE_IS_SWMJB 视网膜疾病 
+            var SE_IS_SWMJB = pastMedicalHistorys.Contains(5) ? "1" : "0";
+            // SE_IS_TNB  糖尿病（Ⅱ型） 
+            var SE_IS_TNB = pastMedicalHistorys.Contains(6) ? "1" : "0";
+            // SE_IS_SB 肾病
+            var SE_IS_SB = pastMedicalHistorys.Contains(7) ? "1" : "0";
+            // SE_IS_Acanthosis 黑棘皮症
+            var SE_IS_Acanthosis = pastMedicalHistorys.Contains(8) ? "1" : "0";
+            // SE_IS_Other 是否有其他 
+            var SE_IS_Other = pastMedicalHistorys.Contains(9) ? "1" : "0";
+            // SE_OtherTxt 其他疾病
+            var SE_OtherTxt = input.OtherMedicalHistory;
+
+            await _supplementaryExamRepository.InsertAsync(new HT_SupplementaryExam()
+            {
+                SE_ID = await _idAppService.GetNewManangeID("HT_SupplementaryExam", "SE"),
+                ArchivesCode = archivesCode,
+                CreateTime = DateTime.Now,
+                SE_IS_NXG = SE_IS_NXG,
+                SE_IS_XZJB = SE_IS_XZJB,
+                SE_IS_WZXGB = SE_IS_WZXGB,
+                SE_IS_SWMJB = SE_IS_SWMJB,
+                SE_IS_TNB = SE_IS_TNB,
+                SE_IS_SB = SE_IS_SB,
+                SE_IS_Acanthosis = SE_IS_Acanthosis,
+                SE_IS_Other = SE_IS_Other,
+                SE_OtherTxt = SE_OtherTxt
+            });
+        }
 
         var updateEntity = input.Adapt<HT_PatientBasicInfo>();
         updateEntity.ArchivesCode = archivesCode;
         var patientBasicInfoDetail = await _patientBasicInfoRepository.UpdateAsync(updateEntity);
         var output = patientBasicInfo.Adapt<ProfileInformationDetailDto>();
-        var (pastMedicalHistoryCodes, pastMedicalHistory,otherMedicalHistory) = await GetPastMedicalHistoryCodes(archivesCode);
-        output.OtherMedicalHistory =  otherMedicalHistory;
+        var (pastMedicalHistoryCodes, pastMedicalHistory, otherMedicalHistory) = await GetPastMedicalHistoryCodes(archivesCode);
+        output.OtherMedicalHistory = otherMedicalHistory;
         output.PastMedicalHistoryCodes = pastMedicalHistoryCodes;
         output.PastMedicalHistory = pastMedicalHistory;
         return output;
@@ -136,7 +139,7 @@ public class ProfileInformationAppService : IProfileInformationAppService
             throw Oops.Oh("患者基本信息不存在");
         }
         var output = patientBasicInfo.Adapt<ProfileInformationDetailDto>();
-        var (pastMedicalHistoryCodes, pastMedicalHistory,otherMediclHistory) = await GetPastMedicalHistoryCodes(archivesCode);
+        var (pastMedicalHistoryCodes, pastMedicalHistory, otherMediclHistory) = await GetPastMedicalHistoryCodes(archivesCode);
         output.PastMedicalHistoryCodes = pastMedicalHistoryCodes;
         output.PastMedicalHistory = pastMedicalHistory;
         output.OtherMedicalHistory = otherMediclHistory;
@@ -153,14 +156,18 @@ public class ProfileInformationAppService : IProfileInformationAppService
     }
 
 
-    private async Task<(string, string,string)> GetPastMedicalHistoryCodes(string archivesCode)
+    private async Task<(string, string, string)> GetPastMedicalHistoryCodes(string archivesCode)
     {
         var supplementaryExam = await _supplementaryExamRepository.GetByArchivesCode(archivesCode);
+        if  (supplementaryExam == null)
+        {
+            return ("", "", "");
+        }
         var pastMedicalHistoryCodes = new StringBuilder();
         var pastMedicalHistory = new StringBuilder();
-        if(supplementaryExam == null)
+        if (supplementaryExam == null)
         {
-            return (pastMedicalHistoryCodes.ToString(), pastMedicalHistory.ToString(),"");
+            return (pastMedicalHistoryCodes.ToString(), pastMedicalHistory.ToString(), "");
         }
         if (supplementaryExam.SE_IS_NXG == "1")
         {
@@ -210,7 +217,7 @@ public class ProfileInformationAppService : IProfileInformationAppService
 
         pastMedicalHistoryCodes = pastMedicalHistoryCodes.Remove(pastMedicalHistoryCodes.Length - 1, 1);
         pastMedicalHistory = pastMedicalHistory.Remove(pastMedicalHistory.Length - 1, 1);
-        return (pastMedicalHistoryCodes.ToString(), pastMedicalHistory.ToString(),supplementaryExam.SE_OtherTxt);
+        return (pastMedicalHistoryCodes.ToString(), pastMedicalHistory.ToString(), supplementaryExam.SE_OtherTxt);
     }
 
 }
