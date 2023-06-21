@@ -21,7 +21,7 @@ public class UserAppService : IUserAppService
     /// <summary>
     /// 修改密码验证码缓存Key
     /// </summary>
-    public const string ChangePwdCodeKeyPrefix = "ChangePwdCodeKey_";
+    public const string ChangePwdCodeKeyPrefix = "_ChangePwdCodeKey";
 
     /// <summary>
     /// 修改密码验证码过期时间
@@ -244,6 +244,8 @@ public class UserAppService : IUserAppService
         {
             throw Oops.Oh("验证码错误");
         }
+        //验证码使用后失效
+        _memoryCache.Remove(input.PhoneNumber + ChangePwdCodeKeyPrefix);
         return new VerifyChangePwdVerificationCodeOutput
         {
             UserId = existUser.Doctor_ID
