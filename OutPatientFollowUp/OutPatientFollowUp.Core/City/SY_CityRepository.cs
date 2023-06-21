@@ -178,6 +178,18 @@ public static class CityRepositoryExtensions
     {
         return App.GetService<SY_CityRepository>().GetProvinceNameByCode(name);
     }
+    
+    public static string GetAdressDetails(string provinceCode, string cityCode,string countyCode, string address)
+    {
+        var province = GetProvinceCodeName(provinceCode);
+        var city = GetCityCodeName(cityCode);
+        var county = GetCityCodeName(countyCode);
+
+        if (city == "市辖区")
+            city = string.Empty;
+        return $"{province}{city}{county}{address}";
+    }
+   
 
 
 }
