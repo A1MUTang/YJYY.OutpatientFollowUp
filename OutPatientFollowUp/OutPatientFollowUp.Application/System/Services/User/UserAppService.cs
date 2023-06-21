@@ -62,7 +62,7 @@ public class UserAppService : IUserAppService
         //判断用户是否存在
         if (existUser == null)
         {
-            Oops.Oh("用户不存在");
+            Oops.Oh("该手机号暂未开通权限");
         }
         //判断验证码是否过期
         await VerifyChangePwdVerificationCodeAsync(new VerifyChangePwdVerificationCodeInput
@@ -176,7 +176,7 @@ public class UserAppService : IUserAppService
         //判断用户是否存在
         if (existUser == null)
         {
-            throw Oops.Oh("用户不存在");
+            throw Oops.Oh("该手机号暂未开通权限");
         }
         //生成验证码（6位数）
         var code = SMShandle.GetRandomCode();
@@ -201,7 +201,7 @@ public class UserAppService : IUserAppService
         //判断用户是否存在
         if (existUser == null)
         {
-            throw Oops.Oh("用户不存在");
+            throw Oops.Oh("该手机号暂未开通权限");
         }
         //生成验证码（6位数）
         var code = SMShandle.GetRandomCode();
@@ -232,7 +232,7 @@ public class UserAppService : IUserAppService
         //判断用户是否存在
         if (existUser == null)
         {
-            throw Oops.Oh("用户不存在");
+            throw Oops.Oh("该手机号暂未开通权限");
         }
         //验证验证码
         if (!_memoryCache.TryGetValue(input.PhoneNumber + ChangePwdCodeKeyPrefix, out string cacheCode))
@@ -256,7 +256,7 @@ public class UserAppService : IUserAppService
         //判断用户是否存在
         if (existUser == null)
         {
-            throw Oops.Oh("用户不存在");
+            throw Oops.Oh("该手机号暂未开通权限");
         }
         //将用户输入的密码加密
         var pwd = DEncrypt.Md5(input.PassWord);

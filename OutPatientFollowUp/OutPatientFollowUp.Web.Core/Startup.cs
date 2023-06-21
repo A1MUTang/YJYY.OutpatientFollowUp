@@ -1,9 +1,11 @@
-﻿using Furion;
+﻿using System.IO;
+using Furion;
 using Furion.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using OutPatientFollowUp.Application;
 using SqlSugar;
@@ -61,6 +63,12 @@ public class Startup : AppStartup
         app.UseAuthorization();
 
         app.UseInject(string.Empty);
+        app.UseStaticFiles(new StaticFileOptions
+        {
+            FileProvider = new PhysicalFileProvider(
+            Path.Combine(Directory.GetCurrentDirectory(), "OutpatientFollowUpUserAgreement")),
+            RequestPath = "/outpatient-follow-up-user-agreement"
+        });
 
         app.UseEndpoints(endpoints =>
         {
