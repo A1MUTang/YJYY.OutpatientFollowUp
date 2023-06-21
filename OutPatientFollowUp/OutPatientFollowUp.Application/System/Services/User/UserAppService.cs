@@ -144,7 +144,8 @@ public class UserAppService : IUserAppService
             RefreshToken = refreshToken,
             IsPasswordChangeRequired = existUser.IsPerfectPwd.GetValueOrDefault() == 0 ? true : false,
             Gender = existUser.Doctor_Gender,
-            IDCardNumber = existUser.Doctor_ICard
+            IDCardNumber = existUser.Doctor_ICard,
+            ManageName = existUser.Doctor_WorkUnits,
         };
     }
 

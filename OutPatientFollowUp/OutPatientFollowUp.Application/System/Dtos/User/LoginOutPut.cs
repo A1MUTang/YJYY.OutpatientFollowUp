@@ -59,5 +59,11 @@ namespace OutPatientFollowUp.Application
         /// <value></value>
         public string RefreshToken { get; set; }
 
+        /// <summary>
+        /// 所属机构名称
+        /// </summary>
+        /// <value></value>
+        public string ManageName { get; set; }
+
     }
 }

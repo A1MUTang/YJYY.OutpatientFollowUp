@@ -1020,6 +1020,12 @@
             医生凭证 密码/验证码
             </summary>
         </member>
+        <member name="P:OutPatientFollowUp.Application.LoginInput.ManageName">
+            <summary>
+            所属机构名称
+            </summary>
+            <value></value>
+        </member>
         <member name="P:OutPatientFollowUp.Application.LoginInput.MacId">
             <summary>
             设备号
@@ -1077,6 +1083,12 @@
         <member name="P:OutPatientFollowUp.Application.LoginOtput.RefreshToken">
             <summary>
             刷新token 7天
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.LoginOtput.ManageName">
+            <summary>
+            所属机构名称
             </summary>
             <value></value>
         </member>
