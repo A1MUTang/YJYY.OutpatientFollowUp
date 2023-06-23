@@ -1,6 +1,6 @@
 namespace OutPatientFollowUp
 {
-    public class CreateOrUpdateBloodPressure : IValidatableObject
+    public class CreateOrUpdateBloodPressureDto : IValidatableObject
     {
 
         /// <summary>
