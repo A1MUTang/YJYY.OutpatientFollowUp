@@ -22,9 +22,9 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_Gender, src => src.Gender ? "1" : "2")
                 .Map(dest => dest.PBI_AgeType, src => ProfileInformationDetailTool.GetPopulationCategory(src.IDCardNumber).ToString())
                 .Map(dest => dest.PBI_Birthday, src => ProfileInformationDetailTool.GetBirthdayFromIdCard(src.IDCardNumber))
-                .Map(dest => dest.PBI_Province, src => src.Province)
-                .Map(dest => dest.PBI_City, src => src.City)
-                .Map(dest => dest.PBI_Country, src => src.District)
+                .Map(dest => dest.PBI_Province, src => CityRepositoryExtensions.GetCityCodeByName(src.Province))
+                .Map(dest => dest.PBI_City, src => CityRepositoryExtensions.GetCityCodeByName( src.City))
+                .Map(dest => dest.PBI_County, src => CityRepositoryExtensions.GetCityCodeByName(src.District))
                 .Map(dest => dest.PBI_Address, src => src.AddressLine)
 
                 // .Map(dest => dest.PBI_ChronicDiseaseType, src => "") 慢病分类默认无 数据库中是null
@@ -41,7 +41,7 @@ public class Mapper : IRegister
                 // ET05	嗜油
                 // ET06	不详
                 .Map(dest => dest.PBI_YinShiKouWei, src => "ET06")
-                .Map(dest => dest.PBI_Nation, src => SY_CoderRepositoryExtensions.GetCodeByName(src.EthnicityCode))
+                .Map(dest => dest.PBI_Nation, src => src.EthnicityCode)
                 //SP01	不运动
                 //SP02	有氧运动
                 //SP03	剧烈运动
@@ -89,13 +89,13 @@ public class Mapper : IRegister
                 .Map(dest => dest.ProvinceCode, src => src.PBI_Province)
                 .Map(dest => dest.CityCode, src => src.PBI_City)
                 .Map(dest => dest.DistrictCode, src => src.PBI_County)
-                .Map(dest => dest.Ethnicity, src => SY_CoderRepositoryExtensions.GetCodeName(src.PBI_Nation))
-                .Map(dest => dest.EthnicityCode, src => src.PBI_Nation)
+                .Map(dest => dest.Ethnicity, src =>SY_CoderRepositoryExtensions.GetCodeName( src.PBI_Nation) )
+                .Map(dest => dest.EthnicityCode, src =>src.PBI_Nation)
                 .Map(dest => dest.Province, src => CityRepositoryExtensions.GetProvinceCodeName(src.PBI_Province))
                 .Map(dest => dest.City, src => CityRepositoryExtensions.GetCityCodeName(src.PBI_City))
                 .Map(dest => dest.District, src => CityRepositoryExtensions.GetCityCodeName(src.PBI_County))
                 .Map(dest => dest.AddressLine, src => src.PBI_Address)
-                .Map(dest => dest.CurrentAddress, src => CityRepositoryExtensions.GetAdressDetails(src.PBI_Province, src.PBI_City, src.PBI_Country, src.PBI_Address));
+                .Map(dest => dest.CurrentAddress, src => CityRepositoryExtensions.GetAdressDetails(src.PBI_Province, src.PBI_City, src.PBI_County, src.PBI_Address));
 
         config.ForType<HT_PatientBasicInfo, ProfileInformationDetailDto>()
                 .Map(dest => dest.AlcoholStatusCode, src => src.PBI_DrinkingStatus)
@@ -182,10 +182,9 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_UserName, src => src.BasicProfileInformation.Name)
                 .Map(dest => dest.PBI_ICard, src => src.BasicProfileInformation.IDCardNumber)
                 .Map(dest => dest.PBI_PersonPhone, src => src.BasicProfileInformation.PhoneNumber)
-                .Map(dest => dest.PBI_Province, src => src.BasicProfileInformation.Province)
-                .Map(dest => dest.PBI_City, src => src.BasicProfileInformation.City)
-                .Map(dest => dest.PBI_County, src => src.BasicProfileInformation.District)
-                .Map(dest => dest.PBI_Country, src => src.BasicProfileInformation.District)
+                .Map(dest => dest.PBI_Province, src =>CityRepositoryExtensions.GetCityCodeByName( src.BasicProfileInformation.Province))
+                .Map(dest => dest.PBI_City, src => CityRepositoryExtensions.GetCityCodeByName(src.BasicProfileInformation.City))
+                .Map(dest => dest.PBI_County, src => CityRepositoryExtensions.GetCityCodeByName(src.BasicProfileInformation.District))
                 .Map(dest => dest.PBI_Address, src => src.BasicProfileInformation.AddressLine)
                 // .Map(dest => dest.PBI_OriginPlace, src => src.BasicProfileInformation.Address)//TODO 未找到对应字段，先对应到籍贯字段
                 .Map(dest => dest.IsSdrug, src => src.BasicProfileInformation.IsTakingAntidiabeticMeds ? "1" : "0")

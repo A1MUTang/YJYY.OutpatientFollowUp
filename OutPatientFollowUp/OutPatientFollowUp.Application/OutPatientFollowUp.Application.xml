@@ -577,6 +577,12 @@
             <remarks>单位：%</remarks>
             <value></value>
         </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodOxygenDto.MacID">
+            <summary>
+            设备号
+            </summary>
+            <value></value>
+        </member>
         <member name="P:OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodOxygenDto.BloodOxygenValue">
             <summary>
             血氧值
@@ -1553,6 +1559,12 @@
             交验身份证号格式
             </summary>
             <param name="idCardNumber"></param>
+        </member>
+        <member name="P:OutPatientFollowUp.CreateOrUpdateBloodPressure.MacID">
+            <summary>
+            设备号
+            </summary>
+            <value></value>
         </member>
     </members>
 </doc>

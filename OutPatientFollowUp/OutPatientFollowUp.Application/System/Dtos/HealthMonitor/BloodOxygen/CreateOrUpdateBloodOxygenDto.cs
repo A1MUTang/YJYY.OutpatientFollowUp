@@ -1,7 +1,12 @@
 namespace OutPatientFollowUp.Application.HealthMonitor
 {
-    public class CreateOrUpdateBloodOxygenDto:IValidatableObject
+    public class CreateOrUpdateBloodOxygenDto : IValidatableObject
     {
+        /// <summary>
+        /// 设备号
+        /// </summary>
+        /// <value></value>
+        public string MacID { get; set; }
         /// <summary>
         /// 血氧值
         /// </summary>
