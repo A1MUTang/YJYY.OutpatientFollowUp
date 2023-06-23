@@ -22,27 +22,13 @@ namespace OutPatientFollowUp.Core
         /// <param name="archivesCode"></param>
         /// <param name="manageName"></param>
         /// <returns></returns>
-        public async Task<HT_BlutdruckTemp> GetByArchivesCode(string archivesCode, string manageName)
+        public async Task<HT_BlutdruckTemp> GetByArchivesCode(string archivesCode)
         {
             return await _context.Queryable<HT_BlutdruckTemp>()
-                .Where(x => x.ArchivesCode == archivesCode && x.CreateArchivesUnit == manageName)
+                .OrderByDescending(x => x.CreateDate)
+                .Where(x => x.ArchivesCode == archivesCode )
                 .FirstAsync();
         }
 
-        /// <summary>
-        /// 根据身份证号和管理单位名称获取血压信息。
-        /// </summary>
-        /// <param name="idcard"></param>
-        /// <param name="manageName"></param>
-        /// <returns></returns>
-        public async Task<HT_BlutdruckTemp> GetByIdcardAndDocterIdAsync(string idcard, string manageName)
-        {
-            return await _context.Queryable<HT_BlutdruckTemp>()
-                .Where(x => x.ICard == idcard && SqlFunc.Subqueryable<PT_OrgnameForParent>()
-                    .Where(y => y.OrgName == manageName)
-                    .Select(y => y.ManageName)
-                    .Contains(x.CreateArchivesUnit))
-                .FirstAsync();
-        }
     }
 }

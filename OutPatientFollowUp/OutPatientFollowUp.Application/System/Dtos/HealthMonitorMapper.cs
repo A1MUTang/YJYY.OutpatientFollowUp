@@ -26,6 +26,24 @@ namespace OutPatientFollowUp.Application
             .Map(dest => dest.HDL, src => src.HDLCholesterol)
             .Map(dest => dest.LDL, src => src.LDLCholesterol)
             ;
+
+
+            config.ForType<HT_BlutdruckTemp, BloodPressureDto>()
+            .Map(dest => dest.ArchivesCode, src => src.ArchivesCode)
+            .Map(dest => dest.Systolic, src => src.SBP)
+            .Map(dest => dest.Diastolic, src => src.DBP)
+            .Map(dest => dest.HeartRate, src => src.MaiBo)
+            .Map(dest => dest.BloodPressureResult, src => BloodPressureTool.GetBloodPressureResult(src.SBP, src.DBP).GetName())
+            .Map(dest => dest.BloodPressureResultCode, src => BloodPressureTool.GetBloodPressureResult(src.SBP, src.DBP))
+            .Map(dest => dest.HealthAdvice, src => BloodPressureTool.GetBloodPressureResult(src.ArchivesCode,src.SBP, src.DBP).GetDescription())
+            .Map(dest => dest.HeartRateResult, src => BloodPressureTool.GetHreatRateResult(src.MaiBo).GetName())
+            .Map(dest => dest.HeartRateResultCode, src => BloodPressureTool.GetHreatRateResult(src.MaiBo));
+
+            config.ForType<CreateOrUpdateBloodPressureDto, HT_BlutdruckTemp>()
+            .Map(dest => dest.SBP, src => src.Systolic)
+            .Map(dest => dest.DBP, src => src.Diastolic)
+            .Map(dest => dest.MaiBo, src => src.HeartRate)
+            ;
         }
     }
 }

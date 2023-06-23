@@ -836,6 +836,295 @@
             </summary>
             <value></value>
         </member>
+        <member name="T:OutPatientFollowUp.Core.HT_BlutdruckTemp">
+            <summary>
+            血压临时表
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.ArchivesCode">
+            <summary>
+            档案编号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.MacID">
+            <summary>
+            设备ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.Manufacture">
+            <summary>
+            制造商
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.MacType">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.UserCode">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.MeasureDate">
+            <summary>
+            测量日期
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.SBP">
+            <summary>
+            收缩压
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.DBP">
+            <summary>
+            舒张压
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.MaiBo">
+            <summary>
+            脉搏
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.DataSources">
+            <summary>
+            数据来源
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.Remarks">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.CreateDate">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.IsUploaded">
+            <summary>
+            是否已上传
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.SvcId">
+            <summary>
+            服务ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.ICard">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.CreateArchivesUnit">
+            <summary>
+            创建档案单位
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.HospitalizationNumber">
+            <summary>
+            住院号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.HospitalizationCount">
+            <summary>
+            住院次数
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.VisitNumber">
+            <summary>
+            就诊号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.IsUpdate">
+            <summary>
+            是否更新
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.PersonPhone">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.MacPlace">
+            <summary>
+            设备位置
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.ParentName">
+            <summary>
+            父母姓名
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.IsHdrug">
+            <summary>
+            是否使用降压药
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.IsSdrug">
+            <summary>
+            是否使用降糖药
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.IsGxyStandard">
+            <summary>
+            是否符合高血压标准
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.PatientType">
+            <summary>
+            患者类型
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.PlanID">
+            <summary>
+            计划ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.SignDoctor">
+            <summary>
+            签约医生
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.IsDBCenter">
+            <summary>
+            是否上传至大数据中心
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.HT_BlutdruckTempRepository">
+            <summary>
+            血压仓储类。
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HT_BlutdruckTempRepository.GetByArchivesCode(System.String)">
+            <summary>
+            根据档案编号和管理单位名称获取血压信息。
+            </summary>
+            <param name="archivesCode"></param>
+            <param name="manageName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.HT_Glucose">
+            <summary>
+            血糖实体类
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Glucose.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Glucose.ArchivesCode">
+            <summary>
+            档案编号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Glucose.MacID">
+            <summary>
+            设备ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Glucose.Manufacture">
+            <summary>
+            制造商
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Glucose.MeasureDate">
+            <summary>
+            测量日期
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Glucose.MensPeriod">
+            <summary>
+            月经期
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Glucose.MensValue">
+            <summary>
+            血糖值
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Glucose.DataSource">
+            <summary>
+            数据来源
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Glucose.Remarks">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Glucose.CreateDate">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Glucose.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Glucose.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Glucose.ICard">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Glucose.CreateArchivesUnit">
+            <summary>
+            创建档案单位
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Glucose.IsDelete">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Glucose.SvcId">
+            <summary>
+            服务ID
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.HT_GlucoseRepository">
+            <summary>
+            血糖仓储类。
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HT_GlucoseRepository.GetByArchivesCode(System.String,System.String)">
+            <summary>
+            根据档案编号和管理单位名称获取血糖信息。
+            </summary>
+            <param name="archivesCode"></param>
+            <param name="manageName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HT_GlucoseRepository.GetByIdcardAndDocterIdAsync(System.String,System.String)">
+            <summary>
+            根据身份证号和管理单位名称获取血糖信息。
+            </summary>
+            <param name="idcard"></param>
+            <param name="manageName"></param>
+            <returns></returns>
+        </member>
         <member name="T:OutPatientFollowUp.Core.HT_PatientBasicInfo">
             <summary>
             患者基本信息
@@ -2472,6 +2761,35 @@
             <summary>
             更新一条
             </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_BlutdruckTempRepository.GetByArchivesCode(System.String)">
+            <summary>
+            根据档案编号和管理单位名称获取血压信息。
+            </summary>
+            <param name="archivesCode"></param>
+            <param name="manageName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.IHT_GlucoseRepository">
+            <summary>
+            血糖仓储接口。
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_GlucoseRepository.GetByArchivesCode(System.String,System.String)">
+            <summary>
+            根据档案编号和管理单位名称获取血糖信息。
+            </summary>
+            <param name="archivesCode"></param>
+            <param name="manageName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_GlucoseRepository.GetByIdcardAndDocterIdAsync(System.String,System.String)">
+            <summary>
+            根据身份证号和管理单位名称获取血糖信息。
+            </summary>
+            <param name="idcard"></param>
+            <param name="manageName"></param>
+            <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Core.IHT_PatientBasicInfoRepository.GetByIdcardAndDocterIdAsync(System.String,System.String)">
             <summary>

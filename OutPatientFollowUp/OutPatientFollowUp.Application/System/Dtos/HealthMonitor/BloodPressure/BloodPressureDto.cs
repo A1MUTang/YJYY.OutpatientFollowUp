@@ -22,19 +22,19 @@ public class BloodPressureDto
     /// <summary>
     /// 脉搏
     /// </summary>
-    public int Pulse { get; set; }
+    public int HeartRate { get; set; }
 
     /// <summary>
     /// 血压结果对应结果码
     /// </summary>
     /// <value></value>
-    public BloodPressureResultEnum bloodPressureResultCode { get; set; }
+    public BloodPressureResultEnum BloodPressureResultCode { get; set; }
 
     /// <summary>
     /// 血压结果
     /// </summary>
     /// <value></value>
-    public string bloodPressureResult { get; set; }
+    public string BloodPressureResult { get; set; }
 
     /// <summary>
     /// 脉搏结果对应结果码

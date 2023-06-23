@@ -688,18 +688,18 @@
             舒张压
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Application.BloodPressureDto.Pulse">
+        <member name="P:OutPatientFollowUp.Application.BloodPressureDto.HeartRate">
             <summary>
             脉搏
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Application.BloodPressureDto.bloodPressureResultCode">
+        <member name="P:OutPatientFollowUp.Application.BloodPressureDto.BloodPressureResultCode">
             <summary>
             血压结果对应结果码
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Application.BloodPressureDto.bloodPressureResult">
+        <member name="P:OutPatientFollowUp.Application.BloodPressureDto.BloodPressureResult">
             <summary>
             血压结果
             </summary>
@@ -1322,6 +1322,28 @@
             <param name="archivesCode">入参</param>
             <returns></returns>
         </member>
+        <member name="T:OutPatientFollowUp.Application.BloodPressureAppService">
+            <summary>
+            血压应用程序服务类。
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.BloodPressureAppService.CreateAsync(System.String,OutPatientFollowUp.CreateOrUpdateBloodPressureDto)">
+            <summary>
+            创建血压记录。
+            </summary>
+            <param name="archivesCode">基础档案信息主键。</param>
+            <param name="input">入参。</param>
+            <remarks>会创建血压信息。</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.BloodPressureAppService.GetAsync(System.String)">
+            <summary>
+            获取血压。
+            </summary>
+            <param name="archivesCode">基础档案信息主键。</param>
+            <remarks>会获取最新当前血压。</remarks>
+            <returns></returns>
+        </member>
         <member name="M:OutPatientFollowUp.Application.CityAppService.GetCityListAsync(System.String)">
             <summary>
             获取城市列表
@@ -1360,6 +1382,28 @@
             获取血脂详情
             </summary>
             <param name="archivesCode">基本档案信息</param>
+            <returns></returns>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.IBloodPressureAppService">
+            <summary>
+            血压应用程序服务接口。
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IBloodPressureAppService.CreateAsync(System.String,OutPatientFollowUp.CreateOrUpdateBloodPressureDto)">
+            <summary>
+            创建血压记录。
+            </summary>
+            <param name="archivesCode">基础档案信息主键。</param>
+            <param name="input">入参。</param>
+            <remarks>会创建血压信息。</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IBloodPressureAppService.GetAsync(System.String)">
+            <summary>
+            获取血压。
+            </summary>
+            <param name="archivesCode">基础档案信息主键。</param>
+            <remarks>会获取最新当前血压。</remarks>
             <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Application.ICityAppService.GetCityListAsync(System.String)">
@@ -1588,7 +1632,7 @@
             <param name="bloodOxygenValue">血氧值</param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Application.BloodPressureTool.GetBloodPressureResult(OutPatientFollowUp.Application.BloodPressureTool.BloodPressureResultInput)">
+        <member name="M:OutPatientFollowUp.Application.BloodPressureTool.GetBloodPressureResultWithMedication(OutPatientFollowUp.Application.BloodPressureTool.BloodPressureResultInput)">
             <summary>
             获取血压结果    
             </summary>
@@ -1685,7 +1729,7 @@
             舒张压
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.CreateOrUpdateBloodPressureDto.Pulse">
+        <member name="P:OutPatientFollowUp.CreateOrUpdateBloodPressureDto.HeartRate">
             <summary>
             脉搏
             </summary>

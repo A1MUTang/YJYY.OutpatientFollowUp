@@ -9,7 +9,11 @@ namespace OutPatientFollowUp.Core.HealthMonitor;
 [Route("api/[controller]")]
 public class BloodPressureController : ControllerBase
 {
-    // private readonly IBloodPressureAppService _bloodPressureAppService;
+    private readonly IBloodPressureAppService _bloodPressureAppService;
+    public BloodPressureController(IBloodPressureAppService bloodPressureAppService)
+    {
+        _bloodPressureAppService = bloodPressureAppService;
+    }
 
     /// <summary>
     /// 创建血压记录
@@ -21,10 +25,7 @@ public class BloodPressureController : ControllerBase
     [HttpPost()]
     public async Task<BloodPressureDto> CreateAsync(string archivesCode, CreateOrUpdateBloodPressureDto input)
     {
-        return new BloodPressureDto()
-        {
-        };
-        //    return  await _bloodLipidAppService.CreateAsync(archivesCode, input);
+        return await _bloodPressureAppService.CreateAsync(archivesCode, input);
     }
 
     /// <summary>
@@ -36,8 +37,6 @@ public class BloodPressureController : ControllerBase
     [HttpGet()]
     public async Task<BloodPressureDto> GetAsync(string archivesCode)
     {
-        return new BloodPressureDto()
-        {
-        };
+        return await _bloodPressureAppService.GetAsync(archivesCode);
     }
 }

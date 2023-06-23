@@ -116,7 +116,7 @@ namespace OutPatientFollowUp.Core
         /// <summary>
         /// 是否更新
         /// </summary>
-        public int IsUpdate { get; set; }
+        public string IsUpdate { get; set; }
         /// <summary>
         /// 联系电话
         /// </summary>
@@ -140,7 +140,7 @@ namespace OutPatientFollowUp.Core
         /// <summary>
         /// 是否符合高血压标准
         /// </summary>
-        public int IsGxyStandard { get; set; }
+        public string IsGxyStandard { get; set; }
         /// <summary>
         /// 患者类型
         /// </summary>
@@ -156,6 +156,6 @@ namespace OutPatientFollowUp.Core
         /// <summary>
         /// 是否上传至大数据中心
         /// </summary>
-        public int IsDBCenter { get; set; }
+        public string IsDBCenter { get; set; }
     }
 }

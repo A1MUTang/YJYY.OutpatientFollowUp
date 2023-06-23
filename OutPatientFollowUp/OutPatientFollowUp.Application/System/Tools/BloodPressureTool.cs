@@ -149,7 +149,7 @@ public static class BloodPressureTool
         public int Age { get; set; }
     }
 
-    public static HeartRateResultEnum GetPulseResult(int HeartRate)
+    public static HeartRateResultEnum GetHreatRateResult(int HeartRate)
     {
         if (HeartRate < 60)
         {
@@ -165,25 +165,26 @@ public static class BloodPressureTool
         }
     }
 
-    public static BloodPressureResultEnum GetBloodPressureResult(BloodPressureResultInput input)
+    public static BloodPressureResultEnum GetBloodPressureResult( int SBP, int DBP)
     {
-        if (input.SBP < 90 || input.DBP < 60)
+     
+        if (SBP < 90 || DBP < 60)
         {
             return BloodPressureResultEnum.Low;
         }
-        else if (input.SBP < 120 && input.DBP < 80)
+        else if (SBP < 120 && DBP < 80)
         {
             return BloodPressureResultEnum.Ideal;
         }
-        else if (input.SBP < 140 && input.DBP < 90)
+        else if (SBP < 140 && DBP < 90)
         {
             return BloodPressureResultEnum.Normal;
         }
-        else if (input.SBP < 160 && input.DBP < 100)
+        else if (SBP < 160 && DBP < 100)
         {
             return BloodPressureResultEnum.Mild;
         }
-        else if (input.SBP < 180 && input.DBP < 110)
+        else if (SBP < 180 && DBP < 110)
         {
             return BloodPressureResultEnum.Moderate;
         }
