@@ -288,7 +288,27 @@
             </summary>
             <remarks>脉搏大于100</remarks>
         </member>
-        <member name="T:OutPatientFollowUp.Core.BloodSugarType">
+        <member name="F:OutPatientFollowUp.Core.BloodSugarResultEnum.Low">
+            <summary>
+            低血糖
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodSugarResultEnum.Normal">
+            <summary>
+            正常
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodSugarResultEnum.High">
+            <summary>
+            偏高
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodSugarResultEnum.VeryHigh">
+            <summary>
+            很高
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.BloodSugarTypeEnum">
             <summary>
             血糖类型
             <remarks>
@@ -296,6 +316,21 @@
             Postprandial = "餐后"
             Random = "随机"
             </remarks>
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodSugarTypeEnum.Fasting">
+            <summary>
+            空腹血糖
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodSugarTypeEnum.Postprandial">
+            <summary>
+            餐后血糖
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.BloodSugarTypeEnum.Random">
+            <summary>
+            随机血糖
             </summary>
         </member>
         <member name="T:OutPatientFollowUp.Core.ChronicDiseaseCategoryEnum">
@@ -600,6 +635,31 @@
             QuitSmoking = "已戒烟"
             Smoking = "吸烟"
             </remarks>
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.TemperatureResultEnum">
+            <summary>
+            体温结果枚举
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.TemperatureResultEnum.Low">
+            <summary>
+            低于正常
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.TemperatureResultEnum.Normal">
+            <summary>
+            正常
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.TemperatureResultEnum.MildAbnormal">
+            <summary>
+            轻度异常
+            </summary>
+        </member>
+        <member name="F:OutPatientFollowUp.Core.TemperatureResultEnum.SevereAbnormal">
+            <summary>
+            严重异常
             </summary>
         </member>
         <member name="T:OutPatientFollowUp.Core.VegetableIntakeEnum">

@@ -557,17 +557,17 @@
             <remarks>单位：%</remarks>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodOxygenDto.BasicProfileInformationId">
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodOxygenDto.archivesCode">
             <summary>
             基础档案信息主键
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodOxygenDto.HealthMonitorBaseDto">
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodOxygenDto.BloodOxygenResultCode">
             <summary>
-            健康基础信息
+            血氧结果
             </summary>
-            <remarks>测量结果中的抬头</remarks>
+            <remarks>单位：%</remarks>
             <value></value>
         </member>
         <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodOxygenDto.BloodOxygenResult">
@@ -590,6 +590,65 @@
             <remarks>单位：%</remarks>
             <value></value>
         </member>
+        <member name="T:OutPatientFollowUp.Application.HealthMonitor.BloodSugarDto">
+            <summary>
+            血脂
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodSugarDto.ArchivesCode">
+            <summary>
+            档案信息编号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodSugarDto.BloodSugarValue">
+            <summary>
+            血糖值
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodSugarDto.BloodSugarType">
+            <summary>
+            血糖类型
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodSugarDto.BloodSugarResultCode">
+            <summary>
+            血糖结果
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodSugarDto.BloodSugarResult">
+            <summary>
+            血糖结果
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodSugarDto.HealthAdvice">
+            <summary>
+            健康建议
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodSugarDto.MacID">
+            <summary>
+            设备号  //TODO 确认设备是哪个设备
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodSugarDto.BloodSugarValue">
+            <summary>
+            血糖值
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodSugarDto.BloodSugarType">
+            <summary>
+            血糖类型
+            </summary>
+            <value></value>
+        </member>
         <member name="T:OutPatientFollowUp.Application.HealthMonitor.HealthMonitorBaseDto">
             <summary>
             健康基础信息
@@ -610,6 +669,57 @@
         <member name="P:OutPatientFollowUp.Application.HealthMonitor.HealthMonitorBaseDto.IDCardNumber">
             <summary>
             身份证号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodPressureDto.ArchivesCode">
+            <summary>
+            档案信息编号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodPressureDto.Systolic">
+            <summary>
+            收缩压
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodPressureDto.Diastolic">
+            <summary>
+            舒张压
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodPressureDto.Pulse">
+            <summary>
+            脉搏
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodPressureDto.bloodPressureResultCode">
+            <summary>
+            血压结果对应结果码
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodPressureDto.bloodPressureResult">
+            <summary>
+            血压结果
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodPressureDto.HeartRateResultCode">
+            <summary>
+            脉搏结果对应结果码
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodPressureDto.HeartRateResult">
+            <summary>
+            脉搏结果
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodPressureDto.HealthAdvice">
+            <summary>
+            健康建议    
             </summary>
             <value></value>
         </member>
@@ -1560,11 +1670,55 @@
             </summary>
             <param name="idCardNumber"></param>
         </member>
-        <member name="P:OutPatientFollowUp.CreateOrUpdateBloodPressure.MacID">
+        <member name="P:OutPatientFollowUp.CreateOrUpdateBloodPressureDto.MacID">
             <summary>
             设备号
             </summary>
-            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.CreateOrUpdateBloodPressureDto.Systolic">
+            <summary>
+            收缩压
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.CreateOrUpdateBloodPressureDto.Diastolic">
+            <summary>
+            舒张压
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.CreateOrUpdateBloodPressureDto.Pulse">
+            <summary>
+            脉搏
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.CreateOrUpdateTemperature.MacID">
+            <summary>
+            设备号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.CreateOrUpdateTemperature.Temperature">
+            <summary>
+            体温
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Dto.TemperatureDto.MacID">
+            <summary>
+            设备号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Dto.TemperatureDto.Temperature">
+            <summary>
+            体温
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Dto.TemperatureDto.TemperatureResultCode">
+            <summary>
+            体温结果
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Dto.TemperatureDto.TemperatureResult">
+            <summary>
+            体温结果
+            </summary>
         </member>
     </members>
 </doc>

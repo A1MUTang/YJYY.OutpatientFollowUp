@@ -10,12 +10,23 @@ namespace OutPatientFollowUp.Core;
 /// Random = "随机"
 /// </remarks>
 /// </summary>
-public enum BloodSugarType
+public enum BloodSugarTypeEnum
 {
-    [Display(Name = "空腹")]
+    /// <summary>
+    /// 空腹血糖
+    /// </summary>
+    [Display(Name = "空腹血糖")]
     Fasting,
-    [Display(Name = "餐后")]
+
+    /// <summary>
+    /// 餐后血糖
+    /// </summary>
+    [Display(Name = "餐后血糖")]
     Postprandial,
-    [Display(Name = "随机")]
-    Random
+
+    /// <summary>
+    /// 随机血糖
+    /// </summary>
+    [Display(Name = "随机血糖")]
+    Random,
 }

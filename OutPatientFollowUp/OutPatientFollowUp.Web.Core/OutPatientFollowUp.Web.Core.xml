@@ -222,6 +222,60 @@
             <param name="archivesCode">基本档案信息Id</param>
             <returns></returns>
         </member>
+        <member name="M:OutPatientFollowUp.Core.HealthMonitor.BloodPressureController.CreateAsync(System.String,OutPatientFollowUp.CreateOrUpdateBloodPressureDto)">
+            <summary>
+            创建血压记录
+            </summary>
+            <param name="archivesCode">基础档案信息主键</param>
+            <param name="input">入参</param>
+            <remarks>会创建血压信息</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HealthMonitor.BloodPressureController.GetAsync(System.String)">
+            <summary>
+            获取血压
+            </summary>
+            <param name="archivesCode">基础档案信息主键</param>
+            <remarks>会获取最新当前血脂压</remarks> 
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HealthMonitor.BloodSugarController.CreateAsync(System.String,OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodSugarDto)">
+            <summary>
+            创建血糖记录
+            </summary>
+            <param name="archivesCode">基础档案信息主键</param>
+            <param name="input">入参</param>
+            <remarks>会创建血糖信息</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HealthMonitor.BloodSugarController.GetAsync(System.String)">
+            <summary>
+            获取血糖
+            </summary>
+            <param name="archivesCode">基础档案信息主键</param>
+            <remarks>会获取最新当前血糖</remarks> 
+            <returns></returns>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.HealthMonitor.TemperatureControl">
+            <summary>
+            体温
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HealthMonitor.TemperatureControl.CreateAsync(System.String,OutPatientFollowUp.CreateOrUpdateTemperature)">
+            <summary>
+            录入体温
+            </summary>
+            <param name="archivesCode">基本档案信息Id</param>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HealthMonitor.TemperatureControl.GetAsync(System.String)">
+            <summary>
+            获取体温
+            </summary>
+            <param name="archivesCode">基本档案信息Id</param>
+            <returns></returns>
+        </member>
         <member name="T:OutPatientFollowUp.Application.ProfileInformationDetailController">
             <summary>
             基本档案信息

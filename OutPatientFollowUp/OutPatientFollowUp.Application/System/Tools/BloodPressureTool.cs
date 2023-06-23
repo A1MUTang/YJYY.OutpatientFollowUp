@@ -8,7 +8,7 @@ public static class BloodPressureTool
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
-    public static BloodPressureHealthAdviceEnum GetBloodPressureResult(BloodPressureResultInput input)
+    public static BloodPressureHealthAdviceEnum GetBloodPressureResultWithMedication(BloodPressureResultInput input)
     {
         //TODO: 有空再优化，也可能有空就忘了
         if (input.SBP < 90 || input.DBP < 60)
@@ -148,6 +148,50 @@ public static class BloodPressureTool
         /// <value></value>
         public int Age { get; set; }
     }
+
+    public static HeartRateResultEnum GetPulseResult(int HeartRate)
+    {
+        if (HeartRate < 60)
+        {
+            return HeartRateResultEnum.Bradycardia;
+        }
+        else if (HeartRate < 100)
+        {
+            return HeartRateResultEnum.Normal;
+        }
+        else
+        {
+            return HeartRateResultEnum.Tachycardia;
+        }
+    }
+
+    public static BloodPressureResultEnum GetBloodPressureResult(BloodPressureResultInput input)
+{
+    if (input.SBP < 90 || input.DBP < 60)
+    {
+        return BloodPressureResultEnum.Low;
+    }
+    else if (input.SBP < 120 && input.DBP < 80)
+    {
+        return BloodPressureResultEnum.Ideal;
+    }
+    else if (input.SBP < 140 && input.DBP < 90)
+    {
+        return BloodPressureResultEnum.Normal;
+    }
+    else if (input.SBP < 160 && input.DBP < 100)
+    {
+        return BloodPressureResultEnum.Mild;
+    }
+    else if (input.SBP < 180 && input.DBP < 110)
+    {
+        return BloodPressureResultEnum.Moderate;
+    }
+    else
+    {
+        return BloodPressureResultEnum.Severe;
+    }
+}
 
 
 }
