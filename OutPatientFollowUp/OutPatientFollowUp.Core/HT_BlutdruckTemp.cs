@@ -97,20 +97,65 @@ namespace OutPatientFollowUp.Core
         /// </summary>
         public string ICard { get; set; }
 
+        /// <summary>
+        /// 创建档案单位
+        /// </summary>
         public string CreateArchivesUnit { get; set; }
+        /// <summary>
+        /// 住院号
+        /// </summary>
         public string HospitalizationNumber { get; set; }
+        /// <summary>
+        /// 住院次数
+        /// </summary>
         public int HospitalizationCount { get; set; }
+        /// <summary>
+        /// 就诊号
+        /// </summary>
         public string VisitNumber { get; set; }
+        /// <summary>
+        /// 是否更新
+        /// </summary>
         public int IsUpdate { get; set; }
+        /// <summary>
+        /// 联系电话
+        /// </summary>
         public string PersonPhone { get; set; }
+        /// <summary>
+        /// 设备位置
+        /// </summary>
         public string MacPlace { get; set; }
+        /// <summary>
+        /// 父母姓名
+        /// </summary>
         public string ParentName { get; set; }
+        /// <summary>
+        /// 是否使用降压药
+        /// </summary>
         public int IsHdrug { get; set; }
+        /// <summary>
+        /// 是否使用降糖药
+        /// </summary>
         public int IsSdrug { get; set; }
+        /// <summary>
+        /// 是否符合高血压标准
+        /// </summary>
         public int IsGxyStandard { get; set; }
+        /// <summary>
+        /// 患者类型
+        /// </summary>
         public int PatientType { get; set; }
+        /// <summary>
+        /// 计划ID
+        /// </summary>
         public int PlanID { get; set; }
+        /// <summary>
+        /// 签约医生
+        /// </summary>
         public string SignDoctor { get; set; }
+        /// <summary>
+        /// 是否上传至大数据中心
+        /// </summary>
         public int IsDBCenter { get; set; }
     }
 }
