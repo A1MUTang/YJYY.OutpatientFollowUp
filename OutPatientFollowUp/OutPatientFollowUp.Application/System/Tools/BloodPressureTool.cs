@@ -117,7 +117,7 @@ public static class BloodPressureTool
             IsUsingAntidiabeticMedication = patientBasicInfo.IsSdrug == 1,
             IsUsingAntihypertensiveMedication = patientBasicInfo.IsHdrug == 1
         };
-        return GetBloodPressureResult(input);
+        return GetBloodPressureResultWithMedication(input);
     }
 
     public class BloodPressureResultInput
@@ -166,32 +166,30 @@ public static class BloodPressureTool
     }
 
     public static BloodPressureResultEnum GetBloodPressureResult(BloodPressureResultInput input)
-{
-    if (input.SBP < 90 || input.DBP < 60)
     {
-        return BloodPressureResultEnum.Low;
+        if (input.SBP < 90 || input.DBP < 60)
+        {
+            return BloodPressureResultEnum.Low;
+        }
+        else if (input.SBP < 120 && input.DBP < 80)
+        {
+            return BloodPressureResultEnum.Ideal;
+        }
+        else if (input.SBP < 140 && input.DBP < 90)
+        {
+            return BloodPressureResultEnum.Normal;
+        }
+        else if (input.SBP < 160 && input.DBP < 100)
+        {
+            return BloodPressureResultEnum.Mild;
+        }
+        else if (input.SBP < 180 && input.DBP < 110)
+        {
+            return BloodPressureResultEnum.Moderate;
+        }
+        else
+        {
+            return BloodPressureResultEnum.Severe;
+        }
     }
-    else if (input.SBP < 120 && input.DBP < 80)
-    {
-        return BloodPressureResultEnum.Ideal;
-    }
-    else if (input.SBP < 140 && input.DBP < 90)
-    {
-        return BloodPressureResultEnum.Normal;
-    }
-    else if (input.SBP < 160 && input.DBP < 100)
-    {
-        return BloodPressureResultEnum.Mild;
-    }
-    else if (input.SBP < 180 && input.DBP < 110)
-    {
-        return BloodPressureResultEnum.Moderate;
-    }
-    else
-    {
-        return BloodPressureResultEnum.Severe;
-    }
-}
-
-
 }
