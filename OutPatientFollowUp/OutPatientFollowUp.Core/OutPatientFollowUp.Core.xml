@@ -1051,7 +1051,7 @@
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_Glucose.MensPeriod">
             <summary>
-            月经期
+            血糖类型
             </summary>
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_Glucose.MensValue">
@@ -1109,7 +1109,7 @@
             血糖仓储类。
             </summary>
         </member>
-        <member name="M:OutPatientFollowUp.Core.HT_GlucoseRepository.GetByArchivesCode(System.String,System.String)">
+        <member name="M:OutPatientFollowUp.Core.HT_GlucoseRepository.GetByArchivesCode(System.String)">
             <summary>
             根据档案编号和管理单位名称获取血糖信息。
             </summary>
@@ -1117,7 +1117,7 @@
             <param name="manageName"></param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Core.HT_GlucoseRepository.GetByIdcardAndDocterIdAsync(System.String,System.String)">
+        <member name="M:OutPatientFollowUp.Core.HT_GlucoseRepository.GetByIdcardAndDocterIdAsync(System.String)">
             <summary>
             根据身份证号和管理单位名称获取血糖信息。
             </summary>
@@ -2690,6 +2690,36 @@
             
              </summary>
         </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Temperature.Id">
+            <summary>
+            主键，自增长的整数类型。
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Temperature.ArchivesCode">
+            <summary>
+            基础档案信息主键，字符串类型。
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Temperature.Temperature">
+            <summary>
+            体温，decimal 类型。
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Temperature.CreateTime">
+            <summary>
+            创建时间，DateTime 类型。
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Temperature.CreateArchivesUnit">
+            <summary>
+            创建档案单位，字符串类型。
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Temperature.ManageOrganization">
+            <summary>
+            管理组织，字符串类型。
+            </summary>
+        </member>
         <member name="M:OutPatientFollowUp.Core.IBloodLipidReository.GetByArchivesCodeAsync(System.String)">
             <summary>
              根据档案号获取最近血脂信息
@@ -2775,7 +2805,7 @@
             血糖仓储接口。
             </summary>
         </member>
-        <member name="M:OutPatientFollowUp.Core.IHT_GlucoseRepository.GetByArchivesCode(System.String,System.String)">
+        <member name="M:OutPatientFollowUp.Core.IHT_GlucoseRepository.GetByArchivesCode(System.String)">
             <summary>
             根据档案编号和管理单位名称获取血糖信息。
             </summary>
@@ -2783,7 +2813,7 @@
             <param name="manageName"></param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Core.IHT_GlucoseRepository.GetByIdcardAndDocterIdAsync(System.String,System.String)">
+        <member name="M:OutPatientFollowUp.Core.IHT_GlucoseRepository.GetByIdcardAndDocterIdAsync(System.String)">
             <summary>
             根据身份证号和管理单位名称获取血糖信息。
             </summary>

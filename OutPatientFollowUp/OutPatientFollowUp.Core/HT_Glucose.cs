@@ -33,14 +33,14 @@ namespace OutPatientFollowUp.Core
         public DateTime MeasureDate { get; set; }
 
         /// <summary>
-        /// 月经期
+        /// 血糖类型
         /// </summary>
         public string MensPeriod { get; set; }
 
         /// <summary>
         /// 血糖值
         /// </summary>
-        public int MensValue { get; set; }
+        public decimal MensValue { get; set; }
 
         /// <summary>
         /// 数据来源

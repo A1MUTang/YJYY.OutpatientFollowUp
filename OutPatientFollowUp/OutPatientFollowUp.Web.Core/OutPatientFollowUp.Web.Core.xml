@@ -239,7 +239,7 @@
             <remarks>会获取最新当前血脂压</remarks> 
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Core.HealthMonitor.BloodSugarController.CreateAsync(System.String,OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodSugarDto)">
+        <member name="M:OutPatientFollowUp.Core.HealthMonitor.BloodSugarController.CreateAsync(System.String,OutPatientFollowUp.Application.CreateOrUpdateBloodSugarDto)">
             <summary>
             创建血糖记录
             </summary>

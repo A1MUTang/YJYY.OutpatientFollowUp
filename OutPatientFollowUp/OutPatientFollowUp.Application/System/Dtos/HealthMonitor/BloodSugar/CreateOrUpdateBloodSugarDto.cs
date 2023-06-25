@@ -1,6 +1,6 @@
 using OutPatientFollowUp.Core;
 
-namespace OutPatientFollowUp.Application.HealthMonitor;
+namespace OutPatientFollowUp.Application;
 
 public class CreateOrUpdateBloodSugarDto : IValidatableObject
 {
@@ -14,7 +14,7 @@ public class CreateOrUpdateBloodSugarDto : IValidatableObject
     /// 血糖值
     /// </summary>
     /// <value></value>
-    public int BloodSugarValue { get; set; }
+    public decimal BloodSugarValue { get; set; }
 
     /// <summary>
     /// 血糖类型

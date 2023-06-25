@@ -590,65 +590,6 @@
             <remarks>单位：%</remarks>
             <value></value>
         </member>
-        <member name="T:OutPatientFollowUp.Application.HealthMonitor.BloodSugarDto">
-            <summary>
-            血脂
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodSugarDto.ArchivesCode">
-            <summary>
-            档案信息编号
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodSugarDto.BloodSugarValue">
-            <summary>
-            血糖值
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodSugarDto.BloodSugarType">
-            <summary>
-            血糖类型
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodSugarDto.BloodSugarResultCode">
-            <summary>
-            血糖结果
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodSugarDto.BloodSugarResult">
-            <summary>
-            血糖结果
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodSugarDto.HealthAdvice">
-            <summary>
-            健康建议
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodSugarDto.MacID">
-            <summary>
-            设备号  //TODO 确认设备是哪个设备
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodSugarDto.BloodSugarValue">
-            <summary>
-            血糖值
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodSugarDto.BloodSugarType">
-            <summary>
-            血糖类型
-            </summary>
-            <value></value>
-        </member>
         <member name="T:OutPatientFollowUp.Application.HealthMonitor.HealthMonitorBaseDto">
             <summary>
             健康基础信息
@@ -720,6 +661,65 @@
         <member name="P:OutPatientFollowUp.Application.BloodPressureDto.HealthAdvice">
             <summary>
             健康建议    
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.BloodSugarDto">
+            <summary>
+            血脂
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodSugarDto.ArchivesCode">
+            <summary>
+            档案信息编号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodSugarDto.BloodSugarValue">
+            <summary>
+            血糖值
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodSugarDto.BloodSugarType">
+            <summary>
+            血糖类型
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodSugarDto.BloodSugarResultCode">
+            <summary>
+            血糖结果
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodSugarDto.BloodSugarResult">
+            <summary>
+            血糖结果
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.BloodSugarDto.HealthAdvice">
+            <summary>
+            健康建议
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateBloodSugarDto.MacID">
+            <summary>
+            设备号  平板id
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateBloodSugarDto.BloodSugarValue">
+            <summary>
+            血糖值
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.CreateOrUpdateBloodSugarDto.BloodSugarType">
+            <summary>
+            血糖类型
             </summary>
             <value></value>
         </member>
@@ -1344,6 +1344,30 @@
             <remarks>会获取最新当前血压。</remarks>
             <returns></returns>
         </member>
+        <member name="M:OutPatientFollowUp.Application.BloodSugarAppService.CreateAsync(System.String,OutPatientFollowUp.Application.CreateOrUpdateBloodSugarDto)">
+            <summary>
+            创建血糖记录。
+            </summary>
+            <param name="archivesCode">基础档案信息主键。</param>
+            <param name="input">入参。</param>
+            <remarks>会创建血糖信息。</remarks>
+            <returns></returns>
+            <summary>
+            创建血压记录。
+            </summary>
+            <param name="archivesCode">基础档案信息主键。</param>
+            <param name="input">入参。</param>
+            <remarks>会创建血压信息。</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.BloodSugarAppService.GetAsync(System.String)">
+            <summary>
+            获取血压。
+            </summary>
+            <param name="archivesCode">基础档案信息主键。</param>
+            <remarks>会获取最新当前血压。</remarks>
+            <returns></returns>
+        </member>
         <member name="M:OutPatientFollowUp.Application.CityAppService.GetCityListAsync(System.String)">
             <summary>
             获取城市列表
@@ -1404,6 +1428,23 @@
             </summary>
             <param name="archivesCode">基础档案信息主键。</param>
             <remarks>会获取最新当前血压。</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IBloodSugarAppService.CreateAsync(System.String,OutPatientFollowUp.Application.CreateOrUpdateBloodSugarDto)">
+            <summary>
+            创建血糖记录
+            </summary>
+            <param name="archivesCode">基础档案信息主键</param>
+            <param name="input">入参</param>
+            <remarks>会创建血糖信息</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IBloodSugarAppService.GetAsync(System.String)">
+            <summary>
+            获取血糖
+            </summary>
+            <param name="archivesCode">基础档案信息主键</param>
+            <remarks>会获取最新当前血糖</remarks> 
             <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Application.ICityAppService.GetCityListAsync(System.String)">

@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using OutPatientFollowUp.Application;
 using OutPatientFollowUp.Application.HealthMonitor;
 
 namespace OutPatientFollowUp.Core.HealthMonitor;
@@ -9,6 +10,12 @@ namespace OutPatientFollowUp.Core.HealthMonitor;
 [Route("api/[controller]")]
 public class BloodSugarController : ControllerBase
 {
+    private readonly IBloodSugarAppService _bloodSugarAppService;
+
+    public BloodSugarController(IBloodSugarAppService bloodSugarAppService)
+    {
+        _bloodSugarAppService = bloodSugarAppService;
+    }
 
     /// <summary>
     /// 创建血糖记录
@@ -20,10 +27,7 @@ public class BloodSugarController : ControllerBase
     [HttpPost()]
     public async Task<BloodSugarDto> CreateAsync(string archivesCode, CreateOrUpdateBloodSugarDto input)
     {
-        return new BloodSugarDto()
-        {
-        };
-        //    return  await _bloodLipidAppService.CreateAsync(archivesCode, input);
+        return await _bloodSugarAppService.CreateAsync(archivesCode, input);
     }
 
     /// <summary>
@@ -35,9 +39,6 @@ public class BloodSugarController : ControllerBase
     [HttpGet()]
     public async Task<BloodSugarDto> GetAsync(string archivesCode)
     {
-        return new BloodSugarDto()
-        {
-        };
+        return await _bloodSugarAppService.GetAsync(archivesCode);
     }
-    // private readonly IBloodPressureAppService _bloodPressureAppService;
 }

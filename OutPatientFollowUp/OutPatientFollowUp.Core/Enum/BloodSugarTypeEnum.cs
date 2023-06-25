@@ -16,17 +16,17 @@ public enum BloodSugarTypeEnum
     /// 空腹血糖
     /// </summary>
     [Display(Name = "空腹血糖")]
-    Fasting,
+    Fasting = 1,
 
     /// <summary>
     /// 餐后血糖
     /// </summary>
     [Display(Name = "餐后血糖")]
-    Postprandial,
+    Postprandial = 3,
 
     /// <summary>
     /// 随机血糖
     /// </summary>
     [Display(Name = "随机血糖")]
-    Random,
+    Random = 10,
 }

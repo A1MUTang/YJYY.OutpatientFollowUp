@@ -35,7 +35,7 @@ namespace OutPatientFollowUp.Application
             .Map(dest => dest.HeartRate, src => src.MaiBo)
             .Map(dest => dest.BloodPressureResult, src => BloodPressureTool.GetBloodPressureResult(src.SBP, src.DBP).GetName())
             .Map(dest => dest.BloodPressureResultCode, src => BloodPressureTool.GetBloodPressureResult(src.SBP, src.DBP))
-            .Map(dest => dest.HealthAdvice, src => BloodPressureTool.GetBloodPressureResult(src.ArchivesCode,src.SBP, src.DBP).GetDescription())
+            .Map(dest => dest.HealthAdvice, src => BloodPressureTool.GetBloodPressureResult(src.ArchivesCode, src.SBP, src.DBP).GetDescription())
             .Map(dest => dest.HeartRateResult, src => BloodPressureTool.GetHreatRateResult(src.MaiBo).GetName())
             .Map(dest => dest.HeartRateResultCode, src => BloodPressureTool.GetHreatRateResult(src.MaiBo));
 
@@ -44,6 +44,23 @@ namespace OutPatientFollowUp.Application
             .Map(dest => dest.DBP, src => src.Diastolic)
             .Map(dest => dest.MaiBo, src => src.HeartRate)
             ;
+
+            config.ForType<HT_Glucose, BloodSugarDto>()
+            .Map(dest => dest.ArchivesCode, src => src.ArchivesCode)
+            .Map(dest => dest.BloodSugarValue, src => src.MensValue)
+            .Map(dest => dest.BloodSugarType, src => (BloodSugarTypeEnum)Enum.Parse(typeof(BloodSugarTypeEnum), src.MensPeriod))
+            .Map(dest => dest.BloodSugarResult, src => BloodSugarTool.GetBloodSugarResult((BloodSugarTypeEnum)Enum.Parse(typeof(BloodSugarTypeEnum), src.MensPeriod), src.MensValue).GetName())
+            .Map(dest => dest.BloodSugarResultCode, src => BloodSugarTool.GetBloodSugarResult((BloodSugarTypeEnum)Enum.Parse(typeof(BloodSugarTypeEnum), src.MensPeriod), src.MensValue))
+            .Map(dest => dest.HealthAdvice, src => BloodSugarTool.GetBloodSugarHealthAdvice((BloodSugarTypeEnum)Enum.Parse(typeof(BloodSugarTypeEnum), src.MensPeriod), src.MensValue, src.ArchivesCode))
+            ;
+
+            config  .ForType<CreateOrUpdateBloodSugarDto,HT_Glucose>()
+            .Map(dest => dest.MensValue, src => src.BloodSugarValue)
+            .Map(dest => dest.MensPeriod, src => Convert.ToInt32(src.BloodSugarType).ToString())
+
+            ;
+
+
         }
     }
 }
