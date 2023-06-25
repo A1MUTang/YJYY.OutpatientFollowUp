@@ -241,8 +241,6 @@ public class UserAppService : IUserAppService
         {
             throw Oops.Oh("验证码错误");
         }
-        //验证码使用后失效
-        _memoryCache.Remove(input.PhoneNumber + ChangePwdCodeKeyPrefix);
         return new VerifyChangePwdVerificationCodeOutput
         {
             UserId = existUser.Doctor_ID
