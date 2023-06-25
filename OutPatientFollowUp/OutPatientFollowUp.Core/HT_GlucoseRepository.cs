@@ -21,10 +21,11 @@ namespace OutPatientFollowUp.Core
         /// <param name="archivesCode"></param>
         /// <param name="manageName"></param>
         /// <returns></returns>
-        public async Task<HT_Glucose> GetByArchivesCode(string archivesCode, string manageName)
+        public async Task<HT_Glucose> GetByArchivesCode(string archivesCode)
         {
             return await _conext.Queryable<HT_Glucose>()
-                .Where(x => x.ArchivesCode == archivesCode && x.CreateArchivesUnit == manageName)
+                .Where(x => x.ArchivesCode == archivesCode )
+                .OrderBy(x => x.CreateDate, OrderByType.Desc)
                 .FirstAsync();
         }
 

@@ -5,7 +5,7 @@ namespace OutPatientFollowUp.Application.HealthMonitor;
 public class CreateOrUpdateBloodSugarDto : IValidatableObject
 {
     /// <summary>
-    /// 设备号  //TODO 确认设备是哪个设备
+    /// 设备号  平板id
     /// </summary>
     /// <value></value>
     public string MacID { get; set; }
