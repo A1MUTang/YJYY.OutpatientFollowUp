@@ -7,15 +7,18 @@ namespace OutPatientFollowUp.Application;
 public class ProfileInformationAppService : IProfileInformationAppService
 {
     private readonly IHT_PatientBasicInfoRepository _patientBasicInfoRepository;
-
     private readonly IHT_SupplementaryExamRepository _supplementaryExamRepository;
     private readonly IIdAppService _idAppService;
+    private readonly IPT_DoctorBasicInfoRepositroy _doctorBasicInfoRepositroy;
 
-    public ProfileInformationAppService(IHT_PatientBasicInfoRepository patientBasicInfoRepository, IIdAppService idAppService, IHT_SupplementaryExamRepository supplementaryExamRepository)
+    public ProfileInformationAppService(IHT_PatientBasicInfoRepository patientBasicInfoRepository, 
+    IIdAppService idAppService, IHT_SupplementaryExamRepository supplementaryExamRepository,
+    IPT_DoctorBasicInfoRepositroy doctorBasicInfoRepositroy)
     {
         _patientBasicInfoRepository = patientBasicInfoRepository;
         _idAppService = idAppService;
         _supplementaryExamRepository = supplementaryExamRepository;
+        _doctorBasicInfoRepositroy = doctorBasicInfoRepositroy;;
     }
 
 
@@ -36,6 +39,8 @@ public class ProfileInformationAppService : IProfileInformationAppService
         basicProfileInformation.PBI_CreateArchivesUnit = workUnits;
         basicProfileInformation.PBI_ManageUnit = manageName;
         basicProfileInformation.PBI_CreateUserID = doctorId;
+        basicProfileInformation.PBI_CreateDate = DateTime.Now;
+        basicProfileInformation.PBI_CreateUser = await _doctorBasicInfoRepositroy.GetDoctorName(doctorId);//我不知道这个冗余字段的意义，但是我还是加上了
         var patientBasicInfo = await _patientBasicInfoRepository.InsertAsync(basicProfileInformation);
         return patientBasicInfo.Adapt<BasicProfileInformationDto>();
     }
@@ -151,6 +156,8 @@ public class ProfileInformationAppService : IProfileInformationAppService
         var (doctorId, manageName, workUnits) = GetLoginInfo();
         var patientBasicInfo = input.Adapt<HT_PatientBasicInfo>();
         patientBasicInfo.ArchivesCode = archivesCode;
+        patientBasicInfo.PBI_CreateUser = await _doctorBasicInfoRepositroy.GetDoctorName(doctorId);
+        patientBasicInfo.PBI_CreateUserID = doctorId;//我同样不知道为什么CreateUserID会在修改的时候填充
         var updateResult = await _patientBasicInfoRepository.UpdateAsync(patientBasicInfo);
         return updateResult.Adapt<BasicProfileInformationDto>();
     }
@@ -159,7 +166,7 @@ public class ProfileInformationAppService : IProfileInformationAppService
     private async Task<(string, string, string)> GetPastMedicalHistoryCodes(string archivesCode)
     {
         var supplementaryExam = await _supplementaryExamRepository.GetByArchivesCode(archivesCode);
-        if  (supplementaryExam == null)
+        if (supplementaryExam == null)
         {
             return ("", "", "");
         }

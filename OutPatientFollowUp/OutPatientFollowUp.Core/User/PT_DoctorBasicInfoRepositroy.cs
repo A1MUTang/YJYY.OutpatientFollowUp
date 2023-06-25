@@ -1,3 +1,4 @@
+using System.Text;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using SqlSugar;
@@ -33,6 +34,12 @@ public class PT_DoctorBasicInfoRepositroy : BaseRepository<PT_DoctorBasicInfo>, 
     {
         var doctor = await Context.Queryable<PT_DoctorBasicInfo>().FirstAsync(x => x.Doctor_ID == doctorId);
         return doctor.Doctor_WorkUnits;
+    }
+
+    public async Task<string> GetDoctorName(string doctorId)
+    {
+        var doctor = await Context.Queryable<PT_DoctorBasicInfo>().FirstAsync(x => x.Doctor_ID == doctorId);
+        return doctor.Doctor_UserName;
     }
 
 }
