@@ -35,11 +35,10 @@ namespace OutPatientFollowUp.Core
         /// <param name="idcard"></param>
         /// <param name="manageName"></param>
         /// <returns></returns>
-        public async Task<HT_Glucose> GetByIdcardAndDocterIdAsync(string idcard, string manageName)
+        public async Task<HT_Glucose> GetByIdcardAndDocterIdAsync(string idcard)
         {
             return await _conext.Queryable<HT_Glucose>()
                 .Where(x => x.ICard == idcard && SqlFunc.Subqueryable<PT_OrgnameForParent>()
-                    .Where(y => y.OrgName == manageName)
                     .Select(y => y.ManageName)
                     .Contains(x.CreateArchivesUnit))
                 .FirstAsync();
