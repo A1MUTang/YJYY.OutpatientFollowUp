@@ -22,13 +22,6 @@ namespace OutPatientFollowUp.Application
         /// <param name="input">入参。</param>
         /// <remarks>会创建血糖信息。</remarks>
         /// <returns></returns>
-        /// <summary>
-        /// 创建血压记录。
-        /// </summary>
-        /// <param name="archivesCode">基础档案信息主键。</param>
-        /// <param name="input">入参。</param>
-        /// <remarks>会创建血压信息。</remarks>
-        /// <returns></returns>
         public async Task<BloodSugarDto> CreateAsync(string archivesCode, CreateOrUpdateBloodSugarDto input)
         {
             var patientBasicInfo = await _patientBasicInfoRepository.GetFirstAsync(x => x.ArchivesCode == archivesCode);

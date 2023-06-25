@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.Reflection;
 using OutPatientFollowUp.Application.HealthMonitor;
 using OutPatientFollowUp.Core;
+using OutPatientFollowUp.Dto;
 
 namespace OutPatientFollowUp.Application
 {
@@ -54,12 +55,20 @@ namespace OutPatientFollowUp.Application
             .Map(dest => dest.HealthAdvice, src => BloodSugarTool.GetBloodSugarHealthAdvice((BloodSugarTypeEnum)Enum.Parse(typeof(BloodSugarTypeEnum), src.MensPeriod), src.MensValue, src.ArchivesCode))
             ;
 
-            config  .ForType<CreateOrUpdateBloodSugarDto,HT_Glucose>()
+            config.ForType<CreateOrUpdateBloodSugarDto, HT_Glucose>()
             .Map(dest => dest.MensValue, src => src.BloodSugarValue)
             .Map(dest => dest.MensPeriod, src => Convert.ToInt32(src.BloodSugarType).ToString())
-
             ;
 
+            config.ForType<CreateOrUpdateTemperatureDto, HT_BodyTemperature>()
+            .Map(dest => dest.BodyTemperature, src => src.Temperature)
+            ;
+
+            config.ForType<HT_BodyTemperature, TemperatureDto>()
+            .Map(dest => dest.archivesCode, src => src.ArchivesCode)
+            .Map(dest => dest.Temperature, src => src.BodyTemperature)
+            .Map(dest => dest.TemperatureResult, src => TemperatureTool.GetTemperatureResult(src.BodyTemperature).GetName())
+            .Map(dest => dest.TemperatureResultCode, src => TemperatureTool.GetTemperatureResult(src.BodyTemperature));
 
         }
     }

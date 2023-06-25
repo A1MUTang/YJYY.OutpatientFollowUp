@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using OutPatientFollowUp.Application;
 using OutPatientFollowUp.Application.HealthMonitor;
 using OutPatientFollowUp.Dto;
 
@@ -13,13 +14,12 @@ namespace OutPatientFollowUp.Core.HealthMonitor;
 [Route("api/[controller]")]
 public class TemperatureControl : ControllerBase
 {
-    // private readonly IBloodOxygenAppService _bloodOxygenAppService;
+    private readonly IBodyTemperatureAppService _temperatureAppService;
 
-    // public BloodOxygenController(IBloodOxygenAppService bloodOxygenAppService)
-    // {
-    //     _bloodOxygenAppService = bloodOxygenAppService;
-    // }
-
+    public TemperatureControl(IBodyTemperatureAppService temperatureAppService)
+    {
+        _temperatureAppService = temperatureAppService;
+    }
     /// <summary>
     /// 录入体温
     /// </summary>
@@ -27,10 +27,9 @@ public class TemperatureControl : ControllerBase
     /// <param name="input"></param>
     /// <returns></returns>
     [HttpPost()]
-    public Task<TemperatureDto> CreateAsync(string archivesCode, CreateOrUpdateTemperature input)
+    public async Task<TemperatureDto> CreateAsync(string archivesCode, CreateOrUpdateTemperatureDto input)
     {
-        throw new NotImplementedException();
-        // return _bloodOxygenAppService.CreateAsync(archivesCode, input);
+      return await _temperatureAppService.CreateAsync(archivesCode, input);       
     }
 
     /// <summary>
@@ -39,10 +38,9 @@ public class TemperatureControl : ControllerBase
     /// <param name="archivesCode">基本档案信息Id</param>
     /// <returns></returns>
     [HttpGet()]
-    public Task<TemperatureDto> GetAsync(string archivesCode)
+    public async Task<TemperatureDto> GetAsync(string archivesCode)
     {
-        throw new NotImplementedException();
-        // return _bloodOxygenAppService.GetAsync(archivesCode);
+        return await _temperatureAppService.GetByArchivesCodeAsync(archivesCode);
     }
 }
 

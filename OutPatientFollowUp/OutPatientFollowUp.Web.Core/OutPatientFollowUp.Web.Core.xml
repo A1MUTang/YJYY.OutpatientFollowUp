@@ -261,7 +261,7 @@
             体温
             </summary>
         </member>
-        <member name="M:OutPatientFollowUp.Core.HealthMonitor.TemperatureControl.CreateAsync(System.String,OutPatientFollowUp.CreateOrUpdateTemperature)">
+        <member name="M:OutPatientFollowUp.Core.HealthMonitor.TemperatureControl.CreateAsync(System.String,OutPatientFollowUp.CreateOrUpdateTemperatureDto)">
             <summary>
             录入体温
             </summary>

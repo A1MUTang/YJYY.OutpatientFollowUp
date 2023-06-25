@@ -5,6 +5,11 @@ namespace OutPatientFollowUp.Dto
     public class TemperatureDto
     {
         /// <summary>
+        /// 档案信息编号    
+        /// </summary>
+        /// <value></value>
+        public string archivesCode { get; set; }
+        /// <summary>
         /// 设备号
         /// </summary>
         public string MacID { get; set; }

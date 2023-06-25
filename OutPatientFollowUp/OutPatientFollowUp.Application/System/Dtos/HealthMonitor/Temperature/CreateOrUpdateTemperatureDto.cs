@@ -1,6 +1,6 @@
 namespace OutPatientFollowUp
 {
-    public class CreateOrUpdateTemperature : IValidatableObject
+    public class CreateOrUpdateTemperatureDto : IValidatableObject
     {
         /// <summary>
         /// 设备号
@@ -14,7 +14,10 @@ namespace OutPatientFollowUp
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            throw new NotImplementedException();
+            if (Temperature <= 0)
+            {
+                yield return new ValidationResult("体温必须大于0", new[] { nameof(Temperature) });
+            }
         }
     }
 }

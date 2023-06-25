@@ -1095,6 +1095,19 @@
             服务ID
             </summary>
         </member>
+        <member name="T:OutPatientFollowUp.Core.HT_BodyTemperatureRepository">
+            <summary>
+            体温仓储类。
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HT_BodyTemperatureRepository.GetByArchivesCode(System.String)">
+            <summary>
+            根据档案编号和测量日期获取体温信息。
+            </summary>
+            <param name="archivesCode"></param>
+            <param name="measureDate"></param>
+            <returns></returns>
+        </member>
         <member name="T:OutPatientFollowUp.Core.HT_Glucose">
             <summary>
             血糖实体类
@@ -2876,6 +2889,13 @@
             <param name="manageName"></param>
             <returns></returns>
         </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_BodyTemperatureRepository.GetByArchivesCode(System.String)">
+            <summary>
+            根据档案编号和管理单位名称获取血压信息。
+            </summary>
+            <param name="archivesCode">档案编号</param>
+            <returns></returns>
+        </member>
         <member name="T:OutPatientFollowUp.Core.IHT_GlucoseRepository">
             <summary>
             血糖仓储接口。
@@ -3174,6 +3194,13 @@
         <member name="M:OutPatientFollowUp.Core.IPT_DoctorBasicInfoRepositroy.GetDoctorWorkUnits(System.String)">
             <summary>
             获取医生对应的Doctor_WorkUnits字段  
+            </summary>
+            <param name="doctorId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IPT_DoctorBasicInfoRepositroy.GetDoctorName(System.String)">
+            <summary>
+            获取医生对应的Doctor_UserName字段
             </summary>
             <param name="doctorId"></param>
             <returns></returns>

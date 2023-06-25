@@ -1352,13 +1352,6 @@
             <param name="input">入参。</param>
             <remarks>会创建血糖信息。</remarks>
             <returns></returns>
-            <summary>
-            创建血压记录。
-            </summary>
-            <param name="archivesCode">基础档案信息主键。</param>
-            <param name="input">入参。</param>
-            <remarks>会创建血压信息。</remarks>
-            <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Application.BloodSugarAppService.GetAsync(System.String)">
             <summary>
@@ -1366,6 +1359,22 @@
             </summary>
             <param name="archivesCode">基础档案信息主键。</param>
             <remarks>会获取最新当前血压。</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.BodyTemperatureAppService.GetByArchivesCodeAsync(System.String)">
+            <summary>
+            根据档案编号获取体温信息。
+            </summary>
+            <param name="archivesCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.BodyTemperatureAppService.CreateAsync(System.String,OutPatientFollowUp.CreateOrUpdateTemperatureDto)">
+            <summary>
+            创建体温记录。
+            </summary>
+            <param name="archivesCode">基础档案信息主键。</param>
+            <param name="input">入参。</param>
+            <remarks>会创建体温信息。</remarks>
             <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Application.CityAppService.GetCityListAsync(System.String)">
@@ -1445,6 +1454,22 @@
             </summary>
             <param name="archivesCode">基础档案信息主键</param>
             <remarks>会获取最新当前血糖</remarks> 
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IBodyTemperatureAppService.GetByArchivesCodeAsync(System.String)">
+            <summary>
+            根据档案编号获取体温信息。
+            </summary>
+            <param name="archivesCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IBodyTemperatureAppService.CreateAsync(System.String,OutPatientFollowUp.CreateOrUpdateTemperatureDto)">
+            <summary>
+            创建体温记录。
+            </summary>
+            <param name="archivesCode">基础档案信息主键。</param>
+            <param name="input">入参。</param>
+            <remarks>会创建体温信息。</remarks>
             <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Application.ICityAppService.GetCityListAsync(System.String)">
@@ -1775,15 +1800,21 @@
             脉搏
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.CreateOrUpdateTemperature.MacID">
+        <member name="P:OutPatientFollowUp.CreateOrUpdateTemperatureDto.MacID">
             <summary>
             设备号
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.CreateOrUpdateTemperature.Temperature">
+        <member name="P:OutPatientFollowUp.CreateOrUpdateTemperatureDto.Temperature">
             <summary>
             体温
             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Dto.TemperatureDto.archivesCode">
+            <summary>
+            档案信息编号    
+            </summary>
+            <value></value>
         </member>
         <member name="P:OutPatientFollowUp.Dto.TemperatureDto.MacID">
             <summary>
