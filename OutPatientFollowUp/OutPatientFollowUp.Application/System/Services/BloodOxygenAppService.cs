@@ -1,3 +1,4 @@
+using OutPatientFollowUp.Application.HealthMonitor;
 using OutPatientFollowUp.Core;
 
 namespace OutPatientFollowUp.Application;
@@ -11,15 +12,15 @@ public class BloodOxygenAppService : IBloodOxygenAppService
         _repository = repository;
     }
 
-    // /// <summary>
-    // /// 根据档案编号和测量日期获取血氧信息。
-    // /// </summary>
-    // /// <param name="archivesCode"></param>
-    // /// <returns></returns>
-    // public async Task<BloodOxygenResultEnum> GetByArchivesCode(string archivesCode)
-    // {
-    //     return await _repository.GetByArchivesCode(archivesCode);
-    // }
+    /// <summary>
+    /// 根据档案编号和测量日期获取血氧信息。
+    /// </summary>
+    /// <param name="archivesCode"></param>
+    /// <returns></returns>
+    public async Task<BloodOxygenDto> GetByArchivesCode(string archivesCode)
+    {
+        return await _repository.GetByArchivesCode(archivesCode).Adapt<BloodOxygenDto>();
+    }
 
 
 }
