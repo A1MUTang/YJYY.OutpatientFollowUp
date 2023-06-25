@@ -836,6 +836,90 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BloodOxygen.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BloodOxygen.ArchivesCode">
+            <summary>
+            档案编号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BloodOxygen.MacID">
+            <summary>
+            设备ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BloodOxygen.Manufacture">
+            <summary>
+            制造商
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BloodOxygen.MeasureDate">
+            <summary>
+            测量日期
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BloodOxygen.BloodOxygen">
+            <summary>
+            体温
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BloodOxygen.DataSource">
+            <summary>
+            数据来源
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BloodOxygen.Remarks">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BloodOxygen.CreateDate">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BloodOxygen.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BloodOxygen.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BloodOxygen.ICard">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BloodOxygen.CreateArchivesUnit">
+            <summary>
+            创建档案单位
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BloodOxygen.IsDelete">
+            <summary>
+            是否删除
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_BloodOxygen.SvcId">
+            <summary>
+            服务ID
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.HT_BloodOxygenReository.GetByArchivesCode(System.String)">
+            <summary>
+            根据档案编号和测量日期获取血氧信息。
+            </summary>
+            <param name="archivesCode"></param>
+            <param name="measureDate"></param>
+            <returns></returns>
+        </member>
         <member name="T:OutPatientFollowUp.Core.HT_BlutdruckTemp">
             <summary>
             血压临时表
@@ -2880,6 +2964,13 @@
             <summary>
             更新一条
             </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_BloodOxygenReository.GetByArchivesCode(System.String)">
+            <summary>
+            根据档案编号和测量日期获取血氧信息。
+            </summary>
+            <param name="archivesCode"></param>
+            <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Core.IHT_BlutdruckTempRepository.GetByArchivesCode(System.String)">
             <summary>

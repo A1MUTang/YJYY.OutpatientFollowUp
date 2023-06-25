@@ -143,6 +143,7 @@ public class UserAppService : IUserAppService
             Gender = existUser.Doctor_Gender,
             IDCardNumber = existUser.Doctor_ICard,
             ManageName = existUser.Doctor_WorkUnits,
+            PhoneNumber = existUser.Doctor_Phone,
         };
     }
 
