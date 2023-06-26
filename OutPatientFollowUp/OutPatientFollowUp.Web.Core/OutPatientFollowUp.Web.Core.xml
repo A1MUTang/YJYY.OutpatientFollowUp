@@ -276,6 +276,13 @@
             <param name="archivesCode">基本档案信息Id</param>
             <returns></returns>
         </member>
+        <member name="M:OutPatientFollowUp.Core.QuestionnaireController.GetQuestionnaireAsync(System.String)">
+            <summary>
+            获取问卷
+            </summary>
+            <param name="code">问卷编码</param>
+            <returns></returns>
+        </member>
         <member name="T:OutPatientFollowUp.Application.ProfileInformationDetailController">
             <summary>
             基本档案信息

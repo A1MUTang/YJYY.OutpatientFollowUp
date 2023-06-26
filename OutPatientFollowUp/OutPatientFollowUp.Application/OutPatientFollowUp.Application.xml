@@ -1056,6 +1056,44 @@
             <remarks>true: 感到压抑/压力大/紧张着急/愤怒 false:无</remarks>
             <value></value>
         </member>
+        <member name="P:OutPatientFollowUp.Application.QuestionnaireDto.Title">
+            <summary>
+            问卷标题
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.QuestionnaireDto.Questions">
+            <summary>
+            问卷问题
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.QuestionnaireDto.Description">
+            <summary>
+            问卷描述
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.QuestionDto.Title">
+            <summary>
+            问题标题
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.QuestionDto.Type">
+            <summary>
+            问题类型
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.QuestionDto.Options">
+            <summary>
+            问题选项
+            </summary>
+            <remarks>当问题类型为单选或多选时，此字段有效</remarks>
+            <value></value>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:OutPatientFollowUp.Application.SurveyQuestionType" -->
         <member name="P:OutPatientFollowUp.Application.ChangePwdInput.UserId">
             <summary>
             用户Id
