@@ -70,6 +70,19 @@ namespace OutPatientFollowUp.Application
             .Map(dest => dest.TemperatureResult, src => TemperatureTool.GetTemperatureResult(src.BodyTemperature).GetName())
             .Map(dest => dest.TemperatureResultCode, src => TemperatureTool.GetTemperatureResult(src.BodyTemperature));
 
+            config.ForType<HT_BloodOxygen, BloodOxygenDto>()
+            .Map(dest => dest.ArchivesCode, src => src.ArchivesCode)
+            .Map(dest => dest.BloodOxygenValue, src => src.BloodOxygen)
+            .Map(dest => dest.BloodOxygenResult, src => BloodOxygenTool.GetBloodOxygenResult(src.BloodOxygen).GetName())
+            .Map(dest => dest.BloodOxygenResultCode, src => BloodOxygenTool.GetBloodOxygenResult(src.BloodOxygen));
+
+            config.ForType<CreateOrUpdateBloodOxygenDto, HT_BloodOxygen>()
+            .Map(dest => dest.BloodOxygen, src => src.BloodOxygenValue)
+            ;
+
+
+            
+
         }
     }
 }

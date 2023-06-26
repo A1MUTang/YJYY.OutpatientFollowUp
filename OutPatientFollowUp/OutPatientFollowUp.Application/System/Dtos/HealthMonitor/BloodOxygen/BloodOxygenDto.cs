@@ -13,7 +13,7 @@ public class BloodOxygenDto
     /// 基础档案信息主键
     /// </summary>
     /// <value></value>
-    public string archivesCode { get; set; }
+    public string ArchivesCode { get; set; }
 
     /// <summary>
     /// 血氧结果

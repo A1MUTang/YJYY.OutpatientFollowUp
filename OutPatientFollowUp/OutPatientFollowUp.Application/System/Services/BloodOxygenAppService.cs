@@ -19,7 +19,24 @@ public class BloodOxygenAppService : IBloodOxygenAppService
     /// <returns></returns>
     public async Task<BloodOxygenDto> GetByArchivesCode(string archivesCode)
     {
-        return await _repository.GetByArchivesCode(archivesCode).Adapt<BloodOxygenDto>();
+        var result = await _repository.GetByArchivesCode(archivesCode);
+        return result.Adapt<BloodOxygenDto>();
+    }
+
+    /// <summary>
+    /// 创建血氧记录。
+    /// </summary>
+    /// <param name="archivesCode">基础档案信息主键。</param>
+    /// <param name="input">入参。</param>
+    /// <remarks>会创建血氧信息。</remarks>
+    /// <returns></returns>
+    public async Task<BloodOxygenDto> CreateAsync(string archivesCode, CreateOrUpdateBloodOxygenDto input)
+    {
+        var bloodOxygen = input.Adapt<HT_BloodOxygen>();
+        bloodOxygen.ArchivesCode = archivesCode;
+        bloodOxygen.ID = DateTime.Now.ToString("yyyyMMddHHmmss") + bloodOxygen.ArchivesCode + new Random().Next(10, 99);
+        var result = await _repository.InsertReturnEntityAsync(bloodOxygen);
+        return result.Adapt<BloodOxygenDto>();
     }
 
 

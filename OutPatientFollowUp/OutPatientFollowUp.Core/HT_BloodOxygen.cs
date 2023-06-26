@@ -33,7 +33,7 @@ public class HT_BloodOxygen
     /// 体温
     /// </summary>
     /// <value></value>
-    public decimal BloodOxygen { get; set; }
+    public int BloodOxygen { get; set; }
 
     /// <summary>
     /// 数据来源

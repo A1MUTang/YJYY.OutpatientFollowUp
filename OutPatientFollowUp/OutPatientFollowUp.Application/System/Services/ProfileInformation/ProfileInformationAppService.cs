@@ -174,7 +174,7 @@ public class ProfileInformationAppService : IProfileInformationAppService
         var pastMedicalHistory = new StringBuilder();
         if (supplementaryExam == null)
         {
-            return (pastMedicalHistoryCodes.ToString(), pastMedicalHistory.ToString(), "");
+            return ("0", "未发现", "");
         }
         if (supplementaryExam.SE_IS_NXG == "1")
         {

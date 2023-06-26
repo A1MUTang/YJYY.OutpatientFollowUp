@@ -557,7 +557,7 @@
             <remarks>单位：%</remarks>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodOxygenDto.archivesCode">
+        <member name="P:OutPatientFollowUp.Application.HealthMonitor.BloodOxygenDto.ArchivesCode">
             <summary>
             基础档案信息主键
             </summary>
@@ -1322,6 +1322,22 @@
             <param name="archivesCode">入参</param>
             <returns></returns>
         </member>
+        <member name="M:OutPatientFollowUp.Application.BloodOxygenAppService.GetByArchivesCode(System.String)">
+            <summary>
+            根据档案编号和测量日期获取血氧信息。
+            </summary>
+            <param name="archivesCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.BloodOxygenAppService.CreateAsync(System.String,OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodOxygenDto)">
+            <summary>
+            创建血氧记录。
+            </summary>
+            <param name="archivesCode">基础档案信息主键。</param>
+            <param name="input">入参。</param>
+            <remarks>会创建血氧信息。</remarks>
+            <returns></returns>
+        </member>
         <member name="T:OutPatientFollowUp.Application.BloodPressureAppService">
             <summary>
             血压应用程序服务类。
@@ -1415,6 +1431,21 @@
             获取血脂详情
             </summary>
             <param name="archivesCode">基本档案信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IBloodOxygenAppService.GetByArchivesCode(System.String)">
+            <summary>
+            获取血氧信息
+            </summary>
+            <param name="archivesCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IBloodOxygenAppService.CreateAsync(System.String,OutPatientFollowUp.Application.HealthMonitor.CreateOrUpdateBloodOxygenDto)">
+            <summary>
+            录入血氧信息
+            </summary>
+            <param name="archivesCode"></param>
+            <param name="input"></param>
             <returns></returns>
         </member>
         <member name="T:OutPatientFollowUp.Application.IBloodPressureAppService">

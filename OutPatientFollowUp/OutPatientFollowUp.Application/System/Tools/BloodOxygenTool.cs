@@ -12,7 +12,7 @@ public static class BloodOxygenTool
     /// </summary>
     /// <param name="bloodOxygenValue">血氧值</param>
     /// <returns></returns>
-    public static object GetBloodOxygenResult(int bloodOxygenValue)
+    public static BloodOxygenResultEnum GetBloodOxygenResult(int bloodOxygenValue)
     {
         //正常: >94  轻度异常: 94   严重异常: ≤93
         return bloodOxygenValue switch
