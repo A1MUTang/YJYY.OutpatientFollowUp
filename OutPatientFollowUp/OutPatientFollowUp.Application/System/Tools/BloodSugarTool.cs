@@ -50,7 +50,7 @@ public static class BloodSugarTool
         }
         else
         {
-            throw new ArgumentException("Invalid blood sugar type.");
+            throw new ArgumentException("血糖异常，请重新测量或联系管理员");
         }
 
     }

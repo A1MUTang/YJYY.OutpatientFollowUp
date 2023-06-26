@@ -35,7 +35,7 @@ namespace OutPatientFollowUp.Application
     public class QuestionDto
     {
         /// <summary>
-        /// 问题标题
+        /// 问题题干
         /// </summary>
         /// <value></value>
         public string Title { get; set; }

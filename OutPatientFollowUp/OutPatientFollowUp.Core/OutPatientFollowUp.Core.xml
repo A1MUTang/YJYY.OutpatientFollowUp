@@ -637,6 +637,7 @@
             </remarks>
             </summary>
         </member>
+        <!-- Badly formed XML comment ignored for member "T:OutPatientFollowUp.Core.SurveyQuestionTypeEnum" -->
         <member name="T:OutPatientFollowUp.Core.TemperatureResultEnum">
             <summary>
             体温结果枚举

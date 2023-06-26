@@ -1056,6 +1056,11 @@
             <remarks>true: 感到压抑/压力大/紧张着急/愤怒 false:无</remarks>
             <value></value>
         </member>
+        <member name="T:OutPatientFollowUp.Application.QuestionnaireDto">
+            <summary>
+            问卷
+            </summary>
+        </member>
         <member name="P:OutPatientFollowUp.Application.QuestionnaireDto.Title">
             <summary>
             问卷标题
@@ -1073,6 +1078,11 @@
             问卷描述
             </summary>
             <value></value>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.QuestionDto">
+            <summary>
+            问题
+            </summary>
         </member>
         <member name="P:OutPatientFollowUp.Application.QuestionDto.Title">
             <summary>
@@ -1093,7 +1103,6 @@
             <remarks>当问题类型为单选或多选时，此字段有效</remarks>
             <value></value>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:OutPatientFollowUp.Application.SurveyQuestionType" -->
         <member name="P:OutPatientFollowUp.Application.ChangePwdInput.UserId">
             <summary>
             用户Id
