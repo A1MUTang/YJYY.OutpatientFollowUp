@@ -9,6 +9,11 @@ namespace OutPatientFollowUp.Application
     public class QuestionnaireDto
     {
         /// <summary>
+        /// 问卷主键
+        /// </summary>
+        /// <value></value>
+        public string Id { get; set; }
+        /// <summary>
         /// 问卷标题
         /// </summary>
         /// <value></value>
@@ -35,6 +40,11 @@ namespace OutPatientFollowUp.Application
     public class QuestionDto
     {
         /// <summary>
+        /// 问题主键
+        /// </summary>
+        /// <value></value>
+        public string Id { get; set; }
+        /// <summary>
         /// 问题题干
         /// </summary>
         /// <value></value>
@@ -51,7 +61,15 @@ namespace OutPatientFollowUp.Application
         /// </summary>
         /// <remarks>当问题类型为单选或多选时，此字段有效</remarks>
         /// <value></value>
-        public string[] Options { get; set; }
+        public Options Options { get; set; } 
     }
-
+    
+    public class Options
+    {
+        /// <summary>
+        /// 问题选项
+        /// </summary>
+        /// <value></value>
+        public List<string> OptionsDeatils { get; set; }
+    }
 }

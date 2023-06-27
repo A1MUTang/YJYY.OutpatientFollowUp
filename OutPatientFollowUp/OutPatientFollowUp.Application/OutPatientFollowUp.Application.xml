@@ -1086,7 +1086,7 @@
         </member>
         <member name="P:OutPatientFollowUp.Application.QuestionDto.Title">
             <summary>
-            问题标题
+            问题题干
             </summary>
             <value></value>
         </member>
