@@ -283,6 +283,20 @@
             <param name="code">问卷编码</param>
             <returns></returns>
         </member>
+        <member name="M:OutPatientFollowUp.Core.QuestionnaireController.SubmitQuestionnaireAsync(OutPatientFollowUp.Core.SurveySubmissionDto)">
+            <summary>
+            提交问卷
+            </summary>
+            <param name="input">问卷答案</param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.QuestionnaireController.GetResultAsync(System.String)">
+            <summary>
+            获取问卷结果
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
         <member name="T:OutPatientFollowUp.Application.ProfileInformationDetailController">
             <summary>
             基本档案信息

@@ -1061,12 +1061,6 @@
             问卷
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Application.QuestionnaireDto.Id">
-            <summary>
-            问卷主键
-            </summary>
-            <value></value>
-        </member>
         <member name="P:OutPatientFollowUp.Application.QuestionnaireDto.Title">
             <summary>
             问卷标题
@@ -1931,6 +1925,87 @@
             <summary>
             体温结果
             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.QuestionResultcs.Title">
+            <summary>
+            问卷标题
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.QuestionResultcs.Code">
+            <summary>
+            问卷编号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.QuestionResultcs.ResultCode">
+            <summary>
+            问卷结果图形Code
+            </summary>
+            <remark>
+            脑卒中风险评估 
+            低危 = 0，
+            中危 = 1，
+            高危 = 2，
+            心血管风险评估
+            低危 = 0，
+            中危 = 1，
+            高危 = 2，
+            极高危 = 3，
+            慢阻肺风险评估
+            如有呼吸问题可咨询医生 = 0，
+            呼吸问题可能是慢阻肺导致 = 1，
+            糖尿病风险评估
+            非高风险 = 0，
+            高风险 = 1，
+            </remark>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.QuestionResultcs.Result">
+            <summary>
+            问卷结果(评估结果)
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.QuestionResultcs.HealthAdvice">
+            <summary>
+            健康建议
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.SurveySubmissionDto">
+            <summary>
+            问卷提交 DTO
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SurveySubmissionDto.QuestionnaireCode">
+            <summary>
+            问卷 ID
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.SurveySubmissionDto.QuestionSubmissions">
+            <summary>
+            问题提交列表
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.QuestionSubmissionDto">
+            <summary>
+            问题提交 DTO
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.QuestionSubmissionDto.QuestionId">
+            <summary>
+            问题 ID
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.QuestionSubmissionDto.AnswerText">
+            <summary>
+            答案文本
+            </summary>
+            <value></value>
         </member>
     </members>
 </doc>

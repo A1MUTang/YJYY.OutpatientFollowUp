@@ -9,11 +9,6 @@ namespace OutPatientFollowUp.Application
     public class QuestionnaireDto
     {
         /// <summary>
-        /// 问卷主键
-        /// </summary>
-        /// <value></value>
-        public string Id { get; set; }
-        /// <summary>
         /// 问卷标题
         /// </summary>
         /// <value></value>
