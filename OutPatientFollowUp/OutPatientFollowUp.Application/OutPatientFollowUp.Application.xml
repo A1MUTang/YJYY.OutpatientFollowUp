@@ -1061,6 +1061,12 @@
             问卷
             </summary>
         </member>
+        <member name="P:OutPatientFollowUp.Application.QuestionnaireDto.Id">
+            <summary>
+            问卷主键
+            </summary>
+            <value></value>
+        </member>
         <member name="P:OutPatientFollowUp.Application.QuestionnaireDto.Title">
             <summary>
             问卷标题
@@ -1084,6 +1090,12 @@
             问题
             </summary>
         </member>
+        <member name="P:OutPatientFollowUp.Application.QuestionDto.Id">
+            <summary>
+            问题主键
+            </summary>
+            <value></value>
+        </member>
         <member name="P:OutPatientFollowUp.Application.QuestionDto.Title">
             <summary>
             问题题干
@@ -1101,6 +1113,12 @@
             问题选项
             </summary>
             <remarks>当问题类型为单选或多选时，此字段有效</remarks>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.Options.OptionsDeatils">
+            <summary>
+            问题选项
+            </summary>
             <value></value>
         </member>
         <member name="P:OutPatientFollowUp.Application.ChangePwdInput.UserId">

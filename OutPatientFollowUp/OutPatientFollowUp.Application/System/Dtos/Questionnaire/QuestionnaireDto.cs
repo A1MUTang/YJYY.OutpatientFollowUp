@@ -61,7 +61,7 @@ namespace OutPatientFollowUp.Application
         /// </summary>
         /// <remarks>当问题类型为单选或多选时，此字段有效</remarks>
         /// <value></value>
-        public Options Options { get; set; } 
+        public List<Options> Options { get; set; } 
     }
     
     public class Options
@@ -70,6 +70,6 @@ namespace OutPatientFollowUp.Application
         /// 问题选项
         /// </summary>
         /// <value></value>
-        public List<string> OptionsDeatils { get; set; }
+        public string OptionsDeatils { get; set; }
     }
 }
