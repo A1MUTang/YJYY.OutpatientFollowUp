@@ -1926,19 +1926,19 @@
             体温结果
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.QuestionResultcs.Title">
+        <member name="P:OutPatientFollowUp.QuestionResult.Title">
             <summary>
             问卷标题
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.QuestionResultcs.Code">
+        <member name="P:OutPatientFollowUp.QuestionResult.Code">
             <summary>
             问卷编号
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.QuestionResultcs.ResultCode">
+        <member name="P:OutPatientFollowUp.QuestionResult.ResultCode">
             <summary>
             问卷结果图形Code
             </summary>
@@ -1961,13 +1961,13 @@
             </remark>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.QuestionResultcs.Result">
+        <member name="P:OutPatientFollowUp.QuestionResult.Result">
             <summary>
             问卷结果(评估结果)
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.QuestionResultcs.HealthAdvice">
+        <member name="P:OutPatientFollowUp.QuestionResult.HealthAdvice">
             <summary>
             健康建议
             </summary>

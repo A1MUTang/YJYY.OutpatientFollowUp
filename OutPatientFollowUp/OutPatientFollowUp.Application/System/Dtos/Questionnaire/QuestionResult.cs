@@ -1,6 +1,6 @@
 namespace OutPatientFollowUp;
 
-public class QuestionResultcs
+public class QuestionResult
 {
     /// <summary>
     /// 问卷标题
@@ -41,7 +41,7 @@ public class QuestionResultcs
     /// 问卷结果(评估结果)
     /// </summary>
     /// <value></value>
-    public string Result { get; set; }
+    public List<string> Result { get; set; }
 
     /// <summary>
     /// 健康建议

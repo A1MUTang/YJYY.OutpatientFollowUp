@@ -39,6 +39,7 @@ namespace OutPatientFollowUp.Application
         /// </summary>
         /// <value></value>
         public string Id { get; set; }
+        
         /// <summary>
         /// 问题题干
         /// </summary>

@@ -31,7 +31,7 @@ public class QuestionnaireController  : ControllerBase
     /// <param name="input">问卷答案</param>
     /// <returns></returns>
     [HttpPost]
-    public async Task<QuestionResultcs> SubmitQuestionnaireAsync(SurveySubmissionDto input)
+    public async Task<QuestionResult> SubmitQuestionnaireAsync(SurveySubmissionDto input)
     {
         throw new System.NotImplementedException();
         //return await _questionnaireAppService.SubmitQuestionnaireAsync(input);
@@ -43,7 +43,7 @@ public class QuestionnaireController  : ControllerBase
     /// <param name="code"></param>
     /// <returns></returns>
     [HttpGet("Result")]
-    public async Task<QuestionResultcs> GetResultAsync(string code)
+    public async Task<QuestionResult> GetResultAsync(string code)
     {
         throw new System.NotImplementedException();
         //return await _questionnaireAppService.GetResultAsync(code);
