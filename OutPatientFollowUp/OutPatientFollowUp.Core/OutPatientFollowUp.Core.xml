@@ -1317,6 +1317,15 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Options.Score">
+            <summary>
+            选项分数    
+            </summary>
+            <remarks>
+             选项分数，用于计算得分
+            </remarks>
+            <value></value>
+        </member>
         <member name="T:OutPatientFollowUp.Core.HT_PatientBasicInfo">
             <summary>
             患者基本信息
@@ -2121,66 +2130,6 @@
             </summary>
             <remarks>仅修改不为空的字段</remarks>
             <param name="patientBasicInfo"></param>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Question.Id">
-            <summary>
-            问题主键
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Question.QuestionnaireId">
-            <summary>
-            问卷主键
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Question.Title">
-            <summary>
-            问题题干
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Question.Type">
-            <summary>
-            问题类型
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Question.Options">
-            <summary>
-            问题选项
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Questionnaire.Id">
-            <summary>
-            问卷主键
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Questionnaire.Tile">
-            <summary>
-            问卷标题
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Questionnaire.Code">
-            <summary>
-            问卷代码
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Questionnaire.Description">
-            <summary>
-            问卷描述
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Questionnaire.Questions">
-            <summary>
-            问卷问题
-            </summary>
-            <value></value>
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.SE_ID">
              <summary>
@@ -3258,6 +3207,101 @@
             <summary>
             圆圈颜色
             </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Question.Id">
+            <summary>
+            问题主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Question.QuestionnaireId">
+            <summary>
+            问卷主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Question.Title">
+            <summary>
+            问题题干
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Question.Type">
+            <summary>
+            问题类型
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Question.Options">
+            <summary>
+            问题选项
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Questionnaire.Id">
+            <summary>
+            问卷主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Questionnaire.Tile">
+            <summary>
+            问卷标题
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Questionnaire.Code">
+            <summary>
+            问卷代码
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Questionnaire.Description">
+            <summary>
+            问卷描述
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Questionnaire.Questions">
+            <summary>
+            问卷问题
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.HT_QuestionnaireResult">
+            <summary>
+            问卷结果
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_QuestionnaireResult.Id">
+            <summary>
+            主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_QuestionnaireResult.QuestionnaireId">
+            <summary>
+            问卷主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_QuestionnaireResult.patientBasicArchivesCode">
+            <summary>
+            基础档案信息Code
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_QuestionnaireResult.Answers">
+            <summary>
+            问卷答案
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_QuestionnaireResult.SubmitTime">
+            <summary>
+            提交时间
+            </summary>
+            <value></value> 
         </member>
         <member name="T:OutPatientFollowUp.Core.SY_Code">
             <summary>

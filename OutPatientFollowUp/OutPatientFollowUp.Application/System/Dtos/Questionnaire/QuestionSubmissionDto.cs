@@ -9,13 +9,13 @@ public class SurveySubmissionDto
     /// 问卷 ID
     /// </summary>
     /// <value></value>
-    public string QuestionnaireCode { get; set; }  
+    public string QuestionnaireCode { get; set; }
 
     /// <summary>
     /// 问题提交列表
     /// </summary>
     /// <value></value>
-    public List<QuestionSubmissionDto> QuestionSubmissions { get; set; } 
+    public List<QuestionSubmissionDto> QuestionSubmissions { get; set; }
 
     /// <summary>
     /// 患者基础档案Code
@@ -33,11 +33,11 @@ public class QuestionSubmissionDto
     /// 问题 ID
     /// </summary>
     /// <value></value>
-    public string QuestionId { get; set; } 
+    public string QuestionId { get; set; }
 
     /// <summary>
     /// 答案文本
     /// </summary>
     /// <value></value>
-    public string AnswerText { get; set; } 
+    public string AnswerText { get; set; }
 }

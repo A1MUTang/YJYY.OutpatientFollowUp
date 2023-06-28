@@ -280,7 +280,13 @@
             <summary>
             获取问卷
             </summary>
-            <param name="code">问卷编码</param>
+            <param name="code">问卷编码</param>、
+            <remarks>问卷编码为问卷的唯一标识，目前共有四种：脑卒中风险评估、心血管风险评估、慢阻肺风险评估、糖尿病风险评估 ，对应Code 分别是：
+            StrokeRiskAssessment：脑卒中风险评估
+            CardiovascularRiskAssessment：心血管风险评估
+            CopdRiskAssessment：慢阻肺风险评估
+            DiabetesRiskAssessment：糖尿病风险评估
+            </remarks>
             <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Core.QuestionnaireController.SubmitQuestionnaireAsync(OutPatientFollowUp.Core.SurveySubmissionDto)">

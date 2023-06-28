@@ -1990,6 +1990,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:OutPatientFollowUp.Core.SurveySubmissionDto.PatientBasicArchivesCodeArchivesCode">
+            <summary>
+            患者基础档案Code
+            </summary>
+            <value></value>
+        </member>
         <member name="T:OutPatientFollowUp.Core.QuestionSubmissionDto">
             <summary>
             问题提交 DTO
