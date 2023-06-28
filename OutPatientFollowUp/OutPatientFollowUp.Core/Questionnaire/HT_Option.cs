@@ -1,7 +1,7 @@
 namespace OutPatientFollowUp.Core
 {
 
-    public class HT_Options
+    public class HT_Option
     {
         /// <summary>
         /// 选项主键    

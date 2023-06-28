@@ -33,5 +33,5 @@ public class HT_Question
     /// </summary>
     /// <value></value>
     [SugarColumn(IsIgnore = true)]
-    public virtual ICollection<HT_Options> Options { get; set; }
+    public virtual ICollection<HT_Option> Options { get; set; }
 }

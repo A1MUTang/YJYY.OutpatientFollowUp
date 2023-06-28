@@ -1,12 +1,15 @@
 using System;
+using System.Collections.Generic;
+using SqlSugar;
 
 namespace OutPatientFollowUp.Core;
 
 /// <summary>
 /// 问卷结果
 /// </summary>
-public class HT_QuestionResult
+public class HT_QuestionnaireResult
 {
+
     /// <summary>
     /// 主键
     /// </summary>
@@ -23,20 +26,19 @@ public class HT_QuestionResult
     /// 基础档案信息Code
     /// </summary>
     /// <value></value>
-    public string patientBasicArchivesCode { get; set; }
-
-    /// <summary>
-    /// 问卷答案
-    /// </summary>
-    /// <value></value>
-    public string Answers { get; set; }
+    public string PatientBasicArchivesCode { get; set; }
 
     /// <summary>
     /// 提交时间
     /// </summary>
     /// <value></value> 
-    public DateTime SubmitTime { get; set; }
+    public DateTime SubmitTime { get; set; } = DateTime.Now;
+
+
+    /// <summary>
+    /// 问卷问题
+    /// </summary>
+    /// <value></value>
+    [SugarColumn(IsIgnore = true)]
+    public virtual IList<HT_QuestionReuslt> QuestionReuslts { get; set; }
 }
-
-
-

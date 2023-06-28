@@ -17,7 +17,7 @@ public class HT_QuestionnaireRepository : BaseRepository<HT_Questionnaire>, IHT_
         result.Questions = await _context.Queryable<HT_Question>().Where(x => x.QuestionnaireId == result.Id).ToListAsync();
         foreach (var question in result.Questions)
         {
-            question.Options = await _context.Queryable<HT_Options>().Where(x => x.QuestionId == question.Id).ToListAsync();
+            question.Options = await _context.Queryable<HT_Option>().Where(x => x.QuestionId == question.Id).ToListAsync();
         }
         return await _context.Queryable<HT_Questionnaire>().Where(x => x.Code == code).FirstAsync();
     }
