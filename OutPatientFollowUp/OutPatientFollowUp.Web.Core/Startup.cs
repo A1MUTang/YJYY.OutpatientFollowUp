@@ -42,7 +42,11 @@ public class Startup : AppStartup
             return sqlSugar;
         });
         services.AddControllers()
-                .AddInjectWithUnifyResult<CustomResponseProvider>();
+                .AddInjectWithUnifyResult<CustomResponseProvider>()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.All);
+                });
 
     }
 

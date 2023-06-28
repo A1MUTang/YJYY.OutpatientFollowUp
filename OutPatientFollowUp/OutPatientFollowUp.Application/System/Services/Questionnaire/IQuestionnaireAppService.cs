@@ -1,8 +1,8 @@
-using System.Threading.Tasks;
+using OutPatientFollowUp.Core;
 
-namespace OutPatientFollowUp.Core
+namespace OutPatientFollowUp.Application
 {
-    public interface IHT_QuestionnaireRepository:IBaseRepository<HT_Questionnaire>
+    public interface IQuestionnaireAppService :ITransient
     {
         /// <summary>
         /// 根据问卷编码获取问卷
@@ -10,7 +10,5 @@ namespace OutPatientFollowUp.Core
         /// <param name="code"></param>
         /// <returns></returns>
         public Task<HT_Questionnaire> GetQuestionnaireByCodeAsync(string code);
-
-
     }
 }
