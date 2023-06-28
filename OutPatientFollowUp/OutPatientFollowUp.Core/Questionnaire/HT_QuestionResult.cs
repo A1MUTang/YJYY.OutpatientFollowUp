@@ -5,7 +5,7 @@ namespace OutPatientFollowUp.Core;
 /// <summary>
 /// 问卷结果
 /// </summary>
-public class HT_QuestionnaireResult
+public class HT_QuestionResult
 {
     /// <summary>
     /// 主键

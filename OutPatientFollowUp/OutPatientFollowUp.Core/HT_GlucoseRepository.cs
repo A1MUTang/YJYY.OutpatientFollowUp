@@ -19,7 +19,6 @@ namespace OutPatientFollowUp.Core
         /// 根据档案编号和管理单位名称获取血糖信息。
         /// </summary>
         /// <param name="archivesCode"></param>
-        /// <param name="manageName"></param>
         /// <returns></returns>
         public async Task<HT_Glucose> GetByArchivesCode(string archivesCode)
         {

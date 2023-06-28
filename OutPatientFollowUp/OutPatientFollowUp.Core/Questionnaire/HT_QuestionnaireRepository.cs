@@ -22,12 +22,4 @@ public class HT_QuestionnaireRepository : BaseRepository<HT_Questionnaire>, IHT_
         return await _context.Queryable<HT_Questionnaire>().Where(x => x.Code == code).FirstAsync();
     }
 
-    // public async Task<HT_Questionnaire> CreateAsync(HT_Questionnaire input)
-    // {
-    //     var result = await _context.Insertable<HT_Questionnaire>(input).ExecuteReturnEntityAsync();
-    //     var questions = input.Questions;
-    //     var 
-    // }
-
-
 }
