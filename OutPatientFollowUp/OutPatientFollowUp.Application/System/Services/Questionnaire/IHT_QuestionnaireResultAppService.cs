@@ -1,4 +1,4 @@
-namespace OutPatientFollowUp.Core;
+namespace OutPatientFollowUp.Application;
 
 public interface IHT_QuestionnaireResultAppService : ITransient
 {
@@ -7,12 +7,13 @@ public interface IHT_QuestionnaireResultAppService : ITransient
     /// </summary>
     /// <param name="code"></param>
     /// <returns></returns>
-    public Task<HT_QuestionnaireResult> GetQuestionnaireResultByCodeAsync(string code);
+    public Task<QuestionResultDto> GetQuestionnaireResultByCodeAsync(string code);
 
     /// <summary>
     /// 保存问卷结果
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
-    public Task<bool> SaveQuestionnaireResult(HT_QuestionnaireResult input);
+    public Task<bool> SaveQuestionnaireResult(SurveySubmissionDto input);
+
 }

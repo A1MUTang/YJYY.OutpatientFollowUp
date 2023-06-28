@@ -13,6 +13,14 @@ namespace OutPatientFollowUp.Core;
 public class QuestionnaireController  : ControllerBase
 {   
 
+    private readonly IQuestionnaireAppService _questionnaireAppService;
+    private readonly IHT_QuestionnaireResultAppService _questionnaireResultAppService;
+    public QuestionnaireController(IQuestionnaireAppService questionnaireAppService, IHT_QuestionnaireResultAppService questionnaireResultAppService)
+    {
+        _questionnaireAppService = questionnaireAppService;
+        _questionnaireResultAppService = questionnaireResultAppService;
+    }
+
     /// <summary>
     /// 获取问卷
     /// </summary>
@@ -27,8 +35,7 @@ public class QuestionnaireController  : ControllerBase
     [HttpGet]
     public async Task<QuestionnaireDto> GetQuestionnaireAsync(string code)
     {
-        throw new System.NotImplementedException();
-        //return await _questionnaireAppService.GetQuestionnaireAsync(archivesCode);
+        return await _questionnaireAppService.GetQuestionnaireByCodeAsync(code);
     }
 
     /// <summary>
@@ -37,10 +44,9 @@ public class QuestionnaireController  : ControllerBase
     /// <param name="input">问卷答案</param>
     /// <returns></returns>
     [HttpPost]
-    public async Task<QuestionResult> SubmitQuestionnaireAsync(SurveySubmissionDto input)
+    public async Task<bool> SubmitQuestionnaireAsync(SurveySubmissionDto input)
     {
-        throw new System.NotImplementedException();
-        //return await _questionnaireAppService.SubmitQuestionnaireAsync(input);
+        return await _questionnaireResultAppService.SaveQuestionnaireResult(input);
     }
 
     /// <summary>
@@ -49,10 +55,9 @@ public class QuestionnaireController  : ControllerBase
     /// <param name="code"></param>
     /// <returns></returns>
     [HttpGet("Result")]
-    public async Task<QuestionResult> GetResultAsync(string code)
+    public async Task<QuestionResultDto> GetResultAsync(string code)
     {
-        throw new System.NotImplementedException();
-        //return await _questionnaireAppService.GetResultAsync(code);
+        return await _questionnaireResultAppService.GetQuestionnaireResultByCodeAsync(code);
     }
 
 

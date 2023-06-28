@@ -1288,7 +1288,6 @@
             根据档案编号和管理单位名称获取血糖信息。
             </summary>
             <param name="archivesCode"></param>
-            <param name="manageName"></param>
             <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Core.HT_GlucoseRepository.GetByIdcardAndDocterIdAsync(System.String)">
@@ -1298,33 +1297,6 @@
             <param name="idcard"></param>
             <param name="manageName"></param>
             <returns></returns>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Options.Id">
-            <summary>
-            选项主键    
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Options.QuestionId">
-            <summary>
-            问题主键
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Options.Content">
-            <summary>
-            选项内容
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Options.Score">
-            <summary>
-            选项分数    
-            </summary>
-            <remarks>
-             选项分数，用于计算得分
-            </remarks>
-            <value></value>
         </member>
         <member name="T:OutPatientFollowUp.Core.HT_PatientBasicInfo">
             <summary>
@@ -3208,6 +3180,33 @@
             圆圈颜色
             </summary>
         </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Option.Id">
+            <summary>
+            选项主键    
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Option.QuestionId">
+            <summary>
+            问题主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Option.Content">
+            <summary>
+            选项内容
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Option.Score">
+            <summary>
+            选项分数    
+            </summary>
+            <remarks>
+             选项分数，用于计算得分
+            </remarks>
+            <value></value>
+        </member>
         <member name="P:OutPatientFollowUp.Core.HT_Question.Id">
             <summary>
             问题主键
@@ -3285,15 +3284,9 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Core.HT_QuestionnaireResult.patientBasicArchivesCode">
+        <member name="P:OutPatientFollowUp.Core.HT_QuestionnaireResult.PatientBasicArchivesCode">
             <summary>
             基础档案信息Code
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_QuestionnaireResult.Answers">
-            <summary>
-            问卷答案
             </summary>
             <value></value>
         </member>
@@ -3302,6 +3295,57 @@
             提交时间
             </summary>
             <value></value> 
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_QuestionnaireResult.QuestionReuslts">
+            <summary>
+            问卷问题
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_QuestionReuslt.Id">
+            <summary>
+            主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_QuestionReuslt.QuestionnaireResultId">
+            <summary>
+            问卷主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_QuestionReuslt.QuestionId">
+            <summary>
+            问题主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_QuestionReuslt.Answers">
+            <summary>
+            问题答案
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireRepository.GetQuestionnaireByCodeAsync(System.String)">
+            <summary>
+            根据问卷编码获取问卷
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireResultRepository.GetQuestionnaireResultByCodeAsync(System.String)">
+            <summary>
+            根据问卷编码获取问卷结果
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireResultRepository.SaveQuestionnaireResult(OutPatientFollowUp.Core.HT_QuestionnaireResult)">
+            <summary>
+            保存问卷结果
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
         </member>
         <member name="T:OutPatientFollowUp.Core.SY_Code">
             <summary>

@@ -1,4 +1,6 @@
-namespace OutPatientFollowUp.Core;
+using OutPatientFollowUp.Core;
+
+namespace OutPatientFollowUp.Application;
 
 public class HT_QuestionnaireResultAppService : IHT_QuestionnaireResultAppService
 {
@@ -9,13 +11,14 @@ public class HT_QuestionnaireResultAppService : IHT_QuestionnaireResultAppServic
         _questionnaireResultRepository = questionnaireResultRepository;
     }
 
-    public async Task<HT_QuestionnaireResult> GetQuestionnaireResultByCodeAsync(string code)
+    public async Task<QuestionResultDto> GetQuestionnaireResultByCodeAsync(string code)
     {
-        return await _questionnaireResultRepository.GetQuestionnaireResultByCodeAsync(code);
+       var result =  await _questionnaireResultRepository.GetQuestionnaireResultByCodeAsync(code);
+        return result.Adapt<QuestionResultDto>();
     }
 
-    public async Task<bool> SaveQuestionnaireResult(HT_QuestionnaireResult input)
+    public async Task<bool> SaveQuestionnaireResult(SurveySubmissionDto input)
     {
-        return await _questionnaireResultRepository.SaveQuestionnaireResult(input);
+        return await _questionnaireResultRepository.SaveQuestionnaireResult(input.Adapt<HT_QuestionnaireResult>());
     }
 }

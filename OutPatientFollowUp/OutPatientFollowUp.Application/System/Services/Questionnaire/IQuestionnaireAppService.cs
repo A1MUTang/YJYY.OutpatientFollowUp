@@ -9,6 +9,6 @@ namespace OutPatientFollowUp.Application
         /// </summary>
         /// <param name="code"></param>
         /// <returns></returns>
-        public Task<HT_Questionnaire> GetQuestionnaireByCodeAsync(string code);
+        public Task<QuestionnaireDto> GetQuestionnaireByCodeAsync(string code);
     }
 }

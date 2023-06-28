@@ -1626,6 +1626,13 @@
             <remarks>会生成对应的修改记录（审计日志）</remarks>
             <returns></returns>
         </member>
+        <member name="M:OutPatientFollowUp.Application.IQuestionnaireAppService.GetQuestionnaireByCodeAsync(System.String)">
+            <summary>
+            根据问卷编码获取问卷
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
         <member name="M:OutPatientFollowUp.Application.DEncrypt.#ctor">
             <summary>
             构造方法
@@ -2012,6 +2019,20 @@
             答案文本
             </summary>
             <value></value>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireResultAppService.GetQuestionnaireResultByCodeAsync(System.String)">
+            <summary>
+            根据问卷编码获取问卷结果
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireResultAppService.SaveQuestionnaireResult(OutPatientFollowUp.Core.HT_QuestionnaireResult)">
+            <summary>
+            保存问卷结果
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

@@ -1,4 +1,4 @@
-namespace OutPatientFollowUp.Core;
+namespace OutPatientFollowUp.Application;
 
 /// <summary>
 /// 问卷提交 DTO

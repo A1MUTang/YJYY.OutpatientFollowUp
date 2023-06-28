@@ -1,6 +1,6 @@
 namespace OutPatientFollowUp;
 
-public class QuestionResult
+public class QuestionResultDto
 {
     /// <summary>
     /// 问卷标题
