@@ -16,6 +16,12 @@ public class SurveySubmissionDto
     /// </summary>
     /// <value></value>
     public List<QuestionSubmissionDto> QuestionSubmissions { get; set; } 
+
+    /// <summary>
+    /// 患者基础档案Code
+    /// </summary>
+    /// <value></value>
+    public string PatientBasicArchivesCodeArchivesCode { get; set; }
 }
 
 /// <summary>

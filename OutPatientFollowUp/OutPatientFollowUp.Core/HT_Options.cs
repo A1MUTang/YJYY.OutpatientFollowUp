@@ -20,5 +20,15 @@ namespace OutPatientFollowUp.Core
         /// </summary>
         /// <value></value>
         public string Content { get; set; }
+
+        /// <summary>
+        /// 选项分数    
+        /// </summary>
+        /// <remarks>
+        ///  选项分数，用于计算得分
+        /// </remarks>
+        /// <value></value>
+        public int Score { get; set; }
+        
     }
 }

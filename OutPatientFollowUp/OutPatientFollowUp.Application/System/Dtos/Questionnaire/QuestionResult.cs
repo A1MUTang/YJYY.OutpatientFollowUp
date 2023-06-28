@@ -41,13 +41,13 @@ public class QuestionResult
     /// 问卷结果(评估结果)
     /// </summary>
     /// <value></value>
-    public List<string> Result { get; set; }
+    public string Result { get; set; }
 
     /// <summary>
     /// 健康建议
     /// </summary>
     /// <value></value>
-    public string HealthAdvice { get; set; }
+    public List<string> HealthAdvice { get; set; }
 
 
 
