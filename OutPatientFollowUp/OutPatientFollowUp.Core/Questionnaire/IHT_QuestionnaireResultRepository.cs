@@ -9,7 +9,7 @@ namespace OutPatientFollowUp.Core
         /// </summary>
         /// <param name="code"></param>
         /// <returns></returns>
-        public  Task<HT_QuestionnaireResult> GetQuestionnaireResultByCodeAsync(string code);
+        public  Task<HT_QuestionnaireResult> GetQuestionnaireResultByCodeAsync(string code, string patientBasicArchivesCode );
 
         /// <summary>
         /// 保存问卷结果

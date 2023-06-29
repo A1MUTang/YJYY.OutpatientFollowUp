@@ -11,9 +11,9 @@ public class HT_QuestionnaireResultAppService : IHT_QuestionnaireResultAppServic
         _questionnaireResultRepository = questionnaireResultRepository;
     }
 
-    public async Task<QuestionResultDto> GetQuestionnaireResultByCodeAsync(string code)
+    public async Task<QuestionResultDto> GetQuestionnaireResultByCodeAsync(string code, string patientBasicArchivesCode)
     {
-       var result =  await _questionnaireResultRepository.GetQuestionnaireResultByCodeAsync(code);
+       var result =  await _questionnaireResultRepository.GetQuestionnaireResultByCodeAsync(code, patientBasicArchivesCode);
         return result.Adapt<QuestionResultDto>();
     }
 

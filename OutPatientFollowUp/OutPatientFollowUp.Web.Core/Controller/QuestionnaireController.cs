@@ -54,11 +54,12 @@ public class QuestionnaireController  : ControllerBase
     /// 获取问卷结果
     /// </summary>
     /// <param name="code"></param>
+    /// <param name="patientBasicArchivesCode"></param>
     /// <returns></returns>
     [HttpGet("Result")]
-    public async Task<QuestionResultDto> GetResultAsync(string code)
+    public async Task<QuestionResultDto> GetResultAsync(string code, string patientBasicArchivesCode)
     {
-        return await _questionnaireResultAppService.GetQuestionnaireResultByCodeAsync(code);
+        return await _questionnaireResultAppService.GetQuestionnaireResultByCodeAsync(code, patientBasicArchivesCode);
     }
 
 

@@ -6,8 +6,9 @@ public interface IHT_QuestionnaireResultAppService : ITransient
     /// 根据问卷编码获取问卷结果
     /// </summary>
     /// <param name="code"></param>
+    /// <param name="patientBasicArchivesCode"></param>
     /// <returns></returns>
-    public Task<QuestionResultDto> GetQuestionnaireResultByCodeAsync(string code);
+    public Task<QuestionResultDto> GetQuestionnaireResultByCodeAsync(string code, string patientBasicArchivesCode);
 
     /// <summary>
     /// 保存问卷结果
