@@ -40,5 +40,5 @@ public class HT_QuestionnaireResult
     /// </summary>
     /// <value></value>
     [SugarColumn(IsIgnore = true)]
-    public virtual IList<HT_QuestionReuslt> QuestionReuslts { get; set; }
+    public virtual IList<HT_QuestionResult> QuestionReuslts { get; set; }
 }

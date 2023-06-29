@@ -1,9 +1,9 @@
 namespace OutPatientFollowUp.Core;
 
 
-public class HT_QuestionReuslt
+public class HT_QuestionResult
 {
-    public HT_QuestionReuslt() // 添加公共无参构造函数
+    public HT_QuestionResult() // 添加公共无参构造函数
     {
     }
     /// <summary>

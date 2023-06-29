@@ -22,6 +22,13 @@ namespace OutPatientFollowUp.Application
         public List<QuestionDto> Questions { get; set; }
 
         /// <summary>
+        /// 预计完成时间
+        /// </summary>
+        /// <remarks>单位：分钟</remarks>   
+        /// <value></value>
+        public int EstimatedTime { get; set; }
+
+        /// <summary>
         /// 问卷描述
         /// </summary>
         /// <value></value>
@@ -57,15 +64,15 @@ namespace OutPatientFollowUp.Application
         /// </summary>
         /// <remarks>当问题类型为单选或多选时，此字段有效</remarks>
         /// <value></value>
-        public List<Options> Options { get; set; } 
+        public List<OptionsDto> Options { get; set; } 
     }
     
-    public class Options
+    public class OptionsDto
     {
         /// <summary>
         /// 问题选项
         /// </summary>
         /// <value></value>
-        public string OptionsDeatils { get; set; }
+        public string Content { get; set; }
     }
 }

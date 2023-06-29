@@ -1073,6 +1073,13 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:OutPatientFollowUp.Application.QuestionnaireDto.EstimatedTime">
+            <summary>
+            预计完成时间
+            </summary>
+            <remarks>单位：分钟</remarks>   
+            <value></value>
+        </member>
         <member name="P:OutPatientFollowUp.Application.QuestionnaireDto.Description">
             <summary>
             问卷描述
@@ -1109,9 +1116,49 @@
             <remarks>当问题类型为单选或多选时，此字段有效</remarks>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Application.Options.OptionsDeatils">
+        <member name="P:OutPatientFollowUp.Application.OptionsDto.Content">
             <summary>
             问题选项
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.SurveySubmissionDto">
+            <summary>
+            问卷提交 DTO
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.SurveySubmissionDto.QuestionnaireCode">
+            <summary>
+            问卷 ID
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.SurveySubmissionDto.QuestionSubmissions">
+            <summary>
+            问题提交列表
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.SurveySubmissionDto.PatientBasicArchivesCodeArchivesCode">
+            <summary>
+            患者基础档案Code
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:OutPatientFollowUp.Application.QuestionSubmissionDto">
+            <summary>
+            问题提交 DTO
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.QuestionSubmissionDto.QuestionId">
+            <summary>
+            问题 ID
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.QuestionSubmissionDto.AnswerText">
+            <summary>
+            答案文本
             </summary>
             <value></value>
         </member>
@@ -1132,8 +1179,7 @@
             <summary>
             新密码 
             </summary>
-            <param name=""></param>
-            <remarks>密码必须包含数字和大小写字母符号，长度在 6 到 16 个字符之间</remarks>
+            <remarks>密码必须包含数字和大小写字母符号,长度在 6 到 16 个字符之间</remarks>
             <returns></returns>
         </member>
         <member name="P:OutPatientFollowUp.Application.ChangePwdInput.VerificationCode">
@@ -1626,11 +1672,26 @@
             <remarks>会生成对应的修改记录（审计日志）</remarks>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Application.IQuestionnaireAppService.GetQuestionnaireByCodeAsync(System.String)">
+        <member name="M:OutPatientFollowUp.Application.IHT_QuestionnaireResultAppService.GetQuestionnaireResultByCodeAsync(System.String)">
+            <summary>
+            根据问卷编码获取问卷结果
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IHT_QuestionnaireResultAppService.SaveQuestionnaireResult(OutPatientFollowUp.Application.SurveySubmissionDto)">
+            <summary>
+            保存问卷结果
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IQuestionnaireAppService.GetQuestionnaireByCodeAsync(System.String,System.Nullable{System.Boolean})">
             <summary>
             根据问卷编码获取问卷
             </summary>
             <param name="code"></param>
+            <param name="Gender"></param>
             <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Application.DEncrypt.#ctor">
@@ -1933,19 +1994,19 @@
             体温结果
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.QuestionResult.Title">
+        <member name="P:OutPatientFollowUp.QuestionResultDto.Title">
             <summary>
             问卷标题
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.QuestionResult.Code">
+        <member name="P:OutPatientFollowUp.QuestionResultDto.Code">
             <summary>
             问卷编号
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.QuestionResult.ResultCode">
+        <member name="P:OutPatientFollowUp.QuestionResultDto.ResultCode">
             <summary>
             问卷结果图形Code
             </summary>
@@ -1968,71 +2029,17 @@
             </remark>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.QuestionResult.Result">
+        <member name="P:OutPatientFollowUp.QuestionResultDto.Result">
             <summary>
             问卷结果(评估结果)
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.QuestionResult.HealthAdvice">
+        <member name="P:OutPatientFollowUp.QuestionResultDto.HealthAdvice">
             <summary>
             健康建议
             </summary>
             <value></value>
-        </member>
-        <member name="T:OutPatientFollowUp.Core.SurveySubmissionDto">
-            <summary>
-            问卷提交 DTO
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.SurveySubmissionDto.QuestionnaireCode">
-            <summary>
-            问卷 ID
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.SurveySubmissionDto.QuestionSubmissions">
-            <summary>
-            问题提交列表
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.SurveySubmissionDto.PatientBasicArchivesCodeArchivesCode">
-            <summary>
-            患者基础档案Code
-            </summary>
-            <value></value>
-        </member>
-        <member name="T:OutPatientFollowUp.Core.QuestionSubmissionDto">
-            <summary>
-            问题提交 DTO
-            </summary>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.QuestionSubmissionDto.QuestionId">
-            <summary>
-            问题 ID
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.QuestionSubmissionDto.AnswerText">
-            <summary>
-            答案文本
-            </summary>
-            <value></value>
-        </member>
-        <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireResultAppService.GetQuestionnaireResultByCodeAsync(System.String)">
-            <summary>
-            根据问卷编码获取问卷结果
-            </summary>
-            <param name="code"></param>
-            <returns></returns>
-        </member>
-        <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireResultAppService.SaveQuestionnaireResult(OutPatientFollowUp.Core.HT_QuestionnaireResult)">
-            <summary>
-            保存问卷结果
-            </summary>
-            <param name="input"></param>
-            <returns></returns>
         </member>
     </members>
 </doc>

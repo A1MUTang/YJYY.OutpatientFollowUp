@@ -16,7 +16,7 @@ public class HT_QuestionnaireResultRepository : BaseRepository<HT_QuestionnaireR
     {
         var questionnaireId = await _context.Queryable<HT_Questionnaire>().Where(x => x.Code == code).Select(it => it.Id).FirstAsync();
         var result = await _context.Queryable<HT_QuestionnaireResult>().OrderByDescending(x=>x.SubmitTime).Where(x => x.QuestionnaireId == questionnaireId).FirstAsync();
-        result.QuestionReuslts = await _context.Queryable<HT_QuestionReuslt>().Where(x => x.QuestionnaireResultId == result.Id).ToListAsync();
+        result.QuestionReuslts = await _context.Queryable<HT_QuestionResult>().Where(x => x.QuestionnaireResultId == result.Id).ToListAsync();
         return result;
     }
 
@@ -27,7 +27,7 @@ public class HT_QuestionnaireResultRepository : BaseRepository<HT_QuestionnaireR
         {
             questionResult.QuestionnaireResultId = result.Id;
         }
-         await _context.Insertable<HT_QuestionReuslt>(input.QuestionReuslts).ExecuteCommandAsync();
+         await _context.Insertable<HT_QuestionResult>(input.QuestionReuslts).ExecuteCommandAsync();
         return true;
     }
 }

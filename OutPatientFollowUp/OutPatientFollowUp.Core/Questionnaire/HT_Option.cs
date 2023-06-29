@@ -29,6 +29,15 @@ namespace OutPatientFollowUp.Core
         /// </remarks>
         /// <value></value>
         public int Score { get; set; }
+
+        /// <summary>
+        /// 是否有根据性别区分
+        /// </summary>
+        /// <remarks>
+        /// null 代表不区分 ，true 代表男性，false 代表女性
+        /// </remarks>
+        /// <value></value>
+        public bool? Gender { get; set; }
         
     }
 }

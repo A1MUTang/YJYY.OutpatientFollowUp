@@ -11,9 +11,9 @@ public class QuestionnaireAppService : IQuestionnaireAppService
         _questionnaireRepository = questionnaireRepository;
     }
 
-    public async Task<QuestionnaireDto> GetQuestionnaireByCodeAsync(string code)
+    public async Task<QuestionnaireDto> GetQuestionnaireByCodeAsync(string code,bool? Gender)
     {
-        var result = await _questionnaireRepository.GetQuestionnaireByCodeAsync(code);
+        var result = await _questionnaireRepository.GetQuestionnaireByCodeAsync(code ,Gender);
         return  result.Adapt<QuestionnaireDto>();
     }
 }

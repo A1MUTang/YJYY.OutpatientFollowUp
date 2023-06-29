@@ -24,7 +24,8 @@ public class QuestionnaireController  : ControllerBase
     /// <summary>
     /// 获取问卷
     /// </summary>
-    /// <param name="code">问卷编码</param>、
+    /// <param name="code">问卷编码</param>
+    /// <param name="Gender"></param>、
     /// <remarks>问卷编码为问卷的唯一标识，目前共有四种：脑卒中风险评估、心血管风险评估、慢阻肺风险评估、糖尿病风险评估 ，对应Code 分别是：
     /// StrokeRiskAssessment：脑卒中风险评估
     /// CardiovascularRiskAssessment：心血管风险评估
@@ -33,9 +34,9 @@ public class QuestionnaireController  : ControllerBase
     /// </remarks>
     /// <returns></returns>
     [HttpGet]
-    public async Task<QuestionnaireDto> GetQuestionnaireAsync(string code)
+    public async Task<QuestionnaireDto> GetQuestionnaireAsync(string code ,bool? Gender )
     {
-        return await _questionnaireAppService.GetQuestionnaireByCodeAsync(code);
+        return await _questionnaireAppService.GetQuestionnaireByCodeAsync(code,Gender);
     }
 
     /// <summary>

@@ -3207,34 +3207,13 @@
             </remarks>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Question.Id">
+        <member name="P:OutPatientFollowUp.Core.HT_Option.Gender">
             <summary>
-            问题主键
+            是否有根据性别区分
             </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Question.QuestionnaireId">
-            <summary>
-            问卷主键
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Question.Title">
-            <summary>
-            问题题干
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Question.Type">
-            <summary>
-            问题类型
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Question.Options">
-            <summary>
-            问题选项
-            </summary>
+            <remarks>
+            null 代表不区分 ，true 代表男性，false 代表女性
+            </remarks>
             <value></value>
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_Questionnaire.Id">
@@ -3243,7 +3222,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Core.HT_Questionnaire.Tile">
+        <member name="P:OutPatientFollowUp.Core.HT_Questionnaire.Title">
             <summary>
             问卷标题
             </summary>
@@ -3259,6 +3238,13 @@
             <summary>
             问卷描述
             </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Questionnaire.EstimatedTime">
+            <summary>
+            预计完成时间
+            </summary>
+            <remarks>单位：分钟</remarks>   
             <value></value>
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_Questionnaire.Questions">
@@ -3302,35 +3288,66 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Core.HT_QuestionReuslt.Id">
+        <member name="P:OutPatientFollowUp.Core.HT_QuestionResult.Id">
             <summary>
             主键
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Core.HT_QuestionReuslt.QuestionnaireResultId">
+        <member name="P:OutPatientFollowUp.Core.HT_QuestionResult.QuestionnaireResultId">
             <summary>
             问卷主键
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Core.HT_QuestionReuslt.QuestionId">
+        <member name="P:OutPatientFollowUp.Core.HT_QuestionResult.QuestionId">
             <summary>
             问题主键
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Core.HT_QuestionReuslt.Answers">
+        <member name="P:OutPatientFollowUp.Core.HT_QuestionResult.Answers">
             <summary>
             问题答案
             </summary>
             <value></value>
         </member>
-        <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireRepository.GetQuestionnaireByCodeAsync(System.String)">
+        <member name="P:OutPatientFollowUp.Core.HT_Question_OutPatientFollowUp.Id">
+            <summary>
+            问题主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Question_OutPatientFollowUp.QuestionnaireId">
+            <summary>
+            问卷主键
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Question_OutPatientFollowUp.Title">
+            <summary>
+            问题题干
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Question_OutPatientFollowUp.Type">
+            <summary>
+            问题类型
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Question_OutPatientFollowUp.Options">
+            <summary>
+            问题选项
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireRepository.GetQuestionnaireByCodeAsync(System.String,System.Nullable{System.Boolean})">
             <summary>
             根据问卷编码获取问卷
             </summary>
             <param name="code"></param>
+            <param name="Gender"></param>
             <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireResultRepository.GetQuestionnaireResultByCodeAsync(System.String)">

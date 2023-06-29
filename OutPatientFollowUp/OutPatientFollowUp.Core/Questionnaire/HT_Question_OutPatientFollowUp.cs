@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using SqlSugar;
 
 namespace OutPatientFollowUp.Core;
-public class HT_Question
+public class HT_Question_OutPatientFollowUp
 {
     /// <summary>
     /// 问题主键
@@ -27,7 +27,7 @@ public class HT_Question
     /// </summary>
     /// <value></value>
     public SurveyQuestionTypeEnum Type { get; set; }
-
+    
     /// <summary>
     /// 问题选项
     /// </summary>
