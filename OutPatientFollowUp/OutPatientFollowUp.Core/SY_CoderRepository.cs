@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -78,7 +79,16 @@ public static class SY_CoderRepositoryExtensions
     /// <returns></returns>
     public static string GetCodeName( string code)
     {
-        return App.GetService<ISY_CoderRepository>().GetCodeName(code);
+        try
+        {
+            return App.GetService<ISY_CoderRepository>().GetCodeName(code);
+
+        }
+        catch(Exception ex)
+        {
+            throw ex;
+        }
+        
     }
 
     /// <summary>

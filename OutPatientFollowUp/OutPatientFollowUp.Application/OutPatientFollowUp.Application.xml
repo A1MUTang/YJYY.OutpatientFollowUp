@@ -1198,7 +1198,7 @@
             获取是否有糖尿病
             </summary>
             <param name="questionResult"></param>
-            <param name="isDiabetes"></param>
+            /// <param name="isDiabetes"></param>
             <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetBloodLipidLevel(System.Collections.Generic.List{OutPatientFollowUp.Core.HT_QuestionResult})">
@@ -1874,6 +1874,7 @@
             获取血脂健康建议
             </summary>
             <param name="bloodLipidsResult">血脂结果</param>
+            <param name="hDLResult"></param>
             <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Application.BloodLipidsTool.GetBloodLipidsHealthAdvice(System.Decimal,System.Decimal,System.Decimal,System.Decimal)">

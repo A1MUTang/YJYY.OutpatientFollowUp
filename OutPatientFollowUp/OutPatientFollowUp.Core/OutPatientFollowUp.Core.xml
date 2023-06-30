@@ -3399,6 +3399,20 @@
             <param name="QuestionnaireResultId"></param>
             <returns></returns>
         </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireResultRepository.GetHT_QuestionResults(System.Int32)">
+            <summary>
+            根据问卷结果Id获取问卷结果
+            </summary>
+            <param name="QuestionnaireResultId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireResultRepository.GetQuestionnaireIdByIdAsync(System.Int32)">
+            <summary>
+            根据问卷结果Id获取问卷Id
+            </summary>
+            <param name="questionnaireResultId"></param>
+            <returns></returns>
+        </member>
         <member name="T:OutPatientFollowUp.Core.SY_Code">
             <summary>
             

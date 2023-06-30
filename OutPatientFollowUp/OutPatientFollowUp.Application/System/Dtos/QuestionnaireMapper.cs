@@ -46,6 +46,7 @@ public class QuestionnaireMapper : IRegister
             ResultCode = GetQuestionnaireResultCode(questionResult),
             Result = GetQuestionnaireResult(questionResult),
             HealthAdvice = GetHealthAdvice(questionResult),
+
         };
 
 
@@ -135,7 +136,7 @@ public class QuestionnaireMapper : IRegister
         var remainingLifeRiskFactor = GetRemainingLifeRiskFactor(questionResults); //余生危险因素
         var riskFactor = GetRiskFactor(questionResults, age, gender); //危险因素
         //使用降压药  暂时未用到该问题
-        var useAntihypertensiveDrugs = getAnswer("使用降压药", questionResults);
+        // var useAntihypertensiveDrugs = getAnswer("使用降压药", questionResults);
         return GetResult(age, isASCVD, isDiabetes, bloodLipidLevel, remainingLifeRiskFactor, riskFactor);
 
     }
@@ -274,7 +275,7 @@ public class QuestionnaireMapper : IRegister
     /// 获取是否有糖尿病
     /// </summary>
     /// <param name="questionResult"></param>
-    /// <param name="isDiabetes"></param>
+    /// /// <param name="isDiabetes"></param>
     /// <returns></returns>
     private static bool GetDiabetesState(List<HT_QuestionResult> questionResult)
     {
@@ -355,7 +356,8 @@ public class QuestionnaireMapper : IRegister
     private static string getAnswer(string title, List<HT_QuestionResult> questionResult)
     {
         //查询问卷题目
-        var questions = HT_QuestionnaireRepositoryExtensions.GetQuestion(questionResult.FirstOrDefault().QuestionnaireResultId);
+        var questionnaireResult = HT_QuestionnaireResultRepositoryExtensions.GetQuestionnaireIdByCoIdAsync(questionResult.FirstOrDefault().QuestionnaireResultId);
+        var questions = HT_QuestionnaireRepositoryExtensions.GetQuestion(questionnaireResult);
         var answerQuestionId = questions.Where(x => x.Title == title).FirstOrDefault().Id;
         var answer = questionResult.Where(x => x.QuestionId == answerQuestionId).FirstOrDefault().Answer;
 

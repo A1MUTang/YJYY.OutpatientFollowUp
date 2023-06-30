@@ -85,6 +85,7 @@ public static class BloodLipidsTool
     /// 获取血脂健康建议
     /// </summary>
     /// <param name="bloodLipidsResult">血脂结果</param>
+    /// <param name="hDLResult"></param>
     /// <returns></returns>
     public static string GetBloodLipidsHealthAdvice(BloodLipidsResultEnum bloodLipidsResult, HDLResultEnum hDLResult)
     {

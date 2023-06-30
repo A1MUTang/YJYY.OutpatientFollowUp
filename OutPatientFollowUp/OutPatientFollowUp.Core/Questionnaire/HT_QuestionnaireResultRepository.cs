@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System;
 using System.Threading.Tasks;
 using SqlSugar;
@@ -42,6 +43,18 @@ public class HT_QuestionnaireResultRepository : BaseRepository<HT_QuestionnaireR
         return questionResult.PatientBasicArchivesCode;
     }
 
+    public int GetQuestionnaireIdByIdAsync(int questionnaireResultId)
+    {
+        var questionnaireId = _context.Queryable<HT_QuestionnaireResult>().Where(x => x.Id == questionnaireResultId).Select(it => it.QuestionnaireId).First();
+        return questionnaireId;
+    }
+
+    public List<HT_QuestionResult> GetHT_QuestionResults(int QuestionnaireResultId)
+    {
+        var questionResults = _context.Queryable<HT_QuestionResult>().Where(x => x.QuestionnaireResultId == QuestionnaireResultId).ToList();
+        return questionResults;
+    }
+
 }
 
 public static class HT_QuestionnaireResultRepositoryExtensions
@@ -49,6 +62,18 @@ public static class HT_QuestionnaireResultRepositoryExtensions
     public static string GetQuestionPatientBasicArchivesCode(int QuestionnaireResultId)
     {
         var result = App.GetService<IHT_QuestionnaireResultRepository>().GetQuestionResult(QuestionnaireResultId);
+        return result;
+    }
+
+    public static List<HT_QuestionResult> GetHT_QuestionResults(int QuestionnaireResultId)
+    {
+        var result = App.GetService<IHT_QuestionnaireResultRepository>().GetHT_QuestionResults(QuestionnaireResultId);
+        return result;
+    }
+
+    public static int GetQuestionnaireIdByCoIdAsync(int questionnaireResultId)
+    {
+        var result = App.GetService<IHT_QuestionnaireResultRepository>().GetQuestionnaireIdByIdAsync(questionnaireResultId);
         return result;
     }
 

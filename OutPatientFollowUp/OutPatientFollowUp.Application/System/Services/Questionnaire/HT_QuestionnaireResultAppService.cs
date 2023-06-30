@@ -13,8 +13,10 @@ public class HT_QuestionnaireResultAppService : IHT_QuestionnaireResultAppServic
 
     public async Task<QuestionResultDto> GetQuestionnaireResultByCodeAsync(string code, string patientBasicArchivesCode)
     {
-       var result =  await _questionnaireResultRepository.GetQuestionnaireResultByCodeAsync(code, patientBasicArchivesCode);
-        return result.Adapt<QuestionResultDto>();
+        var questionnaireResult = await _questionnaireResultRepository.GetQuestionnaireResultByCodeAsync(code, patientBasicArchivesCode);
+        var result = questionnaireResult.Adapt<QuestionResultDto>();
+          result =   questionnaireResult.QuestionResults.Adapt<QuestionResultDto>();
+        return result;
     }
 
     public async Task<bool> SaveQuestionnaireResult(SurveySubmissionDto input)

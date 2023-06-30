@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace OutPatientFollowUp.Core
@@ -9,7 +10,7 @@ namespace OutPatientFollowUp.Core
         /// </summary>
         /// <param name="code"></param>
         /// <returns></returns>
-        public  Task<HT_QuestionnaireResult> GetQuestionnaireResultByCodeAsync(string code, string patientBasicArchivesCode );
+        public Task<HT_QuestionnaireResult> GetQuestionnaireResultByCodeAsync(string code, string patientBasicArchivesCode);
 
         /// <summary>
         /// 保存问卷结果
@@ -23,7 +24,20 @@ namespace OutPatientFollowUp.Core
         /// </summary>
         /// <param name="QuestionnaireResultId"></param>
         /// <returns></returns>
-         public string GetQuestionResult(int QuestionnaireResultId);
+        public string GetQuestionResult(int QuestionnaireResultId);
+        /// <summary>
+        /// 根据问卷结果Id获取问卷结果
+        /// </summary>
+        /// <param name="QuestionnaireResultId"></param>
+        /// <returns></returns>
+        public List<HT_QuestionResult> GetHT_QuestionResults(int QuestionnaireResultId);
+
+        /// <summary>
+        /// 根据问卷结果Id获取问卷Id
+        /// </summary>
+        /// <param name="questionnaireResultId"></param>
+        /// <returns></returns>
+        public int GetQuestionnaireIdByIdAsync(int questionnaireResultId);
 
     }
 }
