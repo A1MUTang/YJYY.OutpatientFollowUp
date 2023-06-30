@@ -9,6 +9,7 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using OutPatientFollowUp.Application;
 using SqlSugar;
+using StackExchange.Profiling.Internal;
 
 namespace OutPatientFollowUp.Web.Core;
 
@@ -36,7 +37,14 @@ public class Startup : AppStartup
                {
                    //获取作IOC作用域对象
                    var appServive = s.GetService<IHttpContextAccessor>();
-                   Log.Information($"【SQL语句】：{sql} \r\n 【参数】：{pars}");
+                   Log.Information($"【SQL语句】：{sql} \r\n 【参数】：{pars.ToJson()}");
+               };
+               db.Aop.OnError = (exp) =>//SQL报错
+               {
+                   //获取原生SQL推荐 5.1.4.63  性能OK
+                   //UtilMethods.GetNativeSql(exp.sql,exp.parameters)
+                   //获取无参数SQL对性能有影响，特别大的SQL参数多的，调试使用
+                   Log.Error($"【SQL报错】：{exp.Sql} \r\n 【参数】：{exp.Parametres.ToJson()}");        
                };
            });
             return sqlSugar;

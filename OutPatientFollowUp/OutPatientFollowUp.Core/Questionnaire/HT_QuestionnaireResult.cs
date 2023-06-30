@@ -14,6 +14,7 @@ public class HT_QuestionnaireResult
     /// 主键
     /// </summary>
     /// <value></value>
+    [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]//数据库是自增才配自增 
     public int Id { get; set; }
 
     /// <summary>

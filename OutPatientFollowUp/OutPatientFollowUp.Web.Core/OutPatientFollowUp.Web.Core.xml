@@ -297,11 +297,12 @@
             <param name="input">问卷答案</param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Core.QuestionnaireController.GetResultAsync(System.String)">
+        <member name="M:OutPatientFollowUp.Core.QuestionnaireController.GetResultAsync(System.String,System.String)">
             <summary>
             获取问卷结果
             </summary>
             <param name="code"></param>
+            <param name="patientBasicArchivesCode"></param>
             <returns></returns>
         </member>
         <member name="T:OutPatientFollowUp.Application.ProfileInformationDetailController">

@@ -1,6 +1,8 @@
+using System;
 using System.Threading.Tasks;
 using SqlSugar;
 using System.Linq;
+using Furion;
 
 namespace OutPatientFollowUp.Core;
 
@@ -12,12 +14,12 @@ public class HT_QuestionnaireResultRepository : BaseRepository<HT_QuestionnaireR
         _context = context;
     }
 
-    public async Task<HT_QuestionnaireResult> GetQuestionnaireResultByCodeAsync(string code, string patientBasicArchivesCode )
+    public async Task<HT_QuestionnaireResult> GetQuestionnaireResultByCodeAsync(string code, string patientBasicArchivesCode)
     {
         var questionnaireId = await _context.Queryable<HT_Questionnaire>().Where(x => x.Code == code).Select(it => it.Id).FirstAsync();
         var result = await _context.Queryable<HT_QuestionnaireResult>()
-        .OrderByDescending(x=>x.SubmitTime)
-        .Where(x => x.QuestionnaireId == questionnaireId 
+        .OrderByDescending(x => x.SubmitTime)
+        .Where(x => x.QuestionnaireId == questionnaireId
         && x.PatientBasicArchivesCode == patientBasicArchivesCode).FirstAsync();
         result.QuestionResults = await _context.Queryable<HT_QuestionResult>().Where(x => x.QuestionnaireResultId == result.Id).ToListAsync();
         return result;
@@ -25,12 +27,29 @@ public class HT_QuestionnaireResultRepository : BaseRepository<HT_QuestionnaireR
 
     public async Task<bool> SaveQuestionnaireResult(HT_QuestionnaireResult input)
     {
-        var result = await _context.Insertable(input).ExecuteReturnEntityAsync();
+        var result = await _context.Insertable<HT_QuestionnaireResult>(input).ExecuteReturnEntityAsync();
         foreach (var questionResult in input.QuestionResults)
         {
             questionResult.QuestionnaireResultId = result.Id;
         }
-         await _context.Insertable<HT_QuestionResult>(input.QuestionResults).ExecuteCommandAsync();
+        await _context.Insertable<HT_QuestionResult>(input.QuestionResults.ToList()).ExecuteCommandAsync();
         return true;
     }
+
+    public string GetQuestionResult(int QuestionnaireResultId)
+    {
+        var questionResult = _context.Queryable<HT_QuestionnaireResult>().Where(x => x.Id == QuestionnaireResultId).First();
+        return questionResult.PatientBasicArchivesCode;
+    }
+
+}
+
+public static class HT_QuestionnaireResultRepositoryExtensions
+{
+    public static string GetQuestionPatientBasicArchivesCode(int QuestionnaireResultId)
+    {
+        var result = App.GetService<IHT_QuestionnaireResultRepository>().GetQuestionResult(QuestionnaireResultId);
+        return result;
+    }
+
 }

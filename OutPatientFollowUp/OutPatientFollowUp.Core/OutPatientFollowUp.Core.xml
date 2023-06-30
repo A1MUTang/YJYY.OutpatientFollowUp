@@ -913,7 +913,7 @@
             服务ID
             </summary>
         </member>
-        <member name="M:OutPatientFollowUp.Core.HT_BloodOxygenReository.GetByArchivesCode(System.String)">
+        <member name="M:OutPatientFollowUp.Core.HT_BloodOxygenRepository.GetByArchivesCode(System.String)">
             <summary>
             根据档案编号和测量日期获取血氧信息。
             </summary>
@@ -2965,7 +2965,7 @@
             更新一条
             </summary>
         </member>
-        <member name="M:OutPatientFollowUp.Core.IHT_BloodOxygenReository.GetByArchivesCode(System.String)">
+        <member name="M:OutPatientFollowUp.Core.IHT_BloodOxygenRepository.GetByArchivesCode(System.String)">
             <summary>
             根据档案编号和测量日期获取血氧信息。
             </summary>
@@ -3282,7 +3282,7 @@
             </summary>
             <value></value> 
         </member>
-        <member name="P:OutPatientFollowUp.Core.HT_QuestionnaireResult.QuestionReuslts">
+        <member name="P:OutPatientFollowUp.Core.HT_QuestionnaireResult.QuestionResults">
             <summary>
             问卷问题
             </summary>
@@ -3296,7 +3296,7 @@
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_QuestionResult.QuestionnaireResultId">
             <summary>
-            问卷主键
+            问卷结果主键
             </summary>
             <value></value>
         </member>
@@ -3306,7 +3306,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Core.HT_QuestionResult.Answers">
+        <member name="P:OutPatientFollowUp.Core.HT_QuestionResult.Answer">
             <summary>
             问题答案
             </summary>
@@ -3350,7 +3350,35 @@
             <param name="Gender"></param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireResultRepository.GetQuestionnaireResultByCodeAsync(System.String)">
+        <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireRepository.GetQuestionnaireIdByCodeAsync(System.String)">
+            <summary>
+            根据问卷编码获取问卷Id
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireRepository.GetQuestionnaireTitle(System.Int32)">
+            <summary>
+            根据问卷结果Id获取问卷标题
+            </summary>
+            <param name="QuestionnaireResultId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireRepository.GetQuestion(System.Int32)">
+            <summary>
+            根据问卷Id获取问卷标题
+            </summary>
+            <param name="questionnaireId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireRepository.GetQuestionnaire(System.Int32)">
+            <summary>
+            根据问卷结果Id获取问卷
+            </summary>
+            <param name="QuestionnaireResultId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireResultRepository.GetQuestionnaireResultByCodeAsync(System.String,System.String)">
             <summary>
             根据问卷编码获取问卷结果
             </summary>
@@ -3362,6 +3390,13 @@
             保存问卷结果
             </summary>
             <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireResultRepository.GetQuestionResult(System.Int32)">
+            <summary>
+            根据问卷结果Id获取问卷结果
+            </summary>
+            <param name="QuestionnaireResultId"></param>
             <returns></returns>
         </member>
         <member name="T:OutPatientFollowUp.Core.SY_Code">

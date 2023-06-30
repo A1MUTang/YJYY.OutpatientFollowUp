@@ -3,11 +3,11 @@ using SqlSugar;
 
 namespace OutPatientFollowUp.Core;
 
-public class HT_BloodOxygenReository : BaseRepository<HT_BloodOxygen>, IHT_BloodOxygenReository
+public class HT_BloodOxygenRepository : BaseRepository<HT_BloodOxygen>, IHT_BloodOxygenRepository
 {
     private readonly ISqlSugarClient _context;
 
-    public HT_BloodOxygenReository(ISqlSugarClient context) : base(context)
+    public HT_BloodOxygenRepository(ISqlSugarClient context) : base(context)
     {
         _context = context;
     }

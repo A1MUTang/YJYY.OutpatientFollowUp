@@ -18,5 +18,12 @@ namespace OutPatientFollowUp.Core
         /// <returns></returns>
         public Task<bool> SaveQuestionnaireResult(HT_QuestionnaireResult input);
 
+        /// <summary>
+        /// 根据问卷结果Id获取问卷结果
+        /// </summary>
+        /// <param name="QuestionnaireResultId"></param>
+        /// <returns></returns>
+         public string GetQuestionResult(int QuestionnaireResultId);
+
     }
 }

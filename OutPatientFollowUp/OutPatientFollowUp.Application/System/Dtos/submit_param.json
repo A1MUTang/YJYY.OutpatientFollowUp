@@ -1,0 +1,90 @@
+{
+    "questionnaireCode": "StrokeRiskAssessment",
+    "questionSubmissions": [
+        {
+          "questionId": "1",
+          "answerText": "180"
+        },
+        {
+          "questionId": "2",
+          "answerText": "60"
+        },
+        {
+          "questionId": "3",
+          "answerText": "10"
+        },
+        {
+          "questionId": "4",
+          "answerText": "96"
+        },
+        {
+          "questionId": "5",
+          "answerText": "是"
+        },
+        {
+          "questionId": "6",
+          "answerText": "是"
+        },
+        {
+          "questionId": "7",
+          "answerText": "110"
+        },
+        {
+          "questionId": "8",
+          "answerText": "否"
+        },
+        {
+          "questionId": "9",
+          "answerText": "<6.1mmol/L<6.1mmol/L"
+        },
+        {
+          "questionId": "10",
+          "answerText": "<7.8mmol/L<7.8mmol/L"
+        },
+        {
+          "questionId": "11",
+          "answerText": "3.13.1≤TC<4.1"
+        },
+        {
+          "questionId": "12",
+          "answerText": "<7.8mmol/L<7.8mmol/L"
+        },
+        {
+          "questionId": "13",
+          "answerText": "<1.0mmol/L"
+        },
+        {
+          "questionId": "14",
+          "answerText": "≥5.2mmol/L"
+        },
+        {
+          "questionId": "15",
+          "answerText": "无"
+        },
+        {
+          "questionId": "16",
+          "answerText": "无"
+        },
+        {
+          "questionId": "17",
+          "answerText": "无"
+        },
+        {
+          "questionId": "18",
+          "answerText": "无"
+        },
+        {
+          "questionId": "19",
+          "answerText": "无"
+        },
+        {
+          "questionId": "22",
+          "answerText": "无"
+        },
+        {
+          "questionId": "23",
+          "answerText": "无"
+        }
+    ],
+    "PatientBasicArchivesCode": "2023062500002"
+  }

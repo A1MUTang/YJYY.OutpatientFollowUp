@@ -21,7 +21,7 @@ public class SurveySubmissionDto
     /// 患者基础档案Code
     /// </summary>
     /// <value></value>
-    public string PatientBasicArchivesCodeArchivesCode { get; set; }
+    public string PatientBasicArchivesCode { get; set; }
 }
 
 /// <summary>

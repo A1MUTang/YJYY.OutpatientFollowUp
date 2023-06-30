@@ -5,9 +5,9 @@ namespace OutPatientFollowUp.Application;
 
 public class BloodOxygenAppService : IBloodOxygenAppService
 {
-    private readonly IHT_BloodOxygenReository _repository;
+    private readonly IHT_BloodOxygenRepository _repository;
 
-    public BloodOxygenAppService(IHT_BloodOxygenReository repository)
+    public BloodOxygenAppService(IHT_BloodOxygenRepository repository)
     {
         _repository = repository;
     }

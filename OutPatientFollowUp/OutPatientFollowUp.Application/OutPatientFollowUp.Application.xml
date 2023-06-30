@@ -1139,7 +1139,7 @@
             </summary>
             <value></value>
         </member>
-        <member name="P:OutPatientFollowUp.Application.SurveySubmissionDto.PatientBasicArchivesCodeArchivesCode">
+        <member name="P:OutPatientFollowUp.Application.SurveySubmissionDto.PatientBasicArchivesCode">
             <summary>
             患者基础档案Code
             </summary>
@@ -1161,6 +1161,59 @@
             答案文本
             </summary>
             <value></value>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetHealthAdvice(System.Int32,System.Boolean,System.Boolean,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            健康建议
+            </summary>
+            <param name="age">年龄</param>
+            <param name="isASCVD">ASCVD</param>
+            <param name="isDiabetes">是否有糖尿病</param>
+            <param name="bloodLipidLevel">血脂水平</param>
+            <param name="remainingLifeRiskFactor">余生危险因素</param>
+            <param name="riskFactor">危险因素</param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetResult(System.Int32,System.Boolean,System.Boolean,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            评估结果
+            </summary>
+            <param name="age">年龄</param>
+            <param name="isASCVD">ASCVD</param>
+            <param name="isDiabetes">是否有糖尿病</param>
+            <param name="bloodLipidLevel">血脂水平</param>
+            <param name="remainingLifeRiskFactor">余生危险因素</param>
+            <param name="riskFactor">危险因素</param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetRemainingLifeRiskFactor(System.Collections.Generic.List{OutPatientFollowUp.Core.HT_QuestionResult})">
+            <summary>
+            获取余生危险因素
+            </summary>
+            <param name="questionResult"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetDiabetesState(System.Collections.Generic.List{OutPatientFollowUp.Core.HT_QuestionResult})">
+            <summary>
+            获取是否有糖尿病
+            </summary>
+            <param name="questionResult"></param>
+            <param name="isDiabetes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetBloodLipidLevel(System.Collections.Generic.List{OutPatientFollowUp.Core.HT_QuestionResult})">
+            <summary>
+            获取血脂水平
+            </summary>
+            <param name="questionResult"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetASCVDResult(System.Collections.Generic.List{OutPatientFollowUp.Core.HT_QuestionResult})">
+            <summary>
+            获取是否有ASCVD
+            </summary>
+            <param name="questionResult"></param>
+            <returns></returns>
         </member>
         <member name="P:OutPatientFollowUp.Application.ChangePwdInput.UserId">
             <summary>
@@ -1672,11 +1725,12 @@
             <remarks>会生成对应的修改记录（审计日志）</remarks>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Application.IHT_QuestionnaireResultAppService.GetQuestionnaireResultByCodeAsync(System.String)">
+        <member name="M:OutPatientFollowUp.Application.IHT_QuestionnaireResultAppService.GetQuestionnaireResultByCodeAsync(System.String,System.String)">
             <summary>
             根据问卷编码获取问卷结果
             </summary>
             <param name="code"></param>
+            <param name="patientBasicArchivesCode"></param>
             <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Application.IHT_QuestionnaireResultAppService.SaveQuestionnaireResult(OutPatientFollowUp.Application.SurveySubmissionDto)">
