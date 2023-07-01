@@ -637,7 +637,12 @@
             </remarks>
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:OutPatientFollowUp.Core.SurveyQuestionTypeEnum" -->
+        <member name="T:OutPatientFollowUp.Core.SurveyQuestionTypeEnum">
+            <summary>
+            问卷问题类型
+            <remarks>单选、多选、填空</remarks>
+            </summary>
+        </member>
         <member name="T:OutPatientFollowUp.Core.TemperatureResultEnum">
             <summary>
             体温结果枚举
@@ -918,7 +923,6 @@
             根据档案编号和测量日期获取血氧信息。
             </summary>
             <param name="archivesCode"></param>
-            <param name="measureDate"></param>
             <returns></returns>
         </member>
         <member name="T:OutPatientFollowUp.Core.HT_BlutdruckTemp">
@@ -1101,7 +1105,6 @@
             根据档案编号和管理单位名称获取血压信息。
             </summary>
             <param name="archivesCode"></param>
-            <param name="manageName"></param>
             <returns></returns>
         </member>
         <member name="P:OutPatientFollowUp.Core.HT_BodyTemperature.ID">
@@ -1190,7 +1193,6 @@
             根据档案编号和测量日期获取体温信息。
             </summary>
             <param name="archivesCode"></param>
-            <param name="measureDate"></param>
             <returns></returns>
         </member>
         <member name="T:OutPatientFollowUp.Core.HT_Glucose">
@@ -1290,12 +1292,11 @@
             <param name="archivesCode"></param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Core.HT_GlucoseRepository.GetByIdcardAndDocterIdAsync(System.String)">
+        <member name="M:OutPatientFollowUp.Core.HT_GlucoseRepository.GetByIdCardAndDoctorIdAsync(System.String)">
             <summary>
             根据身份证号和管理单位名称获取血糖信息。
             </summary>
-            <param name="idcard"></param>
-            <param name="manageName"></param>
+            <param name="idCard"></param>
             <returns></returns>
         </member>
         <member name="T:OutPatientFollowUp.Core.HT_PatientBasicInfo">
@@ -2073,7 +2074,7 @@
             患者基本信息仓储类。
             </summary>
         </member>
-        <member name="M:OutPatientFollowUp.Core.HT_PatientBasicInfoRepository.GetByIdcardAndDocterIdAsync(System.String,System.String)">
+        <member name="M:OutPatientFollowUp.Core.HT_PatientBasicInfoRepository.GetByIdCardAndDoctorIdAsync(System.String,System.String)">
             <summary>
             根据身份证号和管理单位名称获取患者基本信息。
             </summary>
@@ -2977,7 +2978,6 @@
             根据档案编号和管理单位名称获取血压信息。
             </summary>
             <param name="archivesCode"></param>
-            <param name="manageName"></param>
             <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Core.IHT_BodyTemperatureRepository.GetByArchivesCode(System.String)">
@@ -2997,18 +2997,16 @@
             根据档案编号和管理单位名称获取血糖信息。
             </summary>
             <param name="archivesCode"></param>
-            <param name="manageName"></param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Core.IHT_GlucoseRepository.GetByIdcardAndDocterIdAsync(System.String)">
+        <member name="M:OutPatientFollowUp.Core.IHT_GlucoseRepository.GetByIdCardAndDoctorIdAsync(System.String)">
             <summary>
             根据身份证号和管理单位名称获取血糖信息。
             </summary>
-            <param name="idcard"></param>
-            <param name="manageName"></param>
+            <param name="idCard"></param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Core.IHT_PatientBasicInfoRepository.GetByIdcardAndDocterIdAsync(System.String,System.String)">
+        <member name="M:OutPatientFollowUp.Core.IHT_PatientBasicInfoRepository.GetByIdCardAndDoctorIdAsync(System.String,System.String)">
             <summary>
             根据身份证号和管理单位名称获取患者基本信息。
             </summary>
@@ -3383,6 +3381,7 @@
             根据问卷编码获取问卷结果
             </summary>
             <param name="code"></param>
+            <param name="patientBasicArchivesCode"></param>
             <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Core.IHT_QuestionnaireResultRepository.SaveQuestionnaireResult(OutPatientFollowUp.Core.HT_QuestionnaireResult)">
@@ -3418,7 +3417,11 @@
             
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:OutPatientFollowUp.Core.SY_Code.SYC_ID" -->
+        <member name="P:OutPatientFollowUp.Core.SY_Code.SYC_ID">
+            <summary>
+            编码ID
+            </summary>
+        </member>
         <member name="P:OutPatientFollowUp.Core.SY_Code.SCT_ID">
             <summary>
             编码类型ID

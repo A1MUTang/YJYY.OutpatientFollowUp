@@ -9,6 +9,7 @@ namespace OutPatientFollowUp.Core
         /// 根据问卷编码获取问卷结果
         /// </summary>
         /// <param name="code"></param>
+        /// <param name="patientBasicArchivesCode"></param>
         /// <returns></returns>
         public Task<HT_QuestionnaireResult> GetQuestionnaireResultByCodeAsync(string code, string patientBasicArchivesCode);
 

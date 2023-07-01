@@ -51,8 +51,7 @@ public class QuestionnaireMapper : IRegister
     }
     public static string GetQuestionnaireResultCode(List<HT_QuestionResult> questionResults)
     {
-        var questionnaireIdById = HT_QuestionnaireResultRepositoryExtensions.GetQuestionnaireIdByIdAsync(questionResults.First().QuestionnaireResultId);
-        var questionnaire = HT_QuestionnaireRepositoryExtensions.GetQuestionnaire(questionnaireIdById);
+        var questionnaire = HT_QuestionnaireRepositoryExtensions.GetQuestionnaire(questionResults.First().QuestionnaireResultId);
 
         switch (questionnaire.Code)
         {
@@ -72,8 +71,7 @@ public class QuestionnaireMapper : IRegister
 
     public static string GetQuestionnaireResult(List<HT_QuestionResult> questionResults)
     {
-        var questionnaireIdById = HT_QuestionnaireResultRepositoryExtensions.GetQuestionnaireIdByIdAsync(questionResults.First().QuestionnaireResultId);
-        var questionnaire = HT_QuestionnaireRepositoryExtensions.GetQuestionnaire(questionnaireIdById);
+        var questionnaire = HT_QuestionnaireRepositoryExtensions.GetQuestionnaire(questionResults.First().QuestionnaireResultId);
         switch (questionnaire.Code)
         {
             case "CardiovascularRiskAssessment":
@@ -91,9 +89,7 @@ public class QuestionnaireMapper : IRegister
 
     public static List<string> GetHealthAdvice(List<HT_QuestionResult> questionResults)
     {
-        var questionnaireIdById = HT_QuestionnaireResultRepositoryExtensions.GetQuestionnaireIdByIdAsync(questionResults.First().QuestionnaireResultId);
-        var questionnaire = HT_QuestionnaireRepositoryExtensions.GetQuestionnaire(questionnaireIdById);
-
+        var questionnaire = HT_QuestionnaireRepositoryExtensions.GetQuestionnaire(questionResults.First().QuestionnaireResultId);
         switch (questionnaire.Code)
         {
             case "CardiovascularRiskAssessment":
@@ -384,7 +380,9 @@ public class QuestionnaireMapper : IRegister
         var bloodLipidLevel = GetBloodLipidLevel(questionResults); //血脂水平
         var remainingLifeRiskFactor = GetRemainingLifeRiskFactor(questionResults); //余生危险因素
         var riskFactor = GetRiskFactor(questionResults, age, gender); //危险因素
-        return GetHealthAdvice(age, isASCVD, isDiabetes, bloodLipidLevel, remainingLifeRiskFactor, riskFactor);
+        var useAntihypertensiveDrugs = GetUseAntihypertensiveDrugs(questionResults);//使用降压药  
+
+        return GetHealthAdvice(age, isASCVD, isDiabetes, bloodLipidLevel, remainingLifeRiskFactor, riskFactor, useAntihypertensiveDrugs);
     }
 
     private static object GetCopdRiskAssessmentResultCode(List<HT_QuestionResult> questionResults)
@@ -722,7 +720,8 @@ public class QuestionnaireMapper : IRegister
         var bloodLipidLevel = GetBloodLipidLevel(questionResults); //血脂水平
         var remainingLifeRiskFactor = GetRemainingLifeRiskFactor(questionResults); //余生危险因素
         var riskFactor = GetRiskFactor(questionResults, age, gender); //危险因素
-        return GetResultCode(age, isASCVD, isDiabetes, bloodLipidLevel, remainingLifeRiskFactor, riskFactor).ToString();
+        var useAntihypertensiveDrugs = GetUseAntihypertensiveDrugs(questionResults);//使用降压药  
+        return GetResultCode(age, isASCVD, isDiabetes, bloodLipidLevel, remainingLifeRiskFactor, riskFactor, useAntihypertensiveDrugs).ToString();
     }
 
 
@@ -736,17 +735,18 @@ public class QuestionnaireMapper : IRegister
     /// <param name="bloodLipidLevel">血脂水平</param>
     /// <param name="remainingLifeRiskFactor">余生危险因素</param>
     /// <param name="riskFactor">危险因素</param>
+    /// <param name="useAntihypertensiveDrugs">使用降压药</param>
     /// <returns></returns>
-    private static List<string> GetHealthAdvice(int age, bool isASCVD, bool isDiabetes, int bloodLipidLevel, int remainingLifeRiskFactor, int riskFactor)
+    private static List<string> GetHealthAdvice(int age, bool isASCVD, bool isDiabetes, int bloodLipidLevel, int remainingLifeRiskFactor, int riskFactor, bool useAntihypertensiveDrugs)
     {
         var result = new List<string>();
-        result.Add("LDL-C治疗达标值:" + GetStrokeRiskAssessmentHealthAdvice(age, isASCVD, isDiabetes, bloodLipidLevel, remainingLifeRiskFactor, riskFactor));
+        result.Add("LDL-C治疗达标值:" + GetStrokeRiskAssessmentHealthAdvice(age, isASCVD, isDiabetes, bloodLipidLevel, remainingLifeRiskFactor, riskFactor, useAntihypertensiveDrugs));
         return result;
     }
 
-    private static string GetStrokeRiskAssessmentHealthAdvice(int age, bool isASCVD, bool isDiabetes, int bloodLipidLevel, int remainingLifeRiskFactor, int riskFactor)
+    private static string GetStrokeRiskAssessmentHealthAdvice(int age, bool isASCVD, bool isDiabetes, int bloodLipidLevel, int remainingLifeRiskFactor, int riskFactor, bool useAntihypertensiveDrugs)
     {
-        var resultCode = GetResultCode(age, isASCVD, isDiabetes, bloodLipidLevel, remainingLifeRiskFactor, riskFactor);
+        var resultCode = GetResultCode(age, isASCVD, isDiabetes, bloodLipidLevel, remainingLifeRiskFactor, riskFactor, useAntihypertensiveDrugs);
         switch (resultCode)
         {
             //低危或中危
@@ -1326,27 +1326,55 @@ public class QuestionnaireMapper : IRegister
         var bloodLipidLevel = GetBloodLipidLevel(questionResults); //血脂水平
         var remainingLifeRiskFactor = GetRemainingLifeRiskFactor(questionResults); //余生危险因素
         var riskFactor = GetRiskFactor(questionResults, age, gender); //危险因素
-        //使用降压药  暂时未用到该问题
-        // var useAntihypertensiveDrugs = getAnswer("使用降压药", questionResults);
-        return GetResult(age, isASCVD, isDiabetes, bloodLipidLevel, remainingLifeRiskFactor, riskFactor);
+        var useAntihypertensiveDrugs = GetUseAntihypertensiveDrugs(questionResults);//使用降压药  
+        return GetResult(age, isASCVD, isDiabetes, bloodLipidLevel, remainingLifeRiskFactor, riskFactor, useAntihypertensiveDrugs);
     }
 
-    private static int GetResultCode(int age, bool isASCVD, bool isDiabetes, int bloodLipidLevel, int remainingLifeRiskFactor, int riskFactor)
+    private static bool GetUseAntihypertensiveDrugs(List<HT_QuestionResult> questionResults)
     {
+        var useAntihypertensiveDrugs = GetAnswer("使用降压药", questionResults);
+        if (useAntihypertensiveDrugs == "是")
+            return true;
+        return false;
+    }
+
+    private static int GetResultCode(int age, bool isASCVD, bool isDiabetes, int bloodLipidLevel, int remainingLifeRiskFactor, int riskFactor, bool useAntihypertensiveDrugs)
+    {
+        //是否使用降压药
         if (isASCVD)
             return 3;// highRisk + "极高危";
-        if (bloodLipidLevel == 4
-        || (isDiabetes && age > 40)
-        || (bloodLipidLevel >= 1 && bloodLipidLevel <= 3 && riskFactor == 3)
-        || (bloodLipidLevel == 2 || bloodLipidLevel == 3 && riskFactor >= 2 && riskFactor <= 3))
+        //是否使用降压药
+        if (useAntihypertensiveDrugs)
         {
-            return 2;// highRisk + "高危";
+            if (bloodLipidLevel == 4
+                || (isDiabetes && age > 40)
+                || (bloodLipidLevel >= 1 && bloodLipidLevel <= 3 && riskFactor == 3)
+                || (bloodLipidLevel == 2 || bloodLipidLevel == 3 && riskFactor >= 2 && riskFactor <= 3))
+                return 2;// highRisk + "高危";
+            if ((bloodLipidLevel == 1 && riskFactor == 2)
+                || (bloodLipidLevel == 2 || bloodLipidLevel == 3 && riskFactor == 1))
+                return 1;
+            //低危：危险因素0；血脂水平1且危险因素1
+            if (bloodLipidLevel == 1 && riskFactor == 1)
+                return 0;
         }
-        if ((bloodLipidLevel == 1 && riskFactor == 2)
-        || (bloodLipidLevel == 2 || bloodLipidLevel == 3 && riskFactor == 1))
+        else
         {
-            return 1;
+            if (bloodLipidLevel == 4
+            || (isDiabetes && age > 40))
+                return 2;// highRisk + "高危";
+            //中危：血脂水平2且危险因素3；血脂水平3且危险因素2~3。
+            if ((bloodLipidLevel == 2 && riskFactor == 3)
+                || (bloodLipidLevel == 3 && riskFactor >= 2 && riskFactor <= 3))
+                return 1;
+            //低危：血脂水平1；血脂水平2且危险因素0~2；血脂水平3且危险因素0~1
+            if ((bloodLipidLevel == 1)
+                || (bloodLipidLevel == 2 && riskFactor >= 0 && riskFactor <= 2)
+                || (bloodLipidLevel == 3 && riskFactor >= 0 && riskFactor <= 1))
+                return 0;
         }
+
+
         return 0;
     }
 
@@ -1360,15 +1388,16 @@ public class QuestionnaireMapper : IRegister
     /// <param name="bloodLipidLevel">血脂水平</param>
     /// <param name="remainingLifeRiskFactor">余生危险因素</param>
     /// <param name="riskFactor">危险因素</param>
+    /// <param name="useAntihypertensiveDrugs">是否使用降压药</param>
     /// <returns></returns>
-    private static string GetResult(int age, bool isASCVD, bool isDiabetes, int bloodLipidLevel, int remainingLifeRiskFactor, int riskFactor)
+    private static string GetResult(int age, bool isASCVD, bool isDiabetes, int bloodLipidLevel, int remainingLifeRiskFactor, int riskFactor, bool useAntihypertensiveDrugs)
     {
         // 分层为极高危和单纯高危时，ASCVD10年危险评估替换为总体心血管危险评估:总体心血管危险评估：高危 or  总体心血管危险评估：极高危 
         //高危及以上返回值
-        var highRisk = "1.ASCVD10年危险评估：";
+        var highRisk = "ASCVD10年危险评估：";
         //中危及以下返回值
-        var lowRisk = "1.总体心血管危险评估：";
-        var resultLevel = GetResultCode(age, isASCVD, isDiabetes, bloodLipidLevel, remainingLifeRiskFactor, riskFactor);
+        var lowRisk = "总体心血管危险评估：";
+        var resultLevel = GetResultCode(age, isASCVD, isDiabetes, bloodLipidLevel, remainingLifeRiskFactor, riskFactor, useAntihypertensiveDrugs);
         switch (resultLevel)
         {
             case 3:

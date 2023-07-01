@@ -44,3 +44,4 @@ public partial class SY_Code
    
 
 }
+// http://192.168.31.222:50001/api/Questionnaire/Result?code=StrokeRiskAssessment&patientBasicArchivesCode=2023062100002
