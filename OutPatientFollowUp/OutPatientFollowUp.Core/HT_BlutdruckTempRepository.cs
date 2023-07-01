@@ -20,7 +20,6 @@ namespace OutPatientFollowUp.Core
         /// 根据档案编号和管理单位名称获取血压信息。
         /// </summary>
         /// <param name="archivesCode"></param>
-        /// <param name="manageName"></param>
         /// <returns></returns>
         public async Task<HT_BlutdruckTemp> GetByArchivesCode(string archivesCode)
         {

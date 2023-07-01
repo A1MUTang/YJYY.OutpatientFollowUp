@@ -166,10 +166,6 @@ public static class BloodLipidsTool
     /// <summary>
     /// 获取高密度脂蛋白胆固醇 (HDL-C)水平
     /// </summary>
-    /// <param name="TotalCholesterol">总胆固醇</param>
-    /// <param name="LDLCholesterol">低密度脂蛋白胆固醇</param>
-    /// <param name="HDLCholesterol">高密度脂蛋白胆固醇</param>
-    /// <param name="Triglyceride">甘油三酯</param>
     /// <returns></returns>
     public static string GetHDLCholesterolLevel(decimal HDLCholesterol)
     {

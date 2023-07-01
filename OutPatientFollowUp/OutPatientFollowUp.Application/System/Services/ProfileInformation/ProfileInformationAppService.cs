@@ -26,7 +26,7 @@ public class ProfileInformationAppService : IProfileInformationAppService
     {
         var (doctorId, manageName, workUnits) = GetLoginInfo();
         //判断身份证号是否重复
-        var isExist = await _patientBasicInfoRepository.GetByIdcardAndDocterIdAsync(input.IDCardNumber, manageName);
+        var isExist = await _patientBasicInfoRepository.GetByIdCardAndDoctorIdAsync(input.IDCardNumber, manageName);
         if (isExist != null)
         {
             throw Oops.Bah("身份证号已存在", new AbandonedMutexException("身份证号已存在"));
@@ -57,7 +57,7 @@ public class ProfileInformationAppService : IProfileInformationAppService
         if (patientBasicInfo.ArchivesCode == archivesCode && patientBasicInfo.PBI_ICard != input.BasicProfileInformation.IDCardNumber)
         {
             //判断身份证号是否重复
-            var isExist = await _patientBasicInfoRepository.GetByIdcardAndDocterIdAsync(input.BasicProfileInformation.IDCardNumber, manageName);
+            var isExist = await _patientBasicInfoRepository.GetByIdCardAndDoctorIdAsync(input.BasicProfileInformation.IDCardNumber, manageName);
             if (isExist != null)
             {
                 throw Oops.Oh("身份证号已存在");
@@ -127,7 +127,7 @@ public class ProfileInformationAppService : IProfileInformationAppService
     public async Task<BasicProfileInformationDto> GetBasicProfileInformationAsync(string IDCardNumber)
     {
         var (doctorId, manageName, workUnits) = GetLoginInfo();
-        var patientBasicInfo = await _patientBasicInfoRepository.GetByIdcardAndDocterIdAsync(IDCardNumber, manageName);
+        var patientBasicInfo = await _patientBasicInfoRepository.GetByIdCardAndDoctorIdAsync(IDCardNumber, manageName);
         if (patientBasicInfo == null)
         {
             throw Oops.Bah("患者基本信息不存在");

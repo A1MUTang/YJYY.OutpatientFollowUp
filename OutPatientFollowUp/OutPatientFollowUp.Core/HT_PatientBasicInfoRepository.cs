@@ -28,7 +28,7 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
     /// <param name="idcard"></param>
     /// <param name="manageName"></param>
     /// <returns></returns>
-    public async Task<HT_PatientBasicInfo> GetByIdcardAndDocterIdAsync(string idcard, string manageName)
+    public async Task<HT_PatientBasicInfo> GetByIdCardAndDoctorIdAsync(string idcard, string manageName)
     {
         return await _context.Queryable<HT_PatientBasicInfo>()
             .Where(x => x.PBI_ICard == idcard && SqlFunc.Subqueryable<PT_OrgnameForParent>()

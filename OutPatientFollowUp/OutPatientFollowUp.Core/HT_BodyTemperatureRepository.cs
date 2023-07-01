@@ -21,7 +21,6 @@ namespace OutPatientFollowUp.Core
         /// 根据档案编号和测量日期获取体温信息。
         /// </summary>
         /// <param name="archivesCode"></param>
-        /// <param name="measureDate"></param>
         /// <returns></returns>
         public async Task<HT_BodyTemperature> GetByArchivesCode(string archivesCode)
         {

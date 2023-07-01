@@ -11,16 +11,14 @@ namespace OutPatientFollowUp.Core
         /// 根据档案编号和管理单位名称获取血糖信息。
         /// </summary>
         /// <param name="archivesCode"></param>
-        /// <param name="manageName"></param>
         /// <returns></returns>
         Task<HT_Glucose> GetByArchivesCode(string archivesCode);
 
         /// <summary>
         /// 根据身份证号和管理单位名称获取血糖信息。
         /// </summary>
-        /// <param name="idcard"></param>
-        /// <param name="manageName"></param>
+        /// <param name="idCard"></param>
         /// <returns></returns>
-        Task<HT_Glucose> GetByIdcardAndDocterIdAsync(string idcard);
+        Task<HT_Glucose> GetByIdCardAndDoctorIdAsync(string idCard);
     }
 }

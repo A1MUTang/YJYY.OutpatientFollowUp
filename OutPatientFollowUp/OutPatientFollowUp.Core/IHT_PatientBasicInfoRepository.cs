@@ -9,7 +9,7 @@ public interface IHT_PatientBasicInfoRepository : IBaseRepository<HT_PatientBasi
     /// <param name="idCard"></param>
     /// <param name="manageName"></param>
     /// <returns></returns>
-    public Task<HT_PatientBasicInfo> GetByIdcardAndDocterIdAsync(string idCard, string manageName);
+    public Task<HT_PatientBasicInfo> GetByIdCardAndDoctorIdAsync(string idCard, string manageName);
 
     /// <summary>
     /// 判断身份证号在管理单位下是否存在。
@@ -26,14 +26,6 @@ public interface IHT_PatientBasicInfoRepository : IBaseRepository<HT_PatientBasi
     /// <returns></returns>
     public new Task<HT_PatientBasicInfo> InsertAsync(HT_PatientBasicInfo patientBasicInfo);
 
-
-    /// <summary>
-    /// 更新患者基本信息
-    /// </summary>
-    /// <remarks>仅修改不为空的字段</remarks>
-    /// <param name="patientBasicInfo"></param>
-    /// <returns></returns>
-    // public new Task<bool> UpdateAsync(HT_PatientBasicInfo patientBasicInfo);
 
     /// <summary>
     /// 更新患者基本信息

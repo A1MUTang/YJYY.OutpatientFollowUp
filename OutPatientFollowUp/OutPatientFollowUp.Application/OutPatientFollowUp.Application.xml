@@ -1162,6 +1162,34 @@
             </summary>
             <value></value>
         </member>
+        <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetStrokeRiskAssessmentResultCode(System.Collections.Generic.List{OutPatientFollowUp.Core.HT_QuestionResult})">
+            <summary>
+            获取脑卒中 code
+            </summary>
+            <param name="questionResults"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetBloodLipidAbnormalResult(System.Collections.Generic.List{OutPatientFollowUp.Core.HT_QuestionResult})">
+            <summary>
+            获取血脂异常或未知
+            </summary>
+            <param name="questionResults"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetSmokingResult(System.Collections.Generic.List{OutPatientFollowUp.Core.HT_QuestionResult})">
+            <summary>
+            获取是否吸烟
+            </summary>
+            <param name="questionResults"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetHypertensionResult(System.Collections.Generic.List{OutPatientFollowUp.Core.HT_QuestionResult})">
+            <summary>
+            获取是否高血压
+            </summary>
+            <param name="questionResults"></param>
+            <returns></returns>
+        </member>
         <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetHealthAdvice(System.Int32,System.Boolean,System.Boolean,System.Int32,System.Int32,System.Int32)">
             <summary>
             健康建议
@@ -1173,6 +1201,46 @@
             <param name="remainingLifeRiskFactor">余生危险因素</param>
             <param name="riskFactor">危险因素</param>
             <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetSystolicPressureAfterHypotensorSourceMan(System.Decimal)">
+            <summary>
+            获取治疗后的收缩压分熟
+            </summary>
+            <param name="systolicPressureAfterHypotensor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetAtrialFibrillationSourceMan(System.Boolean)">
+            <summary>
+            房颤或瓣膜性心脏病
+            </summary>
+            <param name="isAtrialFibrillation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetCardiovascularDiseaseSourceMan(System.Boolean)">
+            <summary>
+            获取心血管疾病分数
+            </summary>
+            <param name="isCardiovascularDisease"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetSmokingSourceMan(System.Boolean)">
+            <summary>
+            获取吸烟分数
+            </summary>
+            <param name="isSmoking"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetSystolicPressureSourceMan(System.Decimal)">
+            <summary>
+            收缩压
+            </summary>
+            <param name="systolicPressure"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetAgeSourceMan(System.Int32)">
+            <summary>
+            获取年龄分数,男
+            </summary>
         </member>
         <member name="M:OutPatientFollowUp.Application.QuestionnaireMapper.GetResult(System.Int32,System.Boolean,System.Boolean,System.Int32,System.Int32,System.Int32)">
             <summary>

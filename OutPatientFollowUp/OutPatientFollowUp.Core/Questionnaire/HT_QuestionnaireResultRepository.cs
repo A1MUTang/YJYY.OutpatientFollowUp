@@ -71,10 +71,11 @@ public static class HT_QuestionnaireResultRepositoryExtensions
         return result;
     }
 
-    public static int GetQuestionnaireIdByCoIdAsync(int questionnaireResultId)
+    public static int GetQuestionnaireIdByIdAsync(int questionnaireResultId)
     {
         var result = App.GetService<IHT_QuestionnaireResultRepository>().GetQuestionnaireIdByIdAsync(questionnaireResultId);
         return result;
     }
+
 
 }

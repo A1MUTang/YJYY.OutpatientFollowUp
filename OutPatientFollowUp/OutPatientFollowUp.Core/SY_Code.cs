@@ -8,7 +8,6 @@ namespace OutPatientFollowUp.Core;
 public partial class SY_Code
 {
     /// <summary>
-    /// <summary>
     /// 编码ID
     /// </summary>
     public int? SYC_ID { get; set; }

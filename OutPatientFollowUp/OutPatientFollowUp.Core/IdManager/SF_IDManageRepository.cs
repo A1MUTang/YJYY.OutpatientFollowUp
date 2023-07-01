@@ -107,7 +107,7 @@ public class SF_IDManageRepository : BaseRepository<SF_IDManage>, ISF_IDManageRe
     /// <summary>
     /// 更新一条
     /// </summary>
-    private async void UpdateNum(SF_IDManage manage, string strTable)
+    private void UpdateNum(SF_IDManage manage, string strTable)
     {
         if (manage is null)
         {
