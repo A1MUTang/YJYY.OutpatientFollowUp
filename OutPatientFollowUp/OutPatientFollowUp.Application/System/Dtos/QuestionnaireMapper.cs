@@ -344,9 +344,9 @@ public class QuestionnaireMapper : IRegister
     {
         var source = GetCopdRiskAssessmentScore(questionResults);
         if (source <= 4)
-            return new List<string>() { "您的呼吸问题可能是慢性阻塞性肺疾病(慢阻肺)导致，建议进行肺功能检查" };
-        if (source >= 5)
             return new List<string>() { "如有呼吸问题可咨询医生，医生会帮助评估您的呼吸问题的类型" };
+        if (source >= 5)
+            return new List<string>() { "您的呼吸问题可能是慢性阻塞性肺疾病(慢阻肺)导致，建议进行肺功能检查" }; 
         throw Oops.Oh("未知错误");
     }
 
@@ -354,6 +354,9 @@ public class QuestionnaireMapper : IRegister
     {
         //十年卒中风险率
         var tenYearStrokeRiskRate = GetTenYearStrokeRiskRate(questionResults);
+
+        if (tenYearStrokeRiskRate == 0m)
+            return new List<string>() ;
 
         switch (GetStrokeRiskAssessmentResultCode(questionResults))
         {
@@ -366,6 +369,7 @@ public class QuestionnaireMapper : IRegister
             default:
                 return new List<string>() { "未知" };
         }
+        
     }
 
     private static List<string> GetCardiovascularRiskHealthAdvice(List<HT_QuestionResult> questionResults)
@@ -788,7 +792,7 @@ public class QuestionnaireMapper : IRegister
         }
     }
 
-    private static object GetTenYearStrokeRiskRate(List<HT_QuestionResult> questionResults)
+    private static decimal GetTenYearStrokeRiskRate(List<HT_QuestionResult> questionResults)
     {
         var archivesCode = HT_QuestionnaireResultRepositoryExtensions.GetQuestionPatientBasicArchivesCode(questionResults.First().QuestionnaireResultId);
         var patient = HT_PatientBasicInfoRepositoryExtensions.GetByArchivesCode(archivesCode);
