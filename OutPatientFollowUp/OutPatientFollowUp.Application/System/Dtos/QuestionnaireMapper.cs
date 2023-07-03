@@ -864,6 +864,10 @@ public class QuestionnaireMapper : IRegister
 
     private static int GetStrokeRiskRateWoman(int source)
     {
+        if  (source < 0)
+        {
+            return 0;
+        }
         switch (source)
         {
             case 1:
@@ -921,7 +925,7 @@ public class QuestionnaireMapper : IRegister
             case 27:
                 return 84;
             default:
-                return 0;
+                return 88;
         }
 
     }
@@ -991,7 +995,7 @@ public class QuestionnaireMapper : IRegister
             case 30:
                 return 88;
             default:
-                return 0;
+                return 88;
         }
     }
 
