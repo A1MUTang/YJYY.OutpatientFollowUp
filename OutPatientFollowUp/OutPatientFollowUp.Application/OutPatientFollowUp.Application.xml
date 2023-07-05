@@ -1955,6 +1955,19 @@
             血脂结果帮助类
             </summary>
         </member>
+        <member name="M:OutPatientFollowUp.Application.BloodLipidsTool.GetBloodLipidsResultCodeCheckHDLCholesterol(System.Decimal,System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            获取血脂结果并且
+            1.HDL-C属“降低”。整体结果属于“理想水平、合适水平”。仅显示HDL-C的结果。
+            2.HDL-C属“降低”。整体结果属于“边缘升高、升高”。显示整体结果同时，显示HDL-C的结果。
+            3.HDL-C属“降低”。整体结果不属于“理想水平、合适水平、边缘升高、升高”。仅显示HDL-C的结果。
+            </summary>
+            <param name="TotalCholesterol"></param>
+            <param name="LDLCholesterol"></param>
+            <param name="HDLCholesterol"></param>
+            <param name="Triglyceride"></param>
+            <returns></returns>
+        </member>
         <member name="M:OutPatientFollowUp.Application.BloodLipidsTool.GetBloodLipidsResultCode(System.Decimal,System.Decimal,System.Decimal,System.Decimal)">
             <summary>
             获取血脂结果

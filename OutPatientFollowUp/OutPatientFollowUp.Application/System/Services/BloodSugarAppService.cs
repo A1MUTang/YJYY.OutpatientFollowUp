@@ -34,6 +34,7 @@ namespace OutPatientFollowUp.Application
             bloodlipid.UserName = patientBasicInfo?.PBI_UserName;
             bloodlipid.CreateDate = DateTime.Now;
             bloodlipid.MeasureDate =DateTime.Now;
+            bloodlipid.MacID = input.MacID;
             var result = await _repository.InsertReturnEntityAsync(bloodlipid);
             return result.Adapt<BloodSugarDto>();
         }

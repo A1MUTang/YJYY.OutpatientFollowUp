@@ -9,6 +9,26 @@ namespace OutPatientFollowUp.Application;
 /// </summary>
 public static class BloodLipidsTool
 {
+    /// <summary>
+    /// 获取血脂结果并且
+    /// 1.HDL-C属“降低”。整体结果属于“理想水平、合适水平”。仅显示HDL-C的结果。
+    /// 2.HDL-C属“降低”。整体结果属于“边缘升高、升高”。显示整体结果同时，显示HDL-C的结果。
+    /// 3.HDL-C属“降低”。整体结果不属于“理想水平、合适水平、边缘升高、升高”。仅显示HDL-C的结果。
+    /// </summary>
+    /// <param name="TotalCholesterol"></param>
+    /// <param name="LDLCholesterol"></param>
+    /// <param name="HDLCholesterol"></param>
+    /// <param name="Triglyceride"></param>
+    /// <returns></returns>
+    public static BloodLipidsResultEnum GetBloodLipidsResultCodeCheckHDLCholesterol(decimal TotalCholesterol, decimal LDLCholesterol, decimal HDLCholesterol, decimal Triglyceride)
+    {
+        var result = GetBloodLipidsResultCode(TotalCholesterol, LDLCholesterol, HDLCholesterol, Triglyceride);
+        if (HDLCholesterol < 1.0m && result != BloodLipidsResultEnum.BorderlineHigh)
+        {
+            result = BloodLipidsResultEnum.Abnormal;
+        }
+        return result;
+    }
 
     /// <summary>
     /// 获取血脂结果
@@ -23,7 +43,7 @@ public static class BloodLipidsTool
         decimal nonHDLCholesterol = TotalCholesterol - HDLCholesterol;
 
         //TC、LDL-C、非HDL-C、TG四项，同时属于“理想水平”。
-        if (TotalCholesterol < 5.2m && LDLCholesterol < 2.6m && HDLCholesterol > 1.0m && nonHDLCholesterol < 3.4m && Triglyceride < 1.7m)
+        if (TotalCholesterol < 5.2m && LDLCholesterol < 2.6m && nonHDLCholesterol < 3.4m && Triglyceride < 1.7m)
         {
             // 总胆固醇 < 5.2，低密度脂蛋白胆固醇 < 3.4，高密度脂蛋白胆固醇 > 1.0，非高密度脂蛋白胆固醇 < 1.7，甘油三酯 < 1.5
             return BloodLipidsResultEnum.Ideal;
@@ -56,7 +76,7 @@ public static class BloodLipidsTool
 
     public static string GetBloodLipidsResult(decimal TotalCholesterol, decimal LDLCholesterol, decimal HDLCholesterol, decimal Triglyceride)
     {
-        var bloodLipidsResult = GetBloodLipidsResultCode(TotalCholesterol, LDLCholesterol, HDLCholesterol, Triglyceride);
+        var bloodLipidsResult = GetBloodLipidsResultCodeCheckHDLCholesterol(TotalCholesterol, LDLCholesterol, HDLCholesterol, Triglyceride);
 
         var type = bloodLipidsResult.GetType();//先获取这个枚举的类型
         var field = type.GetField(bloodLipidsResult.ToString());//通过这个类型获取到值

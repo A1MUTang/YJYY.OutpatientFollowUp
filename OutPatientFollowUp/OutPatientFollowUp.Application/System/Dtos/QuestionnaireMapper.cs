@@ -515,6 +515,8 @@ public class QuestionnaireMapper : IRegister
                 return 0;
             case "是":
                 return 2;
+            case "不知道":
+                return 0;
             default:
                 return 0;
         }

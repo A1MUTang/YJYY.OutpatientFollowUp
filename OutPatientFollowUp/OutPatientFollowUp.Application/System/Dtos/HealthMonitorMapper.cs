@@ -17,7 +17,7 @@ namespace OutPatientFollowUp.Application
             .Map(dest => dest.HDLCholesterol, src => src.HDL)
             .Map(dest => dest.LDLCholesterol, src => src.LDL)
             .Map(dest => dest.BloodLipidsResult, src => BloodLipidsTool.GetBloodLipidsResult(src.TC, src.LDL, src.HDL, src.TG))
-            .Map(dest => dest.BloodLipidsResultCode, src => BloodLipidsTool.GetBloodLipidsResultCode(src.TC, src.LDL, src.HDL, src.TG))
+            .Map(dest => dest.BloodLipidsResultCode, src => BloodLipidsTool.GetBloodLipidsResultCodeCheckHDLCholesterol(src.TC, src.LDL, src.HDL, src.TG))
             .Map(dest => dest.HealthAdvice, src => BloodLipidsTool.GetBloodLipidsHealthAdvice(src.TC, src.LDL, src.HDL, src.TG))
             .Map(dest => dest.HDLCholesterolLevel, src => BloodLipidsTool.GetHDLCholesterolLevel(src.HDL));
 

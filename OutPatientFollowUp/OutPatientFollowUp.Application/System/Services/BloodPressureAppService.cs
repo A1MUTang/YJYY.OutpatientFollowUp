@@ -34,6 +34,13 @@ namespace OutPatientFollowUp.Application
             bloodlipid.Gender = patientBasicInfo?.PBI_Gender;
             bloodlipid.ICard = patientBasicInfo?.PBI_ICard;
             bloodlipid.UserName = patientBasicInfo?.PBI_UserName;
+            bloodlipid.MacID = input.MacID;
+            bloodlipid.MacType ="4.1.1";
+            bloodlipid.UserCode ="1";
+            bloodlipid.CreateDate = DateTime.Now;
+            bloodlipid.MeasureDate = DateTime.Now;
+            bloodlipid.Remarks="院外随访";
+            bloodlipid.DataSources = "2";
             var result = await _bloodPressureRepository.InsertReturnEntityAsync(bloodlipid);
             return result.Adapt<BloodPressureDto>();
         }

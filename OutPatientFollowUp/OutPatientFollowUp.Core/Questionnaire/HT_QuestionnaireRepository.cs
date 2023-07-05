@@ -22,7 +22,7 @@ public class HT_QuestionnaireRepository : BaseRepository<HT_Questionnaire>, IHT_
         {
             throw Oops.Oh("未找到该问卷");
         }
-        result.Questions = await _context.Queryable<HT_Question_OutPatientFollowUp>().Where(x => x.QuestionnaireId == result.Id).ToListAsync();
+        result.Questions = await _context.Queryable<HT_Question_OutPatientFollowUp>().OrderBy(x => x.OrderIndex).Where(x => x.QuestionnaireId == result.Id).ToListAsync();
         int noNumber = 1;
         foreach (var question in result.Questions)
         {
@@ -73,7 +73,7 @@ public static class HT_QuestionnaireRepositoryExtensions
         var questionnaireTitle = App.GetService<IHT_QuestionnaireRepository>().GetQuestionnaireTitle(QuestionnaireResultId);
         return questionnaireTitle;
     }
-    
+
 
     public static HT_Questionnaire GetQuestionnaire(int QuestionnaireResultId)
     {

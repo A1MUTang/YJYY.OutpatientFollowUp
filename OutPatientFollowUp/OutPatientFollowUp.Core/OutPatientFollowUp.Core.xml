@@ -3596,6 +3596,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:OutPatientFollowUp.Core.HT_Question_OutPatientFollowUp.OrderIndex">
+            <summary>
+            排序
+            </summary>
+            <value></value>
+        </member>
         <member name="P:OutPatientFollowUp.Core.HT_Question_OutPatientFollowUp.Options">
             <summary>
             问题选项

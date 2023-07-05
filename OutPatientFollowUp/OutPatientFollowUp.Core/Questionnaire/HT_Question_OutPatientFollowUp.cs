@@ -27,6 +27,12 @@ public class HT_Question_OutPatientFollowUp
     /// </summary>
     /// <value></value>
     public SurveyQuestionTypeEnum Type { get; set; }
+
+    /// <summary>
+    /// 排序
+    /// </summary>
+    /// <value></value>
+    public int OrderIndex { get; set; }
     
     /// <summary>
     /// 问题选项
