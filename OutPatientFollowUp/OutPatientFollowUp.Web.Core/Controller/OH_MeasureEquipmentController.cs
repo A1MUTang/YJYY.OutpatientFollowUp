@@ -24,17 +24,40 @@ public class OH_MeasureEquipmentController : ControllerBase
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="eqpNo"></param>
-    /// <param name="versionNumber"></param>
-    /// <param name="apkType"></param>
-    /// <param name="parentName"></param>
-    /// <param name="unitName"></param>
     /// <returns></returns>
     [HttpPost()]
-    public async Task<DeviceDto> GetUpdateInfo(string eqpNo, string versionNumber, string apkType = "YWSF-SM-TF701", string parentName = "全部", string unitName = "全部")
+    public async Task<DeviceDto> GetUpdateInfo(GetUpdateInfoDto getUpdateInfoDto)
     {
-        return await _oh_MeasureEquipmentAppService.GetUpdateInfo(eqpNo, versionNumber, apkType, parentName, unitName);
+        return await _oh_MeasureEquipmentAppService.GetUpdateInfo(getUpdateInfoDto.eqpNo, getUpdateInfoDto.versionNumber, "YWSF-SM-TF701", getUpdateInfoDto.parentName, getUpdateInfoDto.unitName);
     }
 
+
+    
+
+
+}
+
+public class GetUpdateInfoDto
+{
+    /// <summary>
+    /// 设备编号
+    /// </summary>
+    /// <value></value>
+    public string eqpNo { get; set; }
+    /// <summary>
+    /// 版本号
+    /// </summary>
+    /// <value></value>
+    public string versionNumber { get; set; }
+    /// <summary>
+    /// 父级名称
+    /// </summary>
+    /// <value></value>
+    public string parentName { get; set; } = "全部";
+    /// <summary>
+    /// 单位名称
+    /// </summary>
+    /// <value></value>
+    public string unitName { get; set; } = "全部";
 
 }

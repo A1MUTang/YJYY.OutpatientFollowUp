@@ -310,16 +310,35 @@
             基本档案信息
             </summary>
         </member>
-        <member name="M:OutPatientFollowUp.Application.OH_MeasureEquipmentController.GetUpdateInfo(System.String,System.String,System.String,System.String,System.String)">
+        <member name="M:OutPatientFollowUp.Application.OH_MeasureEquipmentController.GetUpdateInfo(OutPatientFollowUp.Application.GetUpdateInfoDto)">
             <summary>
             
             </summary>
-            <param name="eqpNo"></param>
-            <param name="versionNumber"></param>
-            <param name="apkType"></param>
-            <param name="parentName"></param>
-            <param name="unitName"></param>
             <returns></returns>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.GetUpdateInfoDto.eqpNo">
+            <summary>
+            设备编号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.GetUpdateInfoDto.versionNumber">
+            <summary>
+            版本号
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.GetUpdateInfoDto.parentName">
+            <summary>
+            父级名称
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.GetUpdateInfoDto.unitName">
+            <summary>
+            单位名称
+            </summary>
+            <value></value>
         </member>
         <member name="T:OutPatientFollowUp.Application.ProfileInformationDetailController">
             <summary>
