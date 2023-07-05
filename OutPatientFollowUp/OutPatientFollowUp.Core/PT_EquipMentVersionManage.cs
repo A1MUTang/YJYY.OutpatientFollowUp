@@ -73,4 +73,10 @@ public class PT_EquipMentVersionManage
     /// 描述信息
     /// </summary>
     public string DescribeInfo { get; set; }
+
+    /// <summary>
+    /// 是否强制更新 1是，2否
+    /// </summary>
+    /// <value></value>
+    public int IsTough { get; set; }
 }

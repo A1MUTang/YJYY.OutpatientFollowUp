@@ -91,5 +91,6 @@ namespace OutPatientFollowUp.Core
         /// 设备状态 1弃用，2有效
         /// </summary>
         public int State { get; set; }
+
     }
 }

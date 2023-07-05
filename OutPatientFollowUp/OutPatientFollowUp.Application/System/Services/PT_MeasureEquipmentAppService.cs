@@ -22,17 +22,19 @@ public class PT_MeasureEquipmentAppService : IPT_MeasureEquipmentAppService
     }
     public async Task<DeviceDto> GetUpdateInfo(string eqpNo, string versionNumber, string apkType, string parentName, string unitName)
     {
-        var updateInfo = await _repository.GetUpdateInfo(eqpNo, apkType, parentName, unitName);
+        var updateInfos = await _repository.GetUpdateInfo(eqpNo, apkType, parentName, unitName);
         var ApkUrl = "";
-        if (updateInfo.Count() > 0)
+        if (updateInfos.Count() > 0)
         {
-            ApkUrl = updateInfo.FirstOrDefault().ApkUrl;
-            if (updateInfo.OrderByDescending(x => x.VersionNumber).FirstOrDefault().VersionNumber != versionNumber)
+            var updateInfo = updateInfos.OrderByDescending(x => x.VersionNumber).FirstOrDefault();
+            if (updateInfo.VersionNumber != versionNumber)
             {
+                ApkUrl = updateInfo.ApkUrl;
                 return new DeviceDto()
                 {
                     ApkUrl = ApkUrl,
-                    Devices = await _measureEquipmentRepository.GetListAsync()
+                    Devices = await _measureEquipmentRepository.GetListAsync(),
+                    IsForceUpdate = updateInfo.IsTough == 1 ? true : false
                 };
             }
         }

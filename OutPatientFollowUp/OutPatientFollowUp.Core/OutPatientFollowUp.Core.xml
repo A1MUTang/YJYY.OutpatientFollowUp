@@ -3328,6 +3328,18 @@
             描述信息
             </summary>
         </member>
+        <member name="P:OutPatientFollowUp.Core.PT_EquipMentVersionManage.IsTough">
+            <summary>
+            是否强制更新 1是，2否
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.Test.IsTough">
+            <summary>
+            是否强制更新 1是，2否
+            </summary>
+            <value></value>
+        </member>
         <member name="T:OutPatientFollowUp.Core.PT_OrgnameForParent">
             <summary>
             

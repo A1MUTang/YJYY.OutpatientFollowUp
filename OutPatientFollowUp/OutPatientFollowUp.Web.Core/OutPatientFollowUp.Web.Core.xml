@@ -321,12 +321,6 @@
             <param name="unitName"></param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Application.OH_MeasureEquipmentController.DownloadFile">
-            <summary>
-            下载文件
-            </summary>
-            <returns></returns>
-        </member>
         <member name="T:OutPatientFollowUp.Application.ProfileInformationDetailController">
             <summary>
             基本档案信息

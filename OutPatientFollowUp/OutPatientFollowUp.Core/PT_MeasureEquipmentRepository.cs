@@ -19,14 +19,14 @@ namespace OutPatientFollowUp.Core
             var result = await _context.Queryable<PT_EquipMentVersionManage>()
                 .Where(m => m.IsRevoke == 0 || m.IsRevoke == null)
                 .Where(m => m.EffectTime < DateTime.Now)
-                .Where(m => m.EqpNo == eqpNo 
-                || (m.ParentName == "全部" 
-                    && m.ApkType == apkType 
-                    && (m.EqpNo == "" 
-                        || m.EqpNo == null)) 
-                || (m.ParentName == parentName 
-                    && m.ApkType == apkType 
-                    && (m.UnitName == "全部" || m.UnitName == unitName) 
+                .Where(m => m.EqpNo == eqpNo
+                || (m.ParentName == "全部"
+                    && m.ApkType == apkType
+                    && (m.EqpNo == ""
+                        || m.EqpNo == null))
+                || (m.ParentName == parentName
+                    && m.ApkType == apkType
+                    && (m.UnitName == "全部" || m.UnitName == unitName)
                     && (m.EqpNo == "" || m.EqpNo == null)))
                 .OrderBy(m => SqlFunc.IIF(m.EqpNo == eqpNo, 1, SqlFunc.IIF(m.ParentName == parentName, 2, SqlFunc.IIF(m.ParentName == "全部", 3, 4))))
                 .OrderBy(m => m.EffectTime, OrderByType.Desc)
@@ -36,7 +36,8 @@ namespace OutPatientFollowUp.Core
                     ApkType = m.ApkType,
                     ApkUrl = m.ApkUrl,
                     VersionNumber = m.VersionNumber,
-                    DescribeInfo = m.DescribeInfo
+                    DescribeInfo = m.DescribeInfo,
+                    IsTough = m.IsTough
                 })
                 .ToListAsync();
             return result;
@@ -54,5 +55,10 @@ namespace OutPatientFollowUp.Core
         public string VersionNumber { get; set; }
 
         public string DescribeInfo { get; set; }
+        /// <summary>
+        /// 是否强制更新 1是，2否
+        /// </summary>
+        /// <value></value>
+        public int IsTough { get; set; }
     }
 }
