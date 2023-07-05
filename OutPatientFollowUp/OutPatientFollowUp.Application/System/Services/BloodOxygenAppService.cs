@@ -6,11 +6,14 @@ namespace OutPatientFollowUp.Application;
 public class BloodOxygenAppService : IBloodOxygenAppService
 {
     private readonly IHT_BloodOxygenRepository _repository;
+    private readonly IHT_PatientBasicInfoRepository _patientBasicInfoRepository;
 
-    public BloodOxygenAppService(IHT_BloodOxygenRepository repository)
+    public BloodOxygenAppService(IHT_BloodOxygenRepository repository, IHT_PatientBasicInfoRepository patientBasicInfoRepository)
     {
         _repository = repository;
+        _patientBasicInfoRepository = patientBasicInfoRepository;
     }
+
 
     /// <summary>
     /// 根据档案编号和测量日期获取血氧信息。
@@ -32,6 +35,11 @@ public class BloodOxygenAppService : IBloodOxygenAppService
     /// <returns></returns>
     public async Task<BloodOxygenDto> CreateAsync(string archivesCode, CreateOrUpdateBloodOxygenDto input)
     {
+        var patientBasicInfo = await _patientBasicInfoRepository.GetFirstAsync(x => x.ArchivesCode == archivesCode);
+        if (patientBasicInfo == null)
+        {
+            throw Oops.Oh("未找到基本档案信息");
+        }
         var bloodOxygen = input.Adapt<HT_BloodOxygen>();
         bloodOxygen.ArchivesCode = archivesCode;
         bloodOxygen.ID = DateTime.Now.ToString("yyyyMMddHHmmss") + bloodOxygen.ArchivesCode + new Random().Next(10, 99);

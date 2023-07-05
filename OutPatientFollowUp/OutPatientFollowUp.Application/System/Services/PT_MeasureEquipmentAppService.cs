@@ -26,8 +26,8 @@ public class PT_MeasureEquipmentAppService : IPT_MeasureEquipmentAppService
         var ApkUrl = "";
         if (updateInfos.Count() > 0)
         {
-            var updateInfo = updateInfos.Where(x=>x.ApkType == apkType).OrderByDescending(x => x.VersionNumber).FirstOrDefault();
-            if ( updateInfo.VersionNumber != versionNumber)
+            var updateInfo = updateInfos.Where(x => x.ApkType == apkType).OrderByDescending(x => x.VersionNumber).FirstOrDefault();
+            if (Convert.ToDecimal(updateInfo.VersionNumber) > Convert.ToDecimal(versionNumber))
             {
                 ApkUrl = updateInfo.ApkUrl;
                 return new DeviceDto()

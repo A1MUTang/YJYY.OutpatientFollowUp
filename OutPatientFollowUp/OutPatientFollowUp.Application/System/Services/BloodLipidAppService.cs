@@ -27,6 +27,10 @@ public class BloodLipidsAppService : IBloodLipidAppService
     public async Task<BloodLipidsDto> CreateAsync(string archivesCode, CreateOrUpdateBloodLipidsDto input)
     {
         var patientBasicInfo = await _patientBasicInfoRepository.GetFirstAsync(x => x.ArchivesCode == archivesCode);
+        if (patientBasicInfo == null)
+        {
+            throw Oops.Oh("未找到基本档案信息");
+        }
         var bloodlipid =  input.Adapt<HT_Bloodlipid>();
         bloodlipid.ArchivesCode = archivesCode;
         bloodlipid.ID =  DateTime.Now.ToString("yyyyMMddHHmmss") + bloodlipid.ArchivesCode + new Random().Next(10, 99);//TODO：这玩意有什么特殊意义吗？ 为什么和其他表的ID生成方式不同？why？我找了俩小时
