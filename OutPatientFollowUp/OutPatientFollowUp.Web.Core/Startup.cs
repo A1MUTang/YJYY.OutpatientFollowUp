@@ -1,9 +1,11 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using Furion;
 using Furion.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
@@ -44,7 +46,7 @@ public class Startup : AppStartup
                    //获取原生SQL推荐 5.1.4.63  性能OK
                    //UtilMethods.GetNativeSql(exp.sql,exp.parameters)
                    //获取无参数SQL对性能有影响，特别大的SQL参数多的，调试使用
-                   Log.Error($"【SQL报错】：{exp.Sql} \r\n 【参数】：{exp.Parametres.ToJson()}");        
+                   Log.Error($"【SQL报错】：{exp.Sql} \r\n 【参数】：{exp.Parametres.ToJson()}");
                };
            });
             return sqlSugar;
@@ -77,6 +79,26 @@ public class Startup : AppStartup
         app.UseInject(string.Empty);
         app.UseStaticFiles(new StaticFileOptions
         {
+            //下面设置可以下载apk和nupkg类型的文件
+            ContentTypeProvider = new FileExtensionContentTypeProvider(new Dictionary<string, string>
+            {
+                { ".apk","application/vnd.android.package-archive"},  
+                { ".html","text/html"},  
+                { ".js","application/javascript"},  
+                { ".css","text/css"},  
+                { ".gif","image/gif"},  
+                { ".jpg","image/jpeg"},  
+                { ".png","image/png"},  
+                { ".woff","application/font-woff"},  
+                { ".woff2","application/font-woff2"},  
+                { ".ttf","application/font-sfnt"},  
+                { ".eot","application/vnd.ms-fontobject"},  
+                { ".otf","application/font-sfnt"},  
+                { ".svg","image/svg+xml"},  
+                { ".ico","image/x-icon"},  
+                { ".json","application/json"},  
+                { ".map","application/json}"}
+            }),
             FileProvider = new PhysicalFileProvider(
             Path.Combine(Directory.GetCurrentDirectory(), "OutpatientFollowUpUserAgreement")),
             RequestPath = "/outpatient-follow-up-user-agreement"

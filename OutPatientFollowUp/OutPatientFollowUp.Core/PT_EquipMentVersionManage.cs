@@ -3,6 +3,7 @@ using System;
 namespace OutPatientFollowUp.Core;
 public class PT_EquipMentVersionManage
 {
+    public string ID { get; set; }
     /// <summary>
     /// 设备编号
     /// </summary>

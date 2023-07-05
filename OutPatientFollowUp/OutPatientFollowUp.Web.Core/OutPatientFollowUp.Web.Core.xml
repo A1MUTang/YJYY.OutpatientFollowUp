@@ -305,6 +305,28 @@
             <param name="patientBasicArchivesCode"></param>
             <returns></returns>
         </member>
+        <member name="T:OutPatientFollowUp.Application.OH_MeasureEquipmentController">
+            <summary>
+            基本档案信息
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.OH_MeasureEquipmentController.GetUpdateInfo(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="eqpNo"></param>
+            <param name="versionNumber"></param>
+            <param name="apkType"></param>
+            <param name="parentName"></param>
+            <param name="unitName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.OH_MeasureEquipmentController.DownloadFile">
+            <summary>
+            下载文件
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:OutPatientFollowUp.Application.ProfileInformationDetailController">
             <summary>
             基本档案信息

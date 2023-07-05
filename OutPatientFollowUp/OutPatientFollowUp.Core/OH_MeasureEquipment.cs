@@ -5,7 +5,7 @@ namespace OutPatientFollowUp.Core
     /// <summary>
     /// 设备信息类
     /// </summary>
-    public class OH_DeviceInfo
+    public class OH_MeasureEquipment
     {
         /// <summary>
         /// ID

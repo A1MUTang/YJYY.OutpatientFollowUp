@@ -3078,6 +3078,256 @@
             <param name="codeName"></param>
             <returns></returns>
         </member>
+        <member name="T:OutPatientFollowUp.Core.OH_MeasureEquipment">
+            <summary>
+            设备信息类
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_MeasureEquipment.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_MeasureEquipment.DeviceName">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_MeasureEquipment.DeviceModel">
+            <summary>
+            设备型号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_MeasureEquipment.BluetoothName">
+            <summary>
+            蓝牙名称
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_MeasureEquipment.BluetoothMAC">
+            <summary>
+            蓝牙MAC地址
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_MeasureEquipment.DeviceID">
+            <summary>
+            设备/服务ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_MeasureEquipment.SeriesID">
+            <summary>
+            系列/特性ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_MeasureEquipment.DeviceClass">
+            <summary>
+            设备种类 血压、血糖、体温、血脂、血氧
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_MeasureEquipment.Manufacturer">
+            <summary>
+            设备厂商
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_MeasureEquipment.TabletSN">
+            <summary>
+            平板SN号，一个平板可关联5个不同设备 血压、血糖、体温、血脂、血氧
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_MeasureEquipment.Productiontime">
+            <summary>
+            生产日期
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_MeasureEquipment.PurchaseDate">
+            <summary>
+            采购日期
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_MeasureEquipment.Warehouseman">
+            <summary>
+            入库人
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_MeasureEquipment.WarehousingDate">
+            <summary>
+            入库日期
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_MeasureEquipment.OrgName">
+            <summary>
+            机构名称
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_MeasureEquipment.ManageName">
+            <summary>
+            管理机构名称
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_MeasureEquipment.State">
+            <summary>
+            设备状态 1弃用，2有效
+            </summary>
+        </member>
+        <member name="T:OutPatientFollowUp.Core.OH_TabletDevice">
+            <summary>
+            平板设备信息类
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_TabletDevice.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_TabletDevice.TabletSN">
+            <summary>
+            平板SN号，一个平板可关联5个不同设备 血压、血糖、体温、血脂、血氧
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_TabletDevice.TabletName">
+            <summary>
+            平板名称
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_TabletDevice.TabletSeries">
+            <summary>
+            平板系列
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_TabletDevice.SIM">
+            <summary>
+            sim卡号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_TabletDevice.SimCZtime">
+            <summary>
+            sim卡充值时间
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_TabletDevice.SimDQtime">
+            <summary>
+            sim卡到期时间
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_TabletDevice.Productiontime">
+            <summary>
+            生产日期
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_TabletDevice.PurchaseDate">
+            <summary>
+            采购日期
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_TabletDevice.Warehouseman">
+            <summary>
+            入库人
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_TabletDevice.WarehousingDate">
+            <summary>
+            入库日期
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_TabletDevice.MacPlace">
+            <summary>
+            设备位置
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_TabletDevice.DataSources">
+            <summary>
+            数据上传类型 3 门诊；4上臂
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_TabletDevice.OrgName">
+            <summary>
+            机构名称
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_TabletDevice.ManageName">
+            <summary>
+            管理机构名称
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.OH_TabletDevice.State">
+            <summary>
+            设备状态 1弃用，2有效
+            </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.OH_TabletDevice.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_EquipMentVersionManage.EqpNo">
+            <summary>
+            设备编号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_EquipMentVersionManage.ApkType">
+            <summary>
+            APK类型
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_EquipMentVersionManage.ParentName">
+            <summary>
+            父级名称
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_EquipMentVersionManage.UnitName">
+            <summary>
+            单位名称
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_EquipMentVersionManage.VersionNumber">
+            <summary>
+            版本号
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_EquipMentVersionManage.ApkUrl">
+            <summary>
+            APK下载地址
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_EquipMentVersionManage.PublishType">
+            <summary>
+            发布类型
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_EquipMentVersionManage.EffectTime">
+            <summary>
+            生效时间
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_EquipMentVersionManage.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_EquipMentVersionManage.OperatorPerson">
+            <summary>
+            操作人
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_EquipMentVersionManage.IsRevoke">
+            <summary>
+            是否撤销
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_EquipMentVersionManage.RevokeTime">
+            <summary>
+            撤销时间
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_EquipMentVersionManage.RevokePerson">
+            <summary>
+            撤销人
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.PT_EquipMentVersionManage.DescribeInfo">
+            <summary>
+            描述信息
+            </summary>
+        </member>
         <member name="T:OutPatientFollowUp.Core.PT_OrgnameForParent">
             <summary>
             

@@ -454,6 +454,29 @@
             </summary>
             <value></value>
         </member>
+        <member name="T:OutPatientFollowUp.Application.DeviceDto">
+            <summary>
+             App更新控制，设备信息类    
+            </summary>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.DeviceDto.ApkUrl">
+            <summary>
+            下载地址
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.DeviceDto.IsForceUpdate">
+            <summary>
+            是否强制更新
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Application.DeviceDto.Devices">
+            <summary>
+            设备信息
+            </summary>
+            <value></value>
+        </member>
         <member name="T:OutPatientFollowUp.Application.HealthMonitor.BloodLipidsDto">
             <summary>
             血脂
@@ -1753,6 +1776,17 @@
             <summary>
             获取字典
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.IPT_MeasureEquipmentAppService.GetUpdateInfo(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="eqpNo"></param>
+            <param name="versionNumber"></param>
+            <param name="apkType"></param>
+            <param name="parentName"></param>
+            <param name="unitName"></param>
             <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Application.IProfileInformationAppService.GetBasicProfileInformationAsync(System.String)">

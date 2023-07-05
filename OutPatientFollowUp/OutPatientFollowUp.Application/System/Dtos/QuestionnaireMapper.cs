@@ -672,6 +672,7 @@ public class QuestionnaireMapper : IRegister
         return isBloodLipidAbnormal;
 
     }
+    
     /// <summary>
     /// 获取是否吸烟
     /// </summary>
