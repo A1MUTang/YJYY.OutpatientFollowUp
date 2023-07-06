@@ -37,8 +37,8 @@ namespace OutPatientFollowUp.Application
             .Map(dest => dest.BloodPressureResult, src => BloodPressureTool.GetBloodPressureResult(src.SBP, src.DBP).GetName())
             .Map(dest => dest.BloodPressureResultCode, src => BloodPressureTool.GetBloodPressureResult(src.SBP, src.DBP))
             .Map(dest => dest.HealthAdvice, src => BloodPressureTool.GetBloodPressureResult(src.ArchivesCode, src.SBP, src.DBP).GetDescription())
-            .Map(dest => dest.HeartRateResult, src => BloodPressureTool.GetHreatRateResult(src.MaiBo).GetName())
-            .Map(dest => dest.HeartRateResultCode, src => BloodPressureTool.GetHreatRateResult(src.MaiBo));
+            .Map(dest => dest.HeartRateResult, src => BloodPressureTool.GetHeartRateResult(src.MaiBo).GetName())
+            .Map(dest => dest.HeartRateResultCode, src => BloodPressureTool.GetHeartRateResult(src.MaiBo));
 
             config.ForType<CreateOrUpdateBloodPressureDto, HT_BlutdruckTemp>()
             .Map(dest => dest.SBP, src => src.Systolic)

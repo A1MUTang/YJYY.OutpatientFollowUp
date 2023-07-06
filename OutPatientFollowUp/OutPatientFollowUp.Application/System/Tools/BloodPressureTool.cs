@@ -149,13 +149,13 @@ public static class BloodPressureTool
         public int Age { get; set; }
     }
 
-    public static HeartRateResultEnum GetHreatRateResult(int HeartRate)
+    public static HeartRateResultEnum GetHeartRateResult(int HeartRate)
     {
         if (HeartRate < 60)
         {
             return HeartRateResultEnum.Bradycardia;
         }
-        else if (HeartRate < 100)
+        else if (HeartRate <= 100)
         {
             return HeartRateResultEnum.Normal;
         }
