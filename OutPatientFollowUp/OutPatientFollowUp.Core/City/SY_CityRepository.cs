@@ -209,7 +209,7 @@ public static class CityRepositoryExtensions
     /// </summary>
     public static string GetCityCodeByName(string name, string provinceName = null)
     {
-        return App.GetService<SY_CityRepository>().GetCityNameByCode(name);
+        return App.GetService<SY_CityRepository>().GetCityNameByCode(name,provinceName);
     }
 
     /// <summary>
