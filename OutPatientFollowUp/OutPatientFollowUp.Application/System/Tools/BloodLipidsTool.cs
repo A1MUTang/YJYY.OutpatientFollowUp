@@ -23,7 +23,7 @@ public static class BloodLipidsTool
     public static BloodLipidsResultEnum GetBloodLipidsResultCodeCheckHDLCholesterol(decimal TotalCholesterol, decimal LDLCholesterol, decimal HDLCholesterol, decimal Triglyceride)
     {
         var result = GetBloodLipidsResultCode(TotalCholesterol, LDLCholesterol, HDLCholesterol, Triglyceride);
-        if (HDLCholesterol < 1.0m &&( result != BloodLipidsResultEnum.BorderlineHigh || result!= BloodLipidsResultEnum.High))
+        if (HDLCholesterol < 1.0m &&( result != BloodLipidsResultEnum.BorderlineHigh && result != BloodLipidsResultEnum.High))
         {
             result = BloodLipidsResultEnum.Abnormal;
         }
