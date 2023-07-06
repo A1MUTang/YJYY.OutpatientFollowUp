@@ -71,12 +71,12 @@ public class Mapper : IRegister
 
         config.ForType<HT_PatientBasicInfo, CreateBasicProfileInformationDto>()
                 .Map(dest => dest.Name, src => src.PBI_UserName)
-                .Map(dest => dest.Address, src => src.PBI_Address)
+                .Map(dest => dest.AddressLine, src => src.PBI_Address)
                 .Map(dest => dest.IDCardNumber, src => src.PBI_ICard)
                 .Map(dest => dest.PhoneNumber, src => src.PBI_PersonPhone)
                 .Map(dest => dest.IsTakingAntidiabeticMeds, src => src.IsSdrug) 
-                 .Map(dest => dest.IsTakingAntihypertensiveMeds, src => src.IsHdrug)
-                  .Map(dest => dest.Address, src => src.PBI_IDCardAddress)
+                .Map(dest => dest.IsTakingAntihypertensiveMeds, src => src.IsHdrug)
+                .Map(dest => dest.Address, src => src.PBI_IDCardAddress)
                 .Map(dest => dest.Gender, src => src.PBI_Gender == "1" ? "男" : "女");
 
         config.ForType<HT_PatientBasicInfo, BasicProfileInformationDto>()
@@ -185,7 +185,7 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_UserName, src => src.BasicProfileInformation.Name)
                 .Map(dest => dest.PBI_ICard, src => src.BasicProfileInformation.IDCardNumber)
                 .Map(dest => dest.PBI_PersonPhone, src => src.BasicProfileInformation.PhoneNumber)
-                .Map(dest => dest.PBI_Address, src => src.BasicProfileInformation.Address)
+                .Map(dest => dest.PBI_IDCardAddress, src => src.BasicProfileInformation.Address)
                 .Map(dest => dest.PBI_Province, src => CityRepositoryExtensions.GetCityCodeByName(src.BasicProfileInformation.Province, null))
                 .Map(dest => dest.PBI_City, src => CityRepositoryExtensions.GetCityCodeByName(src.BasicProfileInformation.City, src.BasicProfileInformation.Province))
                 .Map(dest => dest.PBI_County, src => CityRepositoryExtensions.GetCityCodeByName(src.BasicProfileInformation.District, null))
