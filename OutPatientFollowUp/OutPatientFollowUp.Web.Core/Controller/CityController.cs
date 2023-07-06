@@ -13,6 +13,7 @@ namespace OutPatientFollowUp.Web.Core.Controller;
 [ApiController]
 [Route("api/[controller]")]
 [UnifyModel(typeof(CustomResponse<>))]
+[Authorize] 
 public class CityController : ControllerBase
 {
 

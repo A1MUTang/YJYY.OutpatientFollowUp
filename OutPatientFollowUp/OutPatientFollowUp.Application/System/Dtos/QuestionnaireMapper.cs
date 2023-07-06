@@ -354,18 +354,15 @@ public class QuestionnaireMapper : IRegister
     {
         //十年卒中风险率
         var tenYearStrokeRiskRate = GetTenYearStrokeRiskRate(questionResults);
-
-        if (tenYearStrokeRiskRate == 0m)
-            return new List<string>() ;
-
+        
         switch (GetStrokeRiskAssessmentResultCode(questionResults))
         {
             case 0:
-                return new List<string>() { $"10年卒中风险 {tenYearStrokeRiskRate}%。建议您健康饮食、适当运动、避免肥胖、戒烟限酒、定期体检。" };
+                return new List<string>() { tenYearStrokeRiskRate !=0?$"10年卒中风险 {tenYearStrokeRiskRate}%。建议您健康饮食、适当运动、避免肥胖、戒烟限酒、定期体检。":"" + $"建议您健康饮食、适当运动、避免肥胖、戒烟限酒、定期体检。" };
             case 1:
-                return new List<string>() { $"10年卒中风险 {tenYearStrokeRiskRate}%。建议您健康饮食、适当运动、避免肥胖、戒烟限酒、定期体检。" };
+                return new List<string>() { tenYearStrokeRiskRate !=0?$"10年卒中风险 {tenYearStrokeRiskRate}%。建议您健康饮食、适当运动、避免肥胖、戒烟限酒、定期体检。":"" + $"建议您健康饮食、适当运动、避免肥胖、戒烟限酒、定期体检。" };
             case 2:
-                return new List<string>() { $"10年卒中风险 {tenYearStrokeRiskRate}%。建议您及时到医院相关门诊或病区，在专家指导下行相应检查和规范干预治疗。" };
+                return new List<string>() { tenYearStrokeRiskRate !=0?$"10年卒中风险 {tenYearStrokeRiskRate}%。建议您健康饮食、适当运动、避免肥胖、戒烟限酒、定期体检。":"" + $"建议您及时到医院相关门诊或病区，在专家指导下行相应检查和规范干预治疗。" };
             default:
                 return new List<string>() { "未知" };
         }

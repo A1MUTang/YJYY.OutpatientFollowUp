@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OutPatientFollowUp.Application;
 using OutPatientFollowUp.Application.HealthMonitor;
@@ -12,6 +13,7 @@ namespace OutPatientFollowUp.Core.HealthMonitor;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize] 
 public class BloodOxygenController : ControllerBase
 {
     private readonly IBloodOxygenAppService _bloodOxygenAppService;

@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace OutPatientFollowUp.Application;
@@ -11,6 +12,7 @@ namespace OutPatientFollowUp.Application;
 // [Authorize]
 [ApiController]
 [Route("api/[controller]")]
+[Authorize] 
 public class OH_MeasureEquipmentController : ControllerBase
 {
     private readonly IPT_MeasureEquipmentAppService _oh_MeasureEquipmentAppService;
