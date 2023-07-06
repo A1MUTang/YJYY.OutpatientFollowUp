@@ -156,7 +156,7 @@ public class SY_CityRepository : BaseRepository<SY_City>, ISY_CityRepository
             return string.Empty;
         if (!string.IsNullOrEmpty(provinceName))
         {
-            var provinceCode = GetProvinceCodeByName(provinceName);
+            var provinceCode = GetProvinceNameByCode(provinceName);
             var cities = GetCityListByParentID(provinceCode).ToList();
             return cities.Where(x => x.CITY == name).Select(x => x.CODE).First();
         }
