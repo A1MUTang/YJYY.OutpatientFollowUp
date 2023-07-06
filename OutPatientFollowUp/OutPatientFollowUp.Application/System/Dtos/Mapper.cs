@@ -74,7 +74,7 @@ public class Mapper : IRegister
                 .Map(dest => dest.Address, src => src.PBI_Address)
                 .Map(dest => dest.IDCardNumber, src => src.PBI_ICard)
                 .Map(dest => dest.PhoneNumber, src => src.PBI_PersonPhone)
-                .Map(dest => dest.IsTakingAntidiabeticMeds, src => src.IsSdrug)
+                .Map(dest => dest.IsTakingAntidiabeticMeds, src => src.IsSdrug) 
                  .Map(dest => dest.IsTakingAntihypertensiveMeds, src => src.IsHdrug)
                   .Map(dest => dest.Address, src => src.PBI_IDCardAddress)
                 .Map(dest => dest.Gender, src => src.PBI_Gender == "1" ? "男" : "女");
