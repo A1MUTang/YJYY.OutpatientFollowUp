@@ -79,7 +79,7 @@ public static class BloodSugarTool
             {
                 if (sugarType == BloodSugarTypeEnum.Fasting)
                 {
-                    if (bloodSugar >= 3.9m && bloodSugar <= 6.1m)
+                    if (bloodSugar >= 3.9m && bloodSugar < 6.1m)
                     {
                         if (age < 40 && !isHighBloodPressure)
                         {
@@ -91,18 +91,18 @@ public static class BloodSugarTool
                             return "您本次测量血糖值为理想血糖。建议您每1年至少测量 1次空腹血糖，并接受医务人员的健康指导。";
                         }
                     }
-                    else if (bloodSugar > 6.1m && bloodSugar <= 7.0m)
+                    else if (bloodSugar >= 6.1m && bloodSugar < 7.0m)
                     {
                         return "您本次测量血糖值偏高，建议您每半年至少测量 1次空腹血糖，并接受医务人员的健康指导。";
                     }
-                    else if (bloodSugar > 7.0m)
+                    else if (bloodSugar >= 7.0m)
                     {
                         return "您本次测量血糖值严重偏高明显超标，高血糖风险大，请及时就医。请坚持糖尿病饮食、合理运动、规律用药；坚持血糖监测将及时提醒您的健康问题。";
                     }
                 }
                 else
                 {
-                    if (bloodSugar >= 3.9m && bloodSugar <= 7.8m)
+                    if (bloodSugar >= 3.9m && bloodSugar < 7.8m)
                     {
                         if (age < 40 && !isHighBloodPressure)
                         {
@@ -113,11 +113,11 @@ public static class BloodSugarTool
                             return "您本次测量血糖值为理想血糖。建议您每1年至少测量 1次空腹血糖，并接受医务人员的健康指导。";
                         }
                     }
-                    if (bloodSugar > 7.8m && bloodSugar <= 11.1m)
+                    if (bloodSugar >= 7.8m && bloodSugar < 11.1m)
                     {
                         return "您本次测量血糖值偏高，建议您每半年至少测量 1次空腹血糖，并接受医务人员的健康指导。";
                     }
-                    if (bloodSugar > 11.1m)
+                    if (bloodSugar >= 11.1m)
                     {
                         return "您本次测量血糖值严重偏高明显超标，高血糖风险大，请及时就医。请坚持糖尿病饮食、合理运动、规律用药；坚持血糖监测将及时提醒您的健康问题。";
                     }
