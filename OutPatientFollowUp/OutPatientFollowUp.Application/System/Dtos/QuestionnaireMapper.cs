@@ -1176,7 +1176,9 @@ public class QuestionnaireMapper : IRegister
     /// <returns></returns>
     private static int GetAtrialFibrillationSourceMan(bool isAtrialFibrillation)
     {
-        throw new NotImplementedException();
+        if (isAtrialFibrillation)
+            return 4;
+        return 0;
     }
 
     /// <summary>
