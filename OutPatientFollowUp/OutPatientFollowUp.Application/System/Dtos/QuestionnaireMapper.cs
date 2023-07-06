@@ -935,6 +935,10 @@ public class QuestionnaireMapper : IRegister
 
     private static int GetStrokeRiskRateMan(int source)
     {
+        if  (source <= 0)
+        {
+            return 0;
+        }
         switch (source)
         {
             case 1:
