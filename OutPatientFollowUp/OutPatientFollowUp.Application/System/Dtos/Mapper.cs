@@ -22,10 +22,11 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_Gender, src => src.Gender ? "1" : "2")
                 .Map(dest => dest.PBI_AgeType, src => ProfileInformationDetailTool.GetPopulationCategory(src.IDCardNumber).ToString())
                 .Map(dest => dest.PBI_Birthday, src => ProfileInformationDetailTool.GetBirthdayFromIdCard(src.IDCardNumber))
-                .Map(dest => dest.PBI_Province, src => CityRepositoryExtensions.GetCityCodeByName(src.Province))
-                .Map(dest => dest.PBI_City, src => CityRepositoryExtensions.GetCityCodeByName( src.City))
-                .Map(dest => dest.PBI_County, src => CityRepositoryExtensions.GetCityCodeByName(src.District))
+                .Map(dest => dest.PBI_Province, src => CityRepositoryExtensions.GetCityCodeByName(src.Province,null))
+                .Map(dest => dest.PBI_City, src => CityRepositoryExtensions.GetCityCodeByName(src.City,src.Province))
+                .Map(dest => dest.PBI_County, src => CityRepositoryExtensions.GetCityCodeByName(src.District,null))
                 .Map(dest => dest.PBI_Address, src => src.AddressLine)
+                .Map(dest => dest.PBI_IDCardAddress, src => src.Address)
 
                 // .Map(dest => dest.PBI_ChronicDiseaseType, src => "") 慢病分类默认无 数据库中是null
                 //A01素食为主    
@@ -37,11 +38,11 @@ public class Mapper : IRegister
                 // ET01	适中
                 // ET02	嗜盐
                 // ET03	嗜糖
-                // ET04	清淡
+                // ET04	清淡yijiayiyun2015
                 // ET05	嗜油
                 // ET06	不详
                 .Map(dest => dest.PBI_YinShiKouWei, src => "ET06")
-                .Map(dest => dest.PBI_Nation, src => src.EthnicityCode)
+                .Map(dest => dest.PBI_Nation, src => src.EthnicityCode) 
                 //SP01	不运动
                 //SP02	有氧运动
                 //SP03	剧烈运动
@@ -75,6 +76,7 @@ public class Mapper : IRegister
                 .Map(dest => dest.PhoneNumber, src => src.PBI_PersonPhone)
                 .Map(dest => dest.IsTakingAntidiabeticMeds, src => src.IsSdrug)
                  .Map(dest => dest.IsTakingAntihypertensiveMeds, src => src.IsHdrug)
+                  .Map(dest => dest.Address, src => src.PBI_IDCardAddress)
                 .Map(dest => dest.Gender, src => src.PBI_Gender == "1" ? "男" : "女");
 
         config.ForType<HT_PatientBasicInfo, BasicProfileInformationDto>()
@@ -89,12 +91,13 @@ public class Mapper : IRegister
                 .Map(dest => dest.ProvinceCode, src => src.PBI_Province)
                 .Map(dest => dest.CityCode, src => src.PBI_City)
                 .Map(dest => dest.DistrictCode, src => src.PBI_County)
-                .Map(dest => dest.Ethnicity, src =>SY_CoderRepositoryExtensions.GetCodeName( src.PBI_Nation) )
-                .Map(dest => dest.EthnicityCode, src =>src.PBI_Nation)
+                .Map(dest => dest.Ethnicity, src => SY_CoderRepositoryExtensions.GetCodeName(src.PBI_Nation))
+                .Map(dest => dest.EthnicityCode, src => src.PBI_Nation)
                 .Map(dest => dest.Province, src => CityRepositoryExtensions.GetProvinceCodeName(src.PBI_Province))
                 .Map(dest => dest.City, src => CityRepositoryExtensions.GetCityCodeName(src.PBI_City))
                 .Map(dest => dest.District, src => CityRepositoryExtensions.GetCityCodeName(src.PBI_County))
                 .Map(dest => dest.AddressLine, src => src.PBI_Address)
+                 .Map(dest => dest.Address, src => src.PBI_IDCardAddress)
                 .Map(dest => dest.CurrentAddress, src => CityRepositoryExtensions.GetAdressDetails(src.PBI_Province, src.PBI_City, src.PBI_County, src.PBI_Address));
 
         config.ForType<HT_PatientBasicInfo, ProfileInformationDetailDto>()
@@ -144,6 +147,7 @@ public class Mapper : IRegister
                 .Map(dest => dest.BasicProfileInformation.ArchivesCode, src => src.ArchivesCode)
                 .Map(dest => dest.BasicProfileInformation.Name, src => src.PBI_UserName)
                 .Map(dest => dest.BasicProfileInformation.IDCardNumber, src => src.PBI_ICard)
+                .Map(dest => dest.BasicProfileInformation.Address, src => src.PBI_IDCardAddress)
                 .Map(dest => dest.BasicProfileInformation.PhoneNumber, src => src.PBI_PersonPhone)
                 .Map(dest => dest.BasicProfileInformation.IsTakingAntidiabeticMeds, src => src.IsSdrug == 1 ? "是" : "否")
                 .Map(dest => dest.BasicProfileInformation.IsTakingAntihypertensiveMeds, src => src.IsHdrug == 1 ? "是" : "否");
@@ -181,9 +185,10 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_UserName, src => src.BasicProfileInformation.Name)
                 .Map(dest => dest.PBI_ICard, src => src.BasicProfileInformation.IDCardNumber)
                 .Map(dest => dest.PBI_PersonPhone, src => src.BasicProfileInformation.PhoneNumber)
-                .Map(dest => dest.PBI_Province, src =>CityRepositoryExtensions.GetCityCodeByName( src.BasicProfileInformation.Province))
-                .Map(dest => dest.PBI_City, src => CityRepositoryExtensions.GetCityCodeByName(src.BasicProfileInformation.City))
-                .Map(dest => dest.PBI_County, src => CityRepositoryExtensions.GetCityCodeByName(src.BasicProfileInformation.District))
+                .Map(dest => dest.PBI_Address, src => src.BasicProfileInformation.Address)
+                .Map(dest => dest.PBI_Province, src => CityRepositoryExtensions.GetCityCodeByName(src.BasicProfileInformation.Province, null))
+                .Map(dest => dest.PBI_City, src => CityRepositoryExtensions.GetCityCodeByName(src.BasicProfileInformation.City, src.BasicProfileInformation.Province))
+                .Map(dest => dest.PBI_County, src => CityRepositoryExtensions.GetCityCodeByName(src.BasicProfileInformation.District, null))
                 .Map(dest => dest.PBI_Address, src => src.BasicProfileInformation.AddressLine)
                 // .Map(dest => dest.PBI_OriginPlace, src => src.BasicProfileInformation.Address)//TODO 未找到对应字段，先对应到籍贯字段
                 .Map(dest => dest.IsSdrug, src => src.BasicProfileInformation.IsTakingAntidiabeticMeds ? "1" : "0")

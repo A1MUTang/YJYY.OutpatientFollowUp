@@ -9,6 +9,8 @@ namespace OutPatientFollowUp.Core;
 [Serializable]
 public partial class HT_PatientBasicInfo
 {
+
+    public string PBI_IDCardAddress { get; set; }
     /// <summary>
     /// 智享版加入时间
     /// </summary>

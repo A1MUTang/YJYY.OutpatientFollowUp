@@ -75,7 +75,7 @@
             <param name="code"></param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Core.CityRepositoryExtensions.GetCityCodeByName(System.String)">
+        <member name="M:OutPatientFollowUp.Core.CityRepositoryExtensions.GetCityCodeByName(System.String,System.String)">
             <summary>
             获取城市编码
             </summary>

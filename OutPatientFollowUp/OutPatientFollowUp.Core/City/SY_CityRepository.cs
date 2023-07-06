@@ -1,5 +1,6 @@
 using System.Buffers;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Furion;
 using Furion.FriendlyException;
@@ -44,12 +45,12 @@ public class SY_CityRepository : BaseRepository<SY_City>, ISY_CityRepository
          })
          .ToListAsync();
     }
-    
+
     public async Task<IEnumerable<SY_City>> GetCityListByParentNameAsync(string parentName)
     {
         if (!string.IsNullOrEmpty(parentName))
             throw Oops.Oh("父级名称不能为空");
-        
+
         var code = GetCityNameByCode(parentName);
         if (!string.IsNullOrEmpty(code))
             code = GetProvinceCodeByName(parentName);
@@ -90,10 +91,43 @@ public class SY_CityRepository : BaseRepository<SY_City>, ISY_CityRepository
         }
     }
 
+    public IEnumerable<SY_City> GetCityListByParentID(string parentCode)
+    {
+        if (!string.IsNullOrEmpty(parentCode) && parentCode != "-1" && parentCode.Length > 2)
+        {
+            string strPrefix = parentCode.Substring(0, 2); //前缀
+            string strSuffix = parentCode.Substring(2, 4); //后缀 
+                                                           //根据市编码的前缀确定其所包括的地级市和县
+            string strCityPrefix = parentCode.Substring(0, 4); //前缀
+            string whereSql = "";
+            if (strSuffix.Equals("0000"))
+            {
+                whereSql = $"SUBSTRING(CODE,1,2)={strPrefix} AND SUBSTRING(CODE,5,2)='00' AND CODE<>{parentCode}";
+            }
+            else
+            {
+                whereSql = $"SUBSTRING(CODE,1,4)={strCityPrefix} AND CODE<>{parentCode}";
+            }
+            return Context.Queryable<SY_City>()
+                .Where(whereSql)
+                .OrderBy(x => x.CODE)
+                .Select(x => new SY_City
+                {
+                    CITY = x.CITY,
+                    CODE = x.CODE
+                })
+                .ToList();
+        }
+        else
+        {
+            return null;
+        }
+    }
+
     public string GetProvinceCodeByName(string code)
     {
         if (string.IsNullOrEmpty(code))
-             return string.Empty;
+            return string.Empty;
 
         return Context.Queryable<SY_City>()
             .Where(x => x.CODE == code)
@@ -110,16 +144,23 @@ public class SY_CityRepository : BaseRepository<SY_City>, ISY_CityRepository
             .Where(x => x.CODE == code)
             .Select(x => x.CITY)
             .First();
-        if(city == "直辖市")
-        return "";
+        if (city == "直辖市")
+            return "";
         else
-        return city;
+            return city;
     }
 
-    public string GetCityNameByCode(string name)
+    public string GetCityNameByCode(string name, string provinceName = null)
     {
         if (string.IsNullOrEmpty(name))
             return string.Empty;
+        if (!string.IsNullOrEmpty(provinceName))
+        {
+            var provinceCode = GetProvinceCodeByName(provinceName);
+            var cities = GetCityListByParentID(provinceCode).ToList();
+            return cities.Where(x => x.CITY == name).Select(x => x.CODE).First();
+        }
+
 
         return Context.Queryable<SY_City>()
             .Where(x => x.CITY == name)
@@ -148,7 +189,7 @@ public static class CityRepositoryExtensions
     /// </summary>
     /// <param name="code"></param>
     /// <returns></returns>
-    public static string GetProvinceCodeName( string code)
+    public static string GetProvinceCodeName(string code)
     {
         return App.GetService<SY_CityRepository>().GetProvinceCodeByName(code);
     }
@@ -166,7 +207,7 @@ public static class CityRepositoryExtensions
     /// <summary>
     /// 获取城市编码
     /// </summary>
-    public static string GetCityCodeByName(string name)
+    public static string GetCityCodeByName(string name, string provinceName = null)
     {
         return App.GetService<SY_CityRepository>().GetCityNameByCode(name);
     }
@@ -178,8 +219,8 @@ public static class CityRepositoryExtensions
     {
         return App.GetService<SY_CityRepository>().GetProvinceNameByCode(name);
     }
-    
-    public static string GetAdressDetailsByCode(string provinceCode, string cityCode,string countyCode, string address)
+
+    public static string GetAddressDetailsByCode(string provinceCode, string cityCode, string countyCode, string address)
     {
         var province = GetProvinceCodeName(provinceCode);
         var city = GetCityCodeName(cityCode);
@@ -189,7 +230,7 @@ public static class CityRepositoryExtensions
             city = string.Empty;
         return $"{province}{city}{county}{address}";
     }
-        public static string GetAdressDetails(string provinceCode, string cityCode,string countyCode, string address)
+    public static string GetAdressDetails(string provinceCode, string cityCode, string countyCode, string address)
     {
         var province = GetProvinceCodeName(provinceCode);
         var city = GetCityCodeName(cityCode);
