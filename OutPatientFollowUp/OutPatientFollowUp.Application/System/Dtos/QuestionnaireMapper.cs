@@ -867,7 +867,7 @@ public class QuestionnaireMapper : IRegister
 
     private static int GetStrokeRiskRateWoman(int source)
     {
-        if  (source < 0)
+        if  (source <= 0)
         {
             return 0;
         }
