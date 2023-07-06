@@ -61,7 +61,7 @@ public static class BloodSugarTool
         var hasDiabetes = basicProfileInformation.PBI_ChronicDiseaseType == null ? false : basicProfileInformation.PBI_ChronicDiseaseType.Contains("CD02"); //糖尿病 
         var isHighBloodPressure = basicProfileInformation.PBI_ChronicDiseaseType == null ? false : basicProfileInformation.PBI_ChronicDiseaseType.Contains("CD01"); //是否有高血压
         var age = basicProfileInformation.PBI_Age; 
-        var IsHdrug = basicProfileInformation.IsHdrug == 0; //是否服用降糖药 
+        var IsHdrug = basicProfileInformation.IsHdrug == 1; //是否服用降糖药 
 
         if (bloodSugar < 3.9m)
         {
