@@ -145,7 +145,7 @@ public static class BloodLipidsTool
             if (Triglyceride >= 1.7m)
                 healthAdviceContent.Add("甘油三酯");
             if (nonHDLCholesterol >= 4.1m)
-                healthAdviceContent.Add("高密度脂蛋白胆固醇");
+                healthAdviceContent.Add("非高密度脂蛋白胆固醇");
             var healthAdviceContentString = string.Join("、", healthAdviceContent);
             healthAdvice = string.Format(healthAdvice, healthAdviceContentString);
             return healthAdvice;
@@ -162,7 +162,7 @@ public static class BloodLipidsTool
             if (Triglyceride >= 2.3m)
                 healthAdviceContent.Add("甘油三酯");
             if (nonHDLCholesterol >= 4.9m)
-                healthAdviceContent.Add("高密度脂蛋白胆固醇");
+                healthAdviceContent.Add("非高密度脂蛋白胆固醇");
             var healthAdviceContentString = string.Join("、", healthAdviceContent);
             healthAdvice = string.Format(healthAdvice, healthAdviceContentString);
             return healthAdvice;
