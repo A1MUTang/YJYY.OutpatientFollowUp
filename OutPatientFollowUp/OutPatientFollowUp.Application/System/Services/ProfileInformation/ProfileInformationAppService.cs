@@ -105,11 +105,21 @@ public class ProfileInformationAppService : IProfileInformationAppService
                 SE_IS_SWMJB = SE_IS_SWMJB,
                 SE_IS_TNB = SE_IS_TNB,
                 SE_IS_SB = SE_IS_SB,
+                SE_IS_GXY = SE_IS_GXY,
                 SE_IS_PCOS = SE_IS_PCOS,
                 IsGestational = SE_IS_GestationalDiabetes,
                 SE_IS_Acanthosis = SE_IS_Acanthosis,
                 SE_IS_Other = SE_IS_Other,
                 SE_OtherTxt = SE_OtherTxt
+            });
+        }
+        else
+        {
+            await _supplementaryExamRepository.InsertAsync(new HT_SupplementaryExam()
+            {
+                SE_ID = await _idAppService.GetNewManangeID("HT_SupplementaryExam", "SE"),
+                ArchivesCode = archivesCode,
+                CreateTime = DateTime.Now
             });
         }
 
@@ -235,11 +245,11 @@ public class ProfileInformationAppService : IProfileInformationAppService
             pastMedicalHistoryCodes.Append("10,");
             pastMedicalHistory.Append("黑棘皮症,");
         }
-        if (supplementaryExam.SE_IS_Other == "1")
-        {
-            pastMedicalHistoryCodes.Append("9,");
-            pastMedicalHistory.Append(supplementaryExam.SE_OtherTxt + ",");
-        }
+        // if (supplementaryExam.SE_IS_Other == "1")
+        // {
+        //     pastMedicalHistoryCodes.Append("9,");
+        //     pastMedicalHistory.Append(supplementaryExam.SE_OtherTxt + ",");
+        // }
         if (pastMedicalHistoryCodes.Length == 0 && pastMedicalHistory.Length == 0)
         {
             pastMedicalHistoryCodes.Append("0,");

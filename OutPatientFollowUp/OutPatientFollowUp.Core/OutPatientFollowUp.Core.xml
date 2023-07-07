@@ -2864,6 +2864,12 @@
             
              </summary>
         </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.IsPCOS">
+            <summary>
+            多囊卵巢综合症
+            </summary>
+            <value></value>
+        </member>
         <member name="P:OutPatientFollowUp.Core.HT_Temperature.Id">
             <summary>
             主键，自增长的整数类型。
