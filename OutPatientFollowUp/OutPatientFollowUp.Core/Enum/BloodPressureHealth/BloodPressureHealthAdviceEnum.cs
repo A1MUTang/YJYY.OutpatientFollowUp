@@ -106,9 +106,9 @@ namespace OutPatientFollowUp.Core
         /// <summary>
         /// 不使用降压药血压偏高
         /// </summary>
-        /// <remarks>SBP大于等于120或DBP大于等于80</remarks>
+        /// <remarks>SBP大于等于140或DBP大于等于90</remarks>
         [Display(Name = "不使用降压药血压偏高",
-            Description = "您木次血压偏高，请注意测量方法是否正确，休息后复测血压。建议您及时就诊，遵循健康生活方式，包括：限制盐的摄入、均衡营养、控制体重、戒烟、限酒、适当运动、心理平衡。")]
+            Description = "您本次血压偏高，请注意测量方法是否正确，休息后复测血压。如血压连续偏高，建议您及时就诊。日常请遵循健康生活方式，包括：限制盐的摄入、均衡营养、控制体重、戒烟、限酒、适当运动、心理平衡。")]
         IsBloodPressureSlightlyHighWithoutMedication,
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace OutPatientFollowUp.Core
         /// </summary>
         /// <remarks>SBP大于等于140或DBP大于等于90</remarks>
         [Display(Name = "不使用降压药血压较高",
-            Description = "您本次血压较高，请注意测量方法是否正确，休息后复测血压。建议您及时就诊遵医嘱规律治疗，遵循健康生活方式，包括：限制盐的摄入、均衡营养、控制体重、戒烟、限酒、适当运动、心理平衡。")]
+            Description = "您本次血压较高，请注意测量方法是否正确，休息后复测血压。建议您及时就诊遵医嘱规律治疗，日常请遵循健康生活方式，包括：限制盐的摄入、均衡营养、控制体重、我烟、限酒、适当运动、心理平衡。")]
         IsBloodPressureModeratelyHighWithoutMedication,
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace OutPatientFollowUp.Core
         /// </summary>
         /// <remarks>SBP大于等于160或DBP大于等于100</remarks>
         [Display(Name = "不使用降压药血压很高",
-            Description = "您本次血压很高，请注意测量方法。建议复测，如您多次测量仍无明显改善，请尽快就医。")]
+            Description = "您本次血压很高，请注意测量方法是否正确，建议复测。如您多次测量仍无明显改善，请尽快就医。")]
         IsBloodPressureVeryHighWithoutMedication
     }
 
