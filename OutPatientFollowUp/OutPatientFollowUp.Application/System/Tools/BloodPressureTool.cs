@@ -42,15 +42,10 @@ public static class BloodPressureTool
             {
                 return BloodPressureHealthAdviceEnum.IsBloodPressureMetForUnder45WithoutMedication;
             }
-
-
-
-
-
         }
 
         //使用降压药&使用降糖药
-        if (input.IsUsingAntihypertensiveMedication && input.IsUsingAntidiabeticMedication)
+        if (input.IsUsingAntihypertensiveMedication && (input.IsUsingAntidiabeticMedication || input.HasDiabetes))
         {
             //年龄大于等于65岁
             if (input.Age > 65)
@@ -114,13 +109,16 @@ public static class BloodPressureTool
     public static BloodPressureHealthAdviceEnum GetBloodPressureResult(string ArchivesCode, int SBP, int DBP)
     {
         var patientBasicInfo = HT_PatientBasicInfoRepositoryExtensions.GetByArchivesCode(ArchivesCode);
+        var hasDiabetes = patientBasicInfo.PBI_ChronicDiseaseType == null ? false : patientBasicInfo.PBI_ChronicDiseaseType.Contains("CD02"); //糖尿病 
+
         var input = new BloodPressureResultInput
         {
             SBP = SBP,
             DBP = DBP,
             Age = ProfileInformationDetailTool.GetAgeFromIdCard(patientBasicInfo.PBI_ICard),
             IsUsingAntidiabeticMedication = patientBasicInfo.IsSdrug == 1,
-            IsUsingAntihypertensiveMedication = patientBasicInfo.IsHdrug == 1
+            IsUsingAntihypertensiveMedication = patientBasicInfo.IsHdrug == 1,
+            HasDiabetes = hasDiabetes
         };
         return GetBloodPressureResultWithMedication(input);
     }
@@ -152,6 +150,12 @@ public static class BloodPressureTool
         /// </summary>
         /// <value></value>
         public int Age { get; set; }
+
+        /// <summary>
+        /// 是否有糖尿病
+        /// </summary>
+        /// <value></value>
+        public bool HasDiabetes { get; set; }
     }
 
     public static HeartRateResultEnum GetHeartRateResult(int HeartRate)
