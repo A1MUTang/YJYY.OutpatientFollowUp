@@ -61,7 +61,7 @@ public static class BloodSugarTool
         var hasDiabetes = basicProfileInformation.PBI_ChronicDiseaseType == null ? false : basicProfileInformation.PBI_ChronicDiseaseType.Contains("CD02"); //糖尿病 
         var isHighBloodPressure = basicProfileInformation.PBI_ChronicDiseaseType == null ? false : basicProfileInformation.PBI_ChronicDiseaseType.Contains("CD01"); //是否有高血压
         var age = basicProfileInformation.PBI_Age; 
-        var IsHdrug = basicProfileInformation.IsHdrug == 1; //是否服用降糖药 
+        var IsSdrug = basicProfileInformation.IsSdrug == 1; //是否服用降糖药 
 
         if (bloodSugar < 3.9m)
         {
@@ -75,7 +75,7 @@ public static class BloodSugarTool
 
         if (!hasDiabetes)
         {
-            if (!IsHdrug)
+            if (!IsSdrug)
             {
                 if (sugarType == BloodSugarTypeEnum.Fasting)
                 {
@@ -86,7 +86,7 @@ public static class BloodSugarTool
                             return "您本次测量血糖值为理想血糖。建议保持健康生活方式；坚持血糖监测将有助于更好的管理您的健康。";
                         }
 
-                        if (age >= 40 && isHighBloodPressure)
+                        if (age >= 40 || isHighBloodPressure)
                         {
                             return "您本次测量血糖值为理想血糖。建议您每1年至少测量 1次空腹血糖，并接受医务人员的健康指导。";
                         }

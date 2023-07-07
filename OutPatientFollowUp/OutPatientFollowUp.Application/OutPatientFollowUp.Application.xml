@@ -2060,6 +2060,12 @@
             </summary>
             <value></value>
         </member>
+        <member name="P:OutPatientFollowUp.Application.BloodPressureTool.BloodPressureResultInput.HasDiabetes">
+            <summary>
+            是否有糖尿病
+            </summary>
+            <value></value>
+        </member>
         <member name="T:OutPatientFollowUp.Application.ProfileInformationDetailTool">
             <summary>
             档案信息详情工具类

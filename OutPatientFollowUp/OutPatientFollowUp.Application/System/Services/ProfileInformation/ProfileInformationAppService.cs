@@ -68,6 +68,8 @@ public class ProfileInformationAppService : IProfileInformationAppService
         {
 
             List<int> pastMedicalHistorys = input.PastMedicalHistoryCodes.Split(',').Select(int.Parse).ToList();
+            // SE_IS_GXY 是否有高血压
+            var SE_IS_GXY = pastMedicalHistorys.Contains(1) ? "1" : "0";
             // SE_IS_NXG 是否有脑血管病 
             var SE_IS_NXG = pastMedicalHistorys.Contains(2) ? "1" : "0";
             // SE_IS_XZJB 是否有心脏疾病 
@@ -80,8 +82,13 @@ public class ProfileInformationAppService : IProfileInformationAppService
             var SE_IS_TNB = pastMedicalHistorys.Contains(6) ? "1" : "0";
             // SE_IS_SB 肾病
             var SE_IS_SB = pastMedicalHistorys.Contains(7) ? "1" : "0";
+            // SE_IS_PCOS 多囊卵巢综合征（PCOS）
+            var SE_IS_PCOS = pastMedicalHistorys.Contains(8) ? "1" : "0";
+            // SE_IS_GestationalDiabetes 妊娠糖尿病史
+            var SE_IS_GestationalDiabetes = pastMedicalHistorys.Contains(9) ? 1 : 0;
             // SE_IS_Acanthosis 黑棘皮症
-            var SE_IS_Acanthosis = pastMedicalHistorys.Contains(8) ? "1" : "0";
+            var SE_IS_Acanthosis = pastMedicalHistorys.Contains(10) ? "1" : "0";
+
             // SE_IS_Other 是否有其他 
             var SE_IS_Other = pastMedicalHistorys.Contains(9) ? "1" : "0";
             // SE_OtherTxt 其他疾病
@@ -98,6 +105,8 @@ public class ProfileInformationAppService : IProfileInformationAppService
                 SE_IS_SWMJB = SE_IS_SWMJB,
                 SE_IS_TNB = SE_IS_TNB,
                 SE_IS_SB = SE_IS_SB,
+                SE_IS_PCOS = SE_IS_PCOS,
+                IsGestational = SE_IS_GestationalDiabetes,
                 SE_IS_Acanthosis = SE_IS_Acanthosis,
                 SE_IS_Other = SE_IS_Other,
                 SE_OtherTxt = SE_OtherTxt
@@ -176,6 +185,11 @@ public class ProfileInformationAppService : IProfileInformationAppService
         {
             return ("0", "未发现", "");
         }
+        if(supplementaryExam.SE_IS_GXY == "1")
+        {
+            pastMedicalHistoryCodes.Append("1,");
+            pastMedicalHistory.Append("高血压,");
+        }
         if (supplementaryExam.SE_IS_NXG == "1")
         {
             pastMedicalHistoryCodes.Append("2,");
@@ -206,9 +220,19 @@ public class ProfileInformationAppService : IProfileInformationAppService
             pastMedicalHistoryCodes.Append("7,");
             pastMedicalHistory.Append("肾病,");
         }
-        if (supplementaryExam.SE_IS_Acanthosis == "1")
+        if (supplementaryExam.SE_IS_PCOS == "1")
         {
             pastMedicalHistoryCodes.Append("8,");
+            pastMedicalHistory.Append("多囊卵巢综合征（PCOS）,");
+        }
+        if (supplementaryExam.IsGestational == 1)
+        {
+            pastMedicalHistoryCodes.Append("9,");
+            pastMedicalHistory.Append("妊娠糖尿病史,");
+        }
+        if (supplementaryExam.SE_IS_Acanthosis == "1")
+        {
+            pastMedicalHistoryCodes.Append("10,");
             pastMedicalHistory.Append("黑棘皮症,");
         }
         if (supplementaryExam.SE_IS_Other == "1")

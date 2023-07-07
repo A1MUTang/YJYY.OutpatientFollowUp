@@ -613,5 +613,13 @@ namespace OutPatientFollowUp.Core
         ///
         /// </summary>
         public float? T3T4 { get; set; }
+
+        /// <summary>
+        /// 多囊卵巢综合症
+        /// </summary>
+        /// <value></value>
+        public int IsPCOS { get; set; }
+
+        public int IsGestational { get; set; }
     }
 }
