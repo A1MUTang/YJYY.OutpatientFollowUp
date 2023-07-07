@@ -108,7 +108,7 @@ public static class BloodSugarTool
                         {
                             return "您本次测量血糖值为理想血糖。建议保持健康生活方式；坚持血糖监测将有助于更好的管理您的健康。";
                         }
-                        if (age >= 40 && isHighBloodPressure)
+                        if (age >= 40 || isHighBloodPressure)
                         {
                             return "您本次测量血糖值为理想血糖。建议您每1年至少测量 1次空腹血糖，并接受医务人员的健康指导。";
                         }

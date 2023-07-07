@@ -212,7 +212,7 @@
             <summary>
             不使用降压药血压偏高
             </summary>
-            <remarks>SBP大于等于120或DBP大于等于80</remarks>
+            <remarks>SBP大于等于140或DBP大于等于90</remarks>
         </member>
         <member name="F:OutPatientFollowUp.Core.BloodPressureHealthAdviceEnum.IsBloodPressureModeratelyHighWithoutMedication">
             <summary>
