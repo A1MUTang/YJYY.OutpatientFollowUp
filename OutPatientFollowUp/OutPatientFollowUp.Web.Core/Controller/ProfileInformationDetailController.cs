@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace OutPatientFollowUp.Application;
 
@@ -10,6 +11,7 @@ namespace OutPatientFollowUp.Application;
 // [Authorize]
 [ApiController]
 [Route("api/[controller]")]
+[Authorize] 
 public class ProfileInformationDetailController : ControllerBase
 {
     private readonly IProfileInformationAppService _profileInformationAppService;

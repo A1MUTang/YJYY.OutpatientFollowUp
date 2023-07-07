@@ -18,30 +18,35 @@ public static class BloodPressureTool
         //不使用降压药不使用降糖药
         if (!input.IsUsingAntihypertensiveMedication && !input.IsUsingAntidiabeticMedication)
         {
-            if (input.SBP >= 90 && input.SBP <= 120 && input.DBP >= 60 && input.DBP <= 80 && input.Age < 45)
-            {
-                return BloodPressureHealthAdviceEnum.IsBloodPressureMetForUnder45WithoutMedication;
-            }
-            if (input.SBP >= 90 && input.SBP <= 140 && input.DBP >= 60 && input.DBP <= 80 && input.Age >= 45)
-            {
-                return BloodPressureHealthAdviceEnum.IsBloodPressureMetForOver45WithoutMedication;
-            }
-            if (input.SBP >= 120 && input.SBP < 140 ||( input.DBP >= 80 && input.DBP < 90))
-            {
-                return BloodPressureHealthAdviceEnum.IsBloodPressureAboveIdealWithoutMedication;
-            }
-            if (input.SBP >= 140 && input.SBP < 160 ||( input.DBP >= 90 && input.DBP < 100))
-            {
-                return BloodPressureHealthAdviceEnum.IsBloodPressureSlightlyHighWithoutMedication;
-            }
-            if (input.SBP >= 160 && input.SBP < 180 ||( input.DBP >= 100 && input.DBP < 110))
-            {
-                return BloodPressureHealthAdviceEnum.IsBloodPressureModeratelyHighWithoutMedication;
-            }
-            if (input.SBP >= 180 && input.SBP < 210 ||( input.DBP >= 110 && input.DBP < 120))
+            if (input.SBP >= 180 && input.SBP < 210 || (input.DBP >= 110 && input.DBP < 120))
             {
                 return BloodPressureHealthAdviceEnum.IsBloodPressureVeryHighWithoutMedication;
             }
+            if (input.SBP >= 160 && input.SBP < 180 || (input.DBP >= 100 && input.DBP < 110))
+            {
+                return BloodPressureHealthAdviceEnum.IsBloodPressureModeratelyHighWithoutMedication;
+            }
+            if (input.SBP >= 140 && input.SBP < 160 || (input.DBP >= 90 && input.DBP < 100))
+            {
+                return BloodPressureHealthAdviceEnum.IsBloodPressureSlightlyHighWithoutMedication;
+            }
+            if (input.SBP >= 120 && input.SBP < 140 || (input.DBP >= 80 && input.DBP < 90))
+            {
+                return BloodPressureHealthAdviceEnum.IsBloodPressureAboveIdealWithoutMedication;
+            }
+            if (input.SBP >= 90 && input.SBP < 120 && input.DBP >= 60 && input.DBP < 80 && input.Age >= 45)
+            {
+                return BloodPressureHealthAdviceEnum.IsBloodPressureMetForOver45WithoutMedication;
+            }
+            if (input.SBP >= 90 && input.SBP < 120 && input.DBP >= 60 && input.DBP < 80 && input.Age < 45)
+            {
+                return BloodPressureHealthAdviceEnum.IsBloodPressureMetForUnder45WithoutMedication;
+            }
+
+
+
+
+
         }
 
         //使用降压药&使用降糖药
@@ -165,9 +170,9 @@ public static class BloodPressureTool
         }
     }
 
-    public static BloodPressureResultEnum GetBloodPressureResult( int SBP, int DBP)
+    public static BloodPressureResultEnum GetBloodPressureResult(int SBP, int DBP)
     {
-     
+
         if (SBP < 90 || DBP < 60)
         {
             return BloodPressureResultEnum.Low;
