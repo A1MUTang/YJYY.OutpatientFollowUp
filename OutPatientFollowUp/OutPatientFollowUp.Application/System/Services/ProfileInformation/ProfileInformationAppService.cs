@@ -64,10 +64,10 @@ public class ProfileInformationAppService : IProfileInformationAppService
             }
         }
         //填充既往病史
-        if (!string.IsNullOrEmpty(input.PastMedicalHistoryCodes))
+        if (!string.IsNullOrEmpty(input.PastMedicalHistoryCodes) || !string.IsNullOrEmpty(input.OtherMedicalHistory))
         {
 
-            List<int> pastMedicalHistorys = input.PastMedicalHistoryCodes.Split(',').Select(int.Parse).ToList();
+            List<int> pastMedicalHistorys = !string.IsNullOrEmpty(input.PastMedicalHistoryCodes)? input.PastMedicalHistoryCodes.Split(',').Select(int.Parse).ToList() : new List<int>();
             // SE_IsDisease 是否有疾病
             var SE_IsDisease = pastMedicalHistorys.Contains(0) ? "1" : "0";
             // SE_IS_GXY 是否有高血压
@@ -92,7 +92,7 @@ public class ProfileInformationAppService : IProfileInformationAppService
             var SE_IS_Acanthosis = pastMedicalHistorys.Contains(10) ? "1" : "0";
 
             // SE_IS_Other 是否有其他 
-            var SE_IS_Other = pastMedicalHistorys.Contains(9) ? "1" : "0";
+            var SE_IS_Other = !string.IsNullOrEmpty(input.OtherMedicalHistory) ? "1" : "0";
             // SE_OtherTxt 其他疾病
             var SE_OtherTxt = input.OtherMedicalHistory;
 
@@ -251,7 +251,6 @@ public class ProfileInformationAppService : IProfileInformationAppService
             pastMedicalHistoryCodes.Append("10,");
             pastMedicalHistory.Append("黑棘皮症,");
         }
-
         if (pastMedicalHistoryCodes.Length != 0 && pastMedicalHistory.Length != 0)
         {
             pastMedicalHistoryCodes = pastMedicalHistoryCodes.Remove(pastMedicalHistoryCodes.Length - 1, 1);
