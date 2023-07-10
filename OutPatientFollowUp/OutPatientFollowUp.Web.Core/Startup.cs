@@ -12,11 +12,24 @@ using Microsoft.Extensions.Hosting;
 using OutPatientFollowUp.Application;
 using SqlSugar;
 using StackExchange.Profiling.Internal;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Json;
 
 namespace OutPatientFollowUp.Web.Core;
 
 public class Startup : AppStartup
 {
+    private readonly IConfiguration _configuration;
+
+    public Startup()
+    {
+          var builder = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+
+        _configuration = builder.Build();
+    }
+
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddConsoleFormatter();
@@ -25,11 +38,11 @@ public class Startup : AppStartup
         services.AddCorsAccessor();
         services.AddTransient<SMShandle>();
         services.AddSingleton<ISqlSugarClient>(s =>
-        {//TODO:这里需要改为通过配置文件读取
+        {
             SqlSugarScope sqlSugar = new SqlSugarScope(new ConnectionConfig()
             {
                 DbType = SqlSugar.DbType.SqlServer,
-                ConnectionString = "server=101.201.120.1;uid=sa;pwd=Yjyy968@bbw.com!@#;database=Hypertension; Trusted_Connection=no;Pooling=true;Max Pool Size=500; Min Pool Size=5;Connection Lifetime=300;Connect Timeout=500",
+                ConnectionString = _configuration.GetConnectionString("DefaultConnection"),
                 IsAutoCloseConnection = true,
             },
            db =>
