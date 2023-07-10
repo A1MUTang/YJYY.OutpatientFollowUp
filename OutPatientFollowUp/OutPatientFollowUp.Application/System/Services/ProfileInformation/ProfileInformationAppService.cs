@@ -11,14 +11,14 @@ public class ProfileInformationAppService : IProfileInformationAppService
     private readonly IIdAppService _idAppService;
     private readonly IPT_DoctorBasicInfoRepositroy _doctorBasicInfoRepositroy;
 
-    public ProfileInformationAppService(IHT_PatientBasicInfoRepository patientBasicInfoRepository, 
+    public ProfileInformationAppService(IHT_PatientBasicInfoRepository patientBasicInfoRepository,
     IIdAppService idAppService, IHT_SupplementaryExamRepository supplementaryExamRepository,
     IPT_DoctorBasicInfoRepositroy doctorBasicInfoRepositroy)
     {
         _patientBasicInfoRepository = patientBasicInfoRepository;
         _idAppService = idAppService;
         _supplementaryExamRepository = supplementaryExamRepository;
-        _doctorBasicInfoRepositroy = doctorBasicInfoRepositroy;;
+        _doctorBasicInfoRepositroy = doctorBasicInfoRepositroy; ;
     }
 
 
@@ -68,6 +68,8 @@ public class ProfileInformationAppService : IProfileInformationAppService
         {
 
             List<int> pastMedicalHistorys = input.PastMedicalHistoryCodes.Split(',').Select(int.Parse).ToList();
+            // SE_IsDisease 是否有疾病
+            var SE_IsDisease = pastMedicalHistorys.Contains(0) ? "1" : "0";
             // SE_IS_GXY 是否有高血压
             var SE_IS_GXY = pastMedicalHistorys.Contains(1) ? "1" : "0";
             // SE_IS_NXG 是否有脑血管病 
@@ -107,6 +109,7 @@ public class ProfileInformationAppService : IProfileInformationAppService
                 SE_IS_SB = SE_IS_SB,
                 SE_IS_GXY = SE_IS_GXY,
                 SE_IS_PCOS = SE_IS_PCOS,
+                SE_IsDisease = SE_IsDisease,
                 IsGestational = SE_IS_GestationalDiabetes,
                 SE_IS_Acanthosis = SE_IS_Acanthosis,
                 SE_IS_Other = SE_IS_Other,
@@ -191,11 +194,14 @@ public class ProfileInformationAppService : IProfileInformationAppService
         }
         var pastMedicalHistoryCodes = new StringBuilder();
         var pastMedicalHistory = new StringBuilder();
-        if (supplementaryExam == null)
+
+        if (supplementaryExam.SE_IsDisease == "1")
         {
-            return ("0", "未发现", "");
+            pastMedicalHistoryCodes.Append("0,");
+            pastMedicalHistory.Append("未发现,");
         }
-        if(supplementaryExam.SE_IS_GXY == "1")
+        
+        if (supplementaryExam.SE_IS_GXY == "1")
         {
             pastMedicalHistoryCodes.Append("1,");
             pastMedicalHistory.Append("高血压,");
@@ -245,19 +251,12 @@ public class ProfileInformationAppService : IProfileInformationAppService
             pastMedicalHistoryCodes.Append("10,");
             pastMedicalHistory.Append("黑棘皮症,");
         }
-        // if (supplementaryExam.SE_IS_Other == "1")
-        // {
-        //     pastMedicalHistoryCodes.Append("9,");
-        //     pastMedicalHistory.Append(supplementaryExam.SE_OtherTxt + ",");
-        // }
-        if (pastMedicalHistoryCodes.Length == 0 && pastMedicalHistory.Length == 0)
-        {
-            pastMedicalHistoryCodes.Append("0,");
-            pastMedicalHistory.Append("未发现,");
-        }
 
-        pastMedicalHistoryCodes = pastMedicalHistoryCodes.Remove(pastMedicalHistoryCodes.Length - 1, 1);
-        pastMedicalHistory = pastMedicalHistory.Remove(pastMedicalHistory.Length - 1, 1);
+        if (pastMedicalHistoryCodes.Length != 0 && pastMedicalHistory.Length != 0)
+        {
+            pastMedicalHistoryCodes = pastMedicalHistoryCodes.Remove(pastMedicalHistoryCodes.Length - 1, 1);
+            pastMedicalHistory = pastMedicalHistory.Remove(pastMedicalHistory.Length - 1, 1);
+        }
         return (pastMedicalHistoryCodes.ToString(), pastMedicalHistory.ToString(), supplementaryExam.SE_OtherTxt);
     }
 
