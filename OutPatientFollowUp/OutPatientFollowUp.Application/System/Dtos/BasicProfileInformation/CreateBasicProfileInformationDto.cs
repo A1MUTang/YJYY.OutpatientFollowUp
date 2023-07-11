@@ -85,6 +85,10 @@ namespace OutPatientFollowUp.Application
             ValidateTool.ValidateIdCardNumber(IDCardNumber);
             //正则交验手机号
             ValidateTool.ValidatePhoneNumber(PhoneNumber);
+
+            if(Address.Length > 200)
+                yield return new ValidationResult("地址长度不能超过100", new[] { nameof(Address) });
+                
             yield return ValidationResult.Success;
         }
 

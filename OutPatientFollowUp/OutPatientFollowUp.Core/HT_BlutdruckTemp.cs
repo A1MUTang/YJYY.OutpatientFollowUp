@@ -138,10 +138,6 @@ namespace OutPatientFollowUp.Core
         /// </summary>
         public int IsSdrug { get; set; }
         /// <summary>
-        /// 是否符合高血压标准
-        /// </summary>
-        public string IsGxyStandard { get; set; }
-        /// <summary>
         /// 患者类型
         /// </summary>
         public int PatientType { get; set; }

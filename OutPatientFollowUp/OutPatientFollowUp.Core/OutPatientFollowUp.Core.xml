@@ -1070,11 +1070,6 @@
             是否使用降糖药
             </summary>
         </member>
-        <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.IsGxyStandard">
-            <summary>
-            是否符合高血压标准
-            </summary>
-        </member>
         <member name="P:OutPatientFollowUp.Core.HT_BlutdruckTemp.PatientType">
             <summary>
             患者类型
@@ -2867,6 +2862,12 @@
         <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.IsPCOS">
             <summary>
             多囊卵巢综合症
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:OutPatientFollowUp.Core.HT_SupplementaryExam.IsGestational">
+            <summary>
+            妊娠糖尿病史
             </summary>
             <value></value>
         </member>

@@ -13,7 +13,7 @@ public class Mapper : IRegister
                 .Map(dest => dest.Doctor_UserName, src => src.UserName);
         config.ForType<CreateBasicProfileInformationDto, HT_PatientBasicInfo>()
                 .Map(dest => dest.PBI_UserName, src => src.Name)
-                .Map(dest => dest.PBI_OriginPlace, src => src.Address)
+                .Map(dest => dest.PBI_IDCardAddress, src => src.Address)
                 .Map(dest => dest.PBI_Age, src => ProfileInformationDetailTool.GetAgeFromIdCard(src.IDCardNumber))
                 .Map(dest => dest.PBI_ICard, src => src.IDCardNumber)
                 .Map(dest => dest.IsSdrug, src => src.IsTakingAntidiabeticMeds ? "1" : "0")

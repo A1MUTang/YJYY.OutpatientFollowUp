@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace OutPatientFollowUp.Application;
 
 /// <summary>
-/// 基本档案信息
+/// 设备更新信息
 /// </summary>
 // [Authorize]
 [ApiController]
@@ -24,7 +24,7 @@ public class OH_MeasureEquipmentController : ControllerBase
 
 
     /// <summary>
-    /// 
+    /// 获取设备更新信息
     /// </summary>
     /// <returns></returns>
     [HttpPost()]
@@ -32,11 +32,6 @@ public class OH_MeasureEquipmentController : ControllerBase
     {
         return await _oh_MeasureEquipmentAppService.GetUpdateInfo(getUpdateInfoDto.eqpNo, getUpdateInfoDto.versionNumber, "YWSF-SM-TF701", getUpdateInfoDto.parentName, getUpdateInfoDto.unitName);
     }
-
-
-    
-
-
 }
 
 public class GetUpdateInfoDto

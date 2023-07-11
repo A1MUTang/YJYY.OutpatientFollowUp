@@ -87,5 +87,9 @@ public class CompleteUpdateBasicProfileInformationDto : IValidatableObject
         {
             yield return new ValidationResult("手机号格式不正确", new[] { nameof(PhoneNumber) });
         }
+        if(AddressLine.Length > 200)
+        {
+            yield return new ValidationResult("详细住址长度不能超过100", new[] { nameof(AddressLine) });
+        }
     }
 }

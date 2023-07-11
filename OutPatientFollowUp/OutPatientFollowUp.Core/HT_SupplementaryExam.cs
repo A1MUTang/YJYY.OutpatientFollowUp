@@ -620,6 +620,10 @@ namespace OutPatientFollowUp.Core
         /// <value></value>
         public int IsPCOS { get; set; }
 
+        /// <summary>
+        /// 妊娠糖尿病史
+        /// </summary>
+        /// <value></value>
         public int IsGestational { get; set; }
     }
 }

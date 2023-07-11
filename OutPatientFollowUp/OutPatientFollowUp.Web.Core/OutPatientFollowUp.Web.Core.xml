@@ -307,12 +307,12 @@
         </member>
         <member name="T:OutPatientFollowUp.Application.OH_MeasureEquipmentController">
             <summary>
-            基本档案信息
+            设备更新信息
             </summary>
         </member>
         <member name="M:OutPatientFollowUp.Application.OH_MeasureEquipmentController.GetUpdateInfo(OutPatientFollowUp.Application.GetUpdateInfoDto)">
             <summary>
-            
+            获取设备更新信息
             </summary>
             <returns></returns>
         </member>
