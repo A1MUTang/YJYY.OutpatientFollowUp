@@ -704,7 +704,7 @@ public class QuestionnaireMapper : IRegister
         var isReceiveTreatment = GetAnswer("您是否接受降压治疗", questionResults);
         if (systolicPressure != null && diastolicPressure != null)
         {
-            if (int.Parse(systolicPressure) >= 140 || int.Parse(diastolicPressure) >= 90 || isReceiveTreatment == "是")
+            if (decimal.Parse(systolicPressure) >= 140 || decimal.Parse(diastolicPressure) >= 90 || isReceiveTreatment == "是")
             {
                 isHypertension = true;
             }
@@ -1312,8 +1312,8 @@ public class QuestionnaireMapper : IRegister
 
     private static decimal GetSystolicPressure(List<HT_QuestionResult> questionResults)
     {
-        var systolicPressure = 0;
-        systolicPressure = Convert.ToInt32(GetAnswer("收缩压", questionResults));
+        var systolicPressure = 0m;
+        systolicPressure = Convert.ToDecimal(GetAnswer("收缩压", questionResults));
         return systolicPressure;
     }
 
@@ -1468,8 +1468,8 @@ public class QuestionnaireMapper : IRegister
     {
         var remainingLifeRiskFactor = 0;
         //BMI≥28kg/m余生危险因素	+1
-        var height = int.Parse(GetAnswer("身高", questionResult));
-        var weight = int.Parse(GetAnswer("体重", questionResult));
+        var height = decimal.Parse(GetAnswer("身高", questionResult));
+        var weight = decimal.Parse(GetAnswer("体重", questionResult));
 
         var bmi = GetBMI(height, weight);
         if (bmi >= 28)

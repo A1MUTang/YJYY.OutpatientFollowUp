@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using SqlSugar;
 using System.Linq;
 using Furion;
+using Furion.FriendlyException;
 
 namespace OutPatientFollowUp.Core;
 
@@ -22,6 +23,10 @@ public class HT_QuestionnaireResultRepository : BaseRepository<HT_QuestionnaireR
         .OrderByDescending(x => x.SubmitTime)
         .Where(x => x.QuestionnaireId == questionnaireId
         && x.PatientBasicArchivesCode == patientBasicArchivesCode).FirstAsync();
+        if (result == null)
+        {
+            throw Oops.Oh("未找到该问卷结果");
+        }
         result.QuestionResults = await _context.Queryable<HT_QuestionResult>().Where(x => x.QuestionnaireResultId == result.Id).ToListAsync();
         return result;
     }

@@ -6,11 +6,6 @@ namespace OutPatientFollowUp.Application;
 
 public class UserAppService : IUserAppService
 {
-    /// <summary>
-    /// 访问Token过期时间
-    /// <remarks>单位：分钟</remarks>
-    /// </summary>
-    public const int accessTokenExpiration = 60 * 1;
 
     /// <summary>
     /// 刷新Token过期时间

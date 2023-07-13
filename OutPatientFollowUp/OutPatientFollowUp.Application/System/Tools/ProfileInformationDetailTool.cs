@@ -8,6 +8,21 @@ namespace OutPatientFollowUp.Application;
 public static class ProfileInformationDetailTool
 {
     /// <summary>
+    /// 计算BMI
+    /// </summary>
+    /// <param name="height">身高（单位：米）</param>
+    /// <param name="weight">体重（单位：千克）</param>
+    /// <returns>BMI 值</returns>
+    public static decimal? CalculateBMI(decimal? height, decimal? weight)
+    {
+        if (height <= 0 || weight <= 0)
+        {
+           return 0;
+        }
+
+        return weight / (height * height);
+    }
+    /// <summary>
     /// 计算腰臀比
     /// </summary>
     /// <param name="waist">腰围</param>
@@ -17,7 +32,7 @@ public static class ProfileInformationDetailTool
     {
         if (waist <= 0 || hip <= 0)
         {
-            throw Oops.Oh("腰围或臀围不能小于等于0");
+            return 0;
         }
 
         return waist / hip;

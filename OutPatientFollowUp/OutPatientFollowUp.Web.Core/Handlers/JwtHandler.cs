@@ -20,45 +20,43 @@ public class JwtHandler : AppAuthorizeHandler
     /// <returns></returns>
     public override async Task HandleAsync(AuthorizationHandlerContext context)
     {
-        #if !DEBUG
-        //获取token
-        var token = context.GetCurrentHttpContext().Request.Headers["Authorization"].ToString();
-        //解析token，获取过期时间
-        var handler = new JwtSecurityTokenHandler();
-        //删除 Bearer
-        token = token.Replace("Bearer ", "");
-        var jwtToken = handler.ReadJwtToken(token);
-        // 获取过期时间
-        var expires = jwtToken.ValidTo;
-        // 获取当前时间
-        // var now = DateTime.Now;
-        var now = DateTime.UtcNow;
-        // 获取过期时间和当前时间的时间差
-        var timeSpan =expires - now;
-        // 如果时间差小0，就自动刷新 token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiIyODc4MjI5YzM4NzY0ZGE2OWQ4Nzg5Y2RiZGRmNGM1NiIsIkFjY291bnQiOiLlvKDooYwiLCJNYW5hZ2VOYW1lIjoi6auY6KGA5Y6L5Y2P5LyaIiwiV29ya1VuaXRzIjoi57u_5Zyw6Ieq55Sx5rivIiwiZXhwIjoxNjg2NzIzOTg5LCJuYmYiOjE2ODY3MjM5MjksImlhdCI6MTY4NjcyMzkyOSwiaXNzIjoiWWlKaWFZaVl1biIsImF1ZCI6IllpSmlhWWlZdW4ifQ.l5SV5kV6Ho0kSIVLeQcfwwTMhSfyPdR128O34eWK6CU
-        if (timeSpan.TotalSeconds < 0) 
-        {
+        // //获取token
+        // var token = context.GetCurrentHttpContext().Request.Headers["Authorization"].ToString();
+        // //解析token，获取过期时间
+        // var handler = new JwtSecurityTokenHandler();
+        // //删除 Bearer
+        // token = token.Replace("Bearer ", "");
+        // var jwtToken = handler.ReadJwtToken(token);
+        // // 获取过期时间
+        // var expires = jwtToken.ValidTo;
+        // // 获取当前时间
+        // // var now = DateTime.Now;
+        // var now = DateTime.UtcNow;
+        // // 获取过期时间和当前时间的时间差
+        // var timeSpan =expires - now;
+        // // 如果时间差小0，就自动刷新 token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiIyODc4MjI5YzM4NzY0ZGE2OWQ4Nzg5Y2RiZGRmNGM1NiIsIkFjY291bnQiOiLlvKDooYwiLCJNYW5hZ2VOYW1lIjoi6auY6KGA5Y6L5Y2P5LyaIiwiV29ya1VuaXRzIjoi57u_5Zyw6Ieq55Sx5rivIiwiZXhwIjoxNjg2NzIzOTg5LCJuYmYiOjE2ODY3MjM5MjksImlhdCI6MTY4NjcyMzkyOSwiaXNzIjoiWWlKaWFZaVl1biIsImF1ZCI6IllpSmlhWWlZdW4ifQ.l5SV5kV6Ho0kSIVLeQcfwwTMhSfyPdR128O34eWK6CU
+        // if (timeSpan.TotalSeconds < 0) 
+        // {
             if (JWTEncryption.AutoRefreshToken(context, context.GetCurrentHttpContext()))
             {
+                await AuthorizeHandleAsync(context);
                 // 刷新成功，将token设置到响应头中
-                context.GetCurrentHttpContext().Request.Headers["Authorization"] = context.GetCurrentHttpContext().Response.Headers["access-token"];
-                await base.HandleAsync(context);
+                // context.GetCurrentHttpContext().Request.Headers["Authorization"] = context.GetCurrentHttpContext().Response.Headers["access-token"];
+                // await base.HandleAsync(context);
             }
             else
             {
                 context.Fail();
             }
-        }
-        else
-        {
-            await base.HandleAsync(context);
-            //将访问token 刷新token，清空
-            context.GetCurrentHttpContext().Response.Headers["access-token"] = "";
-            context.GetCurrentHttpContext().Response.Headers["x-access-token"]= "";
-        }
-        #elif DEBUG
-        await base.HandleAsync(context);
-        #endif
+        // }
+        // else
+        // {
+        //     await base.HandleAsync(context);
+        //     //将访问token 刷新token，清空
+        //     // context.GetCurrentHttpContext().Response.Headers["access-token"] = "";
+        //     // context.GetCurrentHttpContext().Response.Headers["x-access-token"]= "";
+        // }
+        // await base.HandleAsync(context);
 
     }
 

@@ -1,0 +1,24 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
+{
+    "name": "C# (.NET 6)",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    "image": "mcr.microsoft.com/dotnet/sdk:6.0",
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+		"ms-dotnettools.csharp",
+		"GitHub.copilot-nightly",
+		"alefragnani.Bookmarks",
+		"donjayamanne.githistory",
+		"ms-vsliveshare.vsliveshare",
+		"Gruntfuggly.todo-tree"
+	],
+    "forwardPorts": [
+        5000
+    ],
+    "appPort": 5000,
+    "postCreateCommand": "dotnet restore"
+     
+}

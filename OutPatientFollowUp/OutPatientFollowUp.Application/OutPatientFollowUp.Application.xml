@@ -1916,12 +1916,6 @@
             <param name="input">要加密的字符串</param>
             <returns>返回加密后的字符串</returns>
         </member>
-        <member name="F:OutPatientFollowUp.Application.UserAppService.accessTokenExpiration">
-            <summary>
-            访问Token过期时间
-            <remarks>单位：分钟</remarks>
-            </summary>
-        </member>
         <member name="F:OutPatientFollowUp.Application.UserAppService.refreshTokenExpiration">
             <summary>
             刷新Token过期时间
@@ -2070,6 +2064,14 @@
             <summary>
             档案信息详情工具类
             </summary>
+        </member>
+        <member name="M:OutPatientFollowUp.Application.ProfileInformationDetailTool.CalculateBMI(System.Nullable{System.Decimal},System.Nullable{System.Decimal})">
+            <summary>
+            计算BMI
+            </summary>
+            <param name="height">身高（单位：米）</param>
+            <param name="weight">体重（单位：千克）</param>
+            <returns>BMI 值</returns>
         </member>
         <member name="M:OutPatientFollowUp.Application.ProfileInformationDetailTool.CalculateWHR(System.Double,System.Double)">
             <summary>

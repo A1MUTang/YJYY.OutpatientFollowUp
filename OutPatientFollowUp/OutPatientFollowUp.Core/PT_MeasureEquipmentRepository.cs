@@ -17,7 +17,7 @@ namespace OutPatientFollowUp.Core
         {
             // 查询条件参数
             var result = await _context.Queryable<PT_EquipMentVersionManage>()
-                .Where(m => m.IsRevoke == 0 || m.IsRevoke == null)
+                .Where(m => m.IsRevoke == 0 )
                 .Where(m => m.EffectTime < DateTime.Now)
                 .Where(m => m.EqpNo == eqpNo
                 || (m.ParentName == "全部"

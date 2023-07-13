@@ -32,7 +32,7 @@ namespace OutPatientFollowUp.Application
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
 
-            if (!Regex.IsMatch(NewPwd, @"^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[a-zA-Z0-9!@#$%^&*()_+]{8,16}$") == false)
+            if (!Regex.IsMatch(NewPwd, @"^(?=(.*\d.*[\p{P}\p{S}\p{C}]|[\p{P}\p{S}\p{C}].*\d))(?=(.*[a-zA-Z].*[\p{P}\p{S}\p{C}]|[\p{P}\p{S}\p{C}].*[a-zA-Z]))[\p{L}\p{N}\p{P}\p{S}\p{C}]{6,20}$") == false)
             { //密码格式不正确
                 yield return new ValidationResult("密码格式不正确", new[] { nameof(NewPwd) });
             }
