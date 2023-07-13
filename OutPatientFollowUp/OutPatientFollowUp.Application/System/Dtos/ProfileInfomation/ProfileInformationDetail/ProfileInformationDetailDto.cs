@@ -23,31 +23,31 @@ public class ProfileInformationDetailDto
     /// <summary>
     /// 身高（单位：米）
     /// </summary>
-    public float Height { get; set; }
+    public decimal? Height { get; set; }
 
     /// <summary>
     /// 体重（单位：千克）
     /// </summary>
-    public decimal Weight { get; set; }
+    public decimal? Weight { get; set; }
 
     /// <summary>
     /// BMI (Body Mass Index)
     /// </summary>
-    public float BMI { get; set; }
+    public decimal? BMI { get; set; }
 
     /// <summary>
     /// 腰围（单位：厘米）
     /// </summary>
-    public decimal WaistCircumference { get; set; }
+    public decimal? WaistCircumference { get; set; }
     /// <summary>
     /// 臀围（单位：厘米）
     /// </summary>
-    public decimal HipCircumference { get; set; }
+    public decimal? HipCircumference { get; set; }
 
     /// <summary>
     /// 腰臀比
     /// </summary>
-    public decimal WaistToHipRatio { get; set; }
+    public decimal? WaistToHipRatio { get; set; }
 
     /// <summary>
     /// 慢病分类

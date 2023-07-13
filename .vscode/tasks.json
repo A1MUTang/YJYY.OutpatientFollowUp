@@ -31,7 +31,7 @@
             "type": "process",
             "args": [
                 "watch",
-                "run",
+                "dotnet dev-certs https --trus",
                 "--project",
                 "${workspaceFolder}/OutPatientFollowUp/OutPatientFollowUp.Web.Entry/OutPatientFollowUp.Web.Entry.csproj"
             ],

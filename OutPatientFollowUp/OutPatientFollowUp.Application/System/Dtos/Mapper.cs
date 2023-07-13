@@ -22,9 +22,9 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_Gender, src => src.Gender ? "1" : "2")
                 .Map(dest => dest.PBI_AgeType, src => ProfileInformationDetailTool.GetPopulationCategory(src.IDCardNumber).ToString())
                 .Map(dest => dest.PBI_Birthday, src => ProfileInformationDetailTool.GetBirthdayFromIdCard(src.IDCardNumber))
-                .Map(dest => dest.PBI_Province, src => CityRepositoryExtensions.GetCityCodeByName(src.Province,null))
-                .Map(dest => dest.PBI_City, src => CityRepositoryExtensions.GetCityCodeByName(src.City,src.Province))
-                .Map(dest => dest.PBI_County, src => CityRepositoryExtensions.GetCityCodeByName(src.District,null))
+                .Map(dest => dest.PBI_Province, src => CityRepositoryExtensions.GetCityCodeByName(src.Province, null))
+                .Map(dest => dest.PBI_City, src => CityRepositoryExtensions.GetCityCodeByName(src.City, src.Province))
+                .Map(dest => dest.PBI_County, src => CityRepositoryExtensions.GetCityCodeByName(src.District, null))
                 .Map(dest => dest.PBI_Address, src => src.AddressLine)
                 .Map(dest => dest.PBI_IDCardAddress, src => src.Address)
 
@@ -42,7 +42,7 @@ public class Mapper : IRegister
                 // ET05	嗜油
                 // ET06	不详
                 .Map(dest => dest.PBI_YinShiKouWei, src => "ET06")
-                .Map(dest => dest.PBI_Nation, src => src.EthnicityCode) 
+                .Map(dest => dest.PBI_Nation, src => src.EthnicityCode)
                 //SP01	不运动
                 //SP02	有氧运动
                 //SP03	剧烈运动
@@ -74,7 +74,7 @@ public class Mapper : IRegister
                 .Map(dest => dest.AddressLine, src => src.PBI_Address)
                 .Map(dest => dest.IDCardNumber, src => src.PBI_ICard)
                 .Map(dest => dest.PhoneNumber, src => src.PBI_PersonPhone)
-                .Map(dest => dest.IsTakingAntidiabeticMeds, src => src.IsSdrug) 
+                .Map(dest => dest.IsTakingAntidiabeticMeds, src => src.IsSdrug)
                 .Map(dest => dest.IsTakingAntihypertensiveMeds, src => src.IsHdrug)
                 .Map(dest => dest.Address, src => src.PBI_IDCardAddress)
                 .Map(dest => dest.Gender, src => src.PBI_Gender == "1" ? "男" : "女");
@@ -114,7 +114,7 @@ public class Mapper : IRegister
                 .Map(dest => dest.FatIntakeCode, src => src.PBI_ZhiFangSheRuLiang == null ? "FAT08" : src.PBI_ZhiFangSheRuLiang)
                 .Map(dest => dest.FruitIntakeEnumCode, src => src.PBI_ShuiGuoSheRuLiang == null ? "FI04" : src.PBI_ShuiGuoSheRuLiang)
                 .Map(dest => dest.FruitIntakeTargetEnumCode, src => src.PBI_MuBiaoSGSheRuLiang == null ? "AFI06" : src.PBI_MuBiaoSGSheRuLiang)
-                .Map(dest => dest.Height, src => src.PBI_Height)
+                .Map(dest => dest.Height, src => src.PBI_Height == 0 ? null : src.PBI_Height)
                 .Map(dest => dest.HighFatFoodIntakeCode, src => src.PBI_MuBiaoZFSheRuLiang == null ? "AFT06" : src.PBI_MuBiaoZFSheRuLiang)
                 .Map(dest => dest.HipCircumference, src => src.PBI_TunWei)
                 .Map(dest => dest.MaritalStatusCode, src => src.PBI_MarryState == null ? "MS05" : src.PBI_MarryState)
@@ -129,9 +129,9 @@ public class Mapper : IRegister
                 .Map(dest => dest.SmokingStatusCode, src => src.PBI_SmokingStatus == null ? "SKS004" : src.PBI_SmokingStatus)
                 .Map(dest => dest.VegetableIntakeCode, src => src.PBI_ShuCiSheRuLiang == null ? "VT04" : src.PBI_ShuCiSheRuLiang)
                 .Map(dest => dest.VegetableIntakeTargetCode, src => src.PBI_MuBiaoSCSheRuLiang == null ? "AV06" : src.PBI_MuBiaoSCSheRuLiang)
-                .Map(dest => dest.WaistCircumference, src => src.PBI_YaoWei)
-                .Map(dest => dest.Weight, src => src.PBI_Weight)
-                .Map(dest => dest.WaistToHipRatio, src => src.PBI_YaoTunBi)
+                .Map(dest => dest.WaistCircumference, src => src.PBI_YaoWei == 0 ? null : src.PBI_YaoWei)
+                .Map(dest => dest.Weight, src => src.PBI_Weight == 0 ? null : src.PBI_Weight)
+                .Map(dest => dest.WaistToHipRatio, src => src.PBI_YaoTunBi == 0 ? null : src.PBI_YaoTunBi)
                 // .Map(dest => dest.BasicProfileInformation.Address, src => src. PBI_OriginPlace)//TODO 身份证地址，未找到对应字段，
                 .Map(dest => dest.BasicProfileInformation.Gender, src => src.PBI_Gender == "1" ? "男" : "女")
                 .Map(dest => dest.BasicProfileInformation.Ethnicity, src => SY_CoderRepositoryExtensions.GetCodeName(src.PBI_Nation))
@@ -155,7 +155,7 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_Gender, src => src.BasicProfileInformation.Gender ? "1" : "2")
                 .Map(dest => dest.PBI_DrinkingStatus, src => src.AlcoholStatusCode)
                 .Map(dest => dest.PBI_Birthday, src => ProfileInformationDetailTool.GetBirthdayFromIdCard(src.BasicProfileInformation.IDCardNumber))
-                .Map(dest => dest.PBI_BMI, src =>  ProfileInformationDetailTool.CalculateBMI(src.Height, src.Weight))
+                .Map(dest => dest.PBI_BMI, src => ProfileInformationDetailTool.CalculateBMI(src.Height, src.Weight))
                 .Map(dest => dest.PBI_ChronicDiseaseType, src => src.ChronicDiseaseCategoryCodes)
                 .Map(dest => dest.PBI_ShiYanLiang, src => src.DietHabitsCode)
                 .Map(dest => dest.PBI_YinShiKouWei, src => src.DietPreferenceCode)
@@ -164,9 +164,9 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_ZhiFangSheRuLiang, src => src.FatIntakeCode)
                 .Map(dest => dest.PBI_ShuiGuoSheRuLiang, src => src.FruitIntakeEnumCode)
                 .Map(dest => dest.PBI_MuBiaoSGSheRuLiang, src => src.FruitIntakeTargetEnumCode)
-                .Map(dest => dest.PBI_Height, src => src.Height)
+                .Map(dest => dest.PBI_Height, src => src.Height == 0 ? null : src.Height)
                 .Map(dest => dest.PBI_MuBiaoZFSheRuLiang, src => src.HighFatFoodIntakeCode)
-                .Map(dest => dest.PBI_TunWei, src => src.HipCircumference)
+                .Map(dest => dest.PBI_TunWei, src => src.HipCircumference == 0 ? null : src.HipCircumference)
                 .Map(dest => dest.PBI_MarryState, src => src.MaritalStatus)
                 .Map(dest => dest.PBI_ChronicDiseaseOther, src => src.OtherChronicDiseases)
                 .Map(dest => dest.PBI_BaoXiaoFangShi, src => src.PaymentMethodCode)
@@ -178,7 +178,7 @@ public class Mapper : IRegister
                 .Map(dest => dest.PBI_SmokingStatus, src => src.SmokingStatusCode)
                 .Map(dest => dest.PBI_ShuCiSheRuLiang, src => src.VegetableIntakeCode)
                 .Map(dest => dest.PBI_MuBiaoSCSheRuLiang, src => src.VegetableIntakeTargetCode)
-                .Map(dest => dest.PBI_YaoWei, src => src.WaistCircumference)
+                .Map(dest => dest.PBI_YaoWei, src => src.WaistCircumference == 0 ? null : src.WaistCircumference)
                 .Map(dest => dest.PBI_Weight, src => src.Weight)
                 .Map(dest => dest.PBI_YaoTunBi, src => src.WaistToHipRatio)
                 .Map(dest => dest.PBI_Nation, src => src.BasicProfileInformation.Ethnicity)

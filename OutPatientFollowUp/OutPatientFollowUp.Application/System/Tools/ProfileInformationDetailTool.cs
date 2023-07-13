@@ -15,9 +15,9 @@ public static class ProfileInformationDetailTool
     /// <returns>BMI 值</returns>
     public static decimal? CalculateBMI(decimal? height, decimal? weight)
     {
-        if (height <= 0 || weight <= 0)
+        if (height == null || weight == null || height <= 0 || weight <= 0)
         {
-           return 0;
+            return null;
         }
 
         return weight / (height * height);
