@@ -15,7 +15,7 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
         _context = context;
     }
 
-    public  async Task<HT_PatientBasicInfo> GetByArchivesCode(string archivesCode,string manageName)
+    public async Task<HT_PatientBasicInfo> GetByArchivesCode(string archivesCode, string manageName)
     {
         return await _context.Queryable<HT_PatientBasicInfo>()
             .Where(x => x.ArchivesCode == archivesCode && x.PBI_ManageUnit == manageName)
@@ -76,13 +76,28 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
     //     return await _context.Updateable(patientBasicInfo).IgnoreColumns(ignoreAllNullColumns: true).WhereColumns(it => new { it.ArchivesCode }).ExecuteCommandAsync() > 0;
     // }
 
+    public async Task<HT_PatientBasicInfo> UpdateBasicInfoAsync(HT_PatientBasicInfo patientBasicInfo)
+    {
+        var oldBasicInfo = await _context.Queryable<HT_PatientBasicInfo>().FirstAsync(x => x.ArchivesCode == patientBasicInfo.ArchivesCode);
+        await _context.Updateable<HT_PatientBasicInfo>(patientBasicInfo).Where(it => it.ArchivesCode == patientBasicInfo.ArchivesCode)
+            .UpdateColumns(it =>
+                new
+                {
+                    it.PBI_PersonPhone,
+                    it.IsSdrug,
+                    it.IsHdrug,
+                }).ExecuteCommandAsync();
+        return await _context.Queryable<HT_PatientBasicInfo>().FirstAsync(x => x.ArchivesCode == patientBasicInfo.ArchivesCode);
+    }
+
 
     public new async Task<HT_PatientBasicInfo> UpdateAsync(HT_PatientBasicInfo patientBasicInfo)
     {
         var oldBasicInfo = await _context.Queryable<HT_PatientBasicInfo>().FirstAsync(x => x.ArchivesCode == patientBasicInfo.ArchivesCode);
         await _context.Updateable<HT_PatientBasicInfo>(patientBasicInfo).Where(it => it.ArchivesCode == patientBasicInfo.ArchivesCode)
-            .UpdateColumns(it => 
-                new {
+            .UpdateColumns(it =>
+                new
+                {
                     it.PBI_Gender,
                     it.PBI_DrinkingStatus,
                     it.PBI_Birthday,
@@ -131,7 +146,7 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
 
     public HT_PatientBasicInfo GetByArchivesCode(string archivesCode)
     {
-        return _context.Queryable<HT_PatientBasicInfo>().OrderByDescending(x=>x.PBI_CreateDate).First(x => x.ArchivesCode == archivesCode);
+        return _context.Queryable<HT_PatientBasicInfo>().OrderByDescending(x => x.PBI_CreateDate).First(x => x.ArchivesCode == archivesCode);
     }
 }
 
@@ -142,5 +157,5 @@ public static class HT_PatientBasicInfoRepositoryExtensions
     {
         return App.GetService<IHT_PatientBasicInfoRepository>().GetByArchivesCode(archivesCode);
     }
-   
+
 }

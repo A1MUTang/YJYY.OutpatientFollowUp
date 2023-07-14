@@ -48,4 +48,11 @@ public interface IHT_PatientBasicInfoRepository : IBaseRepository<HT_PatientBasi
     /// <param name="archivesCode"></param>
     /// <returns></returns>
     public HT_PatientBasicInfo GetByArchivesCode(string archivesCode);
+
+    /// <summary>
+    /// 更新患者基本信息
+    /// </summary>
+    /// <param name="patientBasicInfo"></param>
+    /// <returns></returns>
+    public Task<HT_PatientBasicInfo> UpdateBasicInfoAsync(HT_PatientBasicInfo patientBasicInfo);
 }

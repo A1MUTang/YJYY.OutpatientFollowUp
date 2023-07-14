@@ -180,7 +180,7 @@ public class ProfileInformationAppService : IProfileInformationAppService
         patientBasicInfo.ArchivesCode = archivesCode;
         patientBasicInfo.PBI_CreateUser = await _doctorBasicInfoRepositroy.GetDoctorName(doctorId);
         patientBasicInfo.PBI_CreateUserID = doctorId;//我同样不知道为什么CreateUserID会在修改的时候填充
-        var updateResult = await _patientBasicInfoRepository.UpdateAsync(patientBasicInfo);
+        var updateResult = await _patientBasicInfoRepository.UpdateBasicInfoAsync(patientBasicInfo);
         return updateResult.Adapt<BasicProfileInformationDto>();
     }
 
