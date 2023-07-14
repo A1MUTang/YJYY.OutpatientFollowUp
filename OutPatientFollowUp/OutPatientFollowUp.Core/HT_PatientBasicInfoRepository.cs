@@ -79,6 +79,8 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
 
     public new async Task<HT_PatientBasicInfo> UpdateAsync(HT_PatientBasicInfo patientBasicInfo)
     {
+        var oldBasicInfo = await _context.Queryable<HT_PatientBasicInfo>().FirstAsync(x => x.ArchivesCode == patientBasicInfo.ArchivesCode);
+        patientBasicInfo.PBI_UserID = oldBasicInfo.PBI_UserID;//保留原来的的用户ID
         await _context.Updateable<HT_PatientBasicInfo>(patientBasicInfo).Where(it => it.ArchivesCode == patientBasicInfo.ArchivesCode).IgnoreColumns(ignoreAllNullColumns: false).ExecuteCommandAsync();
         return await _context.Queryable<HT_PatientBasicInfo>().FirstAsync(x => x.ArchivesCode == patientBasicInfo.ArchivesCode);
     }
