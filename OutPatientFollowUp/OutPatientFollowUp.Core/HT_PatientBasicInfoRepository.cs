@@ -79,7 +79,7 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
 
     public new async Task<HT_PatientBasicInfo> UpdateAsync(HT_PatientBasicInfo patientBasicInfo)
     {
-        await _context.Updateable<HT_PatientBasicInfo>(patientBasicInfo).Where(it => it.ArchivesCode == patientBasicInfo.ArchivesCode).IgnoreColumns(ignoreAllNullColumns: true).ExecuteCommandAsync();
+        await _context.Updateable<HT_PatientBasicInfo>(patientBasicInfo).Where(it => it.ArchivesCode == patientBasicInfo.ArchivesCode).IgnoreColumns(ignoreAllNullColumns: false).ExecuteCommandAsync();
         return await _context.Queryable<HT_PatientBasicInfo>().FirstAsync(x => x.ArchivesCode == patientBasicInfo.ArchivesCode);
     }
 
