@@ -116,7 +116,7 @@ public class Mapper : IRegister
                 .Map(dest => dest.FruitIntakeTargetEnumCode, src => src.PBI_MuBiaoSGSheRuLiang == null ? "AFI06" : src.PBI_MuBiaoSGSheRuLiang)
                 .Map(dest => dest.Height, src => src.PBI_Height == 0 ? null : src.PBI_Height)
                 .Map(dest => dest.HighFatFoodIntakeCode, src => src.PBI_MuBiaoZFSheRuLiang == null ? "AFT06" : src.PBI_MuBiaoZFSheRuLiang)
-                .Map(dest => dest.HipCircumference, src => src.PBI_TunWei)
+                .Map(dest => dest.HipCircumference, src => src.PBI_TunWei == 0? null : src.PBI_TunWei)
                 .Map(dest => dest.MaritalStatusCode, src => src.PBI_MarryState == null ? "MS05" : src.PBI_MarryState)
                 .Map(dest => dest.OtherChronicDiseases, src => src.PBI_ChronicDiseaseOther)
                 .Map(dest => dest.PastMedicalHistoryCodes, src => "")
