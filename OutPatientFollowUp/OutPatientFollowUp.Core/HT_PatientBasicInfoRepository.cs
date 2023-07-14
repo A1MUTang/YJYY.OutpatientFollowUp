@@ -80,8 +80,52 @@ public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>
     public new async Task<HT_PatientBasicInfo> UpdateAsync(HT_PatientBasicInfo patientBasicInfo)
     {
         var oldBasicInfo = await _context.Queryable<HT_PatientBasicInfo>().FirstAsync(x => x.ArchivesCode == patientBasicInfo.ArchivesCode);
-        patientBasicInfo.PBI_UserID = oldBasicInfo.PBI_UserID;//保留原来的的用户ID
-        await _context.Updateable<HT_PatientBasicInfo>(patientBasicInfo).Where(it => it.ArchivesCode == patientBasicInfo.ArchivesCode).IgnoreColumns(ignoreAllNullColumns: false).ExecuteCommandAsync();
+        await _context.Updateable<HT_PatientBasicInfo>(patientBasicInfo).Where(it => it.ArchivesCode == patientBasicInfo.ArchivesCode)
+            .UpdateColumns(it => 
+                new {
+                    it.PBI_Gender,
+                    it.PBI_DrinkingStatus,
+                    it.PBI_Birthday,
+                    it.PBI_BMI,
+                    it.PBI_ChronicDiseaseType,
+                    it.PBI_ShiYanLiang,
+                    it.PBI_YinShiKouWei,
+                    it.PBI_YunDongXiGuan,
+                    it.PBI_FamilyDiseaseType,
+                    it.PBI_ZhiFangSheRuLiang,
+                    it.PBI_ShuiGuoSheRuLiang,
+                    it.PBI_MuBiaoSGSheRuLiang,
+                    it.PBI_Height,
+                    it.PBI_MuBiaoZFSheRuLiang,
+                    it.PBI_TunWei,
+                    it.PBI_MarryState,
+                    it.PBI_ChronicDiseaseOther,
+                    it.PBI_BaoXiaoFangShi,
+                    it.PBI_AgeType,
+                    it.PBI_FeelBad,
+                    it.PBI_KongYanLiang,
+                    it.PBI_ShuiMinShiJian,
+                    it.PBI_ShuiMinXiGuan,
+                    it.PBI_SmokingStatus,
+                    it.PBI_ShuCiSheRuLiang,
+                    it.PBI_MuBiaoSCSheRuLiang,
+                    it.PBI_YaoWei,
+                    it.PBI_Weight,
+                    it.PBI_YaoTunBi,
+                    it.PBI_Nation,
+                    it.PBI_UserName,
+                    it.PBI_ICard,
+                    it.PBI_PersonPhone,
+                    it.PBI_IDCardAddress,
+                    it.PBI_Province,
+                    it.PBI_City,
+                    it.PBI_County,
+                    it.PBI_Address,
+                    it.PBI_OriginPlace,
+                    it.IsSdrug,
+                    it.IsHdrug
+                }
+            ).ExecuteCommandAsync();
         return await _context.Queryable<HT_PatientBasicInfo>().FirstAsync(x => x.ArchivesCode == patientBasicInfo.ArchivesCode);
     }
 
