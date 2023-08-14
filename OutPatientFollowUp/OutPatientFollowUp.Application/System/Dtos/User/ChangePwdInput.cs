@@ -32,10 +32,10 @@ namespace OutPatientFollowUp.Application
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
 
-            if (!Regex.IsMatch(NewPwd, @"^(?=(.*\d.*[\p{P}\p{S}\p{C}]|[\p{P}\p{S}\p{C}].*\d))(?=(.*[a-zA-Z].*[\p{P}\p{S}\p{C}]|[\p{P}\p{S}\p{C}].*[a-zA-Z]))[\p{L}\p{N}\p{P}\p{S}\p{C}]{6,20}$") == false)
-            { //密码格式不正确
-                yield return new ValidationResult("密码格式不正确", new[] { nameof(NewPwd) });
-            }
+           if(!Regex.IsMatch(NewPwd,@"^(?=(.*\d.*[\p{P}\p{S}\p{C}]|[\p{P}\p{S}\p{C}].*\d))(?=(.*[a-zA-Z].*[\p{P}\p{S}\p{C}]|[\p{P}\p{S}\p{C}].*[a-zA-Z]))[\p{L}\p{N}\p{P}\p{S}\p{C}]{6,20}$"))
+           {
+               yield return new ValidationResult("密码格式不正确");
+           }
             if (NewPwd != ConfirmNewPwd)
             {
                 yield return new ValidationResult("两次输入的密码不一致", new[] { nameof(ConfirmNewPwd) });

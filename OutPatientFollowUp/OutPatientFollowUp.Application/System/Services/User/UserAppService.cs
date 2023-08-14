@@ -66,7 +66,7 @@ public class UserAppService : IUserAppService
         //将完善密码字段改为1，已完善
         existUser.IsPerfectPwd = 1;
         //将用户输入的密码加密
-        var pwd = DEncrypt.Md5(input.NewPwd);
+        var pwd = DEncrypt.Md5(input.NewPwd).ToLower();
         //修改密码
         //保存
         var result = await _doctorBasicInfoRepositroy.ChangePwd(existUser.Doctor_ID, pwd);

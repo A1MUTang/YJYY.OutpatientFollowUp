@@ -2092,7 +2092,7 @@
             <param name="patientBasicInfo"></param>
             <returns></returns>
         </member>
-        <member name="M:OutPatientFollowUp.Core.HT_PatientBasicInfoRepository.UpdateAsync(OutPatientFollowUp.Core.HT_PatientBasicInfo)">
+        <member name="M:OutPatientFollowUp.Core.HT_PatientBasicInfoRepository.UpdateBasicInfoAsync(OutPatientFollowUp.Core.HT_PatientBasicInfo)">
             <summary>
             更新患者基本信息
             </summary>
@@ -3056,6 +3056,13 @@
             根据档案编号获取患者基本信息
             </summary>
             <param name="archivesCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OutPatientFollowUp.Core.IHT_PatientBasicInfoRepository.UpdateBasicInfoAsync(OutPatientFollowUp.Core.HT_PatientBasicInfo)">
+            <summary>
+            更新患者基本信息
+            </summary>
+            <param name="patientBasicInfo"></param>
             <returns></returns>
         </member>
         <member name="M:OutPatientFollowUp.Core.IHT_SupplementaryExamRepository.GetByArchivesCode(System.String)">

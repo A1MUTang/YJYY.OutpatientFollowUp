@@ -9,7 +9,7 @@ namespace OutPatientFollowUp.Core;
 public class HT_PatientBasicInfoRepository : BaseRepository<HT_PatientBasicInfo>, IHT_PatientBasicInfoRepository
 {
     private readonly ISqlSugarClient _context;
-
+    
     public HT_PatientBasicInfoRepository(ISqlSugarClient context) : base(context)
     {
         _context = context;
